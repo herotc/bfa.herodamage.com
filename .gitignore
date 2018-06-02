@@ -1,3 +1,12 @@
+# Project #
+###########
+public/*
+
+# Project dependencies #
+########################
+node_modules/*
+.cache/*
+
 # IDE #
 #######
 .idea/*
