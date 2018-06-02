@@ -55,6 +55,7 @@
     "gatsby-link": "^1.6.44",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-styled-components": "^2.0.11",
+    "gatsby-source-filesystem": "^1.5.38",
     "react-helmet": "^5.2.0",
     "styled-components": "^3.3.0"
   },
