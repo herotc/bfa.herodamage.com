@@ -1,0 +1,72 @@
+{
+  "name": "herodamage-bfa",
+  "version": "0.0.1",
+  "description": "Battle for Azeroth version of HeroDamage",
+  "keywords": [
+    "herotc",
+    "herodamage",
+    "world of warcraft",
+    "battle for azeroth",
+    "wow bfa",
+    "theorycrafting",
+    "simulationcraft",
+    "simc",
+    "gatsby"
+  ],
+  "homepage": "https://bfa.herodamage.com/",
+  "bugs": {
+    "url": "https://github.com/herotc/bfa.herodamage.com/issues"
+  },
+  "license": "EUPL-1.2",
+  "author": {
+    "name": "HeroTC",
+    "email": "contact@hero.tc",
+    "url": "https://www.hero.tc/"
+  },
+  "contributors": [
+    {
+      "name": "Quentin Giraud",
+      "email": "dev@aethys.io",
+      "url": "https://quentin.giraud.pro/"
+    },
+    {
+      "name": "Florian Meißner",
+      "email": "developer@mystler.eu",
+      "url": "https://www.mystler.eu/"
+    },
+    {
+      "name": "Océane Skowronski",
+      "email": "dev.oceaneskow@gmail.com",
+      "url": "https://nianel.github.io/CV/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herotc/bfa.herodamage.com.git"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write 'src/**/*.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.269",
+    "gatsby-link": "^1.6.44",
+    "gatsby-plugin-react-helmet": "^2.0.11",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.8.0",
+    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-standard": "^3.1.0"
+  },
+  "engines": {
+    "node": "8.11.2",
+    "npm": "6.1.0"
+  }
+}
