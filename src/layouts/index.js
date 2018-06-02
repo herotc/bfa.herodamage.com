@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import Header from '../components/header'
 import './index.css'
 
-const Content = styled.div`
+const Main = styled.main`
   margin: 0 auto;
   max-width: 960px;
   padding: 0 1.0875rem 1.45rem;
@@ -22,7 +22,7 @@ const Layout = ({children, data}) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title}/>
-    <Content>{children()}</Content>
+    <Main>{children()}</Main>
   </div>
 )
 

@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 
-const HeaderElement = styled.div`
+const HeaderElement = styled.header`
   background: rebeccapurple;
   margin-bottom: 1.45rem;
 `
