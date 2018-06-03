@@ -26,4 +26,5 @@ module.exports = {
 }
 ```
 
-Then implement as many templates corresponding to simulationType as needed in `src/templates/simulations/`.
+Then implement as many templates corresponding to simulationType as needed in `src/templates/simulations/`.  
+You also have to implement a `src/templates/wow-class.js` template which is used by the class index page.
