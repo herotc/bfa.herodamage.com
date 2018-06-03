@@ -10,8 +10,7 @@ Programmatically generate reports pages from `src/reports/`.
 
 ## How to use
 
-Edit `gatsby-config.js`
-
+Edit `gatsby-config.js`:
 ```javascript
 module.exports = {
   plugins: [
