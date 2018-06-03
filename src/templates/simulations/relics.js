@@ -1,7 +1,7 @@
 import React from 'react'
 
-const RelicsSimulationsTemplate = () => (
+const RelicsSimulationTemplate = () => (
   <h1>Relics simulations</h1>
 )
 
-export default RelicsSimulationsTemplate
+export default RelicsSimulationTemplate
