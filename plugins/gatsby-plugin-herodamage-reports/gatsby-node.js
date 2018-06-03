@@ -36,7 +36,8 @@ exports.onCreateNode = async ({node, getNode, boundActionCreators}) => {
 
   // Get the metas from the file
   const json = JSON.parse(await fs.readFile(node.absolutePath, {encoding: 'utf8', flag: 'r'})).metas
-  const versionUsed = json['options']['dbc'][json['options']['dbc']['version_used']]
+  const optionsDbc = json['options']['dbc']
+  const versionUsed = optionsDbc[optionsDbc['version_used']]
   createNodeField({node, name: 'version', value: versionUsed['wow_version']})
   createNodeField({node, name: 'build', value: versionUsed['build_level']})
   createNodeField({node, name: 'targetError', value: json['options']['target_error']})
@@ -88,10 +89,11 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
     }
   `)
   result.data.allFile.edges.forEach(({node}) => {
+    const fields = node.fields
     createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/templates/simulation/${node.fields.simulationType}.js`),
-      context: node.fields
+      path: fields.slug,
+      component: path.resolve(`./src/templates/simulation/${fields.simulationType}.js`),
+      context: fields
     })
   })
 }
