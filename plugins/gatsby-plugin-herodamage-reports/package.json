@@ -1,6 +1,6 @@
 {
   "name": "gatsby-plugin-herodamage-reports",
-  "description": "Gatsby plugin to programatically generate reports pages from 'src/reports/'",
+  "description": "Gatsby plugin to programmatically generate reports pages from 'src/reports/'",
   "keywords": [
     "gatsby",
     "gatsby-plugin"
