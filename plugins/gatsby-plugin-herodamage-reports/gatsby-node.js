@@ -1,14 +1,13 @@
 const fs = require('fs').promises
 const path = require('path')
-const {createFilePath} = require('gatsby-source-filesystem')
 
-// Simulation report nodes creation
+const wowClasses = {}
+
 exports.onCreateNode = async ({node, getNode, boundActionCreators}) => {
   const {createNodeField} = boundActionCreators
 
+  // Prevents non reports files & reports directories to be processed
   if (node.sourceInstanceName !== 'reports' || node.internal.type !== 'File') return
-
-  createFilePath({node, getNode, basePath: 'reports/'})
 
   // Example file: 'reports/25901/Death-Knight_Trinkets_1T_T21_Frost_Cold-Heart-Runic-Attenuation.json'
   const name = node.name // 'Death-Knight_Trinkets_1T_T21_Frost_Cold-Heart-Runic-Attenuation'
@@ -43,11 +42,26 @@ exports.onCreateNode = async ({node, getNode, boundActionCreators}) => {
   createNodeField({node, name: 'targetError', value: json['options']['target_error']})
   createNodeField({node, name: 'buildTime', value: json['build_timestamp']})
   createNodeField({node, name: 'resultTime', value: json['result_timestamp']})
+
+  // Register the wow class to create the corresponding index page if it's the first time we meet it
+  if (!wowClasses[wowClass]) wowClasses[wowClass] = true
 }
 
-// Simulation report pages creation
 exports.createPages = async ({graphql, boundActionCreators}) => {
   const {createPage} = boundActionCreators
+
+  // Make the class index pages by iterating over discovered classes during onCreateNode
+  Object.keys(wowClasses).forEach((wowClass) => {
+    createPage({
+      path: `/${wowClass}/`,
+      component: path.resolve(`./src/templates/wow-class.js`),
+      context: {
+        wowClass: wowClass
+      }
+    })
+  })
+
+  // Makes the simulations pages
   const result = await graphql(`
     {
       allFile(filter: {sourceInstanceName: {eq: "reports"}}) {
