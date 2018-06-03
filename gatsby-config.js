@@ -12,17 +12,17 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `reports`,
+        name: 'reports',
         path: `${__dirname}/src/reports/`
       }
     },
     'gatsby-plugin-herodamage-reports',
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `posts`,
+        name: 'posts',
         path: `${__dirname}/src/posts/`
       }
     },

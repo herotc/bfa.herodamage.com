@@ -1,4 +1,4 @@
-const path = require(`path`)
+const path = require('path')
 
 exports.onCreateNode = async ({node, getNode, boundActionCreators}) => {
   const {createNodeField} = boundActionCreators
