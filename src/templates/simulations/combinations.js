@@ -1,7 +1,7 @@
 import React from 'react'
 
-const CombinationsSimulationsTemplate = () => (
+const CombinationsSimulationTemplate = () => (
   <h1>Combinations simulations</h1>
 )
 
-export default CombinationsSimulationsTemplate
+export default CombinationsSimulationTemplate

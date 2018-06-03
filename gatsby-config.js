@@ -11,6 +11,7 @@ module.exports = {
         name: `reports`,
         path: `${__dirname}/src/reports/`
       }
-    }
+    },
+    'gatsby-plugin-herodamage-reports'
   ]
 }

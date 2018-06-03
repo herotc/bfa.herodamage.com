@@ -1,7 +1,7 @@
 import React from 'react'
 
-const RacesSimulationsTemplate = () => (
+const RacesSimulationTemplate = () => (
   <h1>Races simulations</h1>
 )
 
-export default RacesSimulationsTemplate
+export default RacesSimulationTemplate

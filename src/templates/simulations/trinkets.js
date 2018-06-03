@@ -1,7 +1,7 @@
 import React from 'react'
 
-const TrinketsSimulationsTemplate = () => (
+const TrinketsSimulationTemplate = () => (
   <h1>Trinkets simulations</h1>
 )
 
-export default TrinketsSimulationsTemplate
+export default TrinketsSimulationTemplate
