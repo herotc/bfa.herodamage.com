@@ -55,7 +55,7 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
   Object.keys(wowClasses).forEach((wowClass) => {
     createPage({
       path: `/${wowClass}/`,
-      component: path.resolve(`./src/templates/wow-class.js`),
+      component: path.resolve('./src/templates/wow-class.js'),
       context: {
         wowClass: wowClass
       }

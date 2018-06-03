@@ -6,9 +6,11 @@ Programmatically generate blog posts pages from `src/posts/`.
 
 ## Prerequisites
 
-`npm install --save gatsby-source-filesystem gatsby-transformer-remark`
+```
+npm install --save gatsby-source-filesystem gatsby-transformer-remark
+```
 
-And an entry for `gatsby-transformer-remark` in `gatsby-config.js`:
+Then add an entry for `gatsby-transformer-remark` in `gatsby-config.js`:
 ```javascript
 module.exports = {
   plugins: [
@@ -29,9 +31,9 @@ Edit `gatsby-config.js`:
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `posts`,
+        name: 'posts',
         path: `${__dirname}/src/posts/`
       }
     },
@@ -41,4 +43,4 @@ module.exports = {
 ```
 
 Then implement the `src/templates/blog-posts.js` template file.  
-You can also implements a `src/templates/blog.js` template file to list the posts with a pagination.
+You can also implements a `src/pages/blog.js` page to list the posts with a pagination.

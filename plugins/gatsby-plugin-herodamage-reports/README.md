@@ -6,7 +6,9 @@ Programmatically generate reports pages from `src/reports/`.
 
 ## Prerequisites
 
-`npm install --save gatsby-source-filesystem`
+```
+npm install --save gatsby-source-filesystem
+```
 
 ## How to use
 
@@ -15,9 +17,9 @@ Edit `gatsby-config.js`:
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `reports`,
+        name: 'reports',
         path: `${__dirname}/src/reports/`
       }
     },
@@ -27,4 +29,4 @@ module.exports = {
 ```
 
 Then implement as many templates corresponding to simulationType as needed in `src/templates/simulations/`.  
-You also have to implement a `src/templates/wow-class.js` template which is used by the class index page.
+You also have to implement a `src/templates/wow-class.js` template which is used by the classes index pages.
