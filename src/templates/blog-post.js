@@ -48,7 +48,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        
       }
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {

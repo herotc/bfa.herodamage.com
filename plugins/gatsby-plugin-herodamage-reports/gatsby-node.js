@@ -76,7 +76,7 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
   result.data.allFile.edges.forEach(({node}) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve(`./src/templates/simulations/${node.fields.simulationType}.js`),
+      component: path.resolve(`./src/templates/simulation/${node.fields.simulationType}.js`),
       context: node.fields
     })
   })

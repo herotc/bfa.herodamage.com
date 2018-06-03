@@ -18,7 +18,7 @@ exports.onCreateNode = async ({node, getNode, boundActionCreators}) => {
   const name = parentNode.name // '2018-06-03-test-post'
   const nameParts = name.toLowerCase().split('-') // ['2018', '06', '03', 'test', 'post']
   const [year, month, day] = nameParts
-  // slug: '/blog/2018/06/03/test-post'
+  // slug: '/2018/06/03/test-post'
   createNodeField({
     node,
     name: 'slug',
@@ -46,7 +46,7 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
   result.data.allMarkdownRemark.edges.forEach(({node}) => {
     createPage({
       path: node.fields.slug,
-      component: path.resolve('./src/templates/blog-posts.js'),
+      component: path.resolve('./src/templates/blog-post.js'),
       context: {
         slug: node.fields.slug
       }
