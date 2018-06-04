@@ -3,6 +3,7 @@ module.exports = {
     title: 'Hero Damage'
   },
   plugins: [
+    'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-herodamage-i18n',
