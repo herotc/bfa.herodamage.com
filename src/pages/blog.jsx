@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const BlogPage = ({data}) => {
   console.log(data)
@@ -19,6 +20,10 @@ const BlogPage = ({data}) => {
       ))}
     </div>
   )
+}
+
+BlogPage.propTypes = {
+  data: PropTypes.object
 }
 
 export default BlogPage

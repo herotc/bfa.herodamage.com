@@ -1,12 +1,12 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
-import get from 'lodash/get'
 
 class BlogPostTemplate extends React.Component {
   render () {
     const post = this.props.data.markdownRemark
-    const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const siteTitle = this.props.data.site.siteMetadata.title
     const {previous, next} = this.props.pathContext
 
     return (
@@ -39,6 +39,11 @@ class BlogPostTemplate extends React.Component {
       </div>
     )
   }
+}
+
+BlogPostTemplate.propTypes = {
+  data: PropTypes.object,
+  pathContext: PropTypes.object
 }
 
 export default BlogPostTemplate
