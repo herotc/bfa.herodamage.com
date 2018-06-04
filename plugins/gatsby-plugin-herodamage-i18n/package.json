@@ -16,12 +16,11 @@
     "url": "https://github.com/herotc/bfa.herodamage.com/tree/master/plugins/gatsby-plugin-herodamage-i18n"
   },
   "peerDependencies": {
+    "@lingui/babel-preset-react": "^2.0.8",
+    "@lingui/react": "^2.0.8",
     "gatsby": "^1.9.269",
+    "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-source-filesystem": "^1.5.38",
-    "gatsby-transformer-remark": "^1.7.41",
-    "i18next": "^11.3.2",
-    "i18next-browser-languagedetector": "^2.2.0",
-    "i18next-node-fs-backend": "^1.0.0",
-    "react-i18next": "^7.6.1"
+    "gatsby-transformer-remark": "^1.7.41"
   }
 }
