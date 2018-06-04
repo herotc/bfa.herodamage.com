@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { I18nProvider } from '@lingui/react'
 import { navigateTo } from 'gatsby-link'
 import Header from '../components/header'
-import { catalogs, prefix, deprefix, langFromPath } from '../../plugins/gatsby-plugin-herodamage-i18n'
+import { catalogs, replacePrefix, langFromPath } from '../../plugins/gatsby-plugin-herodamage-i18n'
 import styled from 'styled-components'
 import './index.css'
 
@@ -37,7 +37,7 @@ Layout.propTypes = {
 
 class IndexLayout extends React.Component {
   onLangChange = (lang) => {
-    navigateTo(prefix(lang) + deprefix(this.props.location.pathname))
+    navigateTo(replacePrefix(lang, this.props.location.pathname))
   }
 
   render = () => {

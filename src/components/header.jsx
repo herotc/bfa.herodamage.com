@@ -42,7 +42,7 @@ const Header = ({lang, onLangClick, siteTitle}) => (
   <HeaderElement>
     <Container>
       <Title>
-        <SiteLink to="/">
+        <SiteLink to={`/${lang}/`}>
           {siteTitle}
         </SiteLink>
       </Title>
