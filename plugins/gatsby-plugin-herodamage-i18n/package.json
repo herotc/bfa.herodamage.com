@@ -1,0 +1,27 @@
+{
+  "name": "gatsby-plugin-herodamage-i18n",
+  "description": "Gatsby plugin to implements i18next and react-i18next",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "i18next",
+    "react-i18next"
+  ],
+  "bugs": {
+    "url": "https://github.com/herotc/bfa.herodamage.com/issues"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herotc/bfa.herodamage.com/tree/master/plugins/gatsby-plugin-herodamage-i18n"
+  },
+  "peerDependencies": {
+    "gatsby": "^1.9.269",
+    "gatsby-source-filesystem": "^1.5.38",
+    "gatsby-transformer-remark": "^1.7.41",
+    "i18next": "^11.3.2",
+    "i18next-browser-languagedetector": "^2.2.0",
+    "i18next-node-fs-backend": "^1.0.0",
+    "react-i18next": "^7.6.1"
+  }
+}

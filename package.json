@@ -57,7 +57,11 @@
     "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-source-filesystem": "^1.5.38",
     "gatsby-transformer-remark": "^1.7.41",
+    "i18next": "^11.3.2",
+    "i18next-browser-languagedetector": "^2.2.0",
+    "i18next-node-fs-backend": "^1.0.0",
     "react-helmet": "^5.2.0",
+    "react-i18next": "^7.6.1",
     "styled-components": "^3.3.0"
   },
   "devDependencies": {
@@ -66,7 +70,7 @@
     "eslint-plugin-import": "^2.12.0",
     "eslint-plugin-node": "^6.0.1",
     "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-react": "^7.9.0",
     "eslint-plugin-standard": "^3.1.0",
     "shx": "^0.2.2"
   },
