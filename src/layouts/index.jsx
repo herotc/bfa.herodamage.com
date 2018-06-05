@@ -14,19 +14,22 @@ const Main = styled.main`
   padding: 0 1.0875rem 1.45rem;
 `
 
-const Layout = ({children, data, lang, onLangChange}) => (
-  <div>
-    <Helmet
-      title={data.site.siteMetadata.title}
-      meta={[
-        {name: 'description', content: 'Sample'},
-        {name: 'keywords', content: 'sample, something'}
-      ]}
-    />
-    <Header lang={lang} onLangClick={onLangChange} siteTitle={data.site.siteMetadata.title}/>
-    <Main>{children()}</Main>
-  </div>
-)
+const Layout = ({onLangChange, ...props}) => {
+  const {children, data, lang} = props
+  return (
+    <div>
+      <Helmet
+        title={data.site.siteMetadata.title}
+        meta={[
+          {name: 'description', content: 'Sample'},
+          {name: 'keywords', content: 'sample, something'}
+        ]}
+      />
+      <Header lang={lang} onLangClick={onLangChange} siteTitle={data.site.siteMetadata.title}/>
+      <Main>{children(props)}</Main>
+    </div>
+  )
+}
 
 Layout.propTypes = {
   children: PropTypes.func,
