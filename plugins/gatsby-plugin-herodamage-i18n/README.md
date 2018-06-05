@@ -6,12 +6,13 @@ A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin for
 ## Prerequisites
 
 ```
-npm install --save gatsby-plugin-react-next react-dom
+npm install --save gatsby-plugin-react-next react react-dom
 npm install --save gatsby-source-filesystem gatsby-transformer-remark
-npm install --save @lingui/babel-preset-react @lingui/react
+npm install --save @lingui/react @lingui/babel-preset-react
 ```
 
-And add an entry for `gatsby-plugin-react-next`, `gatsby-transformer-remark` and `gatsby-source-filesystem` in `gatsby-config.js` (see Gatsby docs) 
+And add an entry for `gatsby-plugin-react-next`, `gatsby-transformer-remark` and `gatsby-source-filesystem` in `gatsby-config.js` (see Gatsby docs)  
+**Makes sure `gatsby-plugin-react-next` is loaded first.**
 
 ## How to use
 
