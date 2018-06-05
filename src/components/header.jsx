@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
+import { langs } from '../../plugins/gatsby-plugin-herodamage-i18n'
 
 const HeaderElement = styled.header`
   background: rebeccapurple;
@@ -23,19 +24,21 @@ const SiteLink = styled(Link)`
   text-decoration: none;
 `
 
-const LangSelector = ({lang, onClick}) => (
-  <a onClick={onClick}>{lang}</a>
+const LangSelector = ({className, lang, onClick}) => (
+  <a className={className} onClick={onClick}>{lang}</a>
 )
 LangSelector.propTypes = {
+  className: PropTypes.string,
   lang: PropTypes.string,
   onClick: PropTypes.func,
   selected: PropTypes.bool
 }
 const StyledLangSelector = styled(LangSelector)`
   color: yellow;
+  cursor: pointer;
+  font-size: 20px;
   margin-right: 10px;
   text-decoration: ${props => props.selected ? 'underline' : 'none'};
-  cursor: pointer;
 `
 
 const Header = ({lang, onLangClick, siteTitle}) => (
@@ -47,8 +50,9 @@ const Header = ({lang, onLangClick, siteTitle}) => (
         </SiteLink>
       </Title>
       <div>
-        <StyledLangSelector lang='en' onClick={(e) => onLangClick('en')} selected={lang === 'en'}/>
-        <StyledLangSelector lang='fr' onClick={(e) => onLangClick('fr')} selected={lang === 'fr'}/>
+        {langs.map((langKey) =>
+          <StyledLangSelector key={langKey} lang={langKey} onClick={(e) => onLangClick(`${langKey}`)} selected={lang === `${langKey}`}/>
+        )}
       </div>
     </Container>
   </HeaderElement>
