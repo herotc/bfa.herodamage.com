@@ -14,7 +14,7 @@
     "url": "https://github.com/herotc/bfa.herodamage.com/tree/master/plugins/gatsby-plugin-herodamage-reports"
   },
   "peerDependencies": {
-    "gatsby": "^1.9.269",
+    "gatsby": "^1.9.270",
     "gatsby-source-filesystem": "^1.5.38"
   }
 }
