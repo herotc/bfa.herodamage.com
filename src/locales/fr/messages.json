@@ -1,10 +1,10 @@
 {
-  "Hi people": "aze",
-  "Welcome to your new Gatsby site.": "zer",
-  "Now go build something great.": "ert",
-  "Go to faq": "rty",
-  "Go to blog": "tyu",
-  "Go to rogue": "yui",
-  "Go to 404": "uio",
-  "Go to dev error": "iop"
+  "Hi people": "Salut à vous",
+  "Welcome to your new Gatsby site.": "Bienvenue sur votre nouveau site Gatsby.",
+  "Now go build something great.": "Maintenant à vous de construire quelque chose de génial.",
+  "Go to faq": "Aller à la page faq",
+  "Go to blog": "Aller à la page blog",
+  "Go to rogue": "Aller à la page rogue",
+  "Go to 404": "Aller à la page 404",
+  "Go to dev error": "Aller à la page de débug"
 }
