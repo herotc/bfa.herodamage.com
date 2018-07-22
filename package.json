@@ -84,7 +84,7 @@
     "shx": "^0.2.2"
   },
   "engines": {
-    "node": "10.3.0",
+    "node": "10.7.0",
     "npm": "6.1.0"
   },
   "browserslist": [
