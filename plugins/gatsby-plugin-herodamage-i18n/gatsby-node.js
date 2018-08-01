@@ -24,6 +24,7 @@ const langs = require('./index').langs
 exports.onCreatePage = async ({page, boundActionCreators}) => {
   const {createPage, deletePage} = boundActionCreators
 
+  // Prevent i18n on dev pages
   if (page.path === '/dev-404-page/') return
 
   // Delete the original page
@@ -32,9 +33,7 @@ exports.onCreatePage = async ({page, boundActionCreators}) => {
   // Make a new page for each lang
   langs.forEach((lang) => {
     // Make a new page object from the original page and override the path to add the lang prefix
-    const newPage = Object.assign({}, page, {
-      path: `/${lang}${page.path}`
-    })
+    const newPage = Object.assign({}, page, {path: `/${lang}${page.path}`})
 
     createPage(newPage)
   })

@@ -9,16 +9,13 @@ exports.onCreateNode = async ({node, getNode, boundActionCreators}) => {
   // Prevents non reports files & reports directories to be processed
   if (node.sourceInstanceName !== 'reports' || node.internal.type !== 'File') return
 
-  // Example file: 'reports/25901/Death-Knight_Trinkets_1T_T21_Frost_Cold-Heart-Runic-Attenuation.json'
+  // Example file: 'reports/Death-Knight_Trinkets_1T_T21_Frost_Cold-Heart-Runic-Attenuation.json'
   const name = node.name // 'Death-Knight_Trinkets_1T_T21_Frost_Cold-Heart-Runic-Attenuation'
   const nameParts = name.toLowerCase().split('_') // ['death-knight', 'trinkets', '1t', 't21', 'frost', 'cold-heart-runic-attenuation']
   const [wowClass, simulationType, fightStyle, tier, spec, variation] = nameParts
-  // slug: '/death-knight/25901/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
-  createNodeField({
-    node,
-    name: 'slug',
-    value: `/${wowClass}/${node.relativeDirectory}/${simulationType}/${nameParts.slice(2).join('-')}`
-  })
+  const slug = `/${wowClass}/${simulationType}/${nameParts.slice(2).join('-')}`
+  // slug: '/death-knight/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
+  createNodeField({node, name: 'slug', value: slug})
   // name: 'Death-Knight_Trinkets_1T_T21_Frost_Cold-Heart-Runic-Attenuation'
   createNodeField({node, name: 'name', value: name})
   // wowClass: 'death-knight'
@@ -88,12 +85,15 @@ exports.createPages = async ({graphql, boundActionCreators}) => {
       }
     }
   `)
-  result.data.allFile.edges.forEach(({node}) => {
-    const fields = node.fields
-    createPage({
-      path: fields.slug,
-      component: path.resolve(`./src/templates/simulation/${fields.simulationType}.jsx`),
-      context: fields
+  const {allFile} = result.data
+  if (allFile) {
+    allFile.edges.forEach(({node}) => {
+      const fields = node.fields
+      createPage({
+        path: fields.slug,
+        component: path.resolve(`./src/templates/simulation/${fields.simulationType}.jsx`),
+        context: fields
+      })
     })
-  })
+  }
 }
