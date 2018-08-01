@@ -3,7 +3,7 @@ const path = require('path')
 
 const wowClasses = {}
 
-exports.onCreateNode = async ({node, getNode, boundActionCreators}) => {
+module.exports.onCreateNode = async function ({node, getNode, boundActionCreators}) {
   const {createNodeField} = boundActionCreators
 
   // Prevents non reports files & reports directories to be processed
@@ -45,7 +45,7 @@ exports.onCreateNode = async ({node, getNode, boundActionCreators}) => {
   if (!wowClasses[wowClass]) wowClasses[wowClass] = true
 }
 
-exports.createPages = async ({graphql, boundActionCreators}) => {
+module.exports.createPages = async function ({graphql, boundActionCreators}) {
   const {createPage} = boundActionCreators
 
   // Make the class index pages by iterating over discovered classes during onCreateNode

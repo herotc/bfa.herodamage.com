@@ -55,7 +55,10 @@
   "dependencies": {
     "@lingui/babel-preset-react": "^2.3.0",
     "@lingui/react": "^2.3.0",
+    "@material-ui/core": "^1.4.2",
     "babel-plugin-styled-components": "^1.5.1",
+    "esm": "^3.0.72",
+    "fs": "0.0.1-security",
     "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-react-helmet": "^2.0.11",
@@ -63,6 +66,7 @@
     "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
+    "module": "^1.2.5",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-helmet": "^5.2.0",
