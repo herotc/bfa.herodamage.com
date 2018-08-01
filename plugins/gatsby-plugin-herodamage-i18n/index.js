@@ -1,38 +1,36 @@
-const defaultLang = 'en'
+module.exports.defaultLang = 'en'
 
 const langs = ['en', 'fr']
+module.exports.langs = langs
 
 const catalogs = {}
 langs.forEach((lang) => {
   catalogs[lang] = {messages: require(`../../src/locales/${lang}/messages.json`)}
 })
+module.exports.catalogs = catalogs
 
-const prefix = (lang) => `/${lang}`
+const prefix = function (lang) {
+  return `/${lang}`
+}
+module.exports.prefix = prefix
 
-const deprefix = (path) => {
+const deprefix = function (path) {
   let pathPrefixed
   langs.forEach((lang) => {
     if (path.startsWith(`/${lang}/`)) pathPrefixed = true
   })
   return pathPrefixed ? path.substr(3) : path
 }
+module.exports.deprefix = deprefix
 
-const replacePrefix = (lang, path) => {
+module.exports.replacePrefix = function (lang, path) {
   return `${prefix(lang)}${deprefix(path)}`
 }
 
-const langFromPath = (path) => {
+module.exports.langFromPath = function (path) {
   let extractedLang
   langs.forEach((lang) => {
     if (path.startsWith(`/${lang}/`)) extractedLang = lang
   })
   return extractedLang || 'en'
 }
-
-module.exports.defaultLang = defaultLang
-module.exports.langs = langs
-module.exports.catalogs = catalogs
-module.exports.prefix = prefix
-module.exports.deprefix = deprefix
-module.exports.replacePrefix = replacePrefix
-module.exports.langFromPath = langFromPath

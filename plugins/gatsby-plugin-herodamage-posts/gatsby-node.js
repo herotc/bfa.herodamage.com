@@ -1,6 +1,6 @@
 const path = require('path')
 
-exports.onCreateNode = async ({node, getNode, boundActionCreators}) => {
+module.exports.onCreateNode = function ({node, getNode, boundActionCreators}) {
   const {createNodeField} = boundActionCreators
 
   // Prevents non markdown files & non posts files to be processed
@@ -20,7 +20,7 @@ exports.onCreateNode = async ({node, getNode, boundActionCreators}) => {
   createNodeField({node, name: 'slug', value: `/${year}/${month}/${day}/${nameParts.slice(3).join('-')}`})
 }
 
-exports.createPages = async ({graphql, boundActionCreators}) => {
+module.exports.createPages = async function ({graphql, boundActionCreators}) {
   const {createPage} = boundActionCreators
 
   const result = await graphql(`

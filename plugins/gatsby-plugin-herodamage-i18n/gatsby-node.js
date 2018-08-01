@@ -6,22 +6,16 @@ try {
 } catch (e) {
   // Ignore
 }
-
-exports.modifyBabelrc = ({babelrc}) => {
+module.exports.modifyBabelrc = function ({babelrc}) {
   if (babelPresetExists) {
-    return {
-      ...babelrc,
-      presets: babelrc.presets.concat(['@lingui/babel-preset-react'])
-    }
+    return {...babelrc, presets: babelrc.presets.concat(['@lingui/babel-preset-react'])}
   }
-
   return babelrc
 }
 
 // Create i18n routes
 const langs = require('./index').langs
-
-exports.onCreatePage = async ({page, boundActionCreators}) => {
+module.exports.onCreatePage = function ({page, boundActionCreators}) {
   const {createPage, deletePage} = boundActionCreators
 
   // Prevent i18n on dev pages
