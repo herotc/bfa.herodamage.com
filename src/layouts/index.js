@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import { I18nProvider } from '@lingui/react'
 import { navigateTo } from 'gatsby-link'
 import Header from '../components/header'
-import { catalogs, replacePrefix, langFromPath } from '../../plugins/gatsby-plugin-herodamage-i18n'
+import { catalogs, replacePrefix, langFromPath, translation } from '../../plugins/gatsby-plugin-herodamage-i18n'
 import styled from 'styled-components'
 import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
 
@@ -15,7 +15,7 @@ const Main = styled.main`
 `
 
 const Layout = (props) => {
-  const {children, data, lang, onLangChange} = props
+  const {children, data, lang, onLangChange, t} = props
   return (
     <div>
       <Helmet
@@ -44,9 +44,10 @@ const IndexLayout = (props) => {
     navigateTo(replacePrefix(lang, pathname))
   }
   const lang = langFromPath(pathname)
+  const t = translation(lang)
   return (
     <I18nProvider language={lang} catalogs={catalogs}>
-      <Layout {...props} lang={lang} onLangChange={onLangChange}/>
+      <Layout {...props} lang={lang} onLangChange={onLangChange} t={t}/>
     </I18nProvider>
   )
 }
