@@ -34,3 +34,8 @@ module.exports.langFromPath = function (path) {
   })
   return extractedLang || 'en'
 }
+
+// Until there is a way to figure how to dynamic translate variable from lingui we'll use this
+module.exports.translation = function (lang) {
+  return (message) => catalogs[lang].messages[message]
+}
