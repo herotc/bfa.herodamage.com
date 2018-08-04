@@ -75,7 +75,7 @@ const WowClassTemplate = (props) => {
   const {wowClass} = data.allSitePage.group[0].edges[0].node.context
   return (
     <div>
-      <Typography variant={'title'} style={{margin: '2rem 0'}}>{_.capitalize(t(wowClass))}</Typography>
+      <Typography variant={'title'} style={{marginTop: '1rem', padding: '2rem 0'}}>{_.capitalize(t(wowClass))}</Typography>
       {
         data.allSitePage.group.map((group, index) => {
           const {simulationType} = group.edges[0].node.context

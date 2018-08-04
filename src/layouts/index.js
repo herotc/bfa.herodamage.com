@@ -17,7 +17,7 @@ const Main = styled.main`
 const Layout = (props) => {
   const {children, data, lang, onLangChange, t} = props
   return (
-    <div>
+    <div style={{background: '#111111'}}>
       <Helmet
         title={data.site.siteMetadata.title}
         meta={[
@@ -26,7 +26,7 @@ const Layout = (props) => {
         ]}
       />
       <Header lang={lang} onLangClick={onLangChange} siteTitle={data.site.siteMetadata.title}/>
-      <Main>{children(props)}</Main>
+      <Main style={{background: '#303030'}}>{children(props)}</Main>
     </div>
   )
 }
