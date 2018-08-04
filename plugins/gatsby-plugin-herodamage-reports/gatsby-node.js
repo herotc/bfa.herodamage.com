@@ -9,14 +9,14 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   // Prevents non reports files & reports directories to be processed
   if (node.sourceInstanceName !== 'reports' || node.internal.type !== 'File') return
 
-  // Example file: 'reports/Death-Knight_Trinkets_1T_T21_Frost_Cold-Heart-Runic-Attenuation.json'
-  const name = node.name // 'Death-Knight_Trinkets_1T_T21_Frost_Cold-Heart-Runic-Attenuation'
-  const nameParts = name.toLowerCase().split('_') // ['death-knight', 'trinkets', '1t', 't21', 'frost', 'cold-heart-runic-attenuation']
-  const [wowClass, simulationType, fightStyle, tier, spec, variation] = nameParts
+  // Example file: 'reports/Trinkets_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation.json'
+  const name = node.name // 'Trinkets_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
+  const nameParts = name.toLowerCase().split('_') // ['trinkets', '1t', 't21', 'death-knight', 'frost', 'cold-heart-runic-attenuation']
+  const [simulationType, fightStyle, tier, wowClass, spec, variation] = nameParts
   const slug = `/${wowClass}/${simulationType}/${nameParts.slice(2).join('-')}`
   // slug: '/death-knight/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
   createNodeField({node, name: 'slug', value: slug})
-  // name: 'Death-Knight_Trinkets_1T_T21_Frost_Cold-Heart-Runic-Attenuation'
+  // name: 'Trinkets_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
   createNodeField({node, name: 'name', value: name})
   // wowClass: 'death-knight'
   createNodeField({node, name: 'wowClass', value: wowClass})
@@ -52,7 +52,7 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
   Object.keys(wowClasses).forEach((wowClass) => {
     createPage({
       path: `/${wowClass}/`,
-      component: path.resolve('./src/templates/wow-class.jsx'),
+      component: path.resolve('./src/templates/wow-class.js'),
       context: {
         wowClass: wowClass
       }
@@ -91,7 +91,7 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
       const fields = node.fields
       createPage({
         path: fields.slug,
-        component: path.resolve(`./src/templates/simulation/${fields.simulationType}.jsx`),
+        component: path.resolve(`./src/templates/simulation/${fields.simulationType}.js`),
         context: fields
       })
     })
