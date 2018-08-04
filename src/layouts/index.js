@@ -14,8 +14,8 @@ const Main = styled.main`
   padding: 0 1.0875rem 1.45rem;
 `
 
-const Layout = ({onLangChange, ...props}) => {
-  const {children, data, lang} = props
+const Layout = (props) => {
+  const {children, data, lang, onLangChange} = props
   return (
     <div>
       <Helmet
@@ -38,19 +38,17 @@ Layout.propTypes = {
   onLangChange: PropTypes.func
 }
 
-class IndexLayout extends React.Component {
-  onLangChange = (lang) => {
-    navigateTo(replacePrefix(lang, this.props.location.pathname))
+const IndexLayout = (props) => {
+  const {pathname} = props.location
+  const onLangChange = (lang) => {
+    navigateTo(replacePrefix(lang, pathname))
   }
-
-  render = () => {
-    const lang = langFromPath(this.props.location.pathname)
-    return (
-      <I18nProvider language={lang} catalogs={catalogs}>
-        <Layout {...this.props} lang={lang} onLangChange={this.onLangChange} />
-      </I18nProvider>
-    )
-  }
+  const lang = langFromPath(pathname)
+  return (
+    <I18nProvider language={lang} catalogs={catalogs}>
+      <Layout {...props} lang={lang} onLangChange={onLangChange}/>
+    </I18nProvider>
+  )
 }
 
 IndexLayout.propTypes = {
