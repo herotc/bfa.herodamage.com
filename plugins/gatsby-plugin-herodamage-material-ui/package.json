@@ -1,0 +1,28 @@
+{
+  "name": "gatsby-plugin-herodamage-material-ui",
+  "description": "Gatsby plugin to add material-ui support.",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin"
+  ],
+  "bugs": {
+    "url": "https://github.com/herotc/bfa.herodamage.com/issues"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herotc/bfa.herodamage.com/tree/master/plugins/gatsby-plugin-herodamage-material-ui"
+  },
+  "peerDependencies": {
+    "@material-ui/core": "^1.4.2",
+    "@material-ui/icons": "^2.0.1",
+    "gatsby": "^1.9.277",
+    "gatsby-plugin-styled-components": "^2.0.11",
+    "jss": "^9.8.7",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-jss": "^8.6.1",
+    "styled-components": "^3.4.0"
+  }
+}
