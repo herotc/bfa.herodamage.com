@@ -12,6 +12,7 @@ module.exports.onCreateNode = function ({node, getNode, boundActionCreators}) {
   // So we request the parent node, which is the node from filesystem, to build the slug
   const parentNode = getNode(node.parent)
 
+  // TODO: Support pages made with 'name.lang.ext' like 'fancy-post.fr.md'
   // Example file: 'posts/2018-06-03-test-post.md'
   const name = parentNode.name // '2018-06-03-test-post'
   const nameParts = name.toLowerCase().split('-') // ['2018', '06', '03', 'test', 'post']
@@ -42,7 +43,7 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
     allMarkdownRemark.edges.forEach(({node}) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve('./src/templates/blog-post.jsx'),
+        component: path.resolve('./src/templates/blog-post.js'),
         context: {
           slug: node.fields.slug
         }
