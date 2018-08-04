@@ -24,11 +24,14 @@ module.exports.onCreatePage = function ({page, boundActionCreators}) {
   // Delete the original page
   deletePage(page)
 
+  // TODO: Support pages made with 'name.lang.ext' like 'fancy-post.fr.md'
+
   // Make a new page for each lang
   langs.forEach((lang) => {
-    // Make a new page object from the original page and override the path to add the lang prefix
-    const newPage = Object.assign({}, page, {path: `/${lang}${page.path}`})
-
+    // Object.assign is used to avoid mutating the page object
+    const context = {context: Object.assign({}, page.context, {lang})}
+    const path = {path: `/${lang}${page.path}`}
+    const newPage = Object.assign({}, page, path, context)
     createPage(newPage)
   })
 }
