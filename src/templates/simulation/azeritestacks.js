@@ -4,4 +4,4 @@ const AzeriteStacksSimulationTemplate = () => (
   <h1>Azerite Stack simulations</h1>
 )
 
-export default AzeriteStackSimulationTemplate
+export default AzeriteStacksSimulationTemplate
