@@ -6,7 +6,6 @@ import { navigateTo } from 'gatsby-link'
 import Header from '../components/header'
 import { catalogs, replacePrefix, langFromPath } from '../../plugins/gatsby-plugin-herodamage-i18n'
 import styled from 'styled-components'
-import './index.css'
 import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
 
 const Main = styled.main`
