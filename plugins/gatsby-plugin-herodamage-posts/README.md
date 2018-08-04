@@ -1,7 +1,6 @@
 # gatsby-plugin-herodamage-posts
 
-A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin for
-[bfa.herodamage.com](https://github.com/herotc/bfa.herodamage.com).
+A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin for [bfa.herodamage.com](https://github.com/herotc/bfa.herodamage.com).
 Programmatically generate blog posts pages from `src/posts/`.
 
 ## Prerequisites

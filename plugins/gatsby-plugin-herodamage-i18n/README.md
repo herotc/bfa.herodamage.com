@@ -1,12 +1,11 @@
 # gatsby-plugin-herodamage-i18n
  
-A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin for
-[js-lingui](https://github.com/lingui/js-lingui)
+A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin for [js-lingui](https://github.com/lingui/js-lingui)
 
 ## Prerequisites
 
 ```
-npm install --save gatsby-plugin-react-next react react-dom
+npm install --save gatsby-plugin-react-next react react-dom prop-types
 npm install --save gatsby-source-filesystem gatsby-transformer-remark
 npm install --save @lingui/react @lingui/babel-preset-react
 ```

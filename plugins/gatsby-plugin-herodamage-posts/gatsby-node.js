@@ -1,16 +1,24 @@
 const path = require('path')
 
 module.exports.onCreateNode = function ({node, getNode, boundActionCreators}) {
-  const {createNodeField} = boundActionCreators
+  const {createNodeField, deleteNode} = boundActionCreators
 
-  // Prevents non markdown files & non posts files to be processed
-  // Done in two times so we don't have to check if fileAbsolutePath exists since it's a MardownRemark property only
+  // Prevents non markdown files to be processed
   if (node.internal.type !== 'MarkdownRemark') return
-  if (node.fileAbsolutePath.indexOf(path.resolve('./src/posts/')) === -1) return
 
   // We currently have the MardownRemark node which is a child of the file node that only contains markdown information
   // So we request the parent node, which is the node from filesystem, to build the slug
   const parentNode = getNode(node.parent)
+
+  // Prevents non posts files to be processed
+  if (parentNode.sourceInstanceName !== 'posts') return
+  // Prevents directories to be processed
+  if (parentNode.internal.type !== 'File') return
+  // Delete unwanted node from posts (things like .DS_Store)
+  if (parentNode.extension !== 'md') {
+    deleteNode(parentNode.id, parentNode)
+    return
+  }
 
   // TODO: Support pages made with 'name.lang.ext' like 'fancy-post.fr.md'
   // Example file: 'posts/2018-06-03-test-post.md'
@@ -37,16 +45,14 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
       }
     }
   `)
-
   const {allMarkdownRemark} = result.data
   if (allMarkdownRemark) {
     allMarkdownRemark.edges.forEach(({node}) => {
+      const slug = node.fields.slug
       createPage({
-        path: node.fields.slug,
+        path: slug,
         component: path.resolve('./src/templates/blogPost.js'),
-        context: {
-          slug: node.fields.slug
-        }
+        context: {slug}
       })
     })
   }
