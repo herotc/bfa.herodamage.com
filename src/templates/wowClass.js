@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import _ from 'lodash'
 import { DateFormat, Trans, withI18n } from '@lingui/react'
-import { translation } from '../../plugins/gatsby-plugin-herodamage-i18n'
 import styled from 'styled-components'
 import Divider from '@material-ui/core/Divider'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
@@ -31,60 +30,63 @@ const SimName = styled(Typography)`
   }
 `
 
+const SpecsList = ({lang, specs, t}) => {
+  return specs.map(({node}, index) => {
+    const {slug, spec, buildTime} = node.context
+    const buildDate = new Date(buildTime * 1000)
+    return (
+      <div key={index}>
+        {index > 0 && <Divider/>}
+        <List component="nav">
+          <ListItem button component="a" href={`/${lang}${slug}`}>
+            <SimName>
+              {_.capitalize(t(spec))}
+              <span>
+                <DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/>
+              </span>
+            </SimName>
+          </ListItem>
+        </List>
+      </div>
+    )
+  })
+}
+
+const TiersList = (props) => {
+  const {groupedEdgesByTier, lang} = props
+  return Object.keys(groupedEdgesByTier).map((tier, index) => {
+    const specs = groupedEdgesByTier[tier].sort((a, b) => a.node.context.spec > b.node.context.spec)
+    return (
+      <TierExpansionPanel key={index}>
+        <Divider/>
+        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
+          <Typography>{tier.toLocaleUpperCase(lang)}</Typography>
+        </ExpansionPanelSummary>
+        <SimPanelDetails>
+          <SpecsList {...props} specs={specs}/>
+        </SimPanelDetails>
+      </TierExpansionPanel>
+    )
+  })
+}
+
 const WowClassTemplate = (props) => {
-  const {lang, data} = props
-  const t = translation(lang)
+  const {data, t} = props
   const {wowClass} = data.allSitePage.group[0].edges[0].node.context
   return (
     <div>
-      <Typography variant={'headline'}>{_.capitalize(t(wowClass))}</Typography>
+      <Typography variant={'title'} style={{margin: '2rem 0'}}>{_.capitalize(t(wowClass))}</Typography>
       {
         data.allSitePage.group.map((group, index) => {
           const {simulationType} = group.edges[0].node.context
-          const groupedEdgesByTier = _.groupBy(group.edges, (edge) => edge.node.context.tier)
           return (
             <ExpansionPanel key={index} defaultExpanded={true}>
               <Divider/>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-                <Typography>{_.capitalize(t(simulationType))}</Typography>
+                <Typography variant={'subheading'}>{_.capitalize(t(simulationType))}</Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
-                {
-                  Object.keys(groupedEdgesByTier).map((tier, index) => {
-                    const specs = groupedEdgesByTier[tier].sort((a, b) => a.node.context.spec > b.node.context.spec)
-                    return (
-                      <TierExpansionPanel key={index}>
-                        <Divider/>
-                        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-                          <Typography>{tier.toLocaleUpperCase(lang)}</Typography>
-                        </ExpansionPanelSummary>
-                        <SimPanelDetails>
-                          {
-                            specs.map(({node}, index) => {
-                              const {slug, spec, buildTime} = node.context
-                              const buildDate = new Date(buildTime * 1000)
-                              return (
-                                <div key={index}>
-                                  {index > 0 && <Divider/>}
-                                  <List component="nav">
-                                    <ListItem button component="a" href={`/${lang}${slug}`}>
-                                      <SimName>
-                                        {_.capitalize(t(spec))}
-                                        <span>
-                                          <DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/>
-                                        </span>
-                                      </SimName>
-                                    </ListItem>
-                                  </List>
-                                </div>
-                              )
-                            })
-                          }
-                        </SimPanelDetails>
-                      </TierExpansionPanel>
-                    )
-                  })
-                }
+                <TiersList {...props} groupedEdgesByTier={_.groupBy(group.edges, (edge) => edge.node.context.tier)}/>
               </ExpansionPanelDetails>
             </ExpansionPanel>
           )
@@ -95,7 +97,7 @@ const WowClassTemplate = (props) => {
 }
 
 WowClassTemplate.propTypes = {
-  lang: PropTypes.string,
+  t: PropTypes.func,
   data: PropTypes.object
 }
 
