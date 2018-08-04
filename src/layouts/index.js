@@ -7,6 +7,7 @@ import Header from '../components/header'
 import { catalogs, replacePrefix, langFromPath } from '../../plugins/gatsby-plugin-herodamage-i18n'
 import styled from 'styled-components'
 import './index.css'
+import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
 
 const Main = styled.main`
   margin: 0 auto;
@@ -55,7 +56,7 @@ IndexLayout.propTypes = {
   location: PropTypes.object
 }
 
-export default IndexLayout
+export default withRoot(IndexLayout)
 
 export const query = graphql`
   query SiteTitleQuery {
