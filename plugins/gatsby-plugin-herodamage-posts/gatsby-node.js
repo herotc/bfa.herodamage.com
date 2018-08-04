@@ -43,7 +43,7 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
     allMarkdownRemark.edges.forEach(({node}) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve('./src/templates/blog-post.js'),
+        component: path.resolve('./src/templates/blogPost.js'),
         context: {
           slug: node.fields.slug
         }
