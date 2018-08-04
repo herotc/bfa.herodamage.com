@@ -1,8 +1,7 @@
 # gatsby-plugin-herodamage-reports
 
-A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin for
-[bfa.herodamage.com](https://github.com/herotc/bfa.herodamage.com).
-Programmatically generate reports pages from `src/reports/`.
+A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin for [bfa.herodamage.com](https://github.com/herotc/bfa.herodamage.com).
+Programmatically generate reports pages from `static/reports/`.
 
 ## Prerequisites
 
@@ -20,7 +19,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'reports',
-        path: `${__dirname}/src/reports/`
+        path: `${__dirname}/static/reports/`
       }
     },
     'gatsby-plugin-herodamage-reports'

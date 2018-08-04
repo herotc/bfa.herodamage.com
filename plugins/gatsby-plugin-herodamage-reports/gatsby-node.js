@@ -1,18 +1,49 @@
 const fs = require('fs').promises
 const path = require('path')
 
+const simulations = {
+  azeritelevels: {
+    simulationType: 'azeritelevels',
+    order: 1
+  },
+  azeritestacks: {
+    simulationType: 'azeritestacks',
+    order: 2
+  },
+  combinator: {
+    simulationType: 'combinations',
+    order: 3
+  },
+  racesimulation: {
+    simulationType: 'races',
+    order: 5
+  },
+  trinketsimulation: {
+    simulationType: 'trinkets',
+    order: 4
+  }
+}
+
 const wowClasses = {}
 
 module.exports.onCreateNode = async function ({node, getNode, boundActionCreators}) {
-  const {createNodeField} = boundActionCreators
+  const {createNodeField, deleteNode} = boundActionCreators
 
-  // Prevents non reports files & reports directories to be processed
-  if (node.sourceInstanceName !== 'reports' || node.internal.type !== 'File') return
+  // Prevents non reports files to be processed
+  if (node.sourceInstanceName !== 'reports') return
+  // Prevents directories to be processed
+  if (node.internal.type !== 'File') return
+  // Delete unwanted node from reports (things like .DS_Store)
+  if (node.extension !== 'json') {
+    deleteNode(node.id, node)
+    return
+  }
 
-  // Example file: 'reports/Trinkets_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation.json'
+  // Example file: 'reports/TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation.json'
   const name = node.name // 'Trinkets_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
-  const nameParts = name.toLowerCase().split('_') // ['trinkets', '1t', 't21', 'death-knight', 'frost', 'cold-heart-runic-attenuation']
-  const [simulationType, fightStyle, tier, wowClass, spec, variation] = nameParts
+  const nameParts = name.toLowerCase().split('_') // ['trinketsimulation', '1t', 't21', 'death-knight', 'frost', 'cold-heart-runic-attenuation']
+  const [simulationName, fightStyle, tier, wowClass, spec, variation] = nameParts
+  const {simulationType, order} = simulations[simulationName]
   const slug = `/${wowClass}/${simulationType}/${nameParts.slice(2).join('-')}`
   // slug: '/death-knight/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
   createNodeField({node, name: 'slug', value: slug})
@@ -22,6 +53,8 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   createNodeField({node, name: 'wowClass', value: wowClass})
   // simulationType: 'trinkets'
   createNodeField({node, name: 'simulationType', value: simulationType})
+  // simulationType: 'trinkets'
+  createNodeField({node, name: 'order', value: order})
   // fightStyle: '1t'
   createNodeField({node, name: 'fightStyle', value: fightStyle})
   // tier: 't21'
@@ -31,8 +64,18 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   // variation: 'cold-heart-runic-attenuation' (optional, if it doesn't exist then it's an empty string '')
   createNodeField({node, name: 'variation', value: variation || ''})
 
+  // Register the wow class to create the corresponding index page if it's the first time we meet it
+  if (!wowClasses[wowClass]) wowClasses[wowClass] = true
+
   // Get the metas from the file
-  const json = JSON.parse(await fs.readFile(node.absolutePath, {encoding: 'utf8', flag: 'r'})).metas
+  let json
+  try {
+    const jsonFile = await fs.readFile(node.absolutePath, {encoding: 'utf8', flag: 'r'})
+    json = JSON.parse(jsonFile).metas
+  } catch (err) {
+    console.error(`Error while processing the '${name}' report:`, err)
+    return
+  }
   const optionsDbc = json['options']['dbc']
   const versionUsed = optionsDbc[optionsDbc['version_used']]
   createNodeField({node, name: 'targetError', value: json['options']['target_error']})
@@ -41,9 +84,6 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   createNodeField({node, name: 'build', value: versionUsed['build_level']})
   createNodeField({node, name: 'buildTime', value: json['build_timestamp']})
   createNodeField({node, name: 'gitRevision', value: json['git_revision'] || ''})
-
-  // Register the wow class to create the corresponding index page if it's the first time we meet it
-  if (!wowClasses[wowClass]) wowClasses[wowClass] = true
 }
 
 module.exports.createPages = async function ({graphql, boundActionCreators}) {
@@ -70,6 +110,7 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
               name
               wowClass
               simulationType
+              order
               fightStyle
               tier
               spec
