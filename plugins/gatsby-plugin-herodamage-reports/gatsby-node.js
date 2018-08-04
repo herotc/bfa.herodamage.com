@@ -35,11 +35,12 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   const json = JSON.parse(await fs.readFile(node.absolutePath, {encoding: 'utf8', flag: 'r'})).metas
   const optionsDbc = json['options']['dbc']
   const versionUsed = optionsDbc[optionsDbc['version_used']]
+  createNodeField({node, name: 'targetError', value: json['options']['target_error']})
+  createNodeField({node, name: 'resultTime', value: json['result_timestamp']})
   createNodeField({node, name: 'version', value: versionUsed['wow_version']})
   createNodeField({node, name: 'build', value: versionUsed['build_level']})
-  createNodeField({node, name: 'targetError', value: json['options']['target_error']})
   createNodeField({node, name: 'buildTime', value: json['build_timestamp']})
-  createNodeField({node, name: 'resultTime', value: json['result_timestamp']})
+  createNodeField({node, name: 'gitRevision', value: json['git_revision'] || ''})
 
   // Register the wow class to create the corresponding index page if it's the first time we meet it
   if (!wowClasses[wowClass]) wowClasses[wowClass] = true
@@ -50,12 +51,11 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
 
   // Make the class index pages by iterating over discovered classes during onCreateNode
   Object.keys(wowClasses).forEach((wowClass) => {
+    const slug = `/${wowClass}/`
     createPage({
-      path: `/${wowClass}/`,
-      component: path.resolve('./src/templates/wow-class.js'),
-      context: {
-        wowClass: wowClass
-      }
+      path: slug,
+      component: path.resolve('./src/templates/wowClass.js'),
+      context: {slug, wowClass}
     })
   })
 
@@ -74,11 +74,12 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
               tier
               spec
               variation
+              targetError
+              resultTime
               version
               build
-              targetError
               buildTime
-              resultTime
+              gitRevision
             }
           }
         }
