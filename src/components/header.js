@@ -15,7 +15,7 @@ const styles = (theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     margin: '0 auto',
-    maxWidth: 960,
+    maxWidth: theme.breakpoints.values.lg,
     padding: [1.5, 1]
   },
   title: {
@@ -59,12 +59,12 @@ const Header = ({classes, lang, onLangClick, siteTitle}) => (
           {siteTitle.split(' ').map((titlePart, index) => (<span key={index}>{titlePart}&nbsp;</span>))}
         </Link>
       </Typography>
-      <div>
+      <Typography>
         {langs.map((langKey) =>
           <LangSelector key={langKey} className={classes.langSelector} lang={langKey}
             onClick={(e) => onLangClick(`${langKey}`)} selected={lang === `${langKey}`}/>
         )}
-      </div>
+      </Typography>
     </div>
   </header>
 )
