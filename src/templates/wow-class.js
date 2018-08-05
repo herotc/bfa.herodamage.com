@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
 import { DateFormat } from '@lingui/react'
@@ -71,9 +72,11 @@ const TiersList = (props) => {
 const WowClassTemplate = (props) => {
   const {data, t} = props
   const {wowClass} = data.allSitePage.group[0].edges[0].node.context
+  const pageTitle = capitalize(t(wowClass))
   return (
     <div>
-      <Typography variant={'title'}>{capitalize(t(wowClass))}</Typography>
+      <Helmet title={`${pageTitle} | ${data.site.siteMetadata.title}`}/>
+      <Typography variant={'title'}>{pageTitle}</Typography>
       <Grid container spacing={16}>
         {
           data.allSitePage.group.map((group, index) => {
@@ -117,6 +120,11 @@ export default withStyles(styles)(WowClassTemplate)
 
 export const query = graphql`
   query WowClassIndex($lang: String!, $wowClass: String!) {
+    site {
+      siteMetadata {
+        title
+      }
+    }
     allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {ne: null}}}, sort: {fields: [context___order], order: ASC}) {
       group(field: context___simulationType) {
         edges {

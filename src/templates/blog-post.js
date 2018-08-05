@@ -5,12 +5,10 @@ import Link from 'gatsby-link'
 
 const BlogPostTemplate = ({data, pathContext}) => {
   const post = data.markdownRemark
-  const siteTitle = data.site.siteMetadata.title
   const {previous, next} = pathContext
-
   return (
     <div>
-      <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}/>
+      <Helmet title={`${post.frontmatter.title} | ${data.site.siteMetadata.title}`}/>
       <h1>{post.frontmatter.title}</h1>
       <p>{post.frontmatter.date}</p>
       <div dangerouslySetInnerHTML={{__html: post.html}}/>
@@ -30,7 +28,7 @@ BlogPostTemplate.propTypes = {
 
 export default BlogPostTemplate
 
-export const pageQuery = graphql`
+export const query = graphql`
   query BlogPost($slug: String!) {
     site {
       siteMetadata {
