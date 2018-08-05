@@ -29,5 +29,7 @@ before_install:
 before_script:
   - chmod +x ./scripts/ci/build.sh
   - chmod +x ./scripts/ci/deploy.sh
+
+script:
   - ./script/ci/build.sh
   - ./script/ci/deploy.sh
