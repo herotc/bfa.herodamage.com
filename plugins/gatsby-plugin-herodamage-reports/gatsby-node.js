@@ -1,6 +1,8 @@
 const fs = require('fs').promises
 const path = require('path')
 
+if (!fs) throw new Error('You must use a node version containing fs.promises! i.e node >= 10')
+
 const simulations = {
   azeritelevels: {
     simulationType: 'azeritelevels',
@@ -40,14 +42,14 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   }
 
   // Example file: 'reports/TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation.json'
-  const name = node.name // 'Trinkets_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
+  const name = node.name // 'TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
   const nameParts = name.toLowerCase().split('_') // ['trinketsimulation', '1t', 't21', 'death-knight', 'frost', 'cold-heart-runic-attenuation']
   const [simulationName, fightStyle, tier, wowClass, spec, variation] = nameParts
   const {simulationType, order} = simulations[simulationName]
   const slug = `/${wowClass}/${simulationType}/${nameParts.slice(2).join('-')}`
   // slug: '/death-knight/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
   createNodeField({node, name: 'slug', value: slug})
-  // name: 'Trinkets_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
+  // name: 'TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
   createNodeField({node, name: 'name', value: name})
   // wowClass: 'death-knight'
   createNodeField({node, name: 'wowClass', value: wowClass})
