@@ -57,8 +57,6 @@
     "@lingui/react": "^2.3.0",
     "@material-ui/core": "^1.4.2",
     "@material-ui/icons": "^2.0.1",
-    "babel-plugin-styled-components": "^1.5.1",
-    "esm": "^3.0.74",
     "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-react-helmet": "^2.0.11",
