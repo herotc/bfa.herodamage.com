@@ -35,7 +35,7 @@ const SpecsList = ({classes, i18nPlugin, specs}) => {
     return (
       <Grid item key={index} xs={12}>
         {index > 0 && <Divider/>}
-        <ListItem button component="a" href={tLink(slug)}>
+        <ListItem button component={'a'} href={tLink(slug)}>
           <Typography className={classes.name}>
             {capitalize(t(spec))}
             <span><DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/></span>
@@ -59,7 +59,7 @@ const TiersList = (props) => {
           </ExpansionPanelSummary>
           <ExpansionPanelDetails className={classes.type}>
             <Grid container direction={'column'}>
-              <List component="nav" disablePadding={true}>
+              <List component={'nav'} disablePadding={true}>
                 <SpecsList {...props} specs={specs}/>
               </List>
             </Grid>
