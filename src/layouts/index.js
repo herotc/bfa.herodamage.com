@@ -12,7 +12,7 @@ import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoo
 const styles = (theme) => ({
   main: {
     margin: '0 auto',
-    maxWidth: 960,
+    maxWidth: theme.breakpoints.values.lg,
     padding: '0 1rem 1.5rem'
   }
 })
