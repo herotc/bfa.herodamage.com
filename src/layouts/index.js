@@ -4,6 +4,7 @@ import { I18nProvider } from '@lingui/react'
 import { navigateTo } from 'gatsby-link'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { withStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
 import Head from '../components/head'
 import Header from '../components/header'
 import Main from '../components/main'
@@ -12,7 +13,7 @@ import * as i18nPluginHelper from '../../plugins/gatsby-plugin-herodamage-i18n'
 import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
 
 const styles = (theme) => ({
-  layout: Object.assign({}, theme.typography.body1, {
+  layout: {
     margin: '0 auto',
     maxWidth: theme.breakpoints.values.lg,
     [theme.breakpoints.up('xl')]: {
@@ -30,19 +31,19 @@ const styles = (theme) => ({
         color: theme.palette.secondary.light
       }
     }
-  })
+  }
 })
 
 const Layout = ({classes, ...props}) => {
   const {data, i18nPlugin} = props
   const siteMetadata = data.site.siteMetadata
   return (
-    <div className={classes.layout}>
+    <Typography className={classes.layout} component={'div'}>
       <Head siteMetadata={siteMetadata}/>
       <Header i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
       <Main {...props}/>
       <Footer siteMetadata={siteMetadata}/>
-    </div>
+    </Typography>
   )
 }
 
@@ -61,6 +62,7 @@ const IndexLayout = (props) => {
       navigateTo(i18nPluginHelper.replacePrefix(newLang, pathname))
     },
     lang,
+    langs: i18nPluginHelper.langs,
     isIntlPage: i18nPluginHelper.isIntlPage(pathname),
     t: i18nPluginHelper.translation(lang),
     tLink: (path) => i18nPluginHelper.replacePrefix(lang, path)
