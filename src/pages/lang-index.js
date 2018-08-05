@@ -33,7 +33,7 @@ const LangIndexPage = ({classes, data, i18nPlugin}) => {
         </figure>
         <div>
           <h1 className="site-name">
-            {siteMetadata.title.split(' ').map((titlePart, index) => (<span key={index}>{titlePart}&nbsp;</span>))}
+            {siteMetadata.title.split(' ').map((titlePart, index) => (<span key={index}>{index > 0 && ' '}{titlePart}</span>))}
           </h1>
           <p><Trans>Welcome to Hero Damage, the website where you can see the latest World of Warcraft simulations
             results for every class.<br/>
