@@ -18,8 +18,21 @@ const langs = require('./index').langs
 module.exports.onCreatePage = function ({page, boundActionCreators}) {
   const {createPage, deletePage} = boundActionCreators
 
-  // Prevent i18n on dev pages
-  if (page.path === '/dev-404-page/') return
+  let pagePath
+  switch (page.path) {
+    // Prevent i18n on index, 404, dev pages
+    case '/dev-404-page/':
+    case '/404/':
+    case '/404.html':
+    case '/':
+      return
+    // Rewrite lang-index to index to transform it to '/lang/' instead of '/lang/lang-index/'
+    case '/lang-index/':
+      pagePath = '/'
+      break
+    default:
+      pagePath = page.path
+  }
 
   // Delete the original page
   deletePage(page)
@@ -30,7 +43,7 @@ module.exports.onCreatePage = function ({page, boundActionCreators}) {
   langs.forEach((lang) => {
     // Object.assign is used to avoid mutating the page object
     const context = {context: Object.assign({}, page.context, {lang})}
-    const path = {path: `/${lang}${page.path}`}
+    const path = {path: `/${lang}${pagePath}`}
     const newPage = Object.assign({}, page, path, context)
     createPage(newPage)
   })
