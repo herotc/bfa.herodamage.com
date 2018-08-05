@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import _ from 'lodash'
-import { DateFormat, Trans, withI18n } from '@lingui/react'
+import capitalize from 'lodash/capitalize'
+import groupBy from 'lodash/groupBy'
+import { DateFormat } from '@lingui/react'
 import styled from 'styled-components'
 import Divider from '@material-ui/core/Divider'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
@@ -40,7 +41,7 @@ const SpecsList = ({lang, specs, t}) => {
         <List component="nav">
           <ListItem button component="a" href={`/${lang}${slug}`}>
             <SimName>
-              {_.capitalize(t(spec))}
+              {capitalize(t(spec))}
               <span>
                 <DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/>
               </span>
@@ -75,7 +76,7 @@ const WowClassTemplate = (props) => {
   const {wowClass} = data.allSitePage.group[0].edges[0].node.context
   return (
     <div>
-      <Typography variant={'title'} style={{marginTop: '1rem', padding: '2rem 0'}}>{_.capitalize(t(wowClass))}</Typography>
+      <Typography variant={'title'} style={{marginTop: '1rem', padding: '2rem 0'}}>{capitalize(t(wowClass))}</Typography>
       {
         data.allSitePage.group.map((group, index) => {
           const {simulationType} = group.edges[0].node.context
@@ -83,10 +84,10 @@ const WowClassTemplate = (props) => {
             <ExpansionPanel key={index} defaultExpanded={true}>
               <Divider/>
               <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-                <Typography variant={'subheading'}>{_.capitalize(t(simulationType))}</Typography>
+                <Typography variant={'subheading'}>{capitalize(t(simulationType))}</Typography>
               </ExpansionPanelSummary>
               <ExpansionPanelDetails>
-                <TiersList {...props} groupedEdgesByTier={_.groupBy(group.edges, (edge) => edge.node.context.tier)}/>
+                <TiersList {...props} groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
               </ExpansionPanelDetails>
             </ExpansionPanel>
           )
