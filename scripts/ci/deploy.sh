@@ -43,7 +43,7 @@ cd ..
 echo "[CI] Convert the name of the changed files into urls in a JSON array"
 # TODO
 #node scripts/ci/jsondiff.js
-cd deploy
+cd public
 rm filenames.diff
 
 # Build push
