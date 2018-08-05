@@ -15,10 +15,6 @@ import ListItem from '@material-ui/core/ListItem'
 import Typography from '@material-ui/core/Typography'
 
 const styles = (theme) => ({
-  title: {
-    marginTop: '1rem',
-    padding: '2rem 0'
-  },
   type: {
     flexDirection: 'column'
   },
@@ -73,11 +69,11 @@ const TiersList = (props) => {
 }
 
 const WowClassTemplate = (props) => {
-  const {classes, data, t} = props
+  const {data, t} = props
   const {wowClass} = data.allSitePage.group[0].edges[0].node.context
   return (
     <div>
-      <Typography variant={'title'} className={classes.title}>{capitalize(t(wowClass))}</Typography>
+      <Typography variant={'title'}>{capitalize(t(wowClass))}</Typography>
       <Grid container spacing={16}>
         {
           data.allSitePage.group.map((group, index) => {
