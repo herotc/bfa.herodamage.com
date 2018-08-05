@@ -39,46 +39,51 @@ const styles = (theme) => ({
     color: theme.palette.common.white,
     cursor: 'pointer',
     fontSize: 20,
-    marginRight: 10,
-    textDecoration: props => props.selected ? 'underline' : 'none'
+    marginRight: 10
   }
 })
 
-const LangSelector = ({className, lang, onClick}) => (
-  <a className={className} onClick={onClick}>{lang}</a>
+const LangSelector = ({classes, i18nPlugin, lang, selected}) => (
+  <a className={classes.langSelector} onClick={() => i18nPlugin.changeLang(lang)}
+    style={{textDecoration: selected ? 'underline' : 'none'}}>{lang}</a>
 )
 LangSelector.propTypes = {
-  className: PropTypes.string,
+  classes: PropTypes.object,
+  i18nPlugin: PropTypes.object,
   lang: PropTypes.string,
-  onClick: PropTypes.func,
   selected: PropTypes.bool
 }
 
-const Header = ({classes, lang, onLangClick, siteMetadata}) => (
+const Header = ({classes, i18nPlugin, siteMetadata}) => (
   <header>
     <Paper className={classes.header} elevation={1}>
       <Typography variant={'headline'}>
-        <Link to={`/${lang}/`} className={classes.link}>
+        <Link to={`/${i18nPlugin.lang}/`} className={classes.link}>
           <img src={logo} className={classes.logo}/>
           {siteMetadata.title
             .split(' ')
             .map((titlePart, index) => (<span key={index}>{titlePart}&nbsp;</span>))}
         </Link>
       </Typography>
-      <Typography>
-        {langs.map((langKey) =>
-          <LangSelector key={langKey} className={classes.langSelector} lang={langKey}
-            onClick={(e) => onLangClick(`${langKey}`)} selected={lang === `${langKey}`}/>
-        )}
-      </Typography>
+      {
+        i18nPlugin.isIntlPage &&
+        <Typography>
+          {
+            langs.map((lang, index) => (
+              <LangSelector key={index} classes={classes} i18nPlugin={i18nPlugin} lang={lang}
+                selected={i18nPlugin.lang === lang}/>
+            ))
+          }
+        </Typography>
+      }
+
     </Paper>
   </header>
 )
 
 Header.propTypes = {
   classes: PropTypes.object,
-  lang: PropTypes.string,
-  onLangClick: PropTypes.func,
+  i18nPlugin: PropTypes.object,
   siteMetadata: PropTypes.object
 }
 

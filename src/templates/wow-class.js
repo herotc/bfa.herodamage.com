@@ -27,14 +27,15 @@ const styles = (theme) => ({
   }
 })
 
-const SpecsList = ({classes, lang, specs, t}) => {
+const SpecsList = ({classes, i18nPlugin, specs}) => {
+  const {t, tLink} = i18nPlugin
   return specs.map(({node}, index) => {
     const {slug, spec, buildTime} = node.context
     const buildDate = new Date(buildTime * 1000)
     return (
       <Grid item key={index} xs={12}>
         {index > 0 && <Divider/>}
-        <ListItem button component="a" href={`/${lang}${slug}`}>
+        <ListItem button component="a" href={tLink(slug)}>
           <Typography className={classes.name}>
             {capitalize(t(spec))}
             <span><DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/></span>
@@ -46,7 +47,7 @@ const SpecsList = ({classes, lang, specs, t}) => {
 }
 
 const TiersList = (props) => {
-  const {classes, groupedEdgesByTier, lang} = props
+  const {classes, groupedEdgesByTier} = props
   return Object.keys(groupedEdgesByTier).map((tier, index) => {
     const specs = groupedEdgesByTier[tier].sort((a, b) => a.node.context.spec > b.node.context.spec)
     return (
@@ -54,7 +55,7 @@ const TiersList = (props) => {
         <ExpansionPanel>
           <Divider/>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-            <Typography>{tier.toLocaleUpperCase(lang)}</Typography>
+            <Typography>{tier.toUpperCase()}</Typography>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails className={classes.type}>
             <Grid container direction={'column'}>
@@ -70,7 +71,8 @@ const TiersList = (props) => {
 }
 
 const WowClassTemplate = (props) => {
-  const {data, t} = props
+  const {data, i18nPlugin} = props
+  const {t} = i18nPlugin
   const {wowClass} = data.allSitePage.group[0].edges[0].node.context
   const pageTitle = capitalize(t(wowClass))
   return (
@@ -113,7 +115,7 @@ const WowClassTemplate = (props) => {
 WowClassTemplate.propTypes = {
   classes: PropTypes.object,
   data: PropTypes.object,
-  t: PropTypes.func
+  i18nPlugin: PropTypes.object
 }
 
 export default withStyles(styles)(WowClassTemplate)
