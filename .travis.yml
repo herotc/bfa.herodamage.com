@@ -12,7 +12,6 @@ node_js:
 
 env:
   global:
-    - PATH=$HOME/.local/bin:$PATH
     - GH_REPO=https://${GH_TOKEN}@github.com/herotc/bfa.herodamage.com.git
     - GH_SOURCE_BRANCH=master
     - GH_TARGET_BRANCH=gh-pages
@@ -21,10 +20,19 @@ env:
     # The number of file changes required to deploy, put the number of files generated on build + 1
     - DEPLOY_THRESHOLD=4
 
+cache:
+  directories:
+    - "node_modules"
+
 before_install:
   - npm install npm -g # The npm version bundled with node is rarely the latest stable
   - node --version
   - npm --version
+
+install:
+  # npm ci may not work due to npm ls failing whenever optional dependencies are in the package-lock.json
+  # but cannot be installed (due to linux/osx/windows different requirements)
+  - npm install
 
 before_script:
   - chmod +x ./scripts/ci/build.sh
