@@ -1,4 +1,5 @@
-const baseUrl = process.env.BASE_URL
+const config = require('../../gatsby-config')
+const baseUrl = config.siteMetadata.url
 const jsonFiles = []
 const urls = []
 
