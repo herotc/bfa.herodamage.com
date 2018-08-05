@@ -53,7 +53,7 @@ const Header = ({classes, i18nPlugin, siteMetadata}) => (
         <Link to={`/${i18nPlugin.lang}/`}>
           <img src={logo} alt={`${siteMetadata.title} Logo`}/>
           <span className={'site-name'}>
-            {siteMetadata.title.split(' ').map((titlePart, index) => (<span key={index}>{titlePart}&nbsp;</span>))}
+            {siteMetadata.title.split(' ').map((titlePart, index) => (<span key={index}>{index > 0 && ' '}{titlePart}</span>))}
           </span>
         </Link>
       </h2>
