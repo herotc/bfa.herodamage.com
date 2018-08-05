@@ -42,11 +42,17 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   }
 
   // Example file: 'reports/TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation.json'
-  const name = node.name // 'TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
-  const nameParts = name.toLowerCase().split('_') // ['trinketsimulation', '1t', 't21', 'death-knight', 'frost', 'cold-heart-runic-attenuation']
-  const [simulationName, fightStyle, tier, wowClass, spec, variation] = nameParts
+
+  // 'TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
+  const name = node.name
+  // ['trinketsimulation', '1t', 't21', 'death-knight', 'frost', 'cold-heart-runic-attenuation']
+  const [simulationName, fightStyle, tier, wowClass, spec, variation] = name.toLowerCase().split('_')
+  // 'trinkets', 4
   const {simulationType, order} = simulations[simulationName]
-  const slug = `/${wowClass}/${simulationType}/${nameParts.slice(2).join('-')}`
+  // '/death-knight/trinkets/1t-t21-frost
+  let slug = `/${wowClass}/${simulationType}/${fightStyle}-${tier}-${spec}`
+  if (variation) slug += `-${variation}`
+
   // slug: '/death-knight/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
   createNodeField({node, name: 'slug', value: slug})
   // name: 'TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
