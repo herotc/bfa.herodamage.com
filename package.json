@@ -50,7 +50,7 @@
     "build": "shx rm -rf ./public/* && shx rm -rf ./.cache/* && gatsby build",
     "i18n-extract": "cross-env BABEL_ENV=extract lingui extract",
     "i18n-compile": "lingui compile",
-    "test": "echo \"Warning: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "@lingui/babel-preset-react": "^2.3.0",
