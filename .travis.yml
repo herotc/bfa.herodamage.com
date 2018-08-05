@@ -22,12 +22,12 @@ env:
     - DEPLOY_THRESHOLD=4
 
 before_install:
+  - npm install npm -g # The npm version bundled with node is rarely the latest stable
   - node --version
   - npm --version
 
 before_script:
-  - chmod +x ./script/ci/generate
-  - chmod +x ./script/ci/build
-  - chmod +x ./script/ci/deploy
-  - ./script/ci/build
-  - ./script/ci/deploy
+  - chmod +x ./scripts/ci/build.sh
+  - chmod +x ./scripts/ci/deploy.sh
+  - ./script/ci/build.sh
+  - ./script/ci/deploy.sh

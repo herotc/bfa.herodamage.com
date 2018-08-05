@@ -41,7 +41,8 @@ fi
 # Convert the filenames into urls in a JSON array to purge CF cache later on
 cd ..
 echo "[CI] Convert the name of the changed files into urls in a JSON array"
-node script/ci/jsondiff.js
+# TODO
+#node scripts/ci/jsondiff.js
 cd deploy
 rm filenames.diff
 
