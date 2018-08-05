@@ -15,7 +15,6 @@ const styles = (theme) => ({
   }
 })
 
-// We do extract the classes object since we do not want to pass it to children
 const Main = ({classes, ...props}) => {
   const {children} = props
   return (

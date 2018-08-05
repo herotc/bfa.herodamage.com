@@ -8,7 +8,7 @@ import Head from '../components/head'
 import Header from '../components/header'
 import Main from '../components/main'
 import Footer from '../components/footer'
-import { catalogs, replacePrefix, langFromPath, translation } from '../../plugins/gatsby-plugin-herodamage-i18n'
+import * as i18nPluginHelper from '../../plugins/gatsby-plugin-herodamage-i18n'
 import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
 
 const styles = (theme) => ({
@@ -33,14 +33,13 @@ const styles = (theme) => ({
   })
 })
 
-// We do extract the classes object since we do not want to pass it to children
 const Layout = ({classes, ...props}) => {
-  const {data, lang, onLangChange} = props
+  const {data, i18nPlugin} = props
   const siteMetadata = data.site.siteMetadata
   return (
     <div className={classes.layout}>
       <Head siteMetadata={siteMetadata}/>
-      <Header lang={lang} onLangClick={onLangChange} siteMetadata={siteMetadata}/>
+      <Header i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
       <Main {...props}/>
       <Footer siteMetadata={siteMetadata}/>
     </div>
@@ -51,21 +50,25 @@ Layout.propTypes = {
   children: PropTypes.func,
   classes: PropTypes.object,
   data: PropTypes.object,
-  lang: PropTypes.string,
-  onLangChange: PropTypes.func
+  i18nPlugin: PropTypes.object
 }
 
 const IndexLayout = (props) => {
   const {pathname} = props.location
-  const onLangChange = (lang) => {
-    navigateTo(replacePrefix(lang, pathname))
+  const lang = i18nPluginHelper.langFromPath(pathname)
+  const i18nPlugin = {
+    changeLang: (newLang) => {
+      navigateTo(i18nPluginHelper.replacePrefix(newLang, pathname))
+    },
+    lang,
+    isIntlPage: i18nPluginHelper.isIntlPage(pathname),
+    t: i18nPluginHelper.translation(lang),
+    tLink: (path) => i18nPluginHelper.replacePrefix(lang, path)
   }
-  const lang = langFromPath(pathname)
-  const t = translation(lang)
   return (
-    <I18nProvider language={lang} catalogs={catalogs}>
+    <I18nProvider language={lang} catalogs={i18nPluginHelper.catalogs}>
       <CssBaseline/>
-      <Layout {...props} lang={lang} onLangChange={onLangChange} t={t}/>
+      <Layout {...props} i18nPlugin={i18nPlugin}/>
     </I18nProvider>
   )
 }
