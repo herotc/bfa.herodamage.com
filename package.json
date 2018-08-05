@@ -63,7 +63,6 @@
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-react-helmet": "^2.0.11",
     "gatsby-plugin-react-next": "^1.0.11",
-    "gatsby-plugin-styled-components": "^2.0.11",
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "jss": "^9.8.7",
@@ -72,8 +71,7 @@
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-helmet": "^5.2.0",
-    "react-jss": "^8.6.1",
-    "styled-components": "^3.4.0"
+    "react-jss": "^8.6.1"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.56",
