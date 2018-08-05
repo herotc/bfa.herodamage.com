@@ -39,5 +39,5 @@ before_script:
   - chmod +x ./scripts/ci/deploy.sh
 
 script:
-  - ./script/ci/build.sh
-  - ./script/ci/deploy.sh
+  - ./scripts/ci/build.sh
+  - ./scripts/ci/deploy.sh
