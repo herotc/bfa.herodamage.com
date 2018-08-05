@@ -30,6 +30,17 @@ const styles = (theme) => ({
       '&:hover': {
         color: theme.palette.secondary.light
       }
+    },
+    '& .site-name': {
+      '& span': {
+        fontWeight: 500,
+        '&:nth-of-type(1)': {
+          color: theme.palette.common.white
+        },
+        '&:nth-of-type(2)': {
+          color: theme.palette.secondary.main
+        }
+      }
     }
   }
 })
@@ -82,7 +93,7 @@ IndexLayout.propTypes = {
 export default withRoot(withStyles(styles)(IndexLayout))
 
 export const query = graphql`
-  query HeadQuery {
+  query LayoutQuery {
     site {
       siteMetadata {
         title

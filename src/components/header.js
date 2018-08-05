@@ -16,24 +16,16 @@ const styles = (theme) => ({
     marginBottom: theme.spacing.unit * 2,
     padding: theme.spacing.unit * 2
   },
-  link: {
-    alignItems: 'center',
-    color: theme.palette.common.white,
-    display: 'flex',
-    fontWeight: 500,
-    textDecoration: 'none',
-    '& span': {
-      '&:nth-of-type(1)': {
-        color: theme.palette.common.white
-      },
-      '&:nth-of-type(2)': {
-        color: theme.palette.secondary.main
+  logo: {
+    margin: 0,
+    '& a': {
+      alignItems: 'center',
+      display: 'flex',
+      '& img': {
+        height: '3rem',
+        width: '3rem'
       }
     }
-  },
-  logo: {
-    height: '3rem',
-    width: '3rem'
   },
   langSelector: {
     color: theme.palette.common.white,
@@ -57,14 +49,14 @@ LangSelector.propTypes = {
 const Header = ({classes, i18nPlugin, siteMetadata}) => (
   <header>
     <Paper className={classes.header} elevation={1}>
-      <Typography variant={'headline'}>
-        <Link to={`/${i18nPlugin.lang}/`} className={classes.link}>
-          <img src={logo} className={classes.logo}/>
-          {siteMetadata.title
-            .split(' ')
-            .map((titlePart, index) => (<span key={index}>{titlePart}&nbsp;</span>))}
+      <h2 className={classes.logo}>
+        <Link to={`/${i18nPlugin.lang}/`}>
+          <img src={logo} alt={`${siteMetadata.title} Logo`}/>
+          <span className={'site-name'}>
+            {siteMetadata.title.split(' ').map((titlePart, index) => (<span key={index}>{titlePart}&nbsp;</span>))}
+          </span>
         </Link>
-      </Typography>
+      </h2>
       {
         i18nPlugin.isIntlPage &&
         <Typography>

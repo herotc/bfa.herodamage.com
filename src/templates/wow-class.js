@@ -78,7 +78,7 @@ const WowClassTemplate = (props) => {
   return (
     <div>
       <Helmet title={`${pageTitle} | ${data.site.siteMetadata.title}`}/>
-      <Typography variant={'title'}>{pageTitle}</Typography>
+      <h1>{pageTitle}</h1>
       <Grid container spacing={16}>
         {
           data.allSitePage.group.map((group, index) => {
