@@ -10,7 +10,7 @@ import logo from '../assets/images/logo.svg'
 const styles = (theme) => ({
   header: {
     alignItems: 'center',
-    background: theme.palette.custom.layout,
+    background: theme.custom.color.background.layout,
     display: 'flex',
     justifyContent: 'space-between',
     marginBottom: theme.spacing.unit * 2,
@@ -20,10 +20,15 @@ const styles = (theme) => ({
     alignItems: 'center',
     color: theme.palette.common.white,
     display: 'flex',
-    fontWeight: 'bold',
+    fontWeight: 500,
     textDecoration: 'none',
-    '& span:nth-of-type(2)': {
-      color: theme.palette.secondary.main
+    '& span': {
+      '&:nth-of-type(1)': {
+        color: theme.palette.common.white
+      },
+      '&:nth-of-type(2)': {
+        color: theme.palette.secondary.main
+      }
     }
   },
   logo: {

@@ -12,13 +12,25 @@ import { catalogs, replacePrefix, langFromPath, translation } from '../../plugin
 import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
 
 const styles = (theme) => ({
-  layout: {
+  layout: Object.assign({}, theme.typography.body1, {
     margin: '0 auto',
     maxWidth: theme.breakpoints.values.lg,
     [theme.breakpoints.up('xl')]: {
       maxWidth: 2 / 3 * 100 + '%'
+    },
+    '& h1': theme.typography.headline,
+    '& h2': theme.typography.title,
+    '& h3': theme.typography.subheading,
+    '& h4': theme.typography.body2,
+    '& figcaption': theme.typography.caption,
+    '& a': {
+      color: theme.palette.secondary.main,
+      textDecoration: 'none',
+      '&:hover': {
+        color: theme.palette.secondary.light
+      }
     }
-  }
+  })
 })
 
 // We do extract the classes object since we do not want to pass it to children

@@ -16,9 +16,6 @@ const theme = createMuiTheme({
     },
     background: {
       default: grey[900]
-    },
-    custom: {
-      layout: '#303030'
     }
   },
   overrides: {
@@ -27,6 +24,18 @@ const theme = createMuiTheme({
         marginTop: spacingUnit * 2,
         marginBottom: spacingUnit * 2
       }
+    }
+  },
+  custom: {
+    color: {
+      background: {
+        layout: '#303030'
+      }
+    },
+    css: {
+      transitionFast: 'all 0.1s',
+      transitionNormal: 'all 0.2s',
+      transitionSlow: 'all 0.3s'
     }
   }
 })
