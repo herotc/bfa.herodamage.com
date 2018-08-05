@@ -32,7 +32,7 @@ before_install:
 install:
   # npm ci may not work due to npm ls failing whenever optional dependencies are in the package-lock.json
   # but cannot be installed (due to linux/osx/windows different requirements)
-  - npm install
+  - npm install --production=false # production is set to false to install devDependencies required to build
 
 before_script:
   - chmod +x ./scripts/ci/build.sh

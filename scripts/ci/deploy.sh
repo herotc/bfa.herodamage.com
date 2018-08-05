@@ -23,7 +23,7 @@ git checkout --quiet ${GH_TARGET_BRANCH} || git checkout --quiet --orphan ${GH_T
 cd ..
 
 # Build
-echo "[CI] Jekyll build"
+echo "[CI] Gatsby build"
 npm run build
 
 # Should we deploy ?
