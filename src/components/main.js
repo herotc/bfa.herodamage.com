@@ -1,0 +1,35 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import Paper from '@material-ui/core/Paper'
+
+const styles = (theme) => ({
+  main: {
+    background: theme.palette.custom.layout,
+    marginTop: theme.spacing.unit * 2,
+    marginBottom: theme.spacing.unit * 2,
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2,
+    paddingLeft: theme.spacing.unit * 3,
+    paddingRight: theme.spacing.unit * 3
+  }
+})
+
+// We do extract the classes object since we do not want to pass it to children
+const Main = ({classes, ...props}) => {
+  const {children} = props
+  return (
+    <main>
+      <Paper className={classes.main} elevation={1}>
+        {children(props)}
+      </Paper>
+    </main>
+  )
+}
+
+Main.propTypes = {
+  children: PropTypes.func,
+  classes: PropTypes.object
+}
+
+export default withStyles(styles)(Main)

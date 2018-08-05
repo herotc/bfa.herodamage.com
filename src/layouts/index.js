@@ -1,34 +1,36 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 import { I18nProvider } from '@lingui/react'
 import { navigateTo } from 'gatsby-link'
 import CssBaseline from '@material-ui/core/CssBaseline'
 import { withStyles } from '@material-ui/core/styles'
+import Head from '../components/head'
 import Header from '../components/header'
+import Main from '../components/main'
+import Footer from '../components/footer'
 import { catalogs, replacePrefix, langFromPath, translation } from '../../plugins/gatsby-plugin-herodamage-i18n'
 import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
 
 const styles = (theme) => ({
-  main: {
+  layout: {
     margin: '0 auto',
     maxWidth: theme.breakpoints.values.lg,
-    padding: '0 1rem 1.5rem'
+    [theme.breakpoints.up('xl')]: {
+      maxWidth: 2 / 3 * 100 + '%'
+    }
   }
 })
 
-const Layout = (props) => {
-  const {children, classes, data, lang, onLangChange} = props
+// We do extract the classes object since we do not want to pass it to children
+const Layout = ({classes, ...props}) => {
+  const {data, lang, onLangChange} = props
+  const siteMetadata = data.site.siteMetadata
   return (
-    <div>
-      <Helmet>
-        <title>{data.site.siteMetadata.title}</title>
-        <meta name="description" content="Sample"/>
-        <meta name="keywords" content="sample, something"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
-      </Helmet>
-      <Header lang={lang} onLangClick={onLangChange} siteTitle={data.site.siteMetadata.title}/>
-      <main className={classes.main}>{children(props)}</main>
+    <div className={classes.layout}>
+      <Head siteMetadata={siteMetadata}/>
+      <Header lang={lang} onLangClick={onLangChange} siteMetadata={siteMetadata}/>
+      <Main {...props}/>
+      <Footer siteMetadata={siteMetadata}/>
     </div>
   )
 }
@@ -63,10 +65,13 @@ IndexLayout.propTypes = {
 export default withRoot(withStyles(styles)(IndexLayout))
 
 export const query = graphql`
-  query SiteTitleQuery {
+  query HeadQuery {
     site {
       siteMetadata {
         title
+        github
+        description
+        keywords
       }
     }
   }

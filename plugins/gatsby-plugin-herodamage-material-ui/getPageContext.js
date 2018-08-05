@@ -3,6 +3,8 @@ import { createMuiTheme, createGenerateClassName } from '@material-ui/core/style
 import grey from '@material-ui/core/colors/grey'
 import red from '@material-ui/core/colors/red'
 
+const spacingUnit = 8 // MUI default, not accessible until the theme is created
+
 const theme = createMuiTheme({
   palette: {
     type: 'dark',
@@ -11,6 +13,20 @@ const theme = createMuiTheme({
     },
     secondary: {
       main: red[900]
+    },
+    background: {
+      default: grey[900]
+    },
+    custom: {
+      layout: '#303030'
+    }
+  },
+  overrides: {
+    MuiTypography: {
+      title: {
+        marginTop: spacingUnit * 2,
+        marginBottom: spacingUnit * 2
+      }
     }
   }
 })
