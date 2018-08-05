@@ -28,9 +28,15 @@ npm run build
 
 # Should we deploy ?
 cd public
+echo "[CI] Check if it's worth to deploy"
+# Continue the deployment if there are more file changes than what is set as deploy threshold
 git diff --name-only > filenames.diff
 filechanges=`cat filenames.diff | wc -l`
-echo "[CI] $filechanges files changed"
+echo "[CI] $filechanges changed files detected"
+if [ $filechanges -lt $DEPLOY_THRESHOLD ]; then
+    echo "[CI] No meaningful changes detected; deploy aborted"
+    exit 0
+fi
 
 # Convert the filenames into urls in a JSON array to purge CF cache later on
 cd ..
