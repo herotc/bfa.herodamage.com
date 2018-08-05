@@ -6,23 +6,28 @@ if (!fs) throw new Error('You must use a node version containing fs.promises! i.
 const simulations = {
   azeritelevels: {
     simulationType: 'azeritelevels',
-    order: 1
+    order: 1,
+    template: 'azerite-levels'
   },
   azeritestacks: {
     simulationType: 'azeritestacks',
-    order: 2
+    order: 2,
+    template: 'azerite-stacks'
   },
   combinator: {
     simulationType: 'combinations',
-    order: 3
+    order: 3,
+    template: 'combinations'
   },
   racesimulation: {
     simulationType: 'races',
-    order: 5
+    order: 5,
+    template: 'races'
   },
   trinketsimulation: {
     simulationType: 'trinkets',
-    order: 4
+    order: 4,
+    template: 'trinkets'
   }
 }
 
@@ -48,7 +53,7 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   // ['trinketsimulation', '1t', 't21', 'death-knight', 'frost', 'cold-heart-runic-attenuation']
   const [simulationName, fightStyle, tier, wowClass, spec, variation] = name.toLowerCase().split('_')
   // 'trinkets', 4
-  const {simulationType, order} = simulations[simulationName]
+  const {simulationType, order, template} = simulations[simulationName]
   // '/death-knight/trinkets/1t-t21-frost
   let slug = `/${wowClass}/${simulationType}/${fightStyle}-${tier}-${spec}`
   if (variation) slug += `-${variation}`
@@ -61,8 +66,10 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   createNodeField({node, name: 'wowClass', value: wowClass})
   // simulationType: 'trinkets'
   createNodeField({node, name: 'simulationType', value: simulationType})
-  // simulationType: 'trinkets'
+  // order: 4
   createNodeField({node, name: 'order', value: order})
+  // template: 'Trinkets'
+  createNodeField({node, name: 'template', value: template})
   // fightStyle: '1t'
   createNodeField({node, name: 'fightStyle', value: fightStyle})
   // tier: 't21'
@@ -102,7 +109,7 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
     const slug = `/${wowClass}/`
     createPage({
       path: slug,
-      component: path.resolve('./src/templates/wowClass.js'),
+      component: path.resolve('./src/templates/wow-class.js'),
       context: {slug, wowClass}
     })
   })
@@ -119,6 +126,7 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
               wowClass
               simulationType
               order
+              template
               fightStyle
               tier
               spec
@@ -141,7 +149,7 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
       const fields = node.fields
       createPage({
         path: fields.slug,
-        component: path.resolve(`./src/templates/simulation/${fields.simulationType}.js`),
+        component: path.resolve(`./src/templates/simulation/${fields.template}.js`),
         context: fields
       })
     })

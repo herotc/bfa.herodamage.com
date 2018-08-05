@@ -84,7 +84,7 @@ const WowClassTemplate = (props) => {
             const {simulationType} = group.edges[0].node.context
             return (
               <Grid item key={index} xs={12} lg={6}>
-                <ExpansionPanel defaultExpanded={true}>
+                <ExpansionPanel defaultExpanded={true} elevation={2}>
                   <Divider/>
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
                     <Typography variant={'subheading'}>{capitalize(t(simulationType))}</Typography>
