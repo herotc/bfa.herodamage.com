@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
 import { DateFormat } from '@lingui/react'
-import styled from 'styled-components'
+import { withStyles } from '@material-ui/core/styles'
 import Divider from '@material-ui/core/Divider'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import ExpansionPanel from '@material-ui/core/ExpansionPanel'
@@ -13,25 +13,24 @@ import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import Typography from '@material-ui/core/Typography'
 
-const SimPanelDetails = styled(ExpansionPanelDetails)`
-  flex-direction: column;
-`
-
-const TierExpansionPanel = styled(ExpansionPanel)`
-  @media (min-width: 768px) {
-    width: 50%;
+const styles = (theme) => ({
+  types: {
+    flexDirection: 'column'
+  },
+  tiers: {
+    [theme.breakpoints.up('md')]: {
+      width: '50%'
+    }
+  },
+  names: {
+    width: '100%',
+    '& span': {
+      float: 'right'
+    }
   }
-`
+})
 
-const SimName = styled(Typography)`
-  width: 100%;
-  
-  span {
-    float: right;
-  }
-`
-
-const SpecsList = ({lang, specs, t}) => {
+const SpecsList = ({classes, lang, specs, t}) => {
   return specs.map(({node}, index) => {
     const {slug, spec, buildTime} = node.context
     const buildDate = new Date(buildTime * 1000)
@@ -40,12 +39,12 @@ const SpecsList = ({lang, specs, t}) => {
         {index > 0 && <Divider/>}
         <List component="nav">
           <ListItem button component="a" href={`/${lang}${slug}`}>
-            <SimName>
+            <Typography className={classes.names}>
               {capitalize(t(spec))}
               <span>
                 <DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/>
               </span>
-            </SimName>
+            </Typography>
           </ListItem>
         </List>
       </div>
@@ -54,19 +53,19 @@ const SpecsList = ({lang, specs, t}) => {
 }
 
 const TiersList = (props) => {
-  const {groupedEdgesByTier, lang} = props
+  const {classes, groupedEdgesByTier, lang} = props
   return Object.keys(groupedEdgesByTier).map((tier, index) => {
     const specs = groupedEdgesByTier[tier].sort((a, b) => a.node.context.spec > b.node.context.spec)
     return (
-      <TierExpansionPanel key={index}>
+      <ExpansionPanel key={index} className={classes.tiers}>
         <Divider/>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
           <Typography>{tier.toLocaleUpperCase(lang)}</Typography>
         </ExpansionPanelSummary>
-        <SimPanelDetails>
+        <ExpansionPanelDetails className={classes.types}>
           <SpecsList {...props} specs={specs}/>
-        </SimPanelDetails>
-      </TierExpansionPanel>
+        </ExpansionPanelDetails>
+      </ExpansionPanel>
     )
   })
 }
@@ -76,7 +75,8 @@ const WowClassTemplate = (props) => {
   const {wowClass} = data.allSitePage.group[0].edges[0].node.context
   return (
     <div>
-      <Typography variant={'title'} style={{marginTop: '1rem', padding: '2rem 0'}}>{capitalize(t(wowClass))}</Typography>
+      <Typography variant={'title'}
+        style={{marginTop: '1rem', padding: '2rem 0'}}>{capitalize(t(wowClass))}</Typography>
       {
         data.allSitePage.group.map((group, index) => {
           const {simulationType} = group.edges[0].node.context
@@ -102,7 +102,7 @@ WowClassTemplate.propTypes = {
   data: PropTypes.object
 }
 
-export default WowClassTemplate
+export default withStyles(styles)(WowClassTemplate)
 
 export const query = graphql`
   query WowClassIndex($lang: String!, $wowClass: String!) {
