@@ -18,7 +18,7 @@ env:
     - NODE_ENV=production
     - BASE_URL=https://bfa.herodamage.com
     # The number of file changes required to deploy, put the number of files generated on build + 1
-    - DEPLOY_THRESHOLD=4
+    - DEPLOY_THRESHOLD=1
 
 cache:
   directories:
