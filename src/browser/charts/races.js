@@ -2,12 +2,14 @@ import load from 'little-loader'
 import { formatNumber, excludeEmptyRows, removeLoading, initOverlay } from './common'
 
 export async function racesInit (reportPath, chartTitle, templateDPS) {
-  await new Promise((resolve, reject) => {
-    load('https://www.gstatic.com/charts/loader.js', (err) => {
-      if (err) reject(err)
-      resolve()
+  if (!window.google) {
+    await new Promise((resolve, reject) => {
+      load('https://www.gstatic.com/charts/loader.js', (err) => {
+        if (err) reject(err)
+        resolve()
+      })
     })
-  })
+  }
 
   const google = window.google
 
@@ -40,11 +42,10 @@ export async function racesInit (reportPath, chartTitle, templateDPS) {
       const curAbsVal = data.getValue(row, 1)
       const curVal = 100 * ((templateDPS + curAbsVal) / templateDPS - 1)
       const tooltip = `
-        <div class="chart-tooltip">
+      <div class="chart-tooltip">
           <b>${rowName}</b><br/>
           <b>Increase:</b> ${formatNumber(curVal.toFixed(2))}% (${formatNumber(curAbsVal)} )
-        </div>
-      `
+      </div>`
       data.setValue(row, 3, raceStyle)
       data.setValue(row, 2, tooltip)
       data.setValue(row, 1, curVal)
