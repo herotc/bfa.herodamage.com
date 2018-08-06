@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
+import Link from 'gatsby-link'
 import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
 import startCase from 'lodash/startCase'
@@ -36,7 +37,7 @@ const SpecsList = ({classes, i18nPlugin, specs}) => {
     return (
       <Grid item key={index} xs={12}>
         {index > 0 && <Divider/>}
-        <ListItem button component={'a'} href={tLink(slug)}>
+        <ListItem button component={Link} to={tLink(slug)}>
           <Typography className={classes.name}>
             {startCase(t(spec))}
             <span><DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/></span>
@@ -53,7 +54,7 @@ const TiersList = (props) => {
     const specs = groupedEdgesByTier[tier].sort((a, b) => a.node.context.spec > b.node.context.spec)
     return (
       <Grid item key={index} xs={12} sm={6}>
-        <ExpansionPanel>
+        <ExpansionPanel defaultExpanded elevation={2}>
           <Divider/>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
             <Typography>{tier.toUpperCase()}</Typography>
@@ -86,7 +87,7 @@ const WowClassTemplate = (props) => {
             const {simulationType} = group.edges[0].node.context
             return (
               <Grid item key={index} xs={12} lg={6}>
-                <ExpansionPanel defaultExpanded={true} elevation={2}>
+                <ExpansionPanel defaultExpanded elevation={0}>
                   <Divider/>
                   <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
                     <Typography variant={'subheading'}>{capitalize(t(simulationType))}</Typography>
@@ -122,7 +123,7 @@ export const query = graphql`
         title
       }
     }
-    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {ne: null}}}, sort: {fields: [context___order], order: ASC}) {
+    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {ne: null}, fightStyle: {eq: "1t"}}}, sort: {fields: [context___order], order: ASC}) {
       group(field: context___simulationType) {
         edges {
           node {
