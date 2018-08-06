@@ -99,6 +99,7 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   createNodeField({node, name: 'build', value: versionUsed['build_level']})
   createNodeField({node, name: 'buildTime', value: json['build_timestamp']})
   createNodeField({node, name: 'gitRevision', value: json['git_revision'] || ''})
+  if (simulationType !== 'combinations') createNodeField({node, name: 'templateDPS', value: Math.round(json['player']['collected_data']['dps']['mean'])})
 }
 
 module.exports.createPages = async function ({graphql, boundActionCreators}) {
@@ -137,6 +138,7 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
               build
               buildTime
               gitRevision
+              templateDPS
             }
           }
         }
