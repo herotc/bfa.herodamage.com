@@ -1,13 +1,13 @@
-import {formatNumber, excludeEmptyRows, removeLoading, initOverlay} from './common'
+import { formatNumber, excludeEmptyRows, removeLoading, initOverlay } from './common'
 
 export function racesInit (reportPath, chartTitle, templateDPS) {
   const google = window.google
+  const googleChartElement = document.getElementById('google-chart')
 
   const drawChart = async () => {
-    const response = await window.fetch(`/${reportPath}`,)
-    const json = response.json()
+    const response = await window.fetch(`${reportPath}.json`)
+    const json = await response.json()
     const data = new google.visualization.arrayToDataTable(json.results)
-    let row
 
     // Sort
     data.sort({column: 1, desc: true})
@@ -20,7 +20,7 @@ export function racesInit (reportPath, chartTitle, templateDPS) {
     const HordeRaces = ['Orc', 'Troll', 'Tauren', 'Goblin', 'Undead', 'Blood Elf', 'Highmountain Tauren', 'Nightborne']
 
     // Process data
-    for (row = 0; row < data.getNumberOfRows(); row++) {
+    for (let row = 0; row < data.getNumberOfRows(); row++) {
       let raceStyle = ''
       const rowName = data.getValue(row, 0)
       if (AllianceRaces.includes(rowName)) {
@@ -32,21 +32,25 @@ export function racesInit (reportPath, chartTitle, templateDPS) {
       }
       const curAbsVal = data.getValue(row, 1)
       const curVal = 100 * ((templateDPS + curAbsVal) / templateDPS - 1)
-      const tooltip = '<div class="chart-tooltip"><b>' + rowName +
-        '</b><br><b>Increase:</b> ' + formatNumber(curVal.toFixed(2)) + '% (' + formatNumber(curAbsVal) + ')</div>'
+      const tooltip = `
+        <div class="chart-tooltip">
+          <b>${rowName}</b><br/>
+          <b>Increase:</b> ${formatNumber(curVal.toFixed(2))}% (${formatNumber(curAbsVal)} )
+        </div>
+      `
       data.setValue(row, 3, raceStyle)
       data.setValue(row, 2, tooltip)
       data.setValue(row, 1, curVal)
     }
 
     // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
-    const content = document.getElementById('simulations-metas')
+    const content = googleChartElement.parentElement
     const contentWidth = content.innerWidth - window.getComputedStyle(content, null).getPropertyValue('padding-left') * 2
 
     // Set chart options
     const chartWidth = document.documentElement.clientWidth >= 768 ? contentWidth : 700
-    const bgColor = '#222222'
-    const textColor = '#cccccc'
+    const bgColor = '#303030'
+    const textColor = '#ffffff'
     const options = {
       title: chartTitle,
       backgroundColor: bgColor,
@@ -89,8 +93,8 @@ export function racesInit (reportPath, chartTitle, templateDPS) {
           length: -12
         },
         textStyle: {
-          fontName: '"Helvetica Neue", Helvetica, Arial, sans-serif',
-          fontSize: 10,
+          fontName: '"Roboto", "Helvetica", "Arial", sans-serif',
+          fontSize: '0.875rem',
           bold: true,
           color: bgColor,
           auraColor: 'transparent'
@@ -110,7 +114,7 @@ export function racesInit (reportPath, chartTitle, templateDPS) {
     }
 
     // Instantiate and draw our chart, passing in some options.
-    const chart = new google.visualization.BarChart(document.getElementById('google-chart'))
+    const chart = new google.visualization.BarChart(googleChartElement)
     chart.draw(excludeEmptyRows(data), options)
     removeLoading()
     initOverlay(options.chartArea)

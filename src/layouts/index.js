@@ -41,6 +41,19 @@ const styles = (theme) => ({
           color: theme.palette.secondary.main
         }
       }
+    },
+    '& #chart-overlay': {
+      width: '2px',
+      position: 'absolute',
+      backgroundColor: '#FFF',
+      pointerEvents: 'none',
+      zIndex: 2,
+    },
+    '& .chart-tooltip': {
+      color: '#000',
+      fontSize: 18,
+      padding: 8,
+      whiteSpace: 'nowrap',
     }
   }
 })
