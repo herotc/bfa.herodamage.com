@@ -1,23 +1,15 @@
 # Project #
 ###########
-public/*
+public
+src/locales/_build
 
 # Project dependencies #
 ########################
-node_modules/*
-.cache/*
+node_modules
+.cache
 
 # IDE #
 #######
-.idea/*
-.vscode/*
+.idea
+.vscode
 
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
