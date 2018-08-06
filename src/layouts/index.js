@@ -92,7 +92,7 @@ IndexLayout.propTypes = {
 export default withRoot(withStyles(styles)(IndexLayout))
 
 export const query = graphql`
-  query LayoutQuery {
+  query IndexLayout {
     site {
       siteMetadata {
         title

@@ -117,7 +117,7 @@ WowClassTemplate.propTypes = {
 export default withStyles(styles)(WowClassTemplate)
 
 export const query = graphql`
-  query WowClassIndex($lang: String!, $wowClass: String!) {
+  query WowClassTemplate($lang: String!, $wowClass: String!) {
     site {
       siteMetadata {
         title
@@ -132,18 +132,10 @@ export const query = graphql`
             context {
               slug
               wowClass
-              name
               simulationType
-              fightStyle
               tier
               spec
-              variation
-              targetError
-              resultTime
-              version
-              build
               buildTime
-              gitRevision
             }
           }
         }
