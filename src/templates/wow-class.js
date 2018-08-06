@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
+import startCase from 'lodash/startCase'
 import { DateFormat } from '@lingui/react'
 import { withStyles } from '@material-ui/core/styles'
 import Divider from '@material-ui/core/Divider'
@@ -37,7 +38,7 @@ const SpecsList = ({classes, i18nPlugin, specs}) => {
         {index > 0 && <Divider/>}
         <ListItem button component={'a'} href={tLink(slug)}>
           <Typography className={classes.name}>
-            {capitalize(t(spec))}
+            {startCase(t(spec))}
             <span><DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/></span>
           </Typography>
         </ListItem>
@@ -74,7 +75,7 @@ const WowClassTemplate = (props) => {
   const {data, i18nPlugin} = props
   const {t} = i18nPlugin
   const {wowClass} = data.allSitePage.group[0].edges[0].node.context
-  const pageTitle = capitalize(t(wowClass))
+  const pageTitle = startCase(t(wowClass))
   return (
     <div>
       <Helmet title={`${pageTitle} | ${data.site.siteMetadata.title}`}/>
