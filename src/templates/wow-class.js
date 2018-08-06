@@ -95,12 +95,6 @@ const WowClassTemplate = (props) => {
                     <Grid container spacing={8} alignItems={'flex-start'}>
                       <TiersList {...props}
                         groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
-                      <TiersList {...props}
-                        groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
-                      <TiersList {...props}
-                        groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
-                      <TiersList {...props}
-                        groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
                     </Grid>
                   </ExpansionPanelDetails>
                 </ExpansionPanel>
