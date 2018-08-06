@@ -64,6 +64,7 @@
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
     "jss": "^9.8.7",
+    "little-loader": "^0.2.0",
     "lodash": "^4.17.10",
     "prop-types": "^15.6.2",
     "react": "^16.4.2",
