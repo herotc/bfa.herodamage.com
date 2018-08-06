@@ -80,7 +80,6 @@ const IndexLayout = (props) => {
   }
   return (
     <I18nProvider language={lang} catalogs={i18nPluginHelper.catalogs}>
-      <CssBaseline/>
       <Layout {...props} i18nPlugin={i18nPlugin}/>
     </I18nProvider>
   )
