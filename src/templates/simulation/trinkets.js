@@ -64,13 +64,13 @@ TrinketsSimulationTemplate.propTypes = {
 export default withI18n()(withStyles(styles)(TrinketsSimulationTemplate))
 
 export const query = graphql`
-  query TrinketsSimulation($lang: String!, $spec: String!, $simulationType: String!, $tier: String!) {
+  query TrinketsSimulation($lang: String!, $spec: String!, $simulationType: String!, $tier: String!, $variation: String!) {
     site {
       siteMetadata {
         reportsPath
       }
     }
-    allSitePage(filter: {context: {lang: {eq: $lang}, spec: {eq: $spec}, simulationType: {eq: $simulationType}, tier: {eq: $tier}}}) {
+    allSitePage(filter: {context: {lang: {eq: $lang}, spec: {eq: $spec}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, variation: {eq: $variation}}}) {
       edges {
         node {
           path
