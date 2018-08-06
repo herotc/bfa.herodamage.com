@@ -42,6 +42,13 @@ const styles = (theme) => ({
         }
       }
     },
+    '& #results-loader': {
+      display: 'block',
+      marginTop: theme.spacing.unit * 8,
+      marginBottom: theme.spacing.unit * 8,
+      marginRight: 'auto',
+      marginLeft: 'auto'
+    },
     '& #chart-overlay': {
       width: '2px',
       position: 'absolute',

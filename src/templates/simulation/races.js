@@ -26,14 +26,14 @@ class RacesSimulationTemplate extends React.Component {
     const {t} = i18nPlugin
     const {name} = data.sitePage.context
     return (
-      <div id="herodamage-races">
+      <div>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         <p><Trans>If you are interested in how the different races in World of Warcraft compare for this build, you can
           check
           out the following chart. However, keep in mind that race differences are usually rather small and can change
           with balance and gameplay changes. You can always play the race you want to play and don&apos,t have to feel
           compelled to choose based on this chart.</Trans></p>
-        <CircularProgress id="herodamage-loading" color="secondary" style={{margin: 'auto'}}/>
+        <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>
         <div id="google-chart" style={{height: 500, width: '100%'}}/>
       </div>

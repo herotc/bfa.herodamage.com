@@ -11,7 +11,7 @@ export function formatNumber (number) {
  * Remove the loading message
  */
 export function removeLoading () {
-  const el = document.getElementById('herodamage-loading')
+  const el = document.getElementById('results-loader')
   el.parentNode.removeChild(el)
 }
 
