@@ -1,8 +1,15 @@
+import load from 'little-loader'
 import { formatNumber, excludeEmptyRows, removeLoading, initOverlay } from './common'
 
-export function racesInit (reportPath, chartTitle, templateDPS) {
+export async function racesInit (reportPath, chartTitle, templateDPS) {
+  await new Promise((resolve, reject) => {
+    load('https://www.gstatic.com/charts/loader.js', (err) => {
+      if (err) reject(err)
+      resolve()
+    })
+  })
+
   const google = window.google
-  const googleChartElement = document.getElementById('google-chart')
 
   const drawChart = async () => {
     const response = await window.fetch(`${reportPath}.json`)
@@ -44,6 +51,7 @@ export function racesInit (reportPath, chartTitle, templateDPS) {
     }
 
     // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
+    const googleChartElement = document.getElementById('google-chart')
     const content = googleChartElement.parentElement
     const contentWidth = content.innerWidth - window.getComputedStyle(content, null).getPropertyValue('padding-left') * 2
 

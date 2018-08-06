@@ -1,7 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import startCase from 'lodash/startCase'
 import { Trans, withI18n } from '@lingui/react'
 import { withStyles } from '@material-ui/core/styles/index'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -17,9 +15,7 @@ class RacesSimulationTemplate extends React.Component {
     const {reportsPath} = data.site.siteMetadata
     const {name, templateDPS} = data.sitePage.context
     try {
-      window.addEventListener('load', () => {
-        racesInit(`${reportsPath}${name}`, 'Test', templateDPS)
-      })
+      racesInit(`${reportsPath}${name}`, 'Test', templateDPS)
     } catch (err) {
       console.error(err)
     }
@@ -31,9 +27,6 @@ class RacesSimulationTemplate extends React.Component {
     const {name} = data.sitePage.context
     return (
       <div id="herodamage-races">
-        <Helmet>
-          <script src="https://www.gstatic.com/charts/loader.js"/>
-        </Helmet>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         <p><Trans>If you are interested in how the different races in World of Warcraft compare for this build, you can
           check
