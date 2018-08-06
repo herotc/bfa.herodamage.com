@@ -30,14 +30,15 @@ const styles = (theme) => ({
 })
 
 const SpecsList = ({classes, i18nPlugin, specs}) => {
-  const {t, tLink} = i18nPlugin
+  const {t} = i18nPlugin
   return specs.map(({node}, index) => {
-    const {slug, spec, buildTime} = node.context
+    const {context, path} = node
+    const {spec, buildTime} = context
     const buildDate = new Date(buildTime * 1000)
     return (
       <Grid item key={index} xs={12}>
         {index > 0 && <Divider/>}
-        <ListItem button component={Link} to={tLink(slug)}>
+        <ListItem button component={Link} to={path}>
           <Typography className={classes.name}>
             {startCase(t(spec))}
             <span><DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/></span>
@@ -130,7 +131,6 @@ export const query = graphql`
             id
             path
             context {
-              slug
               wowClass
               simulationType
               tier
