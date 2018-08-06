@@ -29,7 +29,7 @@ BlogPostTemplate.propTypes = {
 export default BlogPostTemplate
 
 export const query = graphql`
-  query BlogPost($slug: String!) {
+  query BlogPostTemplate($slug: String!) {
     site {
       siteMetadata {
         title

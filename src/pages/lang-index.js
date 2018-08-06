@@ -118,7 +118,7 @@ LangIndexPage.propTypes = {
 export default withI18n()(withStyles(styles)(LangIndexPage))
 
 export const query = graphql`
-  query IndexQuery {
+  query LangIndexPage {
     site {
       siteMetadata {
         title
