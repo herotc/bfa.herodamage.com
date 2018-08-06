@@ -22,10 +22,13 @@ const styles = (theme) => ({
     flexDirection: 'column'
   },
   name: {
-    width: '100%',
-    '& span': {
-      float: 'right'
-    }
+    padding: theme.spacing.unit,
+    '& p': {
+      width: '100%',
+      '& span': {
+        float: 'right'
+      }
+    },
   }
 })
 
@@ -33,14 +36,14 @@ const SpecsList = ({classes, i18nPlugin, specs}) => {
   const {t} = i18nPlugin
   return specs.map(({node}, index) => {
     const {context, path} = node
-    const {spec, buildTime} = context
+    const {spec, variation, buildTime} = context
     const buildDate = new Date(buildTime * 1000)
     return (
       <Grid item key={index} xs={12}>
         {index > 0 && <Divider/>}
-        <ListItem button component={Link} to={path}>
-          <Typography className={classes.name}>
-            {startCase(t(spec))}
+        <ListItem button component={Link} to={path} className={classes.name}>
+          <Typography>
+            {startCase(t(spec))}{variation && ` ${startCase(t(variation))}`}
             <span><DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/></span>
           </Typography>
         </ListItem>
@@ -58,7 +61,7 @@ const TiersList = (props) => {
         <ExpansionPanel defaultExpanded elevation={2}>
           <Divider/>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-            <Typography>{tier.toUpperCase()}</Typography>
+            <h3 style={{margin: 0}}>{tier.toUpperCase()}</h3>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails className={classes.type}>
             <Grid container direction={'column'}>
@@ -88,18 +91,11 @@ const WowClassTemplate = (props) => {
             const {simulationType} = group.edges[0].node.context
             return (
               <Grid item key={index} xs={12} lg={6}>
-                <ExpansionPanel defaultExpanded elevation={0}>
-                  <Divider/>
-                  <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-                    <Typography variant={'subheading'}>{capitalize(t(simulationType))}</Typography>
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
-                    <Grid container spacing={8} alignItems={'flex-start'}>
-                      <TiersList {...props}
-                        groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
-                    </Grid>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
+                <h2>{capitalize(t(simulationType))}</h2>
+                <Grid container spacing={8} alignItems={'flex-start'}>
+                  <TiersList {...props}
+                    groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
+                </Grid>
               </Grid>
             )
           })
@@ -135,6 +131,7 @@ export const query = graphql`
               simulationType
               tier
               spec
+              variation
               buildTime
             }
           }
