@@ -47,7 +47,7 @@ module.exports.onCreatePage = function ({page, boundActionCreators}) {
   langs.forEach((lang) => {
     // Object.assign is used to avoid mutating the page object
     const context = Object.assign({}, pageContext, {lang})
-    if (slug) context.slug = `/${lang}${slug}`
+    if (slug) context.slugIntl = `/${lang}${slug}`
     const path = `/${lang}${pagePath}`
     const newPage = Object.assign({}, page, {path}, {context})
     createPage(newPage)

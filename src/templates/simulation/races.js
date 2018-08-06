@@ -57,13 +57,13 @@ RacesSimulationTemplate.propTypes = {
 export default withI18n()(withStyles(styles)(RacesSimulationTemplate))
 
 export const query = graphql`
-  query RacesSimulation($slug: String!) {
+  query RacesSimulation($slugIntl: String!) {
     site {
       siteMetadata {
         reportsPath
       }
     }
-    sitePage(path: {eq: $slug}) {
+    sitePage(path: {eq: $slugIntl}) {
       context {
         name
         fightStyle
