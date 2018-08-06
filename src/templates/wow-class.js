@@ -91,8 +91,8 @@ const WowClassTemplate = (props) => {
             const {simulationType} = group.edges[0].node.context
             return (
               <Grid item key={index} xs={12} lg={6}>
-                <h2>{capitalize(t(simulationType))}</h2>
-                <Grid container spacing={8} alignItems={'flex-start'}>
+                <h2 style={{textAlign: 'center'}}>{capitalize(t(simulationType))}</h2>
+                <Grid container spacing={8} alignItems={'flex-start'} justify={'center'}>
                   <TiersList {...props}
                     groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
                 </Grid>
