@@ -64,7 +64,8 @@ const styles = (theme) => ({
       whiteSpace: 'nowrap'
     },
     '& #a-top-d, & #a-bot-d': {
-      padding: 0
+      padding: 0,
+      textAlign: 'center'
     },
     '& p.blockers-text': {
       border: '1px solid #424242',
