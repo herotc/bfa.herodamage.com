@@ -99,12 +99,6 @@ const LangIndexPage = ({classes, data, i18nPlugin}) => {
           })
         }
       </Grid>
-      <List>
-        <ListItem component={Link} to={tLink('/faq/')}><Trans>Go to faq</Trans></ListItem>
-        <ListItem component={Link} to={tLink('/blog/')}><Trans>Go to blog</Trans></ListItem>
-        <ListItem component={Link} to={tLink('/404/')}><Trans>Go to 404</Trans></ListItem>
-        <ListItem component={Link} to={'/dev-404-page/'}><Trans>Go to dev error</Trans></ListItem>
-      </List>
     </div>
   )
 }
