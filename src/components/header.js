@@ -50,24 +50,21 @@ const Header = ({classes, i18nPlugin, siteMetadata}) => (
   <header>
     <Paper className={classes.header} elevation={1}>
       <h2 className={classes.logo}>
-        <Link to={`/${i18nPlugin.lang}/`}>
+        <Link to={i18nPlugin.tLink('/')}>
           <img src={logo} alt={`${siteMetadata.title} Logo`}/>
           <span className={'site-name'}>
             {siteMetadata.title.split(' ').map((titlePart, index) => (<span key={index}>{index > 0 && ' '}{titlePart}</span>))}
           </span>
         </Link>
       </h2>
-      {
-        i18nPlugin.isIntlPage &&
-        <Typography>
-          {
-            langs.map((lang, index) => (
-              <LangSelector key={index} classes={classes} i18nPlugin={i18nPlugin} lang={lang}
-                selected={i18nPlugin.lang === lang}/>
-            ))
-          }
-        </Typography>
-      }
+      <Typography>
+        {
+          langs.map((lang, index) => (
+            <LangSelector key={index} classes={classes} i18nPlugin={i18nPlugin} lang={lang}
+              selected={i18nPlugin.lang === lang}/>
+          ))
+        }
+      </Typography>
 
     </Paper>
   </header>

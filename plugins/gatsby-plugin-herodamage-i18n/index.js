@@ -16,7 +16,7 @@ module.exports.catalogs = catalogs
  * @returns {string}
  */
 function prefix (lang) {
-  return `/${lang}`
+  return lang !== defaultLang ? `/${lang}` : ''
 }
 
 module.exports.prefix = prefix
@@ -27,11 +27,15 @@ module.exports.prefix = prefix
  * @returns {string}
  */
 function deprefix (path) {
-  let pathPrefixed
+  let pathPrefixed = false
+  let langLength = 2
   langs.forEach((lang) => {
-    if (path.startsWith(`/${lang}/`)) pathPrefixed = true
+    if (path.startsWith(`/${lang}/`)) {
+      pathPrefixed = true
+      langLength = lang.length
+    }
   })
-  return pathPrefixed ? path.substr(3) : path
+  return pathPrefixed ? path.substr(1 + langLength) : path
 }
 
 module.exports.deprefix = deprefix
@@ -51,29 +55,17 @@ module.exports.replacePrefix = replacePrefix
 /**
  *
  * @param path
- * @param fallback
  * @returns {*|boolean|string|null}
  */
-function langFromPath (path, fallback = true) {
+function langFromPath (path) {
   let extractedLang = null
   langs.forEach((lang) => {
     if (path.startsWith(`/${lang}/`)) extractedLang = lang
   })
-  return extractedLang || (fallback && 'en') || null
+  return extractedLang || defaultLang
 }
 
 module.exports.langFromPath = langFromPath
-
-/**
- *
- * @param path
- * @returns {boolean}
- */
-function isIntlPage (path) {
-  return langFromPath(path, false) !== null
-}
-
-module.exports.isIntlPage = isIntlPage
 
 /**
  * Until there is a way to figure how to dynamic translate variable from lingui we'll use this
