@@ -20,7 +20,7 @@ class AzeriteStacksSimulationTemplate extends React.Component {
   }
 
   render () {
-    const {data, pathContext} = this.props
+    const {data, location, pathContext} = this.props
     const {reportsPath} = data.site.siteMetadata
     const {name, fightStyle} = pathContext
     return (
@@ -50,7 +50,7 @@ class AzeriteStacksSimulationTemplate extends React.Component {
             })
           }
         </div>
-        <GoogleAd type="inarticle"/>
+        <GoogleAd location={location} type="inarticle"/>
         <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>
         <div id="google-chart" style={{height: 1200, width: '100%'}}/>
@@ -62,7 +62,8 @@ class AzeriteStacksSimulationTemplate extends React.Component {
 AzeriteStacksSimulationTemplate.propTypes = {
   classes: PropTypes.object,
   data: PropTypes.object,
-  pathContext: PropTypes.object
+  pathContext: PropTypes.object,
+  location: PropTypes.object
 }
 
 export default AzeriteStacksSimulationTemplate

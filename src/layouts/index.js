@@ -67,7 +67,7 @@ const styles = (theme) => ({
       padding: 0
     },
     '& p.blockers-text': {
-      border: '1px solid #303030',
+      border: '1px solid #424242',
       borderRadius: 8,
       margin: 0,
       padding: 16,
@@ -80,25 +80,25 @@ const styles = (theme) => ({
 })
 
 const Layout = ({classes, ...props}) => {
-  const {data, i18nPlugin} = props
+  const {data, i18nPlugin, location} = props
   const siteMetadata = data.site.siteMetadata
   return (
     <Typography className={classes.layout} component={'div'}>
       <Head siteMetadata={siteMetadata}/>
       <Header i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
-      <GoogleAd type="top"/>
+      <GoogleAd location={location} type="top"/>
       <Main {...props}/>
-      <GoogleAd type="bot"/>
+      <GoogleAd location={location} type="bot"/>
       <Footer siteMetadata={siteMetadata}/>
     </Typography>
   )
 }
 
 Layout.propTypes = {
-  children: PropTypes.func,
   classes: PropTypes.object,
   data: PropTypes.object,
-  i18nPlugin: PropTypes.object
+  i18nPlugin: PropTypes.object,
+  location: PropTypes.object
 }
 
 const IndexLayout = (props) => {

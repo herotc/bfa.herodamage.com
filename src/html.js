@@ -62,32 +62,6 @@ module.exports = class HTML extends React.Component {
       adsenseScript = (
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
       )
-      adsenseLoad = (
-        <script dangerouslySetInnerHTML={{__html: '(window.adsbygoogle = window.adsbygoogle || []).push({});'}}/>
-      )
-      adsenseChecker = (
-        <script dangerouslySetInnerHTML={{__html: `
-            window.addEventListener("load", function () {
-              setTimeout(function() {
-                var ads = document.querySelectorAll("ins.adsbygoogle");
-                for (var i = 0; i < ads.length; i++) {
-                  var ad = ads[i];
-                  if (ad && ad.innerHTML.replace(/\\s/g, "").length == 0) {
-                    var blockersMessage = document.createElement('p');
-                    blockersMessage.className = 'blockers-text';
-                    if (ad.parentElement.classList.contains("a-matchedcontent-d")) {
-                      blockersMessage.innerHTML = 'This block suggests you recommended content from HeroTC using Google Adsense.<br>You might want to disable your ad blocker to see its content.';
-                    } else {
-                      blockersMessage.innerHTML = 'Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.';
-                    }
-                    ad.parentElement.appendChild(blockersMessage);
-                  }
-                }
-              }, 1500);
-            });
-          `}}>
-        </script>
-      )
     }
     return (
       <html {...this.props.htmlAttributes}>
@@ -115,8 +89,6 @@ module.exports = class HTML extends React.Component {
           {cookieconsentScript}
           {cookieconsentLoad}
           {adsenseScript}
-          {adsenseLoad}
-          {adsenseChecker}
         </body>
       </html>
     )
