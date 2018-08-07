@@ -4,8 +4,8 @@ import Link from 'gatsby-link'
 import { withStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import { langs } from '../../plugins/gatsby-plugin-herodamage-i18n'
-import logo from '../assets/images/logo.svg'
+import { langs } from '../../../plugins/gatsby-plugin-herodamage-i18n/index'
+import logo from '../../assets/images/logo.svg'
 
 const styles = (theme) => ({
   header: {
