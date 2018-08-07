@@ -26,7 +26,7 @@ const checkBlockers = () => {
         }
       }
     }
-  }, 1500)
+  }, 5000)
 }
 
 class Ad extends React.Component {
