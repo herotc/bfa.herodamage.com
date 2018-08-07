@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
 import { Trans, withI18n } from '@lingui/react'
 import { withStyles } from '@material-ui/core/styles/index'
@@ -23,9 +24,13 @@ class TrinketsSimulationTemplate extends React.Component {
 
   render () {
     const {data, pathContext} = this.props
+    const {reportsPath} = data.site.siteMetadata
     const {name, fightStyle} = pathContext
     return (
       <div>
+        <Helmet>
+          <link rel="prefetch" href={`${reportsPath}${name}.json`}/>
+        </Helmet>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         <p><Trans>Here, you can compare expected DPS increase from trinkets.</Trans></p>
         <p><Trans>In order to compare trinkets with this chart, look for the end of the bars corresponding to the item

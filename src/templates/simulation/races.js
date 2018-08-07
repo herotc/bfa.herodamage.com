@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 import { Trans, withI18n } from '@lingui/react'
 import { withStyles } from '@material-ui/core/styles/index'
 import Button from '@material-ui/core/Button'
@@ -7,9 +8,7 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import { racesInit } from '../../browser/charts/races'
 import Link from 'gatsby-link/index'
 
-const styles = (theme) => ({
-
-})
+const styles = (theme) => ({})
 
 class RacesSimulationTemplate extends React.Component {
   componentDidMount () {
@@ -25,9 +24,13 @@ class RacesSimulationTemplate extends React.Component {
 
   render () {
     const {data, pathContext} = this.props
+    const {reportsPath} = data.site.siteMetadata
     const {name, fightStyle} = pathContext
     return (
       <div>
+        <Helmet>
+          <link rel="prefetch" href={`${reportsPath}${name}.json`}/>
+        </Helmet>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         <p><Trans>If you are interested in how the different races in World of Warcraft compare for this build, you can
           check out the following chart. However, keep in mind that race differences are usually rather small and can
