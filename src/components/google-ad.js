@@ -31,11 +31,12 @@ const checkBlockers = () => {
 
 class Ad extends React.Component {
   componentDidMount () {
-    if (document.readyState === 'complete') {
-      checkBlockers()
-    } else {
-      window.addEventListener('load', checkBlockers)
-    }
+    // Disabled for now
+    // if (document.readyState === 'complete') {
+    //   checkBlockers()
+    // } else {
+    //   window.addEventListener('load', checkBlockers)
+    // }
     (window.adsbygoogle = window.adsbygoogle || []).push({})
   }
 
