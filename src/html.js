@@ -11,20 +11,21 @@ if (process.env.NODE_ENV === `production`) {
 
 module.exports = class HTML extends React.Component {
   render () {
-    let analytics, css, cookieconsent, adsense
+    let analyticsScript, analyticsLoad, css, cookieconsentStyle, cookieconsentScript, cookieconsentLoad, adsenseScript, adsenseLoad, adsenseChecker
     if (process.env.NODE_ENV === `production`) {
-      analytics = (
-        <>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109496873-1"/>
-          <script dangerouslySetInnerHTML={{__html: `
+      // Can't use React.Fragment yet, Gatsby V2 / Babel 7 only
+      analyticsScript = (
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109496873-1"/>
+      )
+      analyticsLoad = (
+        <script dangerouslySetInnerHTML={{__html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
 
               gtag('config', 'UA-109496873-1');
             `}}>
-          </script>
-        </>
+        </script>
       )
       css = (
         <style
@@ -32,11 +33,14 @@ module.exports = class HTML extends React.Component {
           dangerouslySetInnerHTML={{__html: stylesStr}}
         />
       )
-      cookieconsent = (
-        <>
-          <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.css"/>
-          <script async src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"/>
-          <script dangerouslySetInnerHTML={{__html: `
+      cookieconsentStyle = (
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.css"/>
+      )
+      cookieconsentScript = (
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"/>
+      )
+      cookieconsentLoad = (
+        <script dangerouslySetInnerHTML={{__html: `
             window.addEventListener("load", function(){
               window.cookieconsent.initialise({
                 "palette": {
@@ -53,12 +57,16 @@ module.exports = class HTML extends React.Component {
               })
             });
           `}}>
-          </script>
-        </>
+        </script>
       )
-      adsense = (
-        <>
-          <script dangerouslySetInnerHTML={{__html: `
+      adsenseScript = (
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
+      )
+      adsenseLoad = (
+        <script dangerouslySetInnerHTML={{__html: '(window.adsbygoogle = window.adsbygoogle || []).push({});'}}/>
+      )
+      adsenseChecker = (
+        <script dangerouslySetInnerHTML={{__html: `
             window.addEventListener("load", function () {
               setTimeout(function() {
                 var ads = document.querySelectorAll("ins.adsbygoogle");
@@ -78,10 +86,7 @@ module.exports = class HTML extends React.Component {
               }, 1500);
             });
           `}}>
-          </script>
-          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
-          <script dangerouslySetInnerHTML={{__html: '(window.adsbygoogle = window.adsbygoogle || []).push({});'}}/>
-        </>
+        </script>
       )
     }
     return (
@@ -93,7 +98,8 @@ module.exports = class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          {analytics}
+          {analyticsScript}
+          {analyticsLoad}
           {this.props.headComponents}
           {css}
         </head>
@@ -105,8 +111,12 @@ module.exports = class HTML extends React.Component {
             dangerouslySetInnerHTML={{__html: this.props.body}}
           />
           {this.props.postBodyComponents}
-          {cookieconsent}
-          {adsense}
+          {cookieconsentStyle}
+          {cookieconsentScript}
+          {cookieconsentLoad}
+          {adsenseScript}
+          {adsenseLoad}
+          {adsenseChecker}
         </body>
       </html>
     )
