@@ -61,7 +61,20 @@ const styles = (theme) => ({
       color: '#000',
       fontSize: 18,
       padding: 8,
-      whiteSpace: 'nowrap',
+      whiteSpace: 'nowrap'
+    },
+    '& #a-top-d, & #a-bot-d': {
+      padding: 0
+    },
+    '& p.blockers-text': {
+      border: '1px solid #303030',
+      borderRadius: 8,
+      margin: 0,
+      padding: 16,
+      textAlign: 'center'
+    },
+    '& p.a-inarticle-d, & p.a-matchedcontent-d': {
+      margin: '16px 0'
     }
   }
 })
