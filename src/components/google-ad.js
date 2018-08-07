@@ -31,7 +31,7 @@ const checkBlockers = () => {
 
 class Ad extends React.Component {
   componentDidMount () {
-    if (window.adsbygoogle) {
+    if (document.readyState === 'complete') {
       checkBlockers()
     } else {
       window.addEventListener('load', checkBlockers)
