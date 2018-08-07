@@ -74,7 +74,8 @@ const styles = (theme) => ({
       textAlign: 'center'
     },
     '& p.a-inarticle-d, & p.a-matchedcontent-d': {
-      margin: '16px 0'
+      margin: '16px 0',
+      textAlign: 'center'
     }
   }
 })
