@@ -110,7 +110,6 @@ const IndexLayout = (props) => {
     },
     lang,
     langs: i18nPluginHelper.langs,
-    isIntlPage: i18nPluginHelper.isIntlPage(pathname),
     t: i18nPluginHelper.translation(lang),
     tLink: (path) => i18nPluginHelper.replacePrefix(lang, path)
   }

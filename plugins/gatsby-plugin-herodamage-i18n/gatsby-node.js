@@ -15,21 +15,16 @@ module.exports.modifyBabelrc = function ({babelrc}) {
 
 // Create i18n routes
 const langs = require('./index').langs
+const defaultLang = require('./index').defaultLang
+const prefix = require('./index').prefix
 module.exports.onCreatePage = function ({page, boundActionCreators}) {
   const {createPage, deletePage} = boundActionCreators
 
   let pagePath
   switch (page.path) {
-    // Prevent i18n on index, 404, dev pages
+    // Prevent i18n on dev page
     case '/dev-404-page/':
-    case '/404/':
-    case '/404.html':
-    case '/':
       return
-    // Rewrite lang-index to index to transform it to '/lang/' instead of '/lang/lang-index/'
-    case '/lang-index/':
-      pagePath = '/'
-      break
     default:
       pagePath = page.path
   }
@@ -43,7 +38,7 @@ module.exports.onCreatePage = function ({page, boundActionCreators}) {
   langs.forEach((lang) => {
     // Object.assign is used to avoid mutating the page object
     const context = Object.assign({}, page.context, {lang})
-    const path = `/${lang}${pagePath}`
+    const path = `${prefix(lang)}${pagePath}`
     const newPage = Object.assign({}, page, {path}, {context})
     createPage(newPage)
   })
