@@ -86,8 +86,8 @@ const WowClassTemplate = (props) => {
     <div>
       <Helmet title={`${pageTitle} | ${data.site.siteMetadata.title}`}/>
       <h1>{pageTitle}</h1>
-      <p><Trans>Here you can retrieve all the simulations we run for the {pageTitle} class. You will find more details
-        about what they represents in their respective page. They are updated on a daily basis.</Trans></p>
+      <p><Trans>Here you can retrieve all the simulations we run. You will find more details about what they represents
+        in their respective pages. They are updated on a daily basis.</Trans></p>
       <GoogleAd location={location} type="inarticle"/>
       <Grid container spacing={16}>
         {
