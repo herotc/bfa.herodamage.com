@@ -9,6 +9,7 @@ import Head from '../components/head'
 import Header from '../components/header'
 import Main from '../components/main'
 import Footer from '../components/footer'
+import GoogleAd from '../components/google-ad'
 import * as i18nPluginHelper from '../../plugins/gatsby-plugin-herodamage-i18n'
 import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
 
@@ -72,7 +73,9 @@ const Layout = ({classes, ...props}) => {
     <Typography className={classes.layout} component={'div'}>
       <Head siteMetadata={siteMetadata}/>
       <Header i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
+      <GoogleAd type="top"/>
       <Main {...props}/>
+      <GoogleAd type="bot"/>
       <Footer siteMetadata={siteMetadata}/>
     </Typography>
   )

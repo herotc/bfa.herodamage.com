@@ -5,7 +5,7 @@ import Link from 'gatsby-link'
 import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
 import startCase from 'lodash/startCase'
-import { DateFormat } from '@lingui/react'
+import { Trans, DateFormat } from '@lingui/react'
 import { withStyles } from '@material-ui/core/styles'
 import Divider from '@material-ui/core/Divider'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
@@ -16,6 +16,7 @@ import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import Typography from '@material-ui/core/Typography'
+import GoogleAd from '../components/google-ad'
 
 const styles = (theme) => ({
   type: {
@@ -85,6 +86,9 @@ const WowClassTemplate = (props) => {
     <div>
       <Helmet title={`${pageTitle} | ${data.site.siteMetadata.title}`}/>
       <h1>{pageTitle}</h1>
+      <p><Trans>Here you can retrieve all the simulations we run for the {pageTitle} class. You will find more details
+        about what they represents in their respective page. They are updated on a daily basis.</Trans></p>
+      <GoogleAd type="inarticle"/>
       <Grid container spacing={16}>
         {
           data.allSitePage.group.map((group, index) => {

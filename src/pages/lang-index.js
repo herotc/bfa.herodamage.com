@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'gatsby-link'
 import startCase from 'lodash/startCase'
-import { Trans, withI18n } from '@lingui/react'
+import { Trans } from '@lingui/react'
 import { withStyles } from '@material-ui/core/styles/index'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -115,7 +115,7 @@ LangIndexPage.propTypes = {
   i18nPlugin: PropTypes.object
 }
 
-export default withI18n()(withStyles(styles)(LangIndexPage))
+export default withStyles(styles)(LangIndexPage)
 
 export const query = graphql`
   query LangIndexPage {

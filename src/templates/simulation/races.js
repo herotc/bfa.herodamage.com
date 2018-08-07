@@ -1,12 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import { Trans, withI18n } from '@lingui/react'
-import { withStyles } from '@material-ui/core/styles/index'
+import Link from 'gatsby-link'
+import { Trans } from '@lingui/react'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { racesInit } from '../../browser/charts/races'
-import Link from 'gatsby-link/index'
+import GoogleAd from '../../components/google-ad'
 
 const styles = (theme) => ({})
 
@@ -16,7 +16,7 @@ class RacesSimulationTemplate extends React.Component {
     const {reportsPath} = data.site.siteMetadata
     const {name, templateDPS} = pathContext
     try {
-      racesInit(`${reportsPath}${name}`, 'Test', templateDPS)
+      racesInit(`${reportsPath}${name}`, 'Race % DPS Gain', templateDPS)
     } catch (err) {
       console.error(err)
     }
@@ -50,6 +50,7 @@ class RacesSimulationTemplate extends React.Component {
             })
           }
         </div>
+        <GoogleAd type="inarticle"/>
         <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>
         <div id="google-chart" style={{height: 500, width: '100%'}}/>
@@ -64,16 +65,16 @@ RacesSimulationTemplate.propTypes = {
   pathContext: PropTypes.object
 }
 
-export default withI18n()(withStyles(styles)(RacesSimulationTemplate))
+export default RacesSimulationTemplate
 
 export const query = graphql`
-  query RacesSimulation($lang: String!, $spec: String!, $simulationType: String!, $tier: String!, $variation: String!) {
+  query RacesSimulation($lang: String!, $wowClass: String!, $spec: String!, $simulationType: String!, $tier: String!, $variation: String!) {
     site {
       siteMetadata {
         reportsPath
       }
     }
-    allSitePage(filter: {context: {lang: {eq: $lang}, spec: {eq: $spec}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, variation: {eq: $variation}}}) {
+    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, spec: {eq: $spec}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, variation: {eq: $variation}}}) {
       edges {
         node {
           path

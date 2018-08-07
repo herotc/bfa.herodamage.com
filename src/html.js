@@ -22,7 +22,8 @@ module.exports = class HTML extends React.Component {
               gtag('js', new Date());
 
               gtag('config', 'UA-109496873-1');
-            `}}/>
+            `}}>
+          </script>
         </>
       )
       css = (
@@ -51,7 +52,8 @@ module.exports = class HTML extends React.Component {
                 "theme": "classic"
               })
             });
-          `}}/>
+          `}}>
+          </script>
         </>
       )
       adsense = (
@@ -75,7 +77,8 @@ module.exports = class HTML extends React.Component {
                 }
               }, 1500);
             });
-          `}}/>
+          `}}>
+          </script>
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"/>
           <script dangerouslySetInnerHTML={{__html: '(window.adsbygoogle = window.adsbygoogle || []).push({});'}}/>
         </>

@@ -2,13 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
-import { Trans, withI18n } from '@lingui/react'
-import { withStyles } from '@material-ui/core/styles/index'
+import { Trans } from '@lingui/react'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import { trinketsInit } from '../../browser/charts/trinkets'
-
-const styles = (theme) => ({})
+import GoogleAd from '../../components/google-ad'
 
 class TrinketsSimulationTemplate extends React.Component {
   componentDidMount () {
@@ -16,7 +14,7 @@ class TrinketsSimulationTemplate extends React.Component {
     const {reportsPath} = data.site.siteMetadata
     const {name, templateDPS} = pathContext
     try {
-      trinketsInit(`${reportsPath}${name}`, 'Test', templateDPS)
+      trinketsInit(`${reportsPath}${name}`, 'Trinkets % DPS Gain per Item Levels', templateDPS)
     } catch (err) {
       console.error(err)
     }
@@ -52,6 +50,7 @@ class TrinketsSimulationTemplate extends React.Component {
             })
           }
         </div>
+        <GoogleAd type="inarticle"/>
         <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>
         <div id="google-chart" style={{height: 750, width: '100%'}}/>
@@ -66,16 +65,16 @@ TrinketsSimulationTemplate.propTypes = {
   pathContext: PropTypes.object
 }
 
-export default withI18n()(withStyles(styles)(TrinketsSimulationTemplate))
+export default TrinketsSimulationTemplate
 
 export const query = graphql`
-  query TrinketsSimulation($lang: String!, $spec: String!, $simulationType: String!, $tier: String!, $variation: String!) {
+  query TrinketsSimulation($lang: String!, $wowClass: String!, $spec: String!, $simulationType: String!, $tier: String!, $variation: String!) {
     site {
       siteMetadata {
         reportsPath
       }
     }
-    allSitePage(filter: {context: {lang: {eq: $lang}, spec: {eq: $spec}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, variation: {eq: $variation}}}) {
+    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, spec: {eq: $spec}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, variation: {eq: $variation}}}) {
       edges {
         node {
           path

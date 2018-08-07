@@ -48,6 +48,7 @@
     "start": "npm run develop",
     "develop": "shx rm -rf public/* && shx rm -rf .cache && gatsby develop",
     "build": "shx rm -rf public/* && shx rm -rf .cache && gatsby build",
+    "serve": "gatsby serve",
     "i18n-extract": "cross-env BABEL_ENV=extract lingui extract",
     "i18n-compile": "lingui compile",
     "test": "echo \"Error: no test specified\" && exit 1"
