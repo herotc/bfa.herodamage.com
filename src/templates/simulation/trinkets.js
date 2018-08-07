@@ -49,7 +49,7 @@ class TrinketsSimulationTemplate extends React.Component {
         </div>
         <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>
-        <div id="google-chart" style={{height: 500, width: '100%'}}/>
+        <div id="google-chart" style={{height: 750, width: '100%'}}/>
       </div>
     )
   }
