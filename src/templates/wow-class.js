@@ -78,7 +78,7 @@ const TiersList = (props) => {
 }
 
 const WowClassTemplate = (props) => {
-  const {data, i18nPlugin} = props
+  const {data, i18nPlugin, location} = props
   const {t} = i18nPlugin
   const {wowClass} = data.allSitePage.group[0].edges[0].node.context
   const pageTitle = startCase(t(wowClass))
@@ -88,7 +88,7 @@ const WowClassTemplate = (props) => {
       <h1>{pageTitle}</h1>
       <p><Trans>Here you can retrieve all the simulations we run for the {pageTitle} class. You will find more details
         about what they represents in their respective page. They are updated on a daily basis.</Trans></p>
-      <GoogleAd type="inarticle"/>
+      <GoogleAd location={location} type="inarticle"/>
       <Grid container spacing={16}>
         {
           data.allSitePage.group.map((group, index) => {
@@ -112,7 +112,8 @@ const WowClassTemplate = (props) => {
 WowClassTemplate.propTypes = {
   classes: PropTypes.object,
   data: PropTypes.object,
-  i18nPlugin: PropTypes.object
+  i18nPlugin: PropTypes.object,
+  location: PropTypes.object
 }
 
 export default withStyles(styles)(WowClassTemplate)
