@@ -65,7 +65,6 @@ const styles = (theme) => ({
       whiteSpace: 'nowrap'
     },
     '& #a-top-d, & #a-bot-d': {
-      padding: 0,
       textAlign: 'center'
     },
     '& p.blockers-text': {
@@ -75,8 +74,8 @@ const styles = (theme) => ({
       padding: 16,
       textAlign: 'center'
     },
-    '& p.a-inarticle-d, & p.a-matchedcontent-d': {
-      margin: '16px 0',
+    '& #a-inarticle-d, & #a-matchedcontent-d': {
+      margin: '16px auto',
       textAlign: 'center'
     }
   }
