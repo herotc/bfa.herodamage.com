@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import { unmountComponentAtNode } from 'react-dom'
 
 const checkBlockers = () => {
@@ -39,12 +40,33 @@ const initAd = () => {
   (window.adsbygoogle = window.adsbygoogle || []).push({})
 }
 
+const AdaptiveContainer = styled.div`
+  @media screen and (min-width: 1552px) {
+    margin: 16px 8px;
+    max-height: calc(100vh - 32px);
+    max-width: 300px;
+    position: fixed;
+    ${({position}) => position}: calc((100% - 1280px) / 4 - 8px);
+    top: 50%;
+    transform: translate(${({position}) => position === 'left' ? '-50%' : '50%'}, -50%);
+    width: calc((100% - 1280px) / 2 - 16px);
+  }
+  @media screen and (min-width: 1920px) {
+    ${({position}) => position}: calc(100% / 12 - 8px);
+    width: calc(100% / 6 - 16px);
+  }
+`
+
+AdaptiveContainer.propTypes = {
+  position: PropTypes.string
+}
+
 class Ad extends React.Component {
   componentDidMount () {
     initAd()
   }
 
-  componentDidUpdate () {
+  componentDidUpdate (prevProps, prevState, snapshot) {
     initAd()
   }
 
@@ -67,12 +89,12 @@ class Ad extends React.Component {
     switch (type) {
       case 'top':
         return (
-          <div key={adId} id="a-top-d">
+          <AdaptiveContainer key={adId} id="a-top-d" position="left">
             <ins className="adsbygoogle" style={{display: 'block'}}
               data-ad-client="ca-pub-5677349133508739" data-ad-slot="8259895565"
               data-ad-format="auto">
             </ins>
-          </div>
+          </AdaptiveContainer>
         )
       case 'inarticle':
         return (
@@ -104,12 +126,12 @@ class Ad extends React.Component {
         )
       case 'bot':
         return (
-          <div key={adId} id="a-bot-d">
+          <AdaptiveContainer key={adId} id="a-bot-d" position="right">
             <ins key={adId} className="adsbygoogle" style={{display: 'block'}}
               data-ad-client="ca-pub-5677349133508739" data-ad-slot="8934153725"
               data-ad-format="auto">
             </ins>
-          </div>
+          </AdaptiveContainer>
         )
     }
   }
@@ -127,8 +149,11 @@ class DevAd extends React.Component {
     const adId = `${key}-${type}`
     switch (type) {
       case 'top':
+        return (
+          <AdaptiveContainer key={adId} id={`a-${type}-d`} position="left">
+          </AdaptiveContainer>
+        )
       case 'infeed':
-      case 'bot':
         return (
           <div key={adId} id={`a-${type}-d`}>
           </div>
@@ -138,6 +163,11 @@ class DevAd extends React.Component {
         return (
           <p key={adId} className={`a-${type}-d`}>
           </p>
+        )
+      case 'bot':
+        return (
+          <AdaptiveContainer key={adId} id={`a-${type}-d`} position="right">
+          </AdaptiveContainer>
         )
     }
   }
