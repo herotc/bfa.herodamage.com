@@ -57,10 +57,6 @@ const AdaptiveContainer = styled.div`
   }
 `
 
-AdaptiveContainer.propTypes = {
-  position: PropTypes.string
-}
-
 class Ad extends React.Component {
   componentDidMount () {
     initAd()
@@ -70,12 +66,13 @@ class Ad extends React.Component {
     initAd()
   }
 
-  // We manually remove top and bot ads to refresh them whenever they receives new location in props
-  // They are static, so the only props update they can receive is new location
+  // We manually remove 'top', 'matchedcontent' and 'bot' ads to refresh them whenever they receives new location in props.
+  // They are static (in the layout), so the only props update they can receive is a new location.
   shouldComponentUpdate (nextProps, nextState, nextContext) {
     const {type} = nextProps
     switch (type) {
       case 'top':
+      case 'matchedcontent':
       case 'bop':
         unmountComponentAtNode(document.getElementById(`a-${type}-d`))
     }
@@ -89,7 +86,7 @@ class Ad extends React.Component {
     switch (type) {
       case 'top':
         return (
-          <AdaptiveContainer key={adId} id="a-top-d" position="left">
+          <AdaptiveContainer key={adId} position="left" id="a-top-d">
             <ins className="adsbygoogle" style={{display: 'block'}}
               data-ad-client="ca-pub-5677349133508739" data-ad-slot="8259895565"
               data-ad-format="auto">
@@ -98,16 +95,16 @@ class Ad extends React.Component {
         )
       case 'inarticle':
         return (
-          <p key={adId} className="a-inarticle-d">
+          <div key={adId} id="a-inarticle-d">
             <ins className="adsbygoogle" style={{display: 'block', textAlign: 'center'}}
               data-ad-layout="in-article" data-ad-format="fluid"
               data-ad-client="ca-pub-5677349133508739" data-ad-slot="9316992214">
             </ins>
-          </p>
+          </div>
         )
       case 'infeed':
         return (
-          <div key={adId} className="a-infeed-d">
+          <div key={adId} id="a-infeed-d">
             <ins className="adsbygoogle" style={{display: 'block'}}
               data-ad-format="fluid" data-ad-layout-key="-gc-3-1f-cz+zv"
               data-ad-client="ca-pub-5677349133508739" data-ad-slot="7987598673">
@@ -116,17 +113,17 @@ class Ad extends React.Component {
         )
       case 'matchedcontent':
         return (
-          <p key={adId} className="a-matchedcontent-d">
+          <div key={adId} id="a-matchedcontent-d">
             <ins className="adsbygoogle" style={{display: 'block'}}
               data-ad-client="ca-pub-5677349133508739" data-ad-slot="3956909192"
-              data-matched-content-ui-type="image_stacked" data-matched-content-rows-num="2,1"
+              data-matched-content-ui-type="image_card_stacked,image_card_stacked" data-matched-content-rows-num="2,1"
               data-matched-content-columns-num="1,4" data-ad-format="autorelaxed">
             </ins>
-          </p>
+          </div>
         )
       case 'bot':
         return (
-          <AdaptiveContainer key={adId} id="a-bot-d" position="right">
+          <AdaptiveContainer key={adId} position="right" id="a-bot-d">
             <ins key={adId} className="adsbygoogle" style={{display: 'block'}}
               data-ad-client="ca-pub-5677349133508739" data-ad-slot="8934153725"
               data-ad-format="auto">
@@ -149,25 +146,17 @@ class DevAd extends React.Component {
     const adId = `${key}-${type}`
     switch (type) {
       case 'top':
+      case 'bot':
         return (
-          <AdaptiveContainer key={adId} id={`a-${type}-d`} position="left">
+          <AdaptiveContainer key={adId} id={`a-${type}-d`} position={type === 'top' ? 'left' : 'right'}>
           </AdaptiveContainer>
         )
+      case 'inarticle':
       case 'infeed':
+      case 'matchedcontent':
         return (
           <div key={adId} id={`a-${type}-d`}>
           </div>
-        )
-      case 'inarticle':
-      case 'matchedcontent':
-        return (
-          <p key={adId} className={`a-${type}-d`}>
-          </p>
-        )
-      case 'bot':
-        return (
-          <AdaptiveContainer key={adId} id={`a-${type}-d`} position="right">
-          </AdaptiveContainer>
         )
     }
   }
