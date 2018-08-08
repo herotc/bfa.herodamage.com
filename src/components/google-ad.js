@@ -116,8 +116,8 @@ class Ad extends React.Component {
           <div key={adId} id="a-matchedcontent-d">
             <ins className="adsbygoogle" style={{display: 'block'}}
               data-ad-client="ca-pub-5677349133508739" data-ad-slot="3956909192"
-              data-matched-content-ui-type="image_card_stacked,image_card_stacked" data-matched-content-rows-num="2,1"
-              data-matched-content-columns-num="1,4" data-ad-format="autorelaxed">
+              data-matched-content-ui-type="image_card,image_card" data-matched-content-rows-num="1,1"
+              data-matched-content-columns-num="1,2" data-ad-format="autorelaxed">
             </ins>
           </div>
         )
