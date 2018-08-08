@@ -8,8 +8,6 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import { racesInit } from '../../browser/charts/races'
 import GoogleAd from '../../components/google-ad'
 
-const styles = (theme) => ({})
-
 class RacesSimulationTemplate extends React.Component {
   componentDidMount () {
     const {data, pathContext} = this.props
@@ -23,8 +21,9 @@ class RacesSimulationTemplate extends React.Component {
   }
 
   render () {
-    const {data, location, pathContext} = this.props
+    const {data, i18nPlugin, location, pathContext} = this.props
     const {reportsPath} = data.site.siteMetadata
+    const {t} = i18nPlugin
     const {name, fightStyle} = pathContext
     return (
       <div>
@@ -44,7 +43,7 @@ class RacesSimulationTemplate extends React.Component {
               return (
                 <Button key={index} variant="contained" color="primary" disabled={fightStyle === nodeFightStyle}
                   component={Link} to={node.path} style={{margin: 8}}>
-                  {nodeFightStyle}
+                  {t(nodeFightStyle)}
                 </Button>
               )
             })
@@ -60,10 +59,10 @@ class RacesSimulationTemplate extends React.Component {
 }
 
 RacesSimulationTemplate.propTypes = {
-  classes: PropTypes.object,
   data: PropTypes.object,
-  pathContext: PropTypes.object,
-  location: PropTypes.object
+  i18nPlugin: PropTypes.object,
+  location: PropTypes.object,
+  pathContext: PropTypes.object
 }
 
 export default RacesSimulationTemplate

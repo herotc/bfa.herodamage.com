@@ -1,8 +1,8 @@
 {
-  "1T": "Single Target",
-  "2T": "Dual Target",
-  "3T": "Triple Target",
-  "1TA": "Single Target w/ Adds",
+  "1t": "Single Target",
+  "2t": "Dual Target",
+  "3t": "Triple Target",
+  "1ta": "Single Target w/ Adds",
   "Go to 404": "Go to 404",
   "Go to blog": "Go to blog",
   "Go to dev error": "Go to dev error",

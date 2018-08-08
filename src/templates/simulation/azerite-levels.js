@@ -18,8 +18,9 @@ class AzeriteLevelsSimulationTemplate extends React.Component {
   }
 
   render () {
-    const {data, location, pathContext} = this.props
+    const {data, i18nPlugin, location, pathContext} = this.props
     const {reportsPath} = data.site.siteMetadata
+    const {t} = i18nPlugin
     const {name, fightStyle} = pathContext
     return (
       <div>
@@ -42,7 +43,7 @@ class AzeriteLevelsSimulationTemplate extends React.Component {
               return (
                 <Button key={index} variant="contained" color="primary" disabled={fightStyle === nodeFightStyle}
                   component={Link} to={node.path} style={{margin: 8}}>
-                  {nodeFightStyle}
+                  {t(nodeFightStyle)}
                 </Button>
               )
             })
@@ -58,10 +59,10 @@ class AzeriteLevelsSimulationTemplate extends React.Component {
 }
 
 AzeriteLevelsSimulationTemplate.propTypes = {
-  classes: PropTypes.object,
   data: PropTypes.object,
-  pathContext: PropTypes.object,
-  location: PropTypes.object
+  i18nPlugin: PropTypes.object,
+  location: PropTypes.object,
+  pathContext: PropTypes.object
 }
 
 export default AzeriteLevelsSimulationTemplate
