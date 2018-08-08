@@ -12,6 +12,7 @@ module.exports = {
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-herodamage-material-ui',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-herodamage-i18n',
     {
       resolve: 'gatsby-transformer-remark',

@@ -21,3 +21,8 @@ module.exports = {
   ]
 }
 ```
+
+## Notes
+
+If you're using another CSS-in-JS solution (like [styled-components](https://github.com/styled-components/styled-components)), then you'll need to implement the ssr part in the website `gatsby-ssr.js`.
+For example, we do use both material-ui and styled-components, so we have to combine both solutions into the same `replaceRenderer` function that we export in our `gatsby-ssr.js`.

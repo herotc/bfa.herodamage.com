@@ -5,7 +5,7 @@ import red from '@material-ui/core/colors/red'
 
 const spacingUnit = 8 // MUI default, not accessible until the theme is created
 
-const theme = createMuiTheme({
+export const theme = createMuiTheme({
   palette: {
     type: 'dark',
     primary: {

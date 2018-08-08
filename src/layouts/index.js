@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { I18nProvider } from '@lingui/react'
 import { navigateTo } from 'gatsby-link'
-import CssBaseline from '@material-ui/core/CssBaseline'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 import Head from '../components/layout/head'
@@ -12,6 +11,8 @@ import Footer from '../components/layout/footer'
 import GoogleAd from '../components/google-ad'
 import * as i18nPluginHelper from '../../plugins/gatsby-plugin-herodamage-i18n'
 import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
+import { theme } from '../../plugins/gatsby-plugin-herodamage-material-ui/getPageContext'
+import { ThemeProvider } from 'styled-components'
 
 const styles = (theme) => ({
   layout: {
@@ -116,9 +117,11 @@ const IndexLayout = (props) => {
     tLink: (path) => i18nPluginHelper.replacePrefix(lang, path)
   }
   return (
-    <I18nProvider language={lang} catalogs={i18nPluginHelper.catalogs}>
-      <Layout {...props} i18nPlugin={i18nPlugin}/>
-    </I18nProvider>
+    <ThemeProvider theme={theme}>
+      <I18nProvider language={lang} catalogs={i18nPluginHelper.catalogs}>
+        <Layout {...props} i18nPlugin={i18nPlugin}/>
+      </I18nProvider>
+    </ThemeProvider>
   )
 }
 
