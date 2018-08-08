@@ -1,4 +1,8 @@
 {
+  "1T": "Monocible",
+  "2T": "Double cible",
+  "3T": "Triple cible",
+  "1TA": "Monocible avec Adds",
   "Go to 404": "Aller à la page 404",
   "Go to blog": "Aller à la page blog",
   "Go to dev error": "Aller à la page de débug",
