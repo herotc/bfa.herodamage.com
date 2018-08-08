@@ -73,7 +73,7 @@ module.exports.langFromPath = langFromPath
  * @returns {function(*=): *}
  */
 function translation (lang) {
-  return (message) => catalogs[lang].messages[message] || message
+  return (message) => catalogs[lang].messages[message] || (lang !== defaultLang && catalogs[defaultLang].messages[message]) || message
 }
 
 module.exports.translation = translation
