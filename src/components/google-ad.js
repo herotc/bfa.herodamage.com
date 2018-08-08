@@ -26,21 +26,30 @@ const checkBlockers = () => {
         }
       }
     }
-  }, 5000)
+  }, 3000)
+}
+
+const initAd = () => {
+  // Disabled for now
+  // if (document.readyState === 'complete') {
+  //   checkBlockers()
+  // } else {
+  //   window.addEventListener('load', checkBlockers)
+  // }
+  (window.adsbygoogle = window.adsbygoogle || []).push({})
 }
 
 class Ad extends React.Component {
   componentDidMount () {
-    // Disabled for now
-    // if (document.readyState === 'complete') {
-    //   checkBlockers()
-    // } else {
-    //   window.addEventListener('load', checkBlockers)
-    // }
-    (window.adsbygoogle = window.adsbygoogle || []).push({})
+    initAd()
+  }
+
+  componentDidUpdate () {
+    initAd()
   }
 
   // We manually remove top and bot ads to refresh them whenever they receives new location in props
+  // They are static, so the only props update they can receive is new location
   shouldComponentUpdate (nextProps, nextState, nextContext) {
     const {type} = nextProps
     switch (type) {
