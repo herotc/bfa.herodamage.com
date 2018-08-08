@@ -17,12 +17,11 @@ const styles = (theme) => ({
 })
 
 const Main = ({classes, ...props}) => {
-  const {children, location} = props
+  const {children} = props
   return (
     <main>
       <Paper className={classes.main} elevation={1}>
         {children(props)}
-        <GoogleAd location={location} type="matchedcontent"/>
       </Paper>
     </main>
   )
@@ -30,8 +29,7 @@ const Main = ({classes, ...props}) => {
 
 Main.propTypes = {
   children: PropTypes.func,
-  classes: PropTypes.object,
-  location: PropTypes.object
+  classes: PropTypes.object
 }
 
 export default withStyles(styles)(Main)
