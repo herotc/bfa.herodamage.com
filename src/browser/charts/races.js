@@ -25,8 +25,8 @@ export async function racesInit (reportPath, chartTitle, templateDPS) {
     data.insertColumn(2, {type: 'string', role: 'tooltip', 'p': {'html': true}})
     data.insertColumn(3, {type: 'string', role: 'style'})
 
-    const AllianceRaces = ['Human', 'Dwarf', 'Night Elf', 'Gnome', 'Worgen', 'Draenei', 'Lightforged Draenei', 'Void Elf']
-    const HordeRaces = ['Orc', 'Troll', 'Tauren', 'Goblin', 'Undead', 'Blood Elf', 'Highmountain Tauren', 'Nightborne']
+    const AllianceRaces = ['Human', 'Dwarf', 'Night Elf', 'Gnome', 'Worgen', 'Draenei', 'Lightforged Draenei', 'Void Elf', 'Dark Iron Dwarf']
+    const HordeRaces = ['Orc', 'Troll', 'Tauren', 'Goblin', 'Undead', 'Blood Elf', 'Highmountain Tauren', 'Nightborne', 'Mag\'har Orc']
 
     // Process data
     for (let row = 0; row < data.getNumberOfRows(); row++) {
