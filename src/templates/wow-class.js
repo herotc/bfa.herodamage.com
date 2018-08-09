@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
 import startCase from 'lodash/startCase'
-import { Trans, DateFormat } from '@lingui/react'
 import { withStyles } from '@material-ui/core/styles'
+
+import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
+import { Trans, DateFormat } from '@lingui/react'
 import Divider from '@material-ui/core/Divider'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import ExpansionPanel from '@material-ui/core/ExpansionPanel'
@@ -16,6 +17,9 @@ import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import Typography from '@material-ui/core/Typography'
+
+import {getSpecVariation} from '../utils/wow'
+
 import GoogleAd from '../components/google-ad'
 
 const styles = (theme) => ({
@@ -44,7 +48,7 @@ const SpecsList = ({classes, i18nPlugin, specs}) => {
         {index > 0 && <Divider/>}
         <ListItem button component={Link} to={path} className={classes.name}>
           <Typography>
-            {startCase(t(spec))}{variation && ` ${startCase(t(variation))}`}
+            {getSpecVariation(t, spec, variation)}
             <span><DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/></span>
           </Typography>
         </ListItem>
@@ -54,7 +58,7 @@ const SpecsList = ({classes, i18nPlugin, specs}) => {
 }
 
 const TiersList = (props) => {
-  const {classes, groupedEdgesByTier} = props
+  const {classes, groupedEdgesByTier, i18nPlugin: {t}} = props
   return Object.keys(groupedEdgesByTier).map((tier, index) => {
     const specs = groupedEdgesByTier[tier].sort((a, b) => a.node.context.spec > b.node.context.spec)
     return (
@@ -62,7 +66,7 @@ const TiersList = (props) => {
         <ExpansionPanel defaultExpanded elevation={2}>
           <Divider/>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-            <h3 style={{margin: 0}}>{tier.toUpperCase()}</h3>
+            <h3 style={{margin: 0}}>{t(tier)}</h3>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails className={classes.type}>
             <Grid container direction={'column'}>
@@ -125,7 +129,7 @@ export const query = graphql`
         title
       }
     }
-    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {ne: null}, fightStyle: {eq: "1t"}}}, sort: {fields: [context___order], order: ASC}) {
+    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {ne: null}, fightStyle: {eq: "1t"}}}, sort: {fields: [context___order, context___spec, context___variation], order: ASC}) {
       group(field: context___simulationType) {
         edges {
           node {

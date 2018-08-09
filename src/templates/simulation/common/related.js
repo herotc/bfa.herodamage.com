@@ -1,18 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import Link from 'gatsby-link'
 import Button from '@material-ui/core/Button'
 
-const RelatedSimulationTypes = ({data: {relatedSimulationTypes: {edges}}, simulationType, t}) => {
-  if (edges && edges.length > 1) {
+import {getSpecVariation} from '../../../utils/wow'
+
+const RelatedSimulationTypes = ({data: {relatedSimulationTypes}, simulationType, t}) => {
+  if (relatedSimulationTypes && relatedSimulationTypes.edges.length > 1) {
     return (
       <div style={{textAlign: 'center'}}>
-        {edges.map((edge, index) => {
-          const {node} = edge
-          const {simulationType: nodeSimulationType} = node.context
+        {relatedSimulationTypes.edges.map((edge, index) => {
+          const {node: {context, path}} = edge
+          const {simulationType: nodeSimulationType} = context
           return (
             <Button key={index} variant="contained" color="primary" disabled={simulationType === nodeSimulationType}
-              component={Link} to={node.path} style={{margin: 8}}>
+              component={Link} to={path} style={{margin: 8}}>
               {t(nodeSimulationType)}
             </Button>
           )
@@ -30,16 +33,16 @@ RelatedSimulationTypes.propTypes = {
   t: PropTypes.func.isRequired
 }
 
-const RelatedTiers = ({data: {relatedTiers: {edges}}, t, tier}) => {
-  if (edges && edges.length > 1) {
+const RelatedTiers = ({data: {relatedTiers}, t, tier}) => {
+  if (relatedTiers && relatedTiers.edges.length > 1) {
     return (
       <div style={{textAlign: 'center'}}>
-        {edges.map((edge, index) => {
-          const {node} = edge
-          const {tier: nodeTier} = node.context
+        {relatedTiers.edges.map((edge, index) => {
+          const {node: {context, path}} = edge
+          const {tier: nodeTier} = context
           return (
             <Button key={index} variant="contained" color="primary" disabled={tier === nodeTier}
-              component={Link} to={node.path} style={{margin: 8}}>
+              component={Link} to={path} style={{margin: 8}}>
               {t(nodeTier)}
             </Button>
           )
@@ -57,16 +60,44 @@ RelatedTiers.propTypes = {
   tier: PropTypes.string.isRequired
 }
 
-const RelatedFightStyles = ({data: {relatedFightStyles: {edges}}, fightStyle, t}) => {
-  if (edges && edges.length > 1) {
+const RelatedSpecs = ({data: {relatedSpecs}, spec, variation, t}) => {
+  if (relatedSpecs && relatedSpecs.edges.length > 1) {
     return (
       <div style={{textAlign: 'center'}}>
-        {edges.map((edge, index) => {
-          const {node} = edge
-          const {fightStyle: nodeFightStyle} = node.context
+        {relatedSpecs.edges.map((edge, index) => {
+          const {node: {context, path}} = edge
+          const {spec: nodeSpec, variation: nodeVariation} = context
+          return (
+            <Button key={index} variant="contained" color="primary" disabled={spec === nodeSpec && variation === nodeVariation}
+              component={Link} to={path} style={{margin: 8}}>
+              {getSpecVariation(t, nodeSpec, nodeVariation, false)}
+            </Button>
+          )
+        })}
+      </div>
+    )
+  } else {
+    return (null)
+  }
+}
+
+RelatedSpecs.propTypes = {
+  data: PropTypes.object.isRequired,
+  spec: PropTypes.string.isRequired,
+  variation: PropTypes.string.isRequired,
+  t: PropTypes.func.isRequired
+}
+
+const RelatedFightStyles = ({data: {relatedFightStyles}, fightStyle, t}) => {
+  if (relatedFightStyles && relatedFightStyles.edges.length > 1) {
+    return (
+      <div style={{textAlign: 'center'}}>
+        {relatedFightStyles.edges.map((edge, index) => {
+          const {node: {context, path}} = edge
+          const {fightStyle: nodeFightStyle} = context
           return (
             <Button key={index} variant="contained" color="primary" disabled={fightStyle === nodeFightStyle}
-              component={Link} to={node.path} style={{margin: 8}}>
+              component={Link} to={path} style={{margin: 8}}>
               {t(nodeFightStyle)}
             </Button>
           )
@@ -84,39 +115,12 @@ RelatedFightStyles.propTypes = {
   t: PropTypes.func.isRequired
 }
 
-const RelatedVariations = ({data: {relatedVariations: {edges}}, variation, t}) => {
-  if (edges && edges.length > 1) {
-    return (
-      <div style={{textAlign: 'center'}}>
-        {edges.map((edge, index) => {
-          const {node} = edge
-          const {variation: nodeVariation} = node.context
-          return (
-            <Button key={index} variant="contained" color="primary" disabled={variation === nodeVariation}
-              component={Link} to={node.path} style={{margin: 8}}>
-              {t(nodeVariation === '' ? 'Default' : nodeVariation)}
-            </Button>
-          )
-        })}
-      </div>
-    )
-  } else {
-    return (null)
-  }
-}
-
-RelatedVariations.propTypes = {
-  data: PropTypes.object.isRequired,
-  variation: PropTypes.string.isRequired,
-  t: PropTypes.func.isRequired
-}
-
-const RelatedSimulations = ({data, fightStyle, variation, simulationType, t, tier}) => (
+const RelatedSimulations = ({data, fightStyle, variation, simulationType, spec, t, tier}) => (
   <div>
     <RelatedSimulationTypes data={data} simulationType={simulationType} t={t}/>
     <RelatedTiers data={data} tier={tier} t={t}/>
+    <RelatedSpecs data={data} spec={spec} variation={variation} t={t}/>
     <RelatedFightStyles data={data} fightStyle={fightStyle} t={t}/>
-    <RelatedVariations data={data} variation={variation} t={t}/>
   </div>
 )
 
@@ -125,6 +129,7 @@ RelatedSimulations.propTypes = {
   fightStyle: PropTypes.string.isRequired,
   variation: PropTypes.string.isRequired,
   simulationType: PropTypes.string.isRequired,
+  spec: PropTypes.string.isRequired,
   t: PropTypes.func.isRequired,
   tier: PropTypes.string.isRequired
 }

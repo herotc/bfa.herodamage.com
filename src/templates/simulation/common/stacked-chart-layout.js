@@ -33,7 +33,7 @@ class StackedChartLayout extends React.Component {
     const {children, data, i18nPlugin, location, pathContext} = this.props
     const {filePath} = this.state
     const {t} = i18nPlugin
-    const {name, fightStyle, simulationType, tier, variation} = pathContext
+    const {name, fightStyle, simulationType, spec, tier, variation} = pathContext
     return (
       <div>
         <Helmet>
@@ -41,7 +41,7 @@ class StackedChartLayout extends React.Component {
         </Helmet>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         {children}
-        <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType}
+        <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
           t={t} tier={tier} variation={variation}/>
         <GoogleAd location={location} type="inarticle"/>
         <CircularProgress id="results-loader" color="secondary"/>
