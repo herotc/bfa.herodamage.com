@@ -62,18 +62,23 @@ class Ad extends React.Component {
   }
 
   componentDidUpdate (prevProps, prevState, snapshot) {
-    initAd()
+    // Do init the ad only if the location did changed
+    if (this.props.location.key !== prevProps.location.key) {
+      initAd()
+    }
   }
 
-  // We manually remove 'top', 'matchedcontent' and 'bot' ads to refresh them whenever they receives new location in props.
-  // They are static (in the layout), so the only props update they can receive is a new location.
   shouldComponentUpdate (nextProps, nextState, nextContext) {
-    const {type} = nextProps
-    switch (type) {
-      case 'top':
-      case 'matchedcontent':
-      case 'bop':
-        unmountComponentAtNode(document.getElementById(`a-${type}-d`))
+    // We manually remove 'top', 'matchedcontent' and 'bot' ads to refresh them whenever they receives new location props
+    // since they'll not be re-rendered by React (despite the key props tied to location...).
+    if (nextProps.location.key !== this.props.location.key) {
+      const {type} = nextProps
+      switch (type) {
+        case 'top':
+        case 'matchedcontent':
+        case 'bot':
+          unmountComponentAtNode(document.getElementById(`a-${type}-d`))
+      }
     }
     return true
   }
@@ -139,6 +144,33 @@ Ad.propTypes = {
 }
 
 class DevAd extends React.Component {
+  componentDidMount () {
+    // console.log(`Mounted: ${this.props.type}`)
+  }
+
+  componentDidUpdate (prevProps, prevState, snapshot) {
+    // Do init the ad only if the location did changed
+    if (this.props.location.key !== prevProps.location.key) {
+      // console.log(`Updated: ${this.props.type}`)
+    }
+  }
+
+  shouldComponentUpdate (nextProps, nextState, nextContext) {
+    // We manually remove 'top', 'matchedcontent' and 'bot' ads to refresh them whenever they receives new location props
+    // since they'll not be re-rendered by React (despite the key props tied to location...).
+    if (nextProps.location.key !== this.props.location.key) {
+      const {type} = nextProps
+      switch (type) {
+        case 'top':
+        case 'matchedcontent':
+        case 'bot':
+          // console.log(`Removed: ${type}`)
+          unmountComponentAtNode(document.getElementById(`a-${type}-d`))
+      }
+    }
+    return true
+  }
+
   render () {
     const {location, type} = this.props
     const {key} = location
