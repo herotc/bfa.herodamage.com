@@ -138,7 +138,7 @@ class CombinationsSimulationTemplate extends React.Component {
     const {data, i18nPlugin, location, pathContext} = this.props
     const {results, order, orderBy, page, rowsPerPage} = this.state
     const {t} = i18nPlugin
-    const {name, fightStyle, simulationType, targetError, tier, variation} = pathContext
+    const {name, fightStyle, simulationType, spec, targetError, tier, variation} = pathContext
     return (
       <div>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
@@ -149,7 +149,7 @@ class CombinationsSimulationTemplate extends React.Component {
           each other and not to promote any definitive best builds. Several variables (like different trinkets, WF/TF or
           ingame situations) are not taken into account. This is why you, as always, should <u><b>simulate your own
             character</b></u> to find your optimal setup.</Trans></p>
-        <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType}
+        <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
           t={t} tier={tier} variation={variation}/>
         <GoogleAd location={location} type="inarticle"/>
         {
@@ -214,7 +214,7 @@ export const query = graphql`
         }
       }
     }
-    relatedTiers: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, spec: {eq: $spec}, fightStyle: {eq: $fightStyle}, variation: {eq: $variation}}}) {
+    relatedTiers: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, spec: {eq: $spec}, fightStyle: {eq: $fightStyle}, variation: {eq: $variation}}}, sort: {fields: [context___tier], order: ASC}) {
       edges {
         node {
           path
@@ -224,22 +224,23 @@ export const query = graphql`
         }
       }
     }
-    relatedFightStyles: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, spec: {eq: $spec}, variation: {eq: $variation}}}) {
+    relatedSpecs: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, fightStyle: {eq: $fightStyle}}}, sort: {fields: [context___spec, context___variation], order: ASC}) {
+      edges {
+        node {
+          path
+          context {
+            spec
+            variation
+          }
+        }
+      }
+    }
+    relatedFightStyles: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, spec: {eq: $spec}, variation: {eq: $variation}}}, sort: {fields: [context___fightStyle], order: ASC}) {
       edges {
         node {
           path
           context {
             fightStyle
-          }
-        }
-      }
-    }
-    relatedVariations: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, spec: {eq: $spec}, fightStyle: {eq: $fightStyle}}}) {
-      edges {
-        node {
-          path
-          context {
-            variation
           }
         }
       }
