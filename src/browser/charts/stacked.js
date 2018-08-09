@@ -3,11 +3,12 @@ import { formatNumber, excludeEmptyRows, removeLoading, initOverlay } from './co
 
 /**
  *
+ * @param simulationType
  * @param data
  * @param templateDPS
  * @returns {*}
  */
-function processRacesData (data, templateDPS) {
+function processRacesData (simulationType, data, templateDPS) {
   // Sort
   data.sort({column: 1, desc: true})
 
@@ -46,11 +47,12 @@ function processRacesData (data, templateDPS) {
 
 /**
  *
+ * @param simulationType
  * @param data
  * @param templateDPS
  * @returns {*}
  */
-function processData (data, templateDPS) {
+function processData (simulationType, data, templateDPS) {
   // Sorting
   const sortCol = data.addColumn('number')
   for (let row = 0; row < data.getNumberOfRows(); row++) {
@@ -79,7 +81,7 @@ function processData (data, templateDPS) {
       const stepVal = curVal - prevVal
       const tooltip = `
         <div class="chart-tooltip">
-          <b>${data.getValue(row, 0)}<br/> Item Level ${data.getColumnLabel(col)}</b><br/>
+          <b>${data.getValue(row, 0)}<br/> ${simulationType === 'azeritestacks' ? 'Stack' : 'Item Level'} ${data.getColumnLabel(col)}</b><br/>
           <b>Total:</b> ${formatNumber(curVal.toFixed(2))} % (${formatNumber(curAbsVal.toFixed())})<br/>
           <b>Increase:</b> ${formatNumber(stepVal.toFixed(2))}% (${formatNumber(absStepVal.toFixed())} )
         </div>`
@@ -95,13 +97,13 @@ function processData (data, templateDPS) {
 
 /**
  *
- * @param type
+ * @param simulationType
  * @param reportPath
  * @param chartTitle
  * @param templateDPS
  * @returns {Promise<void>}
  */
-export async function stackedChart (type, reportPath, chartTitle, templateDPS) {
+export async function stackedChart (simulationType, reportPath, chartTitle, templateDPS) {
   if (!window.google) {
     await new Promise((resolve, reject) => {
       load('https://www.gstatic.com/charts/loader.js', (err) => {
@@ -119,14 +121,14 @@ export async function stackedChart (type, reportPath, chartTitle, templateDPS) {
 
     // Process data
     let data
-    switch (type) {
+    switch (simulationType) {
       case 'races':
-        data = processRacesData(rawData, templateDPS)
+        data = processRacesData(simulationType, rawData, templateDPS)
         break
       case 'azeritelevels':
       case 'azeritestacks':
       case 'trinkets':
-        data = processData(rawData, templateDPS)
+        data = processData(simulationType, rawData, templateDPS)
     }
 
     // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
@@ -177,6 +179,7 @@ export async function stackedChart (type, reportPath, chartTitle, templateDPS) {
         }
       },
       legend: {
+        position: simulationType === 'races' ? 'none' : 'right',
         textStyle: {
           color: textColor
         }
