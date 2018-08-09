@@ -55,10 +55,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@lingui/babel-preset-react": "^2.3.0",
-    "@lingui/react": "^2.3.0",
+    "@lingui/babel-preset-react": "^2.4.0",
+    "@lingui/react": "^2.4.0",
     "@material-ui/core": "^1.4.2",
     "@material-ui/icons": "^2.0.1",
+    "babel-plugin-styled-components": "^1.5.1",
     "gatsby": "^1.9.277",
     "gatsby-link": "^1.6.46",
     "gatsby-plugin-react-helmet": "^2.0.11",
@@ -77,7 +78,7 @@
     "styled-components": "^3.4.2"
   },
   "devDependencies": {
-    "@lingui/cli": "^2.3.0",
+    "@lingui/cli": "^2.4.0",
     "babel-core": "^6.26.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
