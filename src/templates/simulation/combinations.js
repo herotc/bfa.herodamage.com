@@ -17,13 +17,14 @@ const RANK_INDEX = 0
 const TALENTS_INDEX = 1
 const SPECIAL_INDEX = 3
 const DPS_INDEX = 4
+const DPSDIFF_INDEX = 5
 
 const indexFromColumnId = {
   rank: RANK_INDEX,
   talents: TALENTS_INDEX,
   special: SPECIAL_INDEX,
-  dps: DPS_INDEX,
-  dpsPercentageDifference: DPS_INDEX
+  dps: RANK_INDEX,
+  dpsPercentageDifference: RANK_INDEX
 }
 
 function getSorting (order, orderBy) {
@@ -31,6 +32,7 @@ function getSorting (order, orderBy) {
   return order === 'desc' ? (a, b) => b[orderByIndex] - a[orderByIndex] : (a, b) => a[orderByIndex] - b[orderByIndex]
 }
 
+// TODO: Move into the components for i18n
 const columnData = [
   {id: 'rank', numeric: true, label: '#'},
   {id: 'talents', numeric: false, label: 'Talents'},
@@ -40,8 +42,8 @@ const columnData = [
 ]
 
 class EnhancedTableHead extends React.Component {
-  createSortHandler (property) {
-    return (event) => { this.props.onRequestSort(event, property) }
+  createSortHandler (orderBy) {
+    return (event) => { this.props.onRequestSort(event, orderBy) }
   }
 
   render () {
@@ -62,7 +64,7 @@ class EnhancedTableHead extends React.Component {
                 {!numeric && label}
               </TableCell>
             )
-          }, this)}
+          })}
         </TableRow>
       </TableHead>
     )
@@ -79,7 +81,11 @@ class CombinationsSimulationTemplate extends React.Component {
   constructor (props) {
     super(props)
 
+    const {data, pathContext} = this.props
+    const {reportsPath} = data.site.siteMetadata
+    const {name} = pathContext
     this.state = {
+      filepath: `${reportsPath}${name}.json`,
       results: null,
       order: 'asc',
       orderBy: 'rank',
@@ -95,18 +101,21 @@ class CombinationsSimulationTemplate extends React.Component {
   }
 
   async getResults () {
-    const {data, pathContext} = this.props
-    const {reportsPath} = data.site.siteMetadata
-    const {name} = pathContext
-    const response = await window.fetch(`${reportsPath}${name}.json`)
-    const json = await response.json()
-    this.setState({results: json.results})
+    const response = await window.fetch(this.state.filepath)
+    const {results} = await response.json()
+
+    // Add the % Diff column
+    const maxDPS = results[0][DPS_INDEX]
+    for (let row of results) {
+      row.push((100 * row[DPS_INDEX] / maxDPS - 100).toFixed(2))
+    }
+
+    this.setState({results})
   }
 
-  handleRequestSort (event, property) {
-    const orderBy = property
+  handleRequestSort (event, orderBy) {
     let order = 'desc'
-    if (this.state.orderBy === property && this.state.order === 'desc') {
+    if (this.state.orderBy === orderBy && this.state.order === 'desc') {
       order = 'asc'
     }
     this.setState({order, orderBy})
@@ -129,7 +138,6 @@ class CombinationsSimulationTemplate extends React.Component {
     const {t} = i18nPlugin
     const {name, fightStyle, targetError} = pathContext
     const {results, order, orderBy, page, rowsPerPage} = this.state
-    const maxDPS = results && results[0][DPS_INDEX]
     return (
       <div>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
@@ -168,19 +176,15 @@ class CombinationsSimulationTemplate extends React.Component {
                 {results
                   .sort(getSorting(order, orderBy))
                   .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row) => {
-                    const rowId = row[RANK_INDEX]
-                    const rowDPS = row[DPS_INDEX]
-                    return (
-                      <TableRow key={rowId}>
-                        <TableCell component="th" scope="row" numeric>{rowId}</TableCell>
-                        <TableCell>{row[TALENTS_INDEX]}</TableCell>
-                        <TableCell>{row[SPECIAL_INDEX]}</TableCell>
-                        <TableCell numeric>{rowDPS}</TableCell>
-                        <TableCell numeric>{(100 * rowDPS / maxDPS - 100).toFixed(2)}</TableCell>
-                      </TableRow>
-                    )
-                  })
+                  .map((row) => (
+                    <TableRow key={row[RANK_INDEX]}>
+                      <TableCell component="th" scope="row" numeric>{row[RANK_INDEX]}</TableCell>
+                      <TableCell>{row[TALENTS_INDEX]}</TableCell>
+                      <TableCell>{row[SPECIAL_INDEX]}</TableCell>
+                      <TableCell numeric>{row[DPS_INDEX]}</TableCell>
+                      <TableCell numeric>{row[DPSDIFF_INDEX]}</TableCell>
+                    </TableRow>
+                  ))
                 }
               </TableBody>
 
@@ -196,10 +200,10 @@ class CombinationsSimulationTemplate extends React.Component {
 }
 
 CombinationsSimulationTemplate.propTypes = {
-  data: PropTypes.object,
-  i18nPlugin: PropTypes.object,
-  location: PropTypes.object,
-  pathContext: PropTypes.object
+  data: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  pathContext: PropTypes.object.isRequired
 }
 
 export default CombinationsSimulationTemplate
