@@ -27,7 +27,7 @@ const checkBlockers = () => {
         }
       }
     }
-  }, 3000)
+  }, 1500)
 }
 
 const initAd = () => {
@@ -90,12 +90,12 @@ class Ad extends React.Component {
     switch (type) {
       case 'top':
         return (
-          <AdaptiveContainer key={adId} position="left" id="a-top-d">
+          <div key={adId} id="a-top-d">
             <ins className="adsbygoogle" style={{display: 'block'}}
               data-ad-client="ca-pub-5677349133508739" data-ad-slot="8259895565"
               data-ad-format="auto">
             </ins>
-          </AdaptiveContainer>
+          </div>
         )
       case 'inarticle':
         return (
@@ -139,8 +139,8 @@ class Ad extends React.Component {
 }
 
 Ad.propTypes = {
-  location: PropTypes.object,
-  type: PropTypes.string
+  location: PropTypes.object.isRequired,
+  type: PropTypes.string.isRequired
 }
 
 class DevAd extends React.Component {
@@ -177,11 +177,6 @@ class DevAd extends React.Component {
     const adId = `${key}-${type}`
     switch (type) {
       case 'top':
-      case 'bot':
-        return (
-          <AdaptiveContainer key={adId} id={`a-${type}-d`} position={type === 'top' ? 'left' : 'right'}>
-          </AdaptiveContainer>
-        )
       case 'inarticle':
       case 'infeed':
       case 'matchedcontent':
@@ -189,13 +184,18 @@ class DevAd extends React.Component {
           <div key={adId} id={`a-${type}-d`}>
           </div>
         )
+      case 'bot':
+        return (
+          <AdaptiveContainer key={adId} id={`a-${type}-d`} position="right">
+          </AdaptiveContainer>
+        )
     }
   }
 }
 
 DevAd.propTypes = {
-  location: PropTypes.object,
-  type: PropTypes.string
+  location: PropTypes.object.isRequired,
+  type: PropTypes.string.isRequired
 }
 
 const GoogleAd = process.env.NODE_ENV === 'production' ? Ad : DevAd
