@@ -1,18 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { ThemeProvider } from 'styled-components'
 import { I18nProvider } from '@lingui/react'
 import { navigateTo } from 'gatsby-link'
 import { withStyles } from '@material-ui/core/styles'
+
 import Typography from '@material-ui/core/Typography'
-import Head from '../components/layout/head'
-import Header from '../components/layout/header'
-import Main from '../components/layout/main'
-import Footer from '../components/layout/footer'
-import GoogleAd from '../components/google-ad'
+
 import * as i18nPluginHelper from '../../plugins/gatsby-plugin-herodamage-i18n'
 import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
 import { theme } from '../../plugins/gatsby-plugin-herodamage-material-ui/getPageContext'
-import { ThemeProvider } from 'styled-components'
+
+import Head from '../components/layout/head'
+import Header from '../components/layout/header'
+import WowClassSelector from '../components/layout/wow-class-selector'
+import Main from '../components/layout/main'
+import Footer from '../components/layout/footer'
+import GoogleAd from '../components/google-ad'
 
 const styles = (theme) => ({
   layout: {
@@ -88,6 +92,7 @@ const Layout = ({classes, ...props}) => {
     <Typography className={classes.layout} component={'div'}>
       <Head siteMetadata={siteMetadata}/>
       <Header i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
+      <WowClassSelector i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
       <GoogleAd location={location} type="top"/>
       <Main {...props}/>
       <GoogleAd location={location} type="bot"/>
@@ -138,6 +143,7 @@ export const query = graphql`
         github
         description
         keywords
+        wowClasses
       }
     }
   }
