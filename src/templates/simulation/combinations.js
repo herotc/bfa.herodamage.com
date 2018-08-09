@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
+
 import { Trans } from '@lingui/react'
-import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
@@ -11,6 +10,8 @@ import TableHead from '@material-ui/core/TableHead'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
+
+import RelatedSimulations from './common/related'
 import GoogleAd from '../../components/google-ad'
 
 const RANK_INDEX = 0
@@ -135,9 +136,9 @@ class CombinationsSimulationTemplate extends React.Component {
 
   render () {
     const {data, i18nPlugin, location, pathContext} = this.props
-    const {t} = i18nPlugin
-    const {name, fightStyle, targetError} = pathContext
     const {results, order, orderBy, page, rowsPerPage} = this.state
+    const {t} = i18nPlugin
+    const {name, fightStyle, simulationType, targetError, tier, variation} = pathContext
     return (
       <div>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
@@ -148,20 +149,8 @@ class CombinationsSimulationTemplate extends React.Component {
           each other and not to promote any definitive best builds. Several variables (like different trinkets, WF/TF or
           ingame situations) are not taken into account. This is why you, as always, should <u><b>simulate your own
             character</b></u> to find your optimal setup.</Trans></p>
-        <div style={{textAlign: 'center'}}>
-          {
-            data.allSitePage.edges.map((edge, index) => {
-              const {node} = edge
-              const {fightStyle: nodeFightStyle} = node.context
-              return (
-                <Button key={index} variant="contained" color="primary" disabled={fightStyle === nodeFightStyle}
-                  component={Link} to={node.path} style={{margin: 8}}>
-                  {t(nodeFightStyle)}
-                </Button>
-              )
-            })
-          }
-        </div>
+        <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType}
+          t={t} tier={tier} variation={variation}/>
         <GoogleAd location={location} type="inarticle"/>
         {
           !results &&
@@ -209,18 +198,48 @@ CombinationsSimulationTemplate.propTypes = {
 export default CombinationsSimulationTemplate
 
 export const query = graphql`
-  query CombinationsSimulation($lang: String!, $wowClass: String!, $spec: String!, $simulationType: String!, $tier: String!, $variation: String!) {
+  query CombinationsSimulation($lang: String!, $wowClass: String!, $simulationType: String!, $tier: String!, $spec: String!, $fightStyle: String!, $variation: String!) {
     site {
       siteMetadata {
         reportsPath
       }
     }
-    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, spec: {eq: $spec}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, variation: {eq: $variation}}}) {
+    relatedSimulationTypes: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, tier: {eq: $tier}, spec: {eq: $spec}, fightStyle: {eq: $fightStyle}, variation: {eq: $variation}}}, sort: {fields: [context___order], order: ASC}) {
+      edges {
+        node {
+          path
+          context {
+            simulationType
+          }
+        }
+      }
+    }
+    relatedTiers: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, spec: {eq: $spec}, fightStyle: {eq: $fightStyle}, variation: {eq: $variation}}}) {
+      edges {
+        node {
+          path
+          context {
+            tier
+          }
+        }
+      }
+    }
+    relatedFightStyles: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, spec: {eq: $spec}, variation: {eq: $variation}}}) {
       edges {
         node {
           path
           context {
             fightStyle
+          }
+        }
+      }
+    }
+    relatedVariations: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, spec: {eq: $spec}, fightStyle: {eq: $fightStyle}}}) {
+      edges {
+        node {
+          path
+          context {
+            variation
           }
         }
       }

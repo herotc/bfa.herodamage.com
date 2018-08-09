@@ -1,5 +1,7 @@
 import React from 'react'
+
 import { Trans } from '@lingui/react'
+
 import StackedChartLayout from './common/stacked-chart-layout'
 
 const RacesSimulationTemplate = (props) => (
@@ -16,18 +18,48 @@ const RacesSimulationTemplate = (props) => (
 export default RacesSimulationTemplate
 
 export const query = graphql`
-  query RacesSimulation($lang: String!, $wowClass: String!, $spec: String!, $simulationType: String!, $tier: String!, $variation: String!) {
+  query RacesSimulation($lang: String!, $wowClass: String!, $simulationType: String!, $tier: String!, $spec: String!, $fightStyle: String!, $variation: String!) {
     site {
       siteMetadata {
         reportsPath
       }
     }
-    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, spec: {eq: $spec}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, variation: {eq: $variation}}}) {
+    relatedSimulationTypes: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, tier: {eq: $tier}, spec: {eq: $spec}, fightStyle: {eq: $fightStyle}, variation: {eq: $variation}}}, sort: {fields: [context___order], order: ASC}) {
+      edges {
+        node {
+          path
+          context {
+            simulationType
+          }
+        }
+      }
+    }
+    relatedTiers: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, spec: {eq: $spec}, fightStyle: {eq: $fightStyle}, variation: {eq: $variation}}}) {
+      edges {
+        node {
+          path
+          context {
+            tier
+          }
+        }
+      }
+    }
+    relatedFightStyles: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, spec: {eq: $spec}, variation: {eq: $variation}}}) {
       edges {
         node {
           path
           context {
             fightStyle
+          }
+        }
+      }
+    }
+    relatedVariations: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {eq: $simulationType}, tier: {eq: $tier}, spec: {eq: $spec}, fightStyle: {eq: $fightStyle}}}) {
+      edges {
+        node {
+          path
+          context {
+            variation
           }
         }
       }
