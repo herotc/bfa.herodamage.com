@@ -4,15 +4,94 @@ import Link from 'gatsby-link'
 import { Trans } from '@lingui/react'
 import Button from '@material-ui/core/Button'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import Table from '@material-ui/core/Table'
+import TableBody from '@material-ui/core/TableBody'
+import TableCell from '@material-ui/core/TableCell'
+import TableHead from '@material-ui/core/TableHead'
+import TablePagination from '@material-ui/core/TablePagination'
+import TableRow from '@material-ui/core/TableRow'
+import TableSortLabel from '@material-ui/core/TableSortLabel'
 import GoogleAd from '../../components/google-ad'
+
+const RANK_INDEX = 0
+const TALENTS_INDEX = 1
+const SPECIAL_INDEX = 3
+const DPS_INDEX = 4
+
+const indexFromColumnId = {
+  rank: RANK_INDEX,
+  talents: TALENTS_INDEX,
+  special: SPECIAL_INDEX,
+  dps: DPS_INDEX,
+  dpsPercentageDifference: DPS_INDEX
+}
+
+function getSorting (order, orderBy) {
+  const orderByIndex = indexFromColumnId[orderBy]
+  return order === 'desc' ? (a, b) => b[orderByIndex] - a[orderByIndex] : (a, b) => a[orderByIndex] - b[orderByIndex]
+}
+
+const columnData = [
+  {id: 'rank', numeric: true, label: '#'},
+  {id: 'talents', numeric: false, label: 'Talents'},
+  {id: 'special', numeric: false, label: 'Azerite Powers'},
+  {id: 'dps', numeric: true, label: 'DPS'},
+  {id: 'dpsPercentageDifference', numeric: true, label: '% Diff'},
+]
+
+class EnhancedTableHead extends React.Component {
+  createSortHandler (property) {
+    return (event) => { this.props.onRequestSort(event, property) }
+  }
+
+  render () {
+    const {order, orderBy} = this.props
+    return (
+      <TableHead>
+        <TableRow>
+          {columnData.map((column) => {
+            const {id, numeric, label} = column
+            return (
+              <TableCell key={id} numeric={numeric} sortDirection={orderBy === id ? order : false}>
+                {
+                  numeric &&
+                  <TableSortLabel active={orderBy === id} direction={order} onClick={this.createSortHandler(id)}>
+                    {label}
+                  </TableSortLabel>
+                }
+                {!numeric && label}
+              </TableCell>
+            )
+          }, this)}
+        </TableRow>
+      </TableHead>
+    )
+  }
+}
+
+EnhancedTableHead.propTypes = {
+  onRequestSort: PropTypes.func.isRequired,
+  order: PropTypes.string.isRequired,
+  orderBy: PropTypes.string.isRequired
+}
 
 class CombinationsSimulationTemplate extends React.Component {
   constructor (props) {
     super(props)
 
-    this.state = {results: null}
+    this.state = {
+      results: null,
+      order: 'asc',
+      orderBy: 'rank',
+      selected: [],
+      page: 0,
+      rowsPerPage: 15
+    }
 
     this.getResults = this.getResults.bind(this)
+    this.handleRequestSort = this.handleRequestSort.bind(this)
+    this.handleChangePage = this.handleChangePage.bind(this)
+    this.handleChangeRowsPerPage = this.handleChangeRowsPerPage.bind(this)
   }
 
   async getResults () {
@@ -24,6 +103,23 @@ class CombinationsSimulationTemplate extends React.Component {
     this.setState({results: json.results})
   }
 
+  handleRequestSort (event, property) {
+    const orderBy = property
+    let order = 'desc'
+    if (this.state.orderBy === property && this.state.order === 'desc') {
+      order = 'asc'
+    }
+    this.setState({order, orderBy})
+  }
+
+  handleChangePage (event, page) {
+    this.setState({page})
+  }
+
+  handleChangeRowsPerPage (event) {
+    this.setState({rowsPerPage: event.target.value})
+  }
+
   componentDidMount () {
     this.getResults().catch((err) => { console.error(err) })
   }
@@ -32,7 +128,8 @@ class CombinationsSimulationTemplate extends React.Component {
     const {data, i18nPlugin, location, pathContext} = this.props
     const {t} = i18nPlugin
     const {name, fightStyle, targetError} = pathContext
-    const {results} = this.state
+    const {results, order, orderBy, page, rowsPerPage} = this.state
+    const maxDPS = results && results[0][DPS_INDEX]
     return (
       <div>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
@@ -58,7 +155,41 @@ class CombinationsSimulationTemplate extends React.Component {
           }
         </div>
         <GoogleAd location={location} type="inarticle"/>
-        <CircularProgress id="results-loader" color="secondary"/>
+        {
+          !results &&
+          <CircularProgress id="results-loader" color="secondary"/>
+        }
+        {
+          results &&
+          <div>
+            <Table>
+              <EnhancedTableHead order={order} orderBy={orderBy} onRequestSort={this.handleRequestSort}/>
+              <TableBody>
+                {results
+                  .sort(getSorting(order, orderBy))
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((row) => {
+                    const rowId = row[RANK_INDEX]
+                    const rowDPS = row[DPS_INDEX]
+                    return (
+                      <TableRow key={rowId}>
+                        <TableCell component="th" scope="row" numeric>{rowId}</TableCell>
+                        <TableCell>{row[TALENTS_INDEX]}</TableCell>
+                        <TableCell>{row[SPECIAL_INDEX]}</TableCell>
+                        <TableCell numeric>{rowDPS}</TableCell>
+                        <TableCell numeric>{(100 * rowDPS / maxDPS - 100).toFixed(2)}</TableCell>
+                      </TableRow>
+                    )
+                  })
+                }
+              </TableBody>
+
+            </Table>
+            <TablePagination component="div" count={results.length} rowsPerPage={rowsPerPage} page={page}
+              backIconButtonProps={{'aria-label': 'Previous Page'}} nextIconButtonProps={{'aria-label': 'Next Page'}}
+              onChangePage={this.handleChangePage} onChangeRowsPerPage={this.handleChangeRowsPerPage}/>
+          </div>
+        }
       </div>
     )
   }
