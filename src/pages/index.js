@@ -1,40 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 import startCase from 'lodash/startCase'
-import { Trans } from '@lingui/react'
 import { withStyles } from '@material-ui/core/styles/index'
-import List from '@material-ui/core/List'
-import ListItem from '@material-ui/core/ListItem'
-import Grid from '@material-ui/core/Grid'
-import logo from '../assets/images/logo.svg'
-import wowClassDeathKnight from '../assets/images/wow/classpicker/death_knight.svg'
-import wowClassDemonHunter from '../assets/images/wow/classpicker/demon_hunter.svg'
-import wowClassDruid from '../assets/images/wow/classpicker/druid.svg'
-import wowClassHunter from '../assets/images/wow/classpicker/hunter.svg'
-import wowClassMage from '../assets/images/wow/classpicker/mage.svg'
-import wowClassMonk from '../assets/images/wow/classpicker/monk.svg'
-import wowClassPaladin from '../assets/images/wow/classpicker/paladin.svg'
-import wowClassPriest from '../assets/images/wow/classpicker/priest.svg'
-import wowClassRogue from '../assets/images/wow/classpicker/rogue.svg'
-import wowClassShaman from '../assets/images/wow/classpicker/shaman.svg'
-import wowClassWarlock from '../assets/images/wow/classpicker/warlock.svg'
-import wowClassWarrior from '../assets/images/wow/classpicker/warrior.svg'
 
-const wowClassesToIcon = {
-  'death-knight': wowClassDeathKnight,
-  'demon-hunter': wowClassDemonHunter,
-  'druid': wowClassDruid,
-  'hunter': wowClassHunter,
-  'mage': wowClassMage,
-  'monk': wowClassMonk,
-  'paladin': wowClassPaladin,
-  'priest': wowClassPriest,
-  'rogue': wowClassRogue,
-  'shaman': wowClassShaman,
-  'warlock': wowClassWarlock,
-  'warrior': wowClassWarrior
-}
+import Link from 'gatsby-link'
+import { Trans } from '@lingui/react'
+import Grid from '@material-ui/core/Grid'
+
+import { wowIcon } from '../utils/wow'
+
+import logo from '../assets/images/logo.svg'
 
 const styles = (theme) => ({
   introduction: {
@@ -93,7 +68,7 @@ const LangIndexPage = ({classes, data, i18nPlugin}) => {
           siteMetadata.wowClasses.map((wowClass, index) => {
             return (
               <Grid item key={index} component={Link} to={tLink(`/${wowClass}/`)} xs={12} sm={6} md={4} lg={3}>
-                <img src={wowClassesToIcon[wowClass]} alt={startCase(wowClass)}/>
+                <img src={wowIcon(wowClass)} alt={startCase(wowClass)}/>
               </Grid>
             )
           })

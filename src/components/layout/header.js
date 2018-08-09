@@ -1,10 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Link from 'gatsby-link'
 import { withStyles } from '@material-ui/core/styles'
+
+import Link from 'gatsby-link'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+
 import { langs } from '../../../plugins/gatsby-plugin-herodamage-i18n/index'
+
 import logo from '../../assets/images/logo.svg'
 
 const styles = (theme) => ({
@@ -53,19 +56,18 @@ const Header = ({classes, i18nPlugin, siteMetadata}) => (
         <Link to={i18nPlugin.tLink('/')}>
           <img src={logo} alt={`${siteMetadata.title} Logo`}/>
           <span className={'site-name'}>
-            {siteMetadata.title.split(' ').map((titlePart, index) => (<span key={index}>{index > 0 && ' '}{titlePart}</span>))}
+            {siteMetadata.title.split(' ').map((titlePart, index) => (
+              <span key={index}>{index > 0 && ' '}{titlePart}</span>
+            ))}
           </span>
         </Link>
       </h2>
       <Typography>
-        {
-          langs.map((lang, index) => (
-            <LangSelector key={index} classes={classes} i18nPlugin={i18nPlugin} lang={lang}
-              selected={i18nPlugin.lang === lang}/>
-          ))
-        }
+        {langs.map((lang, index) => (
+          <LangSelector key={index} classes={classes} i18nPlugin={i18nPlugin} lang={lang}
+            selected={i18nPlugin.lang === lang}/>
+        ))}
       </Typography>
-
     </Paper>
   </header>
 )
