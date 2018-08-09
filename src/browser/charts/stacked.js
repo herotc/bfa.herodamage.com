@@ -114,8 +114,8 @@ export async function stackedChart (type, reportPath, chartTitle, templateDPS) {
 
   const drawChart = async () => {
     const response = await window.fetch(reportPath)
-    const json = await response.json()
-    const rawData = new google.visualization.arrayToDataTable(json.results)
+    const {results} = await response.json()
+    const rawData = new google.visualization.arrayToDataTable(results)
 
     // Process data
     let data
@@ -141,6 +141,9 @@ export async function stackedChart (type, reportPath, chartTitle, templateDPS) {
     const options = {
       title: chartTitle,
       backgroundColor: bgColor,
+      height: 150 + results.length * 25,
+      width: chartWidth,
+      isStacked: true,
       chartArea: {
         top: 50,
         bottom: 100,
@@ -183,9 +186,7 @@ export async function stackedChart (type, reportPath, chartTitle, templateDPS) {
       },
       tooltip: {
         isHtml: true
-      },
-      isStacked: true,
-      width: chartWidth
+      }
     }
 
     // Instantiate and draw our chart, passing in some options.
