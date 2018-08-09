@@ -13,7 +13,7 @@ class AzeriteStacksSimulationTemplate extends React.Component {
     const {data, pathContext} = this.props
     const {reportsPath} = data.site.siteMetadata
     const {name, templateDPS} = pathContext
-    azeriteLevelsInit(`${reportsPath}${name}`, 'Azerite Powers % DPS Gain per Stacks', templateDPS)
+    azeriteLevelsInit(`${reportsPath}${name}.json`, 'Azerite Powers % DPS Gain per Stacks', templateDPS)
       .catch((err) => { console.error(err) })
   }
 

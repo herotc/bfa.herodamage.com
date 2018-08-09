@@ -14,7 +14,7 @@ class TrinketsSimulationTemplate extends React.Component {
     const {reportsPath} = data.site.siteMetadata
     const {name, templateDPS} = pathContext
     try {
-      trinketsInit(`${reportsPath}${name}`, 'Trinkets % DPS Gain per Item Levels', templateDPS)
+      trinketsInit(`${reportsPath}${name}.json`, 'Trinkets % DPS Gain per Item Levels', templateDPS)
     } catch (err) {
       console.error(err)
     }
