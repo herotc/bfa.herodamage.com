@@ -14,7 +14,7 @@ class RacesSimulationTemplate extends React.Component {
     const {reportsPath} = data.site.siteMetadata
     const {name, templateDPS} = pathContext
     try {
-      racesInit(`${reportsPath}${name}`, 'Race % DPS Gain', templateDPS)
+      racesInit(`${reportsPath}${name}.json`, 'Race % DPS Gain', templateDPS)
     } catch (err) {
       console.error(err)
     }

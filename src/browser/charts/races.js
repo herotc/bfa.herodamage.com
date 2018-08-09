@@ -14,7 +14,7 @@ export async function racesInit (reportPath, chartTitle, templateDPS) {
   const google = window.google
 
   const drawChart = async () => {
-    const response = await window.fetch(`${reportPath}.json`)
+    const response = await window.fetch(reportPath)
     const json = await response.json()
     const data = new google.visualization.arrayToDataTable(json.results)
 
