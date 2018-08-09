@@ -11,22 +11,9 @@ if (process.env.NODE_ENV === `production`) {
 
 module.exports = class HTML extends React.Component {
   render () {
-    let analyticsScript, analyticsLoad, css, cookieconsentStyle, cookieconsentScript, cookieconsentLoad, adsenseScript, adsenseLoad, adsenseChecker
+    let css, cookieconsentStyle, cookieconsentScript, cookieconsentLoad, adsenseScript
     if (process.env.NODE_ENV === `production`) {
       // Can't use React.Fragment yet, Gatsby V2 / Babel 7 only
-      analyticsScript = (
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109496873-1"/>
-      )
-      analyticsLoad = (
-        <script dangerouslySetInnerHTML={{__html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-
-              gtag('config', 'UA-109496873-1');
-            `}}>
-        </script>
-      )
       css = (
         <style
           id="gatsby-inlined-css"
@@ -72,8 +59,6 @@ module.exports = class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          {analyticsScript}
-          {analyticsLoad}
           {this.props.headComponents}
           {css}
         </head>

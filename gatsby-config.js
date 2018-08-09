@@ -10,6 +10,15 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-next',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-109496873-1',
+        head: true,
+        anonymize: true,
+        respectDNT: true
+      }
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-herodamage-material-ui',
     'gatsby-plugin-styled-components',
