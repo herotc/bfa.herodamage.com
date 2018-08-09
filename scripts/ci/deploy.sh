@@ -41,8 +41,7 @@ fi
 # Convert the filenames into urls in a JSON array to purge CF cache later on
 cd ..
 echo "[CI] Convert the name of the changed files into urls in a JSON array"
-# TODO
-#node scripts/ci/jsondiff.js
+node scripts/ci/jsondiff.js
 cd public
 rm filenames.diff
 
@@ -55,13 +54,12 @@ git commit --quiet -m "Deployment ${GH_SHA}"
 git push --quiet ${GH_REPO} ${GH_TARGET_BRANCH}
 cd ..
 
-# TODO
-## Sleep before purging the CF cache, it takes roughly 15s to GitHub to actually push the new content
-#echo "[CI] Wait for 45s before clearing CF cache"
-#sleep 40s
-#echo "[CI] Clear CF cache for changed files by batch of ~450 urls each 5s"
-#for urls in urls_to_purge_*.json; do
-#    sleep 5s
-#    curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data @$urls
-#done
+# Sleep before purging the CF cache, it takes roughly 15s to GitHub to actually push the new content
+echo "[CI] Wait for 45s before clearing CF cache"
+sleep 40s
+echo "[CI] Clear CF cache for changed files by batch of ~475 urls each 5s"
+for urls in urls_to_purge_*.json; do
+    sleep 5s
+    curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data @$urls
+done
 
