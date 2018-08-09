@@ -29,7 +29,7 @@ const styles = (theme) => ({
       '& span': {
         float: 'right'
       }
-    },
+    }
   }
 })
 

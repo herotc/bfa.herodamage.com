@@ -1,10 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
-import Button from '@material-ui/core/Button'
+
 import CircularProgress from '@material-ui/core/CircularProgress'
+
 import { stackedChart } from '../../../browser/charts/stacked'
+
+import RelatedSimulations from './related'
 import GoogleAd from '../../../components/google-ad'
 
 class StackedChartLayout extends React.Component {
@@ -31,7 +33,7 @@ class StackedChartLayout extends React.Component {
     const {children, data, i18nPlugin, location, pathContext} = this.props
     const {filePath} = this.state
     const {t} = i18nPlugin
-    const {name, fightStyle} = pathContext
+    const {name, fightStyle, simulationType, tier, variation} = pathContext
     return (
       <div>
         <Helmet>
@@ -39,20 +41,8 @@ class StackedChartLayout extends React.Component {
         </Helmet>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         {children}
-        <div style={{textAlign: 'center'}}>
-          {
-            data.allSitePage.edges.map((edge, index) => {
-              const {node} = edge
-              const {fightStyle: nodeFightStyle} = node.context
-              return (
-                <Button key={index} variant="contained" color="primary" disabled={fightStyle === nodeFightStyle}
-                  component={Link} to={node.path} style={{margin: 8}}>
-                  {t(nodeFightStyle)}
-                </Button>
-              )
-            })
-          }
-        </div>
+        <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType}
+          t={t} tier={tier} variation={variation}/>
         <GoogleAd location={location} type="inarticle"/>
         <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>

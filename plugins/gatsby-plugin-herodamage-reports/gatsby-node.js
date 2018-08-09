@@ -70,10 +70,10 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   createNodeField({node, name: 'order', value: order})
   // template: 'Trinkets'
   createNodeField({node, name: 'template', value: template})
-  // fightStyle: '1t'
-  createNodeField({node, name: 'fightStyle', value: fightStyle})
   // tier: 't21'
   createNodeField({node, name: 'tier', value: tier})
+  // fightStyle: '1t'
+  createNodeField({node, name: 'fightStyle', value: fightStyle})
   // spec: 'frost'
   createNodeField({node, name: 'spec', value: spec})
   // variation: 'cold-heart-runic-attenuation' (optional, if it doesn't exist then it's an empty string '')
@@ -128,8 +128,8 @@ module.exports.createPages = async function ({graphql, boundActionCreators}) {
               simulationType
               order
               template
-              fightStyle
               tier
+              fightStyle
               spec
               variation
               targetError
