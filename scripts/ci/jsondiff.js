@@ -7,7 +7,7 @@ const baseUrl = config.siteMetadata.url
 const jsonFiles = []
 let urls = []
 
-const diff = readline.createInterface(fs.createReadStream('deploy/filenames.diff'))
+const diff = readline.createInterface(fs.createReadStream('public/filenames.diff'))
 
 diff.on('line', function (relativeUrl) {
   // Split by chunk of ~475 urls since CF limits it to 500 per request
