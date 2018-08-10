@@ -21,9 +21,9 @@ const Metas = ({buildTime, gitRevision, targetError, version}) => {
 }
 
 Metas.propTypes = {
-  buildTime: PropTypes.string.isRequired,
+  buildTime: PropTypes.number.isRequired,
   gitRevision: PropTypes.string.isRequired,
-  targetError: PropTypes.string.isRequired,
+  targetError: PropTypes.number.isRequired,
   version: PropTypes.string.isRequired
 }
 
