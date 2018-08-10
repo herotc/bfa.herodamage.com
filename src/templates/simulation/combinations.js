@@ -11,8 +11,11 @@ import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
 
-import RelatedSimulations from './common/related'
+import { wowAzeriteLabel } from '../../utils/wow'
+
 import GoogleAd from '../../components/google-ad'
+import RelatedSimulations from './common/related'
+import Metas from './common/metas'
 
 const RANK_INDEX = 0
 const TALENTS_INDEX = 1
@@ -105,9 +108,16 @@ class CombinationsSimulationTemplate extends React.Component {
     const response = await window.fetch(this.state.filepath)
     const {results} = await response.json()
 
-    // Add the % Diff column
     const maxDPS = results[0][DPS_INDEX]
     for (let row of results) {
+      // WowHead links
+      const specials = row[SPECIAL_INDEX].split(', ')
+      let specialsLink = []
+      for (let special of specials) {
+        specialsLink.push(special !== 'None' ? wowAzeriteLabel(special, true) : 'None')
+      }
+      row[SPECIAL_INDEX] = specialsLink.join('|')
+      // Add the % Diff
       row.push((100 * row[DPS_INDEX] / maxDPS - 100).toFixed(2))
     }
 
@@ -138,7 +148,7 @@ class CombinationsSimulationTemplate extends React.Component {
     const {data, i18nPlugin, location, pathContext} = this.props
     const {results, order, orderBy, page, rowsPerPage} = this.state
     const {t} = i18nPlugin
-    const {name, fightStyle, simulationType, spec, targetError, tier, variation} = pathContext
+    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, tier, variation, version} = pathContext
     return (
       <div>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
@@ -152,37 +162,34 @@ class CombinationsSimulationTemplate extends React.Component {
         <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
           t={t} tier={tier} variation={variation}/>
         <GoogleAd location={location} type="inarticle"/>
-        {
-          !results &&
-          <CircularProgress id="results-loader" color="secondary"/>
-        }
-        {
-          results &&
-          <div>
-            <Table>
-              <EnhancedTableHead order={order} orderBy={orderBy} onRequestSort={this.handleRequestSort}/>
-              <TableBody>
-                {results
-                  .sort(getSorting(order, orderBy))
-                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                  .map((row) => (
-                    <TableRow key={row[RANK_INDEX]}>
-                      <TableCell component="th" scope="row" numeric>{row[RANK_INDEX]}</TableCell>
-                      <TableCell>{row[TALENTS_INDEX]}</TableCell>
-                      <TableCell>{row[SPECIAL_INDEX]}</TableCell>
-                      <TableCell numeric>{row[DPS_INDEX]}</TableCell>
-                      <TableCell numeric>{row[DPSDIFF_INDEX]}</TableCell>
-                    </TableRow>
-                  ))
-                }
-              </TableBody>
+        <Metas buildTime={buildTime} gitRevision={gitRevision} targetError={targetError} version={version}/>
+        {!results &&
+        <CircularProgress id="results-loader" color="secondary"/>}
+        {results &&
+        <div>
+          <Table>
+            <EnhancedTableHead order={order} orderBy={orderBy} onRequestSort={this.handleRequestSort}/>
+            <TableBody>
+              {results
+                .sort(getSorting(order, orderBy))
+                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                .map((row) => (
+                  <TableRow key={row[RANK_INDEX]}>
+                    <TableCell component="th" scope="row" numeric>{row[RANK_INDEX]}</TableCell>
+                    <TableCell>{row[TALENTS_INDEX]}</TableCell>
+                    <TableCell dangerouslySetInnerHTML={{__html: row[SPECIAL_INDEX]}}/>
+                    <TableCell numeric>{row[DPS_INDEX]}</TableCell>
+                    <TableCell numeric>{row[DPSDIFF_INDEX]}</TableCell>
+                  </TableRow>
+                ))
+              }
+            </TableBody>
 
-            </Table>
-            <TablePagination component="div" count={results.length} rowsPerPage={rowsPerPage} page={page}
-              backIconButtonProps={{'aria-label': 'Previous Page'}} nextIconButtonProps={{'aria-label': 'Next Page'}}
-              onChangePage={this.handleChangePage} onChangeRowsPerPage={this.handleChangeRowsPerPage}/>
-          </div>
-        }
+          </Table>
+          <TablePagination component="div" count={results.length} rowsPerPage={rowsPerPage} page={page}
+            backIconButtonProps={{'aria-label': 'Previous Page'}} nextIconButtonProps={{'aria-label': 'Next Page'}}
+            onChangePage={this.handleChangePage} onChangeRowsPerPage={this.handleChangeRowsPerPage}/>
+        </div>}
       </div>
     )
   }
