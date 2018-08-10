@@ -53,7 +53,7 @@ function processRacesData (data, templateDPS) {
  * @param templateDPS
  * @returns {*}
  */
-function processData (simulationType, data, templateDPS) {
+function processData (simulationType, data, templateDPS, lang) {
   // Sorting
   const sortCol = data.addColumn('number')
   for (let row = 0; row < data.getNumberOfRows(); row++) {
@@ -100,14 +100,14 @@ function processData (simulationType, data, templateDPS) {
     case 'azeritestacks':
       for (let row = 0; row < data.getNumberOfRows(); row++) {
         const wowLabel = data.getValue(row, 0)
-        labels.push(wowAzeriteLabel(wowLabel))
+        labels.push(wowAzeriteLabel(wowLabel, lang))
         data.setValue(row, 0, '')
       }
       break
     case 'trinkets':
       for (let row = 0; row < data.getNumberOfRows(); row++) {
         const wowLabel = data.getValue(row, 0)
-        labels.push(wowTrinketLabel(wowLabel))
+        labels.push(wowTrinketLabel(wowLabel, lang))
         data.setValue(row, 0, '')
       }
       break
@@ -127,9 +127,10 @@ function processData (simulationType, data, templateDPS) {
  * @param reportPath
  * @param chartTitle
  * @param templateDPS
+ * @param lang
  * @returns {Promise<void>}
  */
-export async function stackedChart (simulationType, reportPath, chartTitle, templateDPS) {
+export async function stackedChart (simulationType, reportPath, chartTitle, templateDPS, lang) {
   if (!window.google) {
     await new Promise((resolve, reject) => {
       load('https://www.gstatic.com/charts/loader.js', (err) => {
@@ -155,7 +156,7 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
       case 'azeritelevels':
       case 'azeritestacks':
       case 'trinkets':
-        data = processData(simulationType, rawData, templateDPS)
+        data = processData(simulationType, rawData, templateDPS, lang)
     }
 
     // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)

@@ -1,6 +1,7 @@
 const defaultLang = 'en'
 module.exports.defaultLang = defaultLang
 
+// const langs = ['de', 'en', 'es', 'fr', 'it', 'ko', 'pt', 'ru', 'zh']
 const langs = ['en', 'fr']
 module.exports.langs = langs
 

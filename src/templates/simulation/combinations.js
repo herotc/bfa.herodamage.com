@@ -105,6 +105,8 @@ class CombinationsSimulationTemplate extends React.Component {
   }
 
   async getResults () {
+    const {i18nPlugin: {lang}} = this.props
+
     const response = await window.fetch(this.state.filepath)
     const {results} = await response.json()
 
@@ -114,7 +116,7 @@ class CombinationsSimulationTemplate extends React.Component {
       const specials = row[SPECIAL_INDEX].split(', ')
       let specialsLink = []
       for (let special of specials) {
-        specialsLink.push(special !== 'None' ? wowAzeriteLabel(special, true) : 'None')
+        specialsLink.push(special !== 'None' ? wowAzeriteLabel(special, lang) : 'None')
       }
       row[SPECIAL_INDEX] = specialsLink.join('|')
       // Add the % Diff
