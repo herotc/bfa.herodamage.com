@@ -116,6 +116,11 @@ function processData (simulationType, data, templateDPS) {
   for (let label of labels) {
     interactiveLabels.innerHTML += label
   }
+  // WowHead data refresh if it's already loaded
+  const $WowheadPower = window.$WowheadPower
+  if ($WowheadPower && $WowheadPower.refreshLinks) {
+    $WowheadPower.refreshLinks()
+  }
 
   return data
 }
@@ -168,14 +173,14 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
     const options = {
       title: chartTitle,
       backgroundColor: bgColor,
-      height: 150 + results.length * 27,
+      height: 130 + results.length * 25.5,
       width: chartWidth,
       isStacked: simulationType !== 'races',
       chartArea: {
         top: 50,
         bottom: 100,
         right: 100,
-        left: 200
+        left: 250
       },
       fontName: '"Roboto", "Helvetica", "Arial", sans-serif',
       titleTextStyle: {

@@ -62,11 +62,11 @@ const styles = (theme) => ({
       float: 'left',
       marginTop: 54,
       position: 'relative',
-      width: 190,
+      width: 240,
       zIndex: 1,
       '& > a': {
-        height: 17,
-        marginBottom: 10.5
+        height: 16,
+        marginBottom: 9.6
       }
     },
     '& .azerite-tier2': {
