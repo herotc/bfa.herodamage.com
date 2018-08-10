@@ -1,6 +1,6 @@
 import load from 'little-loader'
 
-import { wowAzeriteLabel } from '../../utils/wow'
+import { wowAzeriteLabel, wowTrinketLabel } from '../../utils/wow'
 import { formatNumber, excludeEmptyRows, removeLoading, initOverlay } from './common'
 
 /**
@@ -103,10 +103,18 @@ function processData (simulationType, data, templateDPS) {
         labels.push(wowAzeriteLabel(wowLabel))
         data.setValue(row, 0, '')
       }
-      const interactiveLabels = document.getElementById('google-chart-labels')
-      for (let label of labels) {
-        interactiveLabels.innerHTML += label
+      break
+    case 'trinkets':
+      for (let row = 0; row < data.getNumberOfRows(); row++) {
+        const wowLabel = data.getValue(row, 0)
+        labels.push(wowTrinketLabel(wowLabel))
+        data.setValue(row, 0, '')
       }
+      break
+  }
+  const interactiveLabels = document.getElementById('google-chart-labels')
+  for (let label of labels) {
+    interactiveLabels.innerHTML += label
   }
 
   return data
