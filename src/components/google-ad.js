@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { unmountComponentAtNode } from 'react-dom'
 
 const checkBlockers = () => {
   setTimeout(() => {
@@ -37,10 +36,13 @@ const initAd = () => {
 
 const VerticalContainer = styled.div`
   margin: auto;
-  max-height: 90px;
-  max-width: 728px;
   padding: 0 16px;
   text-align: center;
+
+  @media screen and (min-width: ${({theme}) => theme.breakpoints.values.sm}px) {
+    max-height: 90px;
+    max-width: 760px;
+  }
 `
 
 const SideContainer = styled.div`
