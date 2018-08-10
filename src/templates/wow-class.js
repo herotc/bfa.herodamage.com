@@ -20,8 +20,6 @@ import Typography from '@material-ui/core/Typography'
 
 import {getSpecVariation} from '../utils/wow'
 
-import GoogleAd from '../components/google-ad'
-
 const styles = (theme) => ({
   type: {
     flexDirection: 'column'
@@ -95,24 +93,7 @@ const WowClassTemplate = (props) => {
         in their respective pages. They are updated on a daily basis.</Trans></p>
       <Grid container spacing={16}>
         {
-          simulationTypes.slice(0, 2).map((group, index) => {
-            const {simulationType} = group.edges[0].node.context
-            return (
-              <Grid item key={index} xs={12} lg={6}>
-                <h2 style={{textAlign: 'center'}}>{capitalize(t(simulationType))}</h2>
-                <Grid container spacing={8} alignItems={'flex-start'} justify={'center'}>
-                  <TiersList {...props}
-                    groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
-                </Grid>
-              </Grid>
-            )
-          })
-        }
-      </Grid>
-      <GoogleAd location={location} type="inarticle"/>
-      <Grid container spacing={16}>
-        {
-          simulationTypes.slice(2).map((group, index) => {
+          simulationTypes.map((group, index) => {
             const {simulationType} = group.edges[0].node.context
             return (
               <Grid item key={index} xs={12} lg={6}>

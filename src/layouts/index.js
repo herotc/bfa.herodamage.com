@@ -88,18 +88,11 @@ const styles = (theme) => ({
       padding: 8,
       whiteSpace: 'nowrap'
     },
-    '& #a-top-d, & #a-bot-d': {
-      textAlign: 'center'
-    },
     '& p.blockers-text': {
       border: '1px solid #424242',
       borderRadius: 8,
       margin: 0,
       padding: 16,
-      textAlign: 'center'
-    },
-    '& #a-inarticle-d, & #a-matchedcontent-d': {
-      margin: '16px auto',
       textAlign: 'center'
     }
   }
@@ -115,6 +108,7 @@ const Layout = ({classes, ...props}) => {
       <WowClassSelector i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
       <GoogleAd location={location} type="top"/>
       <Main {...props}/>
+      <GoogleAd location={location} type="side"/>
       <GoogleAd location={location} type="bot"/>
       <Footer siteMetadata={siteMetadata}/>
     </Typography>
