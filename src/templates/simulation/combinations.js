@@ -177,7 +177,7 @@ class CombinationsSimulationTemplate extends React.Component {
                 .sort(getSorting(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row) => (
-                  <TableRow key={row[RANK_INDEX]}>
+                  <TableRow key={row[RANK_INDEX]} hover>
                     <TableCell component="th" scope="row" numeric>{row[RANK_INDEX]}</TableCell>
                     <TableCell>{row[TALENTS_INDEX]}</TableCell>
                     <TableCell dangerouslySetInnerHTML={{__html: row[SPECIAL_INDEX]}}/>
