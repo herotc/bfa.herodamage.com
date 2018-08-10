@@ -1,4 +1,6 @@
 import load from 'little-loader'
+
+import { wowAzeriteLabel } from '../../utils/wow'
 import { formatNumber, excludeEmptyRows, removeLoading, initOverlay } from './common'
 
 /**
@@ -89,6 +91,22 @@ function processData (simulationType, data, templateDPS) {
       prevVal = curVal > prevVal ? curVal : prevVal
       prevAbsVal = curAbsVal > prevAbsVal ? curAbsVal : prevAbsVal
     }
+  }
+
+  // Remove labels from data to add interactive ones in HTML
+  const labels = []
+  switch (simulationType) {
+    case 'azeritelevels':
+    case 'azeritestacks':
+      for (let row = 0; row < data.getNumberOfRows(); row++) {
+        const wowLabel = data.getValue(row, 0)
+        labels.push(wowAzeriteLabel(wowLabel))
+        data.setValue(row, 0, '')
+      }
+      const interactiveLabels = document.getElementById('google-chart-labels')
+      for (let label of labels) {
+        interactiveLabels.innerHTML += label
+      }
   }
 
   return data

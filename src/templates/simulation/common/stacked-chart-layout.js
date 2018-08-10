@@ -46,6 +46,7 @@ class StackedChartLayout extends React.Component {
         <GoogleAd location={location} type="inarticle"/>
         <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>
+        <div id="google-chart-labels"/>
         <div id="google-chart"/>
       </div>
     )

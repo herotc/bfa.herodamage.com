@@ -55,6 +55,26 @@ const styles = (theme) => ({
       marginRight: 'auto',
       marginLeft: 'auto'
     },
+    '& #google-chart-labels': {
+      alignItems: 'flex-end',
+      display: 'flex',
+      flexDirection: 'column',
+      float: 'left',
+      marginTop: 54,
+      position: 'relative',
+      width: 190,
+      zIndex: 1,
+      '& > a': {
+        height: 17,
+        marginBottom: 10.5
+      }
+    },
+    '& .azerite-tier2': {
+      color: '#9ccc65'
+    },
+    '& .azerite-tier3': {
+      color: '#29b6f6'
+    },
     '& #chart-overlay': {
       width: '2px',
       position: 'absolute',
