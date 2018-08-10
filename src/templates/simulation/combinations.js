@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Helmet from 'react-helmet'
 import { Trans } from '@lingui/react'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Table from '@material-ui/core/Table'
@@ -144,12 +145,15 @@ class CombinationsSimulationTemplate extends React.Component {
   }
 
   render () {
-    const {data, i18nPlugin, location, pathContext} = this.props
-    const {results, order, orderBy, page, rowsPerPage} = this.state
+    const {data, i18nPlugin, pathContext} = this.props
+    const {filePath, order, orderBy, page, results, rowsPerPage} = this.state
     const {t} = i18nPlugin
     const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pathContext
     return (
       <div>
+        <Helmet>
+          <link rel="prefetch" href={filePath}/>
+        </Helmet>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         <p><Trans><b>Information:</b><br/>These simulations are all based on the default profiles from
           SimulationCraft.<br/>The target error was {targetError}% which means you can consider everything within that
@@ -185,7 +189,8 @@ class CombinationsSimulationTemplate extends React.Component {
             </TableBody>
 
           </Table>
-          <TablePagination component="div" count={results.length} rowsPerPage={rowsPerPage} page={page}
+          <TablePagination component="div" count={results.length}
+            rowsPerPage={rowsPerPage} page={page} rowsPerPageOptions={[5, 10, 15, 20, 25, 50, 100, 1000]}
             backIconButtonProps={{'aria-label': 'Previous Page'}} nextIconButtonProps={{'aria-label': 'Next Page'}}
             onChangePage={this.handleChangePage} onChangeRowsPerPage={this.handleChangeRowsPerPage}/>
         </div>}
@@ -197,7 +202,6 @@ class CombinationsSimulationTemplate extends React.Component {
 CombinationsSimulationTemplate.propTypes = {
   data: PropTypes.object.isRequired,
   i18nPlugin: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
   pathContext: PropTypes.object.isRequired
 }
 
