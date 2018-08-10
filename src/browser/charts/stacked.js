@@ -1,7 +1,7 @@
 import load from 'little-loader'
 
-import { wowAzeriteLabel, wowTrinketLabel } from '../../utils/wow'
-import { formatNumber, excludeEmptyRows, removeLoading, initOverlay } from './common'
+import { refreshWowheadLinks, wowAzeriteLabel, wowTrinketLabel } from '../../utils/wow'
+import { excludeEmptyRows, initOverlay, formatNumber, removeLoading } from './common'
 
 /**
  *
@@ -116,11 +116,7 @@ function processData (simulationType, data, templateDPS) {
   for (let label of labels) {
     interactiveLabels.innerHTML += label
   }
-  // WowHead data refresh if it's already loaded
-  const $WowheadPower = window.$WowheadPower
-  if ($WowheadPower && $WowheadPower.refreshLinks) {
-    $WowheadPower.refreshLinks()
-  }
+  refreshWowheadLinks()
 
   return data
 }
