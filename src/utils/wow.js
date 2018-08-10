@@ -22,7 +22,7 @@ import wowClassWarrior from '../assets/images/wow/classpicker/warrior.svg'
  * @returns {string}
  */
 const AzeritePowers = Object.assign({}, ...AzeritePowerArray.map((item) => ({[item['spellName']]: item})))
-const truncateOptions = {length: 25}
+const truncateOptions = {length: 30}
 
 export function wowAzeriteLabel (rawSpellName) {
   const spellName = rawSpellName.split(' / ') // Some labels are concatened, like the Alliance / Horde one, we always take the first one
