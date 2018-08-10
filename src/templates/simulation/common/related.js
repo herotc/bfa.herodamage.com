@@ -1,15 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 
 import Link from 'gatsby-link'
 import Button from '@material-ui/core/Button'
+import Divider from '@material-ui/core/Divider'
 
-import {getSpecVariation} from '../../../utils/wow'
+import { getSpecVariation } from '../../../utils/wow'
+
+const RelatedContainer = styled.div`
+  border: 1px solid ${({theme}) => theme.palette.divider};
+  display: table;
+  margin: auto;
+  text-align: center;
+`
 
 const RelatedSimulationTypes = ({data: {relatedSimulationTypes}, simulationType, t}) => {
   if (relatedSimulationTypes && relatedSimulationTypes.edges.length > 1) {
     return (
-      <div style={{textAlign: 'center'}}>
+      <div>
         {relatedSimulationTypes.edges.map((edge, index) => {
           const {node: {context, path}} = edge
           const {simulationType: nodeSimulationType} = context
@@ -36,7 +45,8 @@ RelatedSimulationTypes.propTypes = {
 const RelatedTiers = ({data: {relatedTiers}, t, tier}) => {
   if (relatedTiers && relatedTiers.edges.length > 1) {
     return (
-      <div style={{textAlign: 'center'}}>
+      <div>
+        <Divider/>
         {relatedTiers.edges.map((edge, index) => {
           const {node: {context, path}} = edge
           const {tier: nodeTier} = context
@@ -63,12 +73,14 @@ RelatedTiers.propTypes = {
 const RelatedSpecs = ({data: {relatedSpecs}, spec, variation, t}) => {
   if (relatedSpecs && relatedSpecs.edges.length > 1) {
     return (
-      <div style={{textAlign: 'center'}}>
+      <div>
+        <Divider/>
         {relatedSpecs.edges.map((edge, index) => {
           const {node: {context, path}} = edge
           const {spec: nodeSpec, variation: nodeVariation} = context
           return (
-            <Button key={index} variant="contained" color="primary" disabled={spec === nodeSpec && variation === nodeVariation}
+            <Button key={index} variant="contained" color="primary"
+              disabled={spec === nodeSpec && variation === nodeVariation}
               component={Link} to={path} style={{margin: '4px 8px'}}>
               {getSpecVariation(t, nodeSpec, nodeVariation, false)}
             </Button>
@@ -91,7 +103,8 @@ RelatedSpecs.propTypes = {
 const RelatedFightStyles = ({data: {relatedFightStyles}, fightStyle, t}) => {
   if (relatedFightStyles && relatedFightStyles.edges.length > 1) {
     return (
-      <div style={{textAlign: 'center'}}>
+      <div>
+        <Divider/>
         {relatedFightStyles.edges.map((edge, index) => {
           const {node: {context, path}} = edge
           const {fightStyle: nodeFightStyle} = context
@@ -116,12 +129,12 @@ RelatedFightStyles.propTypes = {
 }
 
 const RelatedSimulations = ({data, fightStyle, variation, simulationType, spec, t, tier}) => (
-  <div>
+  <RelatedContainer>
     <RelatedSimulationTypes data={data} simulationType={simulationType} t={t}/>
     <RelatedTiers data={data} tier={tier} t={t}/>
     <RelatedSpecs data={data} spec={spec} variation={variation} t={t}/>
     <RelatedFightStyles data={data} fightStyle={fightStyle} t={t}/>
-  </div>
+  </RelatedContainer>
 )
 
 RelatedSimulations.propTypes = {
