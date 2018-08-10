@@ -3,12 +3,11 @@ import { formatNumber, excludeEmptyRows, removeLoading, initOverlay } from './co
 
 /**
  *
- * @param simulationType
  * @param data
  * @param templateDPS
  * @returns {*}
  */
-function processRacesData (simulationType, data, templateDPS) {
+function processRacesData (data, templateDPS) {
   // Sort
   data.sort({column: 1, desc: true})
 
@@ -113,6 +112,7 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
     })
   }
   const google = window.google
+  const googleChartElement = document.getElementById('google-chart')
 
   const drawChart = async () => {
     const response = await window.fetch(reportPath)
@@ -123,7 +123,7 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
     let data
     switch (simulationType) {
       case 'races':
-        data = processRacesData(simulationType, rawData, templateDPS)
+        data = processRacesData(rawData, templateDPS)
         break
       case 'azeritelevels':
       case 'azeritestacks':
@@ -132,36 +132,48 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
     }
 
     // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
-    const googleChartElement = document.getElementById('google-chart')
     const content = googleChartElement.parentElement
     const contentWidth = content.innerWidth - window.getComputedStyle(content, null).getPropertyValue('padding-left') * 2
 
     // Set chart options
     const chartWidth = document.documentElement.clientWidth >= 768 ? contentWidth : 700
     const bgColor = '#303030'
-    const textColor = '#ffffff'
+    const textColor = 'white'
     const options = {
       title: chartTitle,
       backgroundColor: bgColor,
-      height: 150 + results.length * 25,
+      height: 150 + results.length * 27,
       width: chartWidth,
-      isStacked: true,
+      isStacked: simulationType !== 'races',
       chartArea: {
         top: 50,
         bottom: 100,
-        right: 150,
+        right: 100,
         left: 200
+      },
+      fontName: '"Roboto", "Helvetica", "Arial", sans-serif',
+      titleTextStyle: {
+        fontSize: 18,
+        color: textColor
+      },
+      vAxis: {
+        textStyle: {
+          fontSize: 14,
+          color: textColor
+        }
       },
       hAxis: {
         gridlines: {
-          count: 20
+          count: 10
         },
         format: '#.#\'%\'',
         textStyle: {
+          fontSize: 14,
           color: textColor
         },
         title: '% DPS Gain',
         titleTextStyle: {
+          fontSize: 18,
           color: textColor
         },
         viewWindowMode: 'maximized',
@@ -169,23 +181,12 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
           min: 0
         }
       },
-      vAxis: {
-        textStyle: {
-          fontSize: 12,
-          color: textColor
-        },
-        titleTextStyle: {
-          color: textColor
-        }
-      },
       legend: {
         position: simulationType === 'races' ? 'none' : 'right',
         textStyle: {
+          fontSize: 14,
           color: textColor
         }
-      },
-      titleTextStyle: {
-        color: textColor
       },
       tooltip: {
         isHtml: true

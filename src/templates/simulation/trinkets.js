@@ -5,7 +5,7 @@ import { Trans } from '@lingui/react'
 import StackedChartLayout from './common/stacked-chart-layout'
 
 const TrinketsSimulationTemplate = (props) => (
-  <StackedChartLayout {...props} chartTitle="Race % DPS Gain">
+  <StackedChartLayout {...props} chartTitle="Trinkets % DPS Gain per Item Levels">
     <div>
       <p><Trans>Here, you can compare expected DPS increase from trinkets.</Trans></p>
       <p><Trans>In order to compare trinkets with this chart, look for the end of the bars corresponding to the item
