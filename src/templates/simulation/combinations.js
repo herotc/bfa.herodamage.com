@@ -12,7 +12,7 @@ import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
 
-import { wowAzeriteLabel } from '../../utils/wow'
+import { refreshWowheadLinks, wowAzeriteLabel } from '../../utils/wow'
 
 import RelatedSimulations from './common/related'
 import Metas from './common/metas'
@@ -142,6 +142,10 @@ class CombinationsSimulationTemplate extends React.Component {
 
   componentDidMount () {
     this.getResults().catch((err) => { console.error(err) })
+  }
+
+  componentDidUpdate (prevProps, prevState, snapshot) {
+    refreshWowheadLinks()
   }
 
   render () {

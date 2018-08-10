@@ -47,6 +47,16 @@ export function wowTrinketLabel (rawItemName) {
 }
 
 /**
+ * Does refresh any Wowhead links in the DOM
+ */
+export function refreshWowheadLinks () {
+  const $WowheadPower = window.$WowheadPower
+  if ($WowheadPower && $WowheadPower.refreshLinks) {
+    $WowheadPower.refreshLinks()
+  }
+}
+
+/**
  *
  * @param wowClass
  */
