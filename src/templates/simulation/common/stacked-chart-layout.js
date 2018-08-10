@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
 
+import Helmet from 'react-helmet'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import { stackedChart } from '../../../browser/charts/stacked'
@@ -30,7 +30,7 @@ class StackedChartLayout extends React.Component {
   }
 
   render () {
-    const {children, data, i18nPlugin, location, pathContext} = this.props
+    const {children, data, i18nPlugin, pathContext} = this.props
     const {filePath} = this.state
     const {t} = i18nPlugin
     const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pathContext
@@ -65,7 +65,6 @@ StackedChartLayout.propTypes = {
   children: PropTypes.element.isRequired,
   data: PropTypes.object.isRequired,
   i18nPlugin: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
   pathContext: PropTypes.object.isRequired
 }
 
