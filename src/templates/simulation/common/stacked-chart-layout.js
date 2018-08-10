@@ -6,8 +6,9 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 
 import { stackedChart } from '../../../browser/charts/stacked'
 
-import RelatedSimulations from './related'
 import GoogleAd from '../../../components/google-ad'
+import RelatedSimulations from './related'
+import Metas from './metas'
 
 class StackedChartLayout extends React.Component {
   constructor (props) {
@@ -33,7 +34,7 @@ class StackedChartLayout extends React.Component {
     const {children, data, i18nPlugin, location, pathContext} = this.props
     const {filePath} = this.state
     const {t} = i18nPlugin
-    const {name, fightStyle, simulationType, spec, tier, variation} = pathContext
+    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, tier, variation, version} = pathContext
     return (
       <div>
         <Helmet>
@@ -44,6 +45,13 @@ class StackedChartLayout extends React.Component {
         <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
           t={t} tier={tier} variation={variation}/>
         <GoogleAd location={location} type="inarticle"/>
+        <Metas buildTime={buildTime} gitRevision={gitRevision} targetError={targetError} version={version}/>
+        {simulationType.includes('azerite') &&
+        <p style={{textAlign: 'center'}}>
+          <span className={'azerite-tier2'}>Inner Ring</span>
+          &nbsp;|&nbsp;
+          <span className={'azerite-tier3'}>Outer Ring</span>
+        </p>}
         <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>
         <div id="google-chart-labels"/>
