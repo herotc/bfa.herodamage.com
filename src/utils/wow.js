@@ -1,6 +1,8 @@
 import startCase from 'lodash/startCase'
 import truncate from 'lodash/truncate'
 
+import { defaultLang } from '../../plugins/gatsby-plugin-herodamage-i18n'
+
 import AzeritePowerArray from '../assets/wow-data/AzeritePower.json'
 import TrinketArray from '../assets/wow-data/Trinket.json'
 import wowClassDeathKnight from '../assets/images/wow/classpicker/death_knight.svg'
@@ -18,16 +20,38 @@ import wowClassWarrior from '../assets/images/wow/classpicker/warrior.svg'
 
 /**
  *
+ * @param lang
+ * @returns {string}
+ */
+const wowheadDomains = {
+  de: 'de',
+  en: 'www',
+  es: 'es',
+  fr: 'fr',
+  it: 'it',
+  ko: 'ko',
+  pt: 'pt',
+  ru: 'ru',
+  zh: 'cn'
+}
+
+function getWowheadLink (lang) {
+  const wowheadDomain = wowheadDomains[lang] || 'www'
+  return `https://${wowheadDomain}.wowhead.com/`
+}
+
+/**
+ *
  * @param rawSpellName
  * @returns {string}
  */
 const AzeritePowers = Object.assign({}, ...AzeritePowerArray.map((item) => ({[item['spellName']]: item})))
 const truncateOptions = {length: 30}
 
-export function wowAzeriteLabel (rawSpellName) {
+export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
   const spellName = rawSpellName.split(' / ') // Some labels are concatened, like the Alliance / Horde one, we always take the first one
   const {spellId, tier} = AzeritePowers[spellName[0]]
-  return `<a href="http://www.wowhead.com/spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow">
+  return `<a href="${getWowheadLink(lang)}spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow">
     <span class="azerite-tier${tier}">${truncate(rawSpellName, truncateOptions)}</span>
   </a>`
 }
@@ -39,9 +63,9 @@ export function wowAzeriteLabel (rawSpellName) {
  */
 const Trinkets = Object.assign({}, ...TrinketArray.map((item) => ({[item['name']]: item})))
 
-export function wowTrinketLabel (rawItemName) {
+export function wowTrinketLabel (rawItemName, lang = defaultLang) {
   const {itemId} = Trinkets[rawItemName]
-  return `<a href="http://www.wowhead.com/item=${itemId}" target="_blank" rel="noopener noreferrer nofollow">
+  return `<a href="${getWowheadLink(lang)}item=${itemId}" target="_blank" rel="noopener noreferrer nofollow">
     <span>${truncate(rawItemName, truncateOptions)}</span>
   </a>`
 }

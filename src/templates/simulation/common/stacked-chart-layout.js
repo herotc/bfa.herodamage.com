@@ -22,10 +22,11 @@ class StackedChartLayout extends React.Component {
   }
 
   componentDidMount () {
-    const {chartTitle, pathContext} = this.props
+    const {chartTitle, i18nPlugin, pathContext} = this.props
     const {filePath} = this.state
+    const {lang} = i18nPlugin
     const {simulationType, templateDPS} = pathContext
-    stackedChart(simulationType, filePath, chartTitle, templateDPS)
+    stackedChart(simulationType, filePath, chartTitle, templateDPS, lang)
       .catch((err) => { console.error(err) })
   }
 
