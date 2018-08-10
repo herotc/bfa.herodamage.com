@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import { Trans, DateFormat } from '@lingui/react'
 
-const Metas = ({buildTime, gitRevision, targetError, version}) => {
+const Metas = ({buildTime, gitRevision, targetError, templateDPS, version}) => {
   const buildDate = new Date(buildTime * 1000)
   return (
     <div style={{display: 'flex', justifyContent: 'center'}}>
@@ -14,7 +14,7 @@ const Metas = ({buildTime, gitRevision, targetError, version}) => {
         <Trans><b>WoW-Build:</b></Trans> {version}
         <a href={`https://github.com/simulationcraft/simc/commit/${gitRevision}`} title="Corresponding SimC commit"
           target="_blank" rel="noopener noreferrer nofollow">#{gitRevision}</a><br/>
-        <Trans><b>Target Error:</b></Trans> {targetError}%
+        <Trans><b>Target Error:</b></Trans> {targetError}% (~{Math.round(templateDPS * targetError / 100)} DPS)
       </p>
     </div>
   )
@@ -24,6 +24,7 @@ Metas.propTypes = {
   buildTime: PropTypes.number.isRequired,
   gitRevision: PropTypes.string.isRequired,
   targetError: PropTypes.number.isRequired,
+  templateDPS: PropTypes.number.isRequired,
   version: PropTypes.string.isRequired
 }
 

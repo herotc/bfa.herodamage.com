@@ -33,7 +33,7 @@ class StackedChartLayout extends React.Component {
     const {children, data, i18nPlugin, location, pathContext} = this.props
     const {filePath} = this.state
     const {t} = i18nPlugin
-    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, tier, variation, version} = pathContext
+    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pathContext
     return (
       <div>
         <Helmet>
@@ -43,7 +43,8 @@ class StackedChartLayout extends React.Component {
         {children}
         <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
           t={t} tier={tier} variation={variation}/>
-        <Metas buildTime={buildTime} gitRevision={gitRevision} targetError={targetError} version={version}/>
+        <Metas buildTime={buildTime} gitRevision={gitRevision}
+          targetError={targetError} templateDPS={templateDPS} version={version}/>
         {simulationType.includes('azerite') &&
         <p style={{textAlign: 'center'}}>
           <span className={'azerite-tier2'}>Inner Ring</span>

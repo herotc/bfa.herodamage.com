@@ -147,7 +147,7 @@ class CombinationsSimulationTemplate extends React.Component {
     const {data, i18nPlugin, location, pathContext} = this.props
     const {results, order, orderBy, page, rowsPerPage} = this.state
     const {t} = i18nPlugin
-    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, tier, variation, version} = pathContext
+    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pathContext
     return (
       <div>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
@@ -160,7 +160,8 @@ class CombinationsSimulationTemplate extends React.Component {
             character</b></u> to find your optimal setup.</Trans></p>
         <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
           t={t} tier={tier} variation={variation}/>
-        <Metas buildTime={buildTime} gitRevision={gitRevision} targetError={targetError} version={version}/>
+        <Metas buildTime={buildTime} gitRevision={gitRevision}
+          targetError={targetError} templateDPS={templateDPS} version={version}/>
         {!results &&
         <CircularProgress id="results-loader" color="secondary"/>}
         {results &&
