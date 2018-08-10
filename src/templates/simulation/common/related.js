@@ -15,7 +15,7 @@ const RelatedSimulationTypes = ({data: {relatedSimulationTypes}, simulationType,
           const {simulationType: nodeSimulationType} = context
           return (
             <Button key={index} variant="contained" color="primary" disabled={simulationType === nodeSimulationType}
-              component={Link} to={path} style={{margin: 8}}>
+              component={Link} to={path} style={{margin: '4px 8px'}}>
               {t(nodeSimulationType)}
             </Button>
           )
@@ -42,7 +42,7 @@ const RelatedTiers = ({data: {relatedTiers}, t, tier}) => {
           const {tier: nodeTier} = context
           return (
             <Button key={index} variant="contained" color="primary" disabled={tier === nodeTier}
-              component={Link} to={path} style={{margin: 8}}>
+              component={Link} to={path} style={{margin: '4px 8px'}}>
               {t(nodeTier)}
             </Button>
           )
@@ -69,7 +69,7 @@ const RelatedSpecs = ({data: {relatedSpecs}, spec, variation, t}) => {
           const {spec: nodeSpec, variation: nodeVariation} = context
           return (
             <Button key={index} variant="contained" color="primary" disabled={spec === nodeSpec && variation === nodeVariation}
-              component={Link} to={path} style={{margin: 8}}>
+              component={Link} to={path} style={{margin: '4px 8px'}}>
               {getSpecVariation(t, nodeSpec, nodeVariation, false)}
             </Button>
           )
@@ -97,7 +97,7 @@ const RelatedFightStyles = ({data: {relatedFightStyles}, fightStyle, t}) => {
           const {fightStyle: nodeFightStyle} = context
           return (
             <Button key={index} variant="contained" color="primary" disabled={fightStyle === nodeFightStyle}
-              component={Link} to={path} style={{margin: 8}}>
+              component={Link} to={path} style={{margin: '4px 8px'}}>
               {t(nodeFightStyle)}
             </Button>
           )
