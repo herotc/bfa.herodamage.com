@@ -74,6 +74,12 @@ module.exports = class HTML extends React.Component {
           {cookieconsentScript}
           {cookieconsentLoad}
           {adsenseScript}
+          <script dangerouslySetInnerHTML={{__html: `
+            var whTooltips = {colorLinks: true};
+          `}}>
+          </script>
+          <script src="https://wow.zamimg.com/widgets/power.js">
+          </script>
         </body>
       </html>
     )

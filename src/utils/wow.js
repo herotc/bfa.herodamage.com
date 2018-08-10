@@ -1,5 +1,7 @@
 import startCase from 'lodash/startCase'
+import truncate from 'lodash/truncate'
 
+import AzeritePowerArray from '../assets/wow-data/AzeritePower.json'
 import wowClassDeathKnight from '../assets/images/wow/classpicker/death_knight.svg'
 import wowClassDemonHunter from '../assets/images/wow/classpicker/demon_hunter.svg'
 import wowClassDruid from '../assets/images/wow/classpicker/druid.svg'
@@ -12,6 +14,19 @@ import wowClassRogue from '../assets/images/wow/classpicker/rogue.svg'
 import wowClassShaman from '../assets/images/wow/classpicker/shaman.svg'
 import wowClassWarlock from '../assets/images/wow/classpicker/warlock.svg'
 import wowClassWarrior from '../assets/images/wow/classpicker/warrior.svg'
+
+const AzeritePowers = Object.assign({}, ...AzeritePowerArray.map((item) => ({[item['spellName']]: item})))
+const truncateOptions = {length: 25}
+
+export function wowAzeriteLabel (rawSpellName) {
+  const spellName = rawSpellName.split(' / ') // Some labels are concatened, like the Alliance / Horde one, we always take the first one
+  console.log(spellName)
+  const power = AzeritePowers[spellName[0]]
+  const {spellId, tier} = power
+  return `<a href="http://www.wowhead.com/spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow">
+    <span class="azerite-tier${tier}">${truncate(rawSpellName, truncateOptions)}</span>
+  </a>`
+}
 
 export function wowIcon (wowClass) {
   switch (wowClass) {
