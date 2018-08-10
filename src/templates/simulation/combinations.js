@@ -168,6 +168,11 @@ class CombinationsSimulationTemplate extends React.Component {
           targetError={targetError} templateDPS={templateDPS} version={version}/>
         {!results &&
         <CircularProgress id="results-loader" color="secondary"/>}
+        <p style={{textAlign: 'center'}}>
+          <span className={'azerite-tier2'}>Inner Ring</span>
+          &nbsp;|&nbsp;
+          <span className={'azerite-tier3'}>Outer Ring</span>
+        </p>
         {results &&
         <div>
           <Table>
