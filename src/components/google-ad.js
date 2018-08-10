@@ -18,11 +18,7 @@ const checkBlockers = () => {
         if (!messageAlreadyDisplayed) {
           const blockersMessage = document.createElement('p')
           blockersMessage.className = 'blockers-text'
-          if (ad.parentElement.classList.contains('a-matchedcontent-d')) {
-            blockersMessage.innerHTML = 'This block suggests you recommended content from HeroTC using Google Adsense.<br>You might want to disable your ad blocker to see its content.'
-          } else {
-            blockersMessage.innerHTML = 'Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.'
-          }
+          blockersMessage.innerHTML = 'Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.'
           parent.appendChild(blockersMessage)
         }
       }
@@ -39,100 +35,118 @@ const initAd = () => {
   (window.adsbygoogle = window.adsbygoogle || []).push({})
 }
 
-const AdaptiveContainer = styled.div`
+const VerticalContainer = styled.div`
+  margin: auto;
+  max-height: 90px;
+  max-width: 728px;
+  padding: 0 16px;
+  text-align: center;
+`
+
+const SideContainer = styled.div`
   @media screen and (min-width: 1552px) {
-    margin: 16px 8px;
+    margin: 16px;
     max-height: calc(100vh - 32px);
     max-width: 300px;
     position: fixed;
-    ${({position}) => position}: calc((100% - 1280px) / 4 - 8px);
+    right: calc((100% - 1280px) / 4 - 16px);
+    text-align: center;
     top: 50%;
-    transform: translate(${({position}) => position === 'left' ? '-50%' : '50%'}, -50%);
-    width: calc((100% - 1280px) / 2 - 16px);
+    transform: translate(50%, -50%);
+    width: calc((100% - 1280px) / 2 - 32px);
   }
   @media screen and (min-width: 1920px) {
-    ${({position}) => position}: calc(100% / 12 - 8px);
-    width: calc(100% / 6 - 16px);
+    right: calc(100% / 12 - 16px);
+    width: calc(100% / 6 - 32px);
   }
 `
 
 class Ad extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      innerWidth: typeof window !== 'undefined' ? window.innerWidth : undefined
+    }
+
+    this.getWidth = this.getWidth.bind(this)
+    this.shouldPreventSideRendering = this.shouldPreventSideRendering.bind(this)
+  }
+
+  getWidth () {
+    this.setState({innerWidth: window.innerWidth})
+  }
+
+  shouldPreventSideRendering () {
+    // Prevent rendering for SSR and whenever the viewport width is lower than 1552
+    const {innerWidth} = this.state
+    return typeof window === 'undefined' || !innerWidth || innerWidth < 1552
+  }
+
   componentDidMount () {
-    initAd()
+    if (this.props.type === 'side') {
+      window.addEventListener('resize', this.getWidth)
+      // Do init the side ad only if we actually rendered it
+      if (!this.shouldPreventSideRendering()) {
+        initAd()
+      }
+    } else {
+      initAd()
+    }
   }
 
   componentDidUpdate (prevProps, prevState, snapshot) {
     // Do init the ad only if the location did changed
     if (this.props.location.key !== prevProps.location.key) {
-      initAd()
+      if (this.props.type === 'side') {
+        // Do init the side ad only if we actually rendered it
+        if (!this.shouldPreventSideRendering()) {
+          initAd()
+        }
+      } else {
+        initAd()
+      }
     }
   }
 
-  shouldComponentUpdate (nextProps, nextState, nextContext) {
-    // We manually remove 'top', 'matchedcontent' and 'bot' ads to refresh them whenever they receives new location props
-    // since they'll not be re-rendered by React (despite the key props tied to location...).
-    if (nextProps.location.key !== this.props.location.key) {
-      const {type} = nextProps
-      switch (type) {
-        case 'top':
-        case 'matchedcontent':
-        case 'bot':
-          unmountComponentAtNode(document.getElementById(`a-${type}-d`))
-      }
+  componentWillUnmount () {
+    if (this.props.type === 'side') {
+      window.removeEventListener('resize', this.getWidth)
     }
-    return true
   }
 
   render () {
-    const {location, type} = this.props
-    const {key} = location
-    const adId = `${key}-${type}`
+    const {location: {key}, type} = this.props
+    const adKey = `${key}-${type}`
+    const adId = `a-${type}-d`
     switch (type) {
       case 'top':
         return (
-          <div key={adId} id="a-top-d">
+          <VerticalContainer key={adKey} id={adId}>
             <ins className="adsbygoogle" style={{display: 'block'}}
-              data-ad-client="ca-pub-5677349133508739" data-ad-slot="8259895565"
-              data-ad-format="auto">
+              data-ad-client="ca-pub-5677349133508739" data-ad-slot="4519471734"
+              data-ad-format="auto" data-full-width-responsive="true">
             </ins>
-          </div>
+          </VerticalContainer>
         )
-      case 'inarticle':
+      case 'side':
+        if (this.shouldPreventSideRendering()) return null
         return (
-          <div key={adId} id="a-inarticle-d">
-            <ins className="adsbygoogle" style={{display: 'block', textAlign: 'center'}}
-              data-ad-layout="in-article" data-ad-format="fluid"
-              data-ad-client="ca-pub-5677349133508739" data-ad-slot="9316992214">
-            </ins>
-          </div>
-        )
-      case 'infeed':
-        return (
-          <div key={adId} id="a-infeed-d">
+          <SideContainer key={adKey} id={adId}>
             <ins className="adsbygoogle" style={{display: 'block'}}
-              data-ad-format="fluid" data-ad-layout-key="-gc-3-1f-cz+zv"
-              data-ad-client="ca-pub-5677349133508739" data-ad-slot="7987598673">
+              data-ad-client="ca-pub-5677349133508739" data-ad-slot="6483290095"
+              data-ad-format="auto" data-full-width-responsive="true">
             </ins>
-          </div>
-        )
-      case 'matchedcontent':
-        return (
-          <div key={adId} id="a-matchedcontent-d">
-            <ins className="adsbygoogle" style={{display: 'block'}}
-              data-ad-client="ca-pub-5677349133508739" data-ad-slot="3956909192"
-              data-matched-content-ui-type="text,text" data-matched-content-rows-num="1,1"
-              data-matched-content-columns-num="1,2" data-ad-format="autorelaxed">
-            </ins>
-          </div>
+          </SideContainer>
         )
       case 'bot':
         return (
-          <AdaptiveContainer key={adId} position="right" id="a-bot-d">
-            <ins key={adId} className="adsbygoogle" style={{display: 'block'}}
-              data-ad-client="ca-pub-5677349133508739" data-ad-slot="8934153725"
-              data-ad-format="auto">
+          <VerticalContainer key={adKey} id={adId}>
+            <ins className="adsbygoogle" style={{display: 'block'}}
+              data-ad-client="ca-pub-5677349133508739" data-ad-slot="2851059041"
+              data-ad-format="auto" data-full-width-responsive="true">
             </ins>
-          </AdaptiveContainer>
+          </VerticalContainer>
         )
     }
   }
@@ -144,50 +158,77 @@ Ad.propTypes = {
 }
 
 class DevAd extends React.Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      innerWidth: typeof window !== 'undefined' ? window.innerWidth : undefined
+    }
+
+    this.getWidth = this.getWidth.bind(this)
+    this.shouldPreventSideRendering = this.shouldPreventSideRendering.bind(this)
+  }
+
+  getWidth () {
+    this.setState({innerWidth: window.innerWidth})
+  }
+
+  shouldPreventSideRendering () {
+    // Prevent rendering for SSR and whenever the viewport width is lower than 1552
+    const {innerWidth} = this.state
+    return typeof window === 'undefined' || !innerWidth || innerWidth < 1552
+  }
+
   componentDidMount () {
-    // console.log(`Mounted: ${this.props.type}`)
+    if (this.props.type === 'side') {
+      // console.log(`EventListener Added: ${this.props.type}`)
+      window.addEventListener('resize', this.getWidth)
+      // Do init the side ad only if we actually rendered it
+      if (!this.shouldPreventSideRendering()) {
+        // console.log(`Mounted: ${this.props.type}`)
+      }
+    } else {
+      // console.log(`Mounted: ${this.props.type}`)
+    }
   }
 
   componentDidUpdate (prevProps, prevState, snapshot) {
     // Do init the ad only if the location did changed
     if (this.props.location.key !== prevProps.location.key) {
-      // console.log(`Updated: ${this.props.type}`)
+      if (this.props.type === 'side') {
+        // Do init the side ad only if we actually rendered it
+        if (!this.shouldPreventSideRendering()) {
+          // console.log(`Updated: ${this.props.type}`)
+        }
+      } else {
+        // console.log(`Updated: ${this.props.type}`)
+      }
     }
   }
 
-  shouldComponentUpdate (nextProps, nextState, nextContext) {
-    // We manually remove 'top', 'matchedcontent' and 'bot' ads to refresh them whenever they receives new location props
-    // since they'll not be re-rendered by React (despite the key props tied to location...).
-    if (nextProps.location.key !== this.props.location.key) {
-      const {type} = nextProps
-      switch (type) {
-        case 'top':
-        case 'matchedcontent':
-        case 'bot':
-          // console.log(`Removed: ${type}`)
-          unmountComponentAtNode(document.getElementById(`a-${type}-d`))
-      }
+  componentWillUnmount () {
+    if (this.props.type === 'side') {
+      // console.log(`EventListener Removed: ${this.props.type}`)
+      window.removeEventListener('resize', this.getWidth)
     }
-    return true
   }
 
   render () {
-    const {location, type} = this.props
-    const {key} = location
-    const adId = `${key}-${type}`
+    const {location: {key}, type} = this.props
+    const adKey = `${key}-${type}`
+    const adId = `a-${type}-d`
     switch (type) {
       case 'top':
-      case 'inarticle':
-      case 'infeed':
-      case 'matchedcontent':
-        return (
-          <div key={adId} id={`a-${type}-d`}>
-          </div>
-        )
       case 'bot':
         return (
-          <AdaptiveContainer key={adId} id={`a-${type}-d`} position="right">
-          </AdaptiveContainer>
+          <VerticalContainer key={adKey} id={adId}>
+          </VerticalContainer>
+        )
+      case 'side':
+        if (this.shouldPreventSideRendering()) return null
+        return (
+          <SideContainer key={adKey} id={adId}>
+          </SideContainer>
         )
     }
   }

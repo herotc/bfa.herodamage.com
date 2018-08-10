@@ -13,7 +13,6 @@ import TableSortLabel from '@material-ui/core/TableSortLabel'
 
 import { wowAzeriteLabel } from '../../utils/wow'
 
-import GoogleAd from '../../components/google-ad'
 import RelatedSimulations from './common/related'
 import Metas from './common/metas'
 
@@ -161,7 +160,6 @@ class CombinationsSimulationTemplate extends React.Component {
             character</b></u> to find your optimal setup.</Trans></p>
         <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
           t={t} tier={tier} variation={variation}/>
-        <GoogleAd location={location} type="inarticle"/>
         <Metas buildTime={buildTime} gitRevision={gitRevision} targetError={targetError} version={version}/>
         {!results &&
         <CircularProgress id="results-loader" color="secondary"/>}

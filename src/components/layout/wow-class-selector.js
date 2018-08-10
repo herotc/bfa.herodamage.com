@@ -14,6 +14,7 @@ const Sidebar = styled.aside`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 16px;
 
     a {
       margin: 8px 16px;

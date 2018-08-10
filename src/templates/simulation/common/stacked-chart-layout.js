@@ -6,7 +6,6 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 
 import { stackedChart } from '../../../browser/charts/stacked'
 
-import GoogleAd from '../../../components/google-ad'
 import RelatedSimulations from './related'
 import Metas from './metas'
 
@@ -44,7 +43,6 @@ class StackedChartLayout extends React.Component {
         {children}
         <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
           t={t} tier={tier} variation={variation}/>
-        <GoogleAd location={location} type="inarticle"/>
         <Metas buildTime={buildTime} gitRevision={gitRevision} targetError={targetError} version={version}/>
         {simulationType.includes('azerite') &&
         <p style={{textAlign: 'center'}}>
