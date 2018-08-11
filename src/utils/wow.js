@@ -5,7 +5,7 @@ import { defaultLang } from '../../plugins/gatsby-plugin-herodamage-i18n'
 
 import AzeritePowerArray from '../assets/wow-data/AzeritePower.json'
 import ClassSpec from '../assets/wow-data/ClassSpec.json'
-import Talent from '../assets/wow-data/Talent.json'
+import TalentExpanded from '../assets/wow-data/TalentExpanded.json'
 import TrinketArray from '../assets/wow-data/Trinket.json'
 import wowClassDeathKnight from '../assets/images/wow/classpicker/death_knight.svg'
 import wowClassDemonHunter from '../assets/images/wow/classpicker/demon_hunter.svg'
@@ -40,6 +40,12 @@ export function getWowClassIdAndSpecId (wowClass, spec) {
   const classId = classSpec.classId
   const specId = classSpec.specIds[spec]
   return {classId, specId}
+}
+
+export function getTalentsTree (wowClass, spec) {
+  const {classId, specId} = getWowClassIdAndSpecId(wowClass, spec)
+  const classTalents = TalentExpanded[classId]
+  return classTalents[specId]
 }
 
 /**
@@ -152,22 +158,14 @@ export function wowTrinketLabel (rawItemName, lang = defaultLang) {
  * @returns {string}
  */
 export function wowTalentsLabel (talents, wowClass, spec, lang = defaultLang) {
-  const {classId, specId} = getWowClassIdAndSpecId(wowClass, spec)
-  const classTalents = Talent[classId]
-  const sharedTalents = classTalents[0]
-  const specTalents = classTalents[specId]
+  const talentsTree = getTalentsTree(wowClass, spec)
   let label = ''
   for (let row = 0; row < talents.length; row++) {
     let talentChar = parseInt(talents.charAt(row))
     if (talentChar !== 0) {
       const col = talentChar - 1
-      let talent
-      if (specTalents[row] && specTalents[row][col]) {
-        talent = specTalents[row][col]
-      } else if (sharedTalents[row] && sharedTalents[row][col]) {
-        talent = sharedTalents[row][col]
-      }
-      label += `<a href="${getWowheadLink(lang)}spell=${talent && talent.spellId}" target="_blank" rel="noopener noreferrer nofollow">
+      const {spellId} = talentsTree[row][col]
+      label += `<a href="${getWowheadLink(lang)}spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow">
         </a>`
     }
   }
