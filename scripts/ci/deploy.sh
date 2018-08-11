@@ -60,6 +60,6 @@ sleep 40s
 echo "[CI] Clear CF cache for changed files by batch of ~475 urls each 5s"
 for urls in urls_to_purge_*.json; do
     sleep 5s
-    curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data @$urls
+    curl -v -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data @$urls
     echo ""
 done

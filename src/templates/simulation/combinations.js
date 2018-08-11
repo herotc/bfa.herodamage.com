@@ -28,6 +28,7 @@ const indexFromColumnId = {
   talents: TALENTS_INDEX,
   special: SPECIAL_INDEX,
   dps: RANK_INDEX,
+  dpsBoss: DPSDIFF_INDEX,
   dpsPercentageDifference: RANK_INDEX
 }
 
@@ -42,7 +43,8 @@ const columnData = [
   {id: 'talents', numeric: false, label: 'Talents'},
   {id: 'special', numeric: false, label: 'Azerite Powers'},
   {id: 'dps', numeric: true, label: 'DPS'},
-  {id: 'dpsPercentageDifference', numeric: true, label: '% Diff'},
+  {id: 'dpsBoss', numeric: true, label: 'Boss DPS'},
+  {id: 'dpsPercentageDifference', numeric: true, label: '% Diff'}
 ]
 
 class EnhancedTableHead extends React.Component {
@@ -51,12 +53,13 @@ class EnhancedTableHead extends React.Component {
   }
 
   render () {
-    const {order, orderBy} = this.props
+    const {multiTargets, order, orderBy} = this.props
     return (
       <TableHead>
         <TableRow>
           {columnData.map((column) => {
             const {id, numeric, label} = column
+            if (!multiTargets && id === 'dpsBoss') return null
             return (
               <TableCell key={id} numeric={numeric} sortDirection={orderBy === id ? order : false}>
                 {
@@ -76,6 +79,7 @@ class EnhancedTableHead extends React.Component {
 }
 
 EnhancedTableHead.propTypes = {
+  multiTargets: PropTypes.bool.isRequired,
   onRequestSort: PropTypes.func.isRequired,
   order: PropTypes.string.isRequired,
   orderBy: PropTypes.string.isRequired
@@ -90,6 +94,7 @@ class CombinationsSimulationTemplate extends React.Component {
     const {name} = pathContext
     this.state = {
       filepath: `${reportsPath}${name}.json`,
+      multiTargets: false,
       results: null,
       order: 'asc',
       orderBy: 'rank',
@@ -111,6 +116,8 @@ class CombinationsSimulationTemplate extends React.Component {
     const response = await window.fetch(this.state.filepath)
     const {results} = await response.json()
 
+    const multiTargets = results[0].length === 6
+
     const maxDPS = results[0][DPS_INDEX]
     for (let row of results) {
       // WowHead links
@@ -127,7 +134,7 @@ class CombinationsSimulationTemplate extends React.Component {
       row.push((100 * row[DPS_INDEX] / maxDPS - 100).toFixed(2))
     }
 
-    this.setState({results})
+    this.setState({multiTargets, results})
   }
 
   handleRequestSort (event, orderBy) {
@@ -156,7 +163,7 @@ class CombinationsSimulationTemplate extends React.Component {
 
   render () {
     const {data, i18nPlugin, pathContext} = this.props
-    const {filePath, order, orderBy, page, results, rowsPerPage} = this.state
+    const {filePath, multiTargets, order, orderBy, page, results, rowsPerPage} = this.state
     const {t} = i18nPlugin
     const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pathContext
     return (
@@ -186,7 +193,8 @@ class CombinationsSimulationTemplate extends React.Component {
         {results &&
         <div>
           <Table>
-            <EnhancedTableHead order={order} orderBy={orderBy} onRequestSort={this.handleRequestSort}/>
+            <EnhancedTableHead multiTargets={multiTargets} onRequestSort={this.handleRequestSort}
+              order={order} orderBy={orderBy} />
             <TableBody>
               {results
                 .sort(getSorting(order, orderBy))
@@ -194,10 +202,11 @@ class CombinationsSimulationTemplate extends React.Component {
                 .map((row) => (
                   <TableRow key={row[RANK_INDEX]} hover>
                     <TableCell component="th" scope="row" numeric>{row[RANK_INDEX]}</TableCell>
-                    <TableCell dangerouslySetInnerHTML={{__html: row[TALENTS_INDEX]}} />
+                    <TableCell dangerouslySetInnerHTML={{__html: row[TALENTS_INDEX]}}/>
                     <TableCell dangerouslySetInnerHTML={{__html: row[SPECIAL_INDEX]}}/>
                     <TableCell numeric>{row[DPS_INDEX]}</TableCell>
-                    <TableCell numeric>{row[DPSDIFF_INDEX]}</TableCell>
+                    {multiTargets && <TableCell numeric>{row[DPSDIFF_INDEX]}</TableCell>}
+                    <TableCell numeric>{row[DPSDIFF_INDEX + (multiTargets ? 1 : 0)]}</TableCell>
                   </TableRow>
                 ))
               }
