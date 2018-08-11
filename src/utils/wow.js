@@ -42,10 +42,16 @@ export function getWowClassIdAndSpecId (wowClass, spec) {
   return {classId, specId}
 }
 
+/**
+ *
+ * @param wowClass
+ * @param spec
+ * @returns {*}
+ */
 export function getTalentsTree (wowClass, spec) {
   const {classId, specId} = getWowClassIdAndSpecId(wowClass, spec)
   const classTalents = TalentExpanded[classId]
-  return classTalents[specId]
+  return Object.assign({}, classTalents[specId])
 }
 
 /**
@@ -114,9 +120,27 @@ const wowheadDomains = {
   zh: 'cn'
 }
 
-function getWowheadLink (lang) {
-  const wowheadDomain = wowheadDomains[lang] || 'www'
+export function getWowheadDomain (lang) {
+  return wowheadDomains[lang] || 'www'
+}
+
+/**
+ *
+ * @param lang
+ * @returns {string}
+ */
+export function getWowheadLink (lang) {
+  const wowheadDomain = getWowheadDomain(lang)
   return `https://${wowheadDomain}.wowhead.com/`
+}
+
+/**
+ *
+ * @param azeritePower
+ * @returns {*}
+ */
+export function getAzeriteInformation (azeritePower) {
+  return AzeritePowers[azeritePower]
 }
 
 /**
@@ -161,7 +185,7 @@ export function wowTalentsLabel (talents, wowClass, spec, lang = defaultLang) {
   const talentsTree = getTalentsTree(wowClass, spec)
   let label = ''
   for (let row = 0; row < talents.length; row++) {
-    let talentChar = parseInt(talents.charAt(row))
+    const talentChar = parseInt(talents.charAt(row))
     if (talentChar !== 0) {
       const col = talentChar - 1
       const {spellId} = talentsTree[row][col]

@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography'
 import * as i18nPluginHelper from '../../plugins/gatsby-plugin-herodamage-i18n'
 import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
 import { theme } from '../../plugins/gatsby-plugin-herodamage-material-ui/getPageContext'
+import { getWowheadLink } from '../utils/wow'
 
 import Head from '../components/layout/head'
 import Header from '../components/layout/header'
@@ -132,7 +133,8 @@ const IndexLayout = (props) => {
     lang,
     langs: i18nPluginHelper.langs,
     t: i18nPluginHelper.translation(lang),
-    tLink: (path) => i18nPluginHelper.replacePrefix(lang, path)
+    tLink: (path) => i18nPluginHelper.replacePrefix(lang, path),
+    wowheadLink: getWowheadLink(lang)
   }
   return (
     <ThemeProvider theme={theme}>
