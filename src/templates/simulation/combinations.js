@@ -7,65 +7,16 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 import Table from '@material-ui/core/Table'
 import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
-import TableHead from '@material-ui/core/TableHead'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
-import TableSortLabel from '@material-ui/core/TableSortLabel'
 
-import { refreshWowheadLinks, wowAzeriteLabel, wowTalentsLabel } from '../../utils/wow'
+import { refreshWowheadLinks } from '../../utils/wow'
+import { getResultsStates } from './combinations/get-results-states'
 
 import RelatedSimulations from './common/related'
 import Metas from './common/metas'
-
-// TODO: Move into the components for easier i18n
-const columnData = [
-  {id: 'rank', label: '#', numeric: true, sortable: false},
-  {id: 'talents', label: 'Talents', numeric: false, sortable: false},
-  {id: 'special', label: 'Azerite Powers', numeric: false, sortable: false},
-  {id: 'dps', label: 'DPS', numeric: true, sortable: true},
-  {id: 'bossDPS', label: 'Boss DPS', numeric: true, sortable: true},
-  {id: 'dpsPercentageDifference', label: '% Diff', numeric: true, sortable: false}
-]
-
-function getSorting (order, orderBy) {
-  return order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy]
-}
-
-class EnhancedTableHead extends React.Component {
-  createSortHandler (orderBy) {
-    return (event) => { this.props.onRequestSort(event, orderBy) }
-  }
-
-  render () {
-    const {multiTargets, order, orderBy} = this.props
-    return (
-      <TableHead>
-        <TableRow>
-          {columnData.map((column) => {
-            const {id, label, numeric, sortable} = column
-            if (!multiTargets && id === 'bossDPS') return null
-            return (
-              <TableCell key={id} numeric={numeric} sortDirection={orderBy === id ? order : false}>
-                {sortable &&
-                <TableSortLabel active={orderBy === id} direction={order} onClick={this.createSortHandler(id)}>
-                  {label}
-                </TableSortLabel>}
-                {!sortable && label}
-              </TableCell>
-            )
-          })}
-        </TableRow>
-      </TableHead>
-    )
-  }
-}
-
-EnhancedTableHead.propTypes = {
-  multiTargets: PropTypes.bool.isRequired,
-  onRequestSort: PropTypes.func.isRequired,
-  order: PropTypes.string.isRequired,
-  orderBy: PropTypes.string.isRequired
-}
+import Filters from './combinations/filters'
+import EnhancedTableHead from './combinations/enhanced-table-head'
 
 class CombinationsSimulationTemplate extends React.Component {
   constructor (props) {
@@ -81,43 +32,74 @@ class CombinationsSimulationTemplate extends React.Component {
       order: 'desc',
       orderBy: 'dps',
       page: 0,
-      rowsPerPage: 15
+      rowsPerPage: 15,
+      selectedAzeritePowers: null,
+      talentsTree: null
     }
 
     this.getResults = this.getResults.bind(this)
+    this.handleAzeritePowerSelect = this.handleAzeritePowerSelect.bind(this)
+    this.handleTalentSelect = this.handleTalentSelect.bind(this)
+    this.isValidResult = this.isValidResult.bind(this)
     this.handleRequestSort = this.handleRequestSort.bind(this)
     this.handleChangePage = this.handleChangePage.bind(this)
     this.handleChangeRowsPerPage = this.handleChangeRowsPerPage.bind(this)
   }
 
   async getResults () {
-    const {i18nPlugin: {lang}, pathContext} = this.props
-    const {spec, wowClass} = pathContext
+    const state = await getResultsStates(this.props, this.state.filepath)
+    this.setState(state)
+  }
 
-    const response = await window.fetch(this.state.filepath)
-    const {results: jsonResults} = await response.json()
+  handleAzeritePowerSelect (event, spellName) {
+    event.preventDefault()
 
-    const results = []
-    const multiTargets = jsonResults[0].length === 6
-    const maxDPS = jsonResults[0][4]
-    for (let row of jsonResults) {
-      const talents = row[1]
-      const azeritePower = row[3]
-      const dps = row[4]
-      const result = {
-        rank: row[0],
-        talents,
-        azeritePower,
-        dps
+    const {selectedAzeritePowers} = this.state
+    selectedAzeritePowers[spellName].selected = !selectedAzeritePowers[spellName].selected
+    this.setState({selectedAzeritePowers})
+  }
+
+  handleTalentSelect (event, rowId, colId) {
+    event.preventDefault()
+
+    const {talentsTree} = this.state
+    const row = talentsTree[rowId]
+    const talent = row[colId]
+
+    // Prevent the talent to be unselected if it's disabled
+    if (!talent.disabled) {
+      // Prevent the talent to be unselected if it's the last one on this row
+      let inactiveCount = 0
+      for (let col = 0; col < 3; col++) {
+        if (col === colId) continue
+        const talent = row[col]
+        if (talent.disabled || !talent.selected) {
+          inactiveCount += 1
+        }
       }
-      if (multiTargets) result.bossDPS = row[5]
-      result.talentsLabel = wowTalentsLabel(talents, wowClass, spec, lang)
-      result.azeritePowerLabel = azeritePower !== 'None' ? wowAzeriteLabel(azeritePower, lang) : 'None'
-      result.dpsPercentageDifference = (100 * dps / maxDPS - 100).toFixed(1)
-      results.push(result)
+      if (inactiveCount < 2) {
+        talent.selected = !talent.selected
+        this.setState({talentsTree})
+      }
     }
+  }
 
-    this.setState({multiTargets, results})
+  isValidResult (result) {
+    const {talents, azeritePower} = result
+    const {selectedAzeritePowers, talentsTree} = this.state
+    if (talents) {
+      for (let row = 0; row < talents.length; row++) {
+        const talentChar = parseInt(talents.charAt(row))
+        if (talentChar !== 0) {
+          const col = talentChar - 1
+          if (!talentsTree[row][col].selected) return false
+        }
+      }
+    }
+    if (azeritePower && azeritePower !== 'None') {
+      if (!selectedAzeritePowers[azeritePower].selected) return false
+    }
+    return true
   }
 
   handleRequestSort (event, orderBy) {
@@ -146,8 +128,8 @@ class CombinationsSimulationTemplate extends React.Component {
 
   render () {
     const {data, i18nPlugin, pathContext} = this.props
-    const {filePath, multiTargets, order, orderBy, page, results, rowsPerPage} = this.state
-    const {t} = i18nPlugin
+    const {filePath, multiTargets, order, orderBy, page, results, rowsPerPage, selectedAzeritePowers, talentsTree} = this.state
+    const {t, wowheadLink} = i18nPlugin
     const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pathContext
     return (
       <div>
@@ -168,22 +150,25 @@ class CombinationsSimulationTemplate extends React.Component {
           targetError={targetError} templateDPS={templateDPS} version={version}/>
         {!results &&
         <CircularProgress id="results-loader" color="secondary"/>}
-        <p style={{textAlign: 'center'}}>
-          <span className={'azerite-tier2'}>Inner Ring</span>
-          &nbsp;|&nbsp;
-          <span className={'azerite-tier3'}>Outer Ring</span>
-        </p>
         {results &&
         <div>
+          <Filters name={name} onAzeritePowerSelect={this.handleAzeritePowerSelect} onTalentSelect={this.handleTalentSelect}
+            selectedAzeritePowers={selectedAzeritePowers} talentsTree={talentsTree} wowheadLink={wowheadLink} />
+          <p style={{textAlign: 'center'}}>
+            <span className={'azerite-tier2'}>Inner Ring</span>
+            &nbsp;|&nbsp;
+            <span className={'azerite-tier3'}>Outer Ring</span>
+          </p>
           <Table>
             <EnhancedTableHead multiTargets={multiTargets} onRequestSort={this.handleRequestSort}
               order={order} orderBy={orderBy}/>
             <TableBody>
               {results
-                .sort(getSorting(order, orderBy))
+                .filter((result) => this.isValidResult(result))
+                .sort(order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy])
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((result) => (
-                  <TableRow key={result.rank} hover>
+                  <TableRow key={`${name}-${result.rank}`} hover>
                     <TableCell component="th" scope="row" numeric>{result.rank}</TableCell>
                     <TableCell dangerouslySetInnerHTML={{__html: result.talentsLabel}}/>
                     <TableCell dangerouslySetInnerHTML={{__html: result.azeritePowerLabel}}/>
