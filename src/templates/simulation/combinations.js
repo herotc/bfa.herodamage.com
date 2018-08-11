@@ -17,35 +17,19 @@ import { refreshWowheadLinks, wowAzeriteLabel, wowTalentsLabel } from '../../uti
 import RelatedSimulations from './common/related'
 import Metas from './common/metas'
 
-const RANK_INDEX = 0
-const TALENTS_INDEX = 1
-const SPECIAL_INDEX = 3
-const DPS_INDEX = 4
-const DPSDIFF_INDEX = 5
-
-const indexFromColumnId = {
-  rank: RANK_INDEX,
-  talents: TALENTS_INDEX,
-  special: SPECIAL_INDEX,
-  dps: RANK_INDEX,
-  dpsBoss: DPSDIFF_INDEX,
-  dpsPercentageDifference: RANK_INDEX
-}
+// TODO: Move into the components for easier i18n
+const columnData = [
+  {id: 'rank', label: '#', numeric: true, sortable: false},
+  {id: 'talents', label: 'Talents', numeric: false, sortable: false},
+  {id: 'special', label: 'Azerite Powers', numeric: false, sortable: false},
+  {id: 'dps', label: 'DPS', numeric: true, sortable: true},
+  {id: 'bossDPS', label: 'Boss DPS', numeric: true, sortable: true},
+  {id: 'dpsPercentageDifference', label: '% Diff', numeric: true, sortable: false}
+]
 
 function getSorting (order, orderBy) {
-  const orderByIndex = indexFromColumnId[orderBy]
-  return order === 'desc' ? (a, b) => b[orderByIndex] - a[orderByIndex] : (a, b) => a[orderByIndex] - b[orderByIndex]
+  return order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy]
 }
-
-// TODO: Move into the components for i18n
-const columnData = [
-  {id: 'rank', numeric: true, label: '#'},
-  {id: 'talents', numeric: false, label: 'Talents'},
-  {id: 'special', numeric: false, label: 'Azerite Powers'},
-  {id: 'dps', numeric: true, label: 'DPS'},
-  {id: 'dpsBoss', numeric: true, label: 'Boss DPS'},
-  {id: 'dpsPercentageDifference', numeric: true, label: '% Diff'}
-]
 
 class EnhancedTableHead extends React.Component {
   createSortHandler (orderBy) {
@@ -58,17 +42,15 @@ class EnhancedTableHead extends React.Component {
       <TableHead>
         <TableRow>
           {columnData.map((column) => {
-            const {id, numeric, label} = column
-            if (!multiTargets && id === 'dpsBoss') return null
+            const {id, label, numeric, sortable} = column
+            if (!multiTargets && id === 'bossDPS') return null
             return (
               <TableCell key={id} numeric={numeric} sortDirection={orderBy === id ? order : false}>
-                {
-                  numeric &&
-                  <TableSortLabel active={orderBy === id} direction={order} onClick={this.createSortHandler(id)}>
-                    {label}
-                  </TableSortLabel>
-                }
-                {!numeric && label}
+                {sortable &&
+                <TableSortLabel active={orderBy === id} direction={order} onClick={this.createSortHandler(id)}>
+                  {label}
+                </TableSortLabel>}
+                {!sortable && label}
               </TableCell>
             )
           })}
@@ -96,9 +78,8 @@ class CombinationsSimulationTemplate extends React.Component {
       filepath: `${reportsPath}${name}.json`,
       multiTargets: false,
       results: null,
-      order: 'asc',
-      orderBy: 'rank',
-      selected: [],
+      order: 'desc',
+      orderBy: 'dps',
       page: 0,
       rowsPerPage: 15
     }
@@ -114,24 +95,26 @@ class CombinationsSimulationTemplate extends React.Component {
     const {spec, wowClass} = pathContext
 
     const response = await window.fetch(this.state.filepath)
-    const {results} = await response.json()
+    const {results: jsonResults} = await response.json()
 
-    const multiTargets = results[0].length === 6
-
-    const maxDPS = results[0][DPS_INDEX]
-    for (let row of results) {
-      // WowHead links
-      // Talents
-      row[TALENTS_INDEX] = wowTalentsLabel(row[TALENTS_INDEX], wowClass, spec, lang)
-      // Specials
-      const specials = row[SPECIAL_INDEX].split(', ')
-      let specialsLink = []
-      for (let special of specials) {
-        specialsLink.push(special !== 'None' ? wowAzeriteLabel(special, lang) : 'None')
+    const results = []
+    const multiTargets = jsonResults[0].length === 6
+    const maxDPS = jsonResults[0][4]
+    for (let row of jsonResults) {
+      const talents = row[1]
+      const azeritePower = row[3]
+      const dps = row[4]
+      const result = {
+        rank: row[0],
+        talents,
+        azeritePower,
+        dps
       }
-      row[SPECIAL_INDEX] = specialsLink.join('|')
-      // Add the % Diff
-      row.push((100 * row[DPS_INDEX] / maxDPS - 100).toFixed(2))
+      if (multiTargets) result.bossDPS = row[5]
+      result.talentsLabel = wowTalentsLabel(talents, wowClass, spec, lang)
+      result.azeritePowerLabel = azeritePower !== 'None' ? wowAzeriteLabel(azeritePower, lang) : 'None'
+      result.dpsPercentageDifference = (100 * dps / maxDPS - 100).toFixed(1)
+      results.push(result)
     }
 
     this.setState({multiTargets, results})
@@ -194,19 +177,19 @@ class CombinationsSimulationTemplate extends React.Component {
         <div>
           <Table>
             <EnhancedTableHead multiTargets={multiTargets} onRequestSort={this.handleRequestSort}
-              order={order} orderBy={orderBy} />
+              order={order} orderBy={orderBy}/>
             <TableBody>
               {results
                 .sort(getSorting(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((row) => (
-                  <TableRow key={row[RANK_INDEX]} hover>
-                    <TableCell component="th" scope="row" numeric>{row[RANK_INDEX]}</TableCell>
-                    <TableCell dangerouslySetInnerHTML={{__html: row[TALENTS_INDEX]}}/>
-                    <TableCell dangerouslySetInnerHTML={{__html: row[SPECIAL_INDEX]}}/>
-                    <TableCell numeric>{row[DPS_INDEX]}</TableCell>
-                    {multiTargets && <TableCell numeric>{row[DPSDIFF_INDEX]}</TableCell>}
-                    <TableCell numeric>{row[DPSDIFF_INDEX + (multiTargets ? 1 : 0)]}</TableCell>
+                .map((result) => (
+                  <TableRow key={result.rank} hover>
+                    <TableCell component="th" scope="row" numeric>{result.rank}</TableCell>
+                    <TableCell dangerouslySetInnerHTML={{__html: result.talentsLabel}}/>
+                    <TableCell dangerouslySetInnerHTML={{__html: result.azeritePowerLabel}}/>
+                    <TableCell numeric>{result.dps}</TableCell>
+                    {multiTargets && <TableCell numeric>{result.bossDPS}</TableCell>}
+                    <TableCell numeric>{result.dpsPercentageDifference}</TableCell>
                   </TableRow>
                 ))
               }
