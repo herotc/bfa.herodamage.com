@@ -4,6 +4,8 @@ import truncate from 'lodash/truncate'
 import { defaultLang } from '../../plugins/gatsby-plugin-herodamage-i18n'
 
 import AzeritePowerArray from '../assets/wow-data/AzeritePower.json'
+import ClassSpec from '../assets/wow-data/ClassSpec.json'
+import Talent from '../assets/wow-data/Talent.json'
 import TrinketArray from '../assets/wow-data/Trinket.json'
 import wowClassDeathKnight from '../assets/images/wow/classpicker/death_knight.svg'
 import wowClassDemonHunter from '../assets/images/wow/classpicker/demon_hunter.svg'
@@ -17,6 +19,77 @@ import wowClassRogue from '../assets/images/wow/classpicker/rogue.svg'
 import wowClassShaman from '../assets/images/wow/classpicker/shaman.svg'
 import wowClassWarlock from '../assets/images/wow/classpicker/warlock.svg'
 import wowClassWarrior from '../assets/images/wow/classpicker/warrior.svg'
+
+/**
+ * Get the class id from the class string
+ * @param wowClass
+ * @returns {*}
+ */
+export function getWowClassId (wowClass) {
+  return ClassSpec[wowClass].classId
+}
+
+/**
+ * Get the class id and the spec id from the class and spec string
+ * @param wowClass
+ * @param spec
+ * @returns {{classId, specId: *}}
+ */
+export function getWowClassIdAndSpecId (wowClass, spec) {
+  const classSpec = ClassSpec[wowClass]
+  const classId = classSpec.classId
+  const specId = classSpec.specIds[spec]
+  return {classId, specId}
+}
+
+/**
+ *
+ * @param wowClass
+ */
+export function wowIcon (wowClass) {
+  switch (wowClass) {
+    case 'death-knight':
+      return wowClassDeathKnight
+    case 'demon-hunter':
+      return wowClassDemonHunter
+    case 'druid':
+      return wowClassDruid
+    case 'hunter':
+      return wowClassHunter
+    case 'mage':
+      return wowClassMage
+    case 'monk':
+      return wowClassMonk
+    case 'paladin':
+      return wowClassPaladin
+    case 'priest':
+      return wowClassPriest
+    case 'rogue':
+      return wowClassRogue
+    case 'shaman':
+      return wowClassShaman
+    case 'warlock':
+      return wowClassWarlock
+    case 'warrior':
+      return wowClassWarrior
+  }
+}
+
+/**
+ *
+ * @param t
+ * @param spec
+ * @param variation
+ * @param formatted
+ * @returns {string}
+ */
+export function getSpecVariation (t, spec, variation, formatted = true) {
+  if (formatted) {
+    return `${startCase(t(spec))}${variation !== '' ? ` ${startCase(t(variation))}` : ''}`
+  } else {
+    return `${t(spec)}${variation !== '' ? ` ${t(variation)}` : ''}`
+  }
+}
 
 /**
  *
@@ -71,52 +144,45 @@ export function wowTrinketLabel (rawItemName, lang = defaultLang) {
 }
 
 /**
- * Does refresh any Wowhead links in the DOM
+ *
+ * @param talents
+ * @param wowClass
+ * @param spec
+ * @param lang
+ * @returns {string}
  */
-export function refreshWowheadLinks () {
-  const $WowheadPower = window.$WowheadPower
-  if ($WowheadPower && $WowheadPower.refreshLinks) {
-    $WowheadPower.refreshLinks()
+export function wowTalentsLabel (talents, wowClass, spec, lang = defaultLang) {
+  const {classId, specId} = getWowClassIdAndSpecId(wowClass, spec)
+  const classTalents = Talent[classId]
+  const sharedTalents = classTalents[0]
+  const specTalents = classTalents[specId]
+  let label = ''
+  for (let row = 0; row < talents.length; row++) {
+    let talentChar = parseInt(talents.charAt(row))
+    if (talentChar !== 0) {
+      const col = talentChar - 1
+      let talent
+      if (specTalents[row] && specTalents[row][col]) {
+        talent = specTalents[row][col]
+      } else if (sharedTalents[row] && sharedTalents[row][col]) {
+        talent = sharedTalents[row][col]
+      }
+      label += `<a href="${getWowheadLink(lang)}spell=${talent && talent.spellId}" target="_blank" rel="noopener noreferrer nofollow">
+        </a>`
+    }
   }
+  return label
 }
 
 /**
- *
- * @param wowClass
+ * Does refresh any Wowhead links in the DOM
  */
-export function wowIcon (wowClass) {
-  switch (wowClass) {
-    case 'death-knight':
-      return wowClassDeathKnight
-    case 'demon-hunter':
-      return wowClassDemonHunter
-    case 'druid':
-      return wowClassDruid
-    case 'hunter':
-      return wowClassHunter
-    case 'mage':
-      return wowClassMage
-    case 'monk':
-      return wowClassMonk
-    case 'paladin':
-      return wowClassPaladin
-    case 'priest':
-      return wowClassPriest
-    case 'rogue':
-      return wowClassRogue
-    case 'shaman':
-      return wowClassShaman
-    case 'warlock':
-      return wowClassWarlock
-    case 'warrior':
-      return wowClassWarrior
-  }
-}
-
-export function getSpecVariation (t, spec, variation, formatted = true) {
-  if (formatted) {
-    return `${startCase(t(spec))}${variation !== '' ? ` ${startCase(t(variation))}` : ''}`
+export function refreshWowheadLinks () {
+  const WH = window.WH
+  const $WowheadPower = window.$WowheadPower
+  if (WH && WH.getLocaleFromDomain && $WowheadPower && $WowheadPower.refreshLinks) {
+    $WowheadPower.refreshLinks()
   } else {
-    return `${t(spec)}${variation !== '' ? ` ${t(variation)}` : ''}`
+    setTimeout(refreshWowheadLinks, 250)
   }
 }

@@ -12,7 +12,7 @@ import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 import TableSortLabel from '@material-ui/core/TableSortLabel'
 
-import { refreshWowheadLinks, wowAzeriteLabel } from '../../utils/wow'
+import { refreshWowheadLinks, wowAzeriteLabel, wowTalentsLabel } from '../../utils/wow'
 
 import RelatedSimulations from './common/related'
 import Metas from './common/metas'
@@ -105,7 +105,8 @@ class CombinationsSimulationTemplate extends React.Component {
   }
 
   async getResults () {
-    const {i18nPlugin: {lang}} = this.props
+    const {i18nPlugin: {lang}, pathContext} = this.props
+    const {spec, wowClass} = pathContext
 
     const response = await window.fetch(this.state.filepath)
     const {results} = await response.json()
@@ -113,6 +114,9 @@ class CombinationsSimulationTemplate extends React.Component {
     const maxDPS = results[0][DPS_INDEX]
     for (let row of results) {
       // WowHead links
+      // Talents
+      row[TALENTS_INDEX] = wowTalentsLabel(row[TALENTS_INDEX], wowClass, spec, lang)
+      // Specials
       const specials = row[SPECIAL_INDEX].split(', ')
       let specialsLink = []
       for (let special of specials) {
@@ -190,7 +194,7 @@ class CombinationsSimulationTemplate extends React.Component {
                 .map((row) => (
                   <TableRow key={row[RANK_INDEX]} hover>
                     <TableCell component="th" scope="row" numeric>{row[RANK_INDEX]}</TableCell>
-                    <TableCell>{row[TALENTS_INDEX]}</TableCell>
+                    <TableCell dangerouslySetInnerHTML={{__html: row[TALENTS_INDEX]}} />
                     <TableCell dangerouslySetInnerHTML={{__html: row[SPECIAL_INDEX]}}/>
                     <TableCell numeric>{row[DPS_INDEX]}</TableCell>
                     <TableCell numeric>{row[DPSDIFF_INDEX]}</TableCell>
