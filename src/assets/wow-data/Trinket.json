@@ -456,80 +456,8 @@
     "additionalInput": []
   },
   {
-    "name": "Galecaller's Beak",
-    "itemId": 161379,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Prism of Dark Intensity",
-    "itemId": 161376,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Doom's Fury",
-    "itemId": 161463,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Kraulok's Claw",
-    "itemId": 161419,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Twitching Tentacle of Xalzaix",
-    "itemId": 160656,
+    "name": "Balefire Branch",
+    "itemId": 159630,
     "itemLevels": [
       340,
       345,
@@ -549,8 +477,80 @@
     "additionalInput": []
   },
   {
-    "name": "Vanquished Tendril of G'huun",
-    "itemId": 160654,
+    "name": "Azuretho's Singed Plumage",
+    "itemId": 161377,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [],
+    "additionalInput": []
+  },
+  {
+    "name": "Doom's Hatred",
+    "itemId": 161461,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [],
+    "additionalInput": []
+  },
+  {
+    "name": "Drust-Runed Icicle",
+    "itemId": 161380,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [],
+    "additionalInput": []
+  },
+  {
+    "name": "T'zane's Barkspines",
+    "itemId": 161411,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [],
+    "additionalInput": []
+  },
+  {
+    "name": "Twitching Tentacle of Xalzaix",
+    "itemId": 160656,
     "itemLevels": [
       340,
       345,
@@ -595,24 +595,6 @@
     "itemId": 159126,
     "itemLevels": [
       355
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Endless Tincture of Fractional Power",
-    "itemId": 152636,
-    "itemLevels": [
-      300
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Surging Alchemist Stone",
-    "itemId": 152632,
-    "itemLevels": [
-      300
     ],
     "bonusIds": [],
     "additionalInput": []
@@ -874,54 +856,6 @@
       390,
       395,
       400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Vanquished Tendril of G'huun",
-    "itemId": 160654,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Darkmoon Deck: Fathoms",
-    "itemId": 159125,
-    "itemLevels": [
-      355
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Endless Tincture of Fractional Power",
-    "itemId": 152636,
-    "itemLevels": [
-      300
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Surging Alchemist Stone",
-    "itemId": 152632,
-    "itemLevels": [
-      300
     ],
     "bonusIds": [],
     "additionalInput": []
