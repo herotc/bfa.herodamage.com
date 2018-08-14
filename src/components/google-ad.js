@@ -36,30 +36,25 @@ const initAd = () => {
 
 const VerticalContainer = styled.div`
   margin: auto;
-  padding: 0 16px;
+  padding: 0 8px;
   text-align: center;
-
-  @media screen and (min-width: ${({theme}) => theme.breakpoints.values.sm}px) {
-    max-height: 90px;
-    max-width: 760px;
-  }
 `
 
 const SideContainer = styled.div`
   @media screen and (min-width: 1552px) {
-    margin: 16px;
-    max-height: calc(100vh - 32px);
+    margin: 8px;
+    max-height: calc(100vh - 16px);
     max-width: 300px;
     position: fixed;
-    right: calc((100% - 1280px) / 4 - 16px);
+    right: calc((100% - 1280px) / 4 - 8px);
     text-align: center;
     top: 50%;
     transform: translate(50%, -50%);
-    width: calc((100% - 1280px) / 2 - 32px);
+    width: calc((100% - 1280px) / 2 - 16px);
   }
   @media screen and (min-width: 1920px) {
-    right: calc(100% / 12 - 16px);
-    width: calc(100% / 6 - 32px);
+    right: calc(100% / 12 - 8px);
+    width: calc(100% / 6 - 16px);
   }
 `
 
