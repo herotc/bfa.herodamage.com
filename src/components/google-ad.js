@@ -40,75 +40,15 @@ const VerticalContainer = styled.div`
   text-align: center;
 `
 
-const SideContainer = styled.div`
-  @media screen and (min-width: 1552px) {
-    margin: 8px;
-    max-height: calc(100vh - 16px);
-    max-width: 300px;
-    position: fixed;
-    right: calc((100% - 1280px) / 4 - 8px);
-    text-align: center;
-    top: 50%;
-    transform: translate(50%, -50%);
-    width: calc((100% - 1280px) / 2 - 16px);
-  }
-  @media screen and (min-width: 1920px) {
-    right: calc(100% / 12 - 8px);
-    width: calc(100% / 6 - 16px);
-  }
-`
-
 class Ad extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      innerWidth: typeof window !== 'undefined' ? window.innerWidth : undefined
-    }
-
-    this.getWidth = this.getWidth.bind(this)
-    this.shouldPreventSideRendering = this.shouldPreventSideRendering.bind(this)
-  }
-
-  getWidth () {
-    this.setState({innerWidth: window.innerWidth})
-  }
-
-  shouldPreventSideRendering () {
-    // Prevent rendering for SSR and whenever the viewport width is lower than 1552
-    const {innerWidth} = this.state
-    return typeof window === 'undefined' || !innerWidth || innerWidth < 1552
-  }
-
   componentDidMount () {
-    if (this.props.type === 'side') {
-      window.addEventListener('resize', this.getWidth)
-      // Do init the side ad only if we actually rendered it
-      if (!this.shouldPreventSideRendering()) {
-        initAd()
-      }
-    } else {
-      initAd()
-    }
+    initAd()
   }
 
   componentDidUpdate (prevProps, prevState, snapshot) {
     // Do init the ad only if the location did changed
     if (this.props.location.key !== prevProps.location.key) {
-      if (this.props.type === 'side') {
-        // Do init the side ad only if we actually rendered it
-        if (!this.shouldPreventSideRendering()) {
-          initAd()
-        }
-      } else {
-        initAd()
-      }
-    }
-  }
-
-  componentWillUnmount () {
-    if (this.props.type === 'side') {
-      window.removeEventListener('resize', this.getWidth)
+      initAd()
     }
   }
 
@@ -125,16 +65,6 @@ class Ad extends React.Component {
               data-ad-format="auto" data-full-width-responsive="true">
             </ins>
           </VerticalContainer>
-        )
-      case 'side':
-        if (this.shouldPreventSideRendering()) return null
-        return (
-          <SideContainer key={adKey} id={adId}>
-            <ins className="adsbygoogle" style={{display: 'block'}}
-              data-ad-client="ca-pub-5677349133508739" data-ad-slot="6483290095"
-              data-ad-format="auto" data-full-width-responsive="true">
-            </ins>
-          </SideContainer>
         )
       case 'bot':
         return (
@@ -155,58 +85,14 @@ Ad.propTypes = {
 }
 
 class DevAd extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      innerWidth: typeof window !== 'undefined' ? window.innerWidth : undefined
-    }
-
-    this.getWidth = this.getWidth.bind(this)
-    this.shouldPreventSideRendering = this.shouldPreventSideRendering.bind(this)
-  }
-
-  getWidth () {
-    this.setState({innerWidth: window.innerWidth})
-  }
-
-  shouldPreventSideRendering () {
-    // Prevent rendering for SSR and whenever the viewport width is lower than 1552
-    const {innerWidth} = this.state
-    return typeof window === 'undefined' || !innerWidth || innerWidth < 1552
-  }
-
   componentDidMount () {
-    if (this.props.type === 'side') {
-      // console.log(`EventListener Added: ${this.props.type}`)
-      window.addEventListener('resize', this.getWidth)
-      // Do init the side ad only if we actually rendered it
-      if (!this.shouldPreventSideRendering()) {
-        // console.log(`Mounted: ${this.props.type}`)
-      }
-    } else {
-      // console.log(`Mounted: ${this.props.type}`)
-    }
+    // console.log(`Mounted: ${this.props.type}`)
   }
 
   componentDidUpdate (prevProps, prevState, snapshot) {
     // Do init the ad only if the location did changed
     if (this.props.location.key !== prevProps.location.key) {
-      if (this.props.type === 'side') {
-        // Do init the side ad only if we actually rendered it
-        if (!this.shouldPreventSideRendering()) {
-          // console.log(`Updated: ${this.props.type}`)
-        }
-      } else {
-        // console.log(`Updated: ${this.props.type}`)
-      }
-    }
-  }
-
-  componentWillUnmount () {
-    if (this.props.type === 'side') {
-      // console.log(`EventListener Removed: ${this.props.type}`)
-      window.removeEventListener('resize', this.getWidth)
+      // console.log(`Updated: ${this.props.type}`)
     }
   }
 
@@ -220,12 +106,6 @@ class DevAd extends React.Component {
         return (
           <VerticalContainer key={adKey} id={adId}>
           </VerticalContainer>
-        )
-      case 'side':
-        if (this.shouldPreventSideRendering()) return null
-        return (
-          <SideContainer key={adKey} id={adId}>
-          </SideContainer>
         )
     }
   }

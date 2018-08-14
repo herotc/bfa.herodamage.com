@@ -18,6 +18,7 @@ import WowClassSelector from '../components/layout/wow-class-selector'
 import Main from '../components/layout/main'
 import Footer from '../components/layout/footer'
 import GoogleAd from '../components/google-ad'
+import GPTAd from '../components/gpt-ad'
 
 const styles = (theme) => ({
   layout: {
@@ -109,7 +110,7 @@ const Layout = ({classes, ...props}) => {
       <WowClassSelector i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
       <GoogleAd location={location} type="top"/>
       <Main {...props}/>
-      <GoogleAd location={location} type="side"/>
+      <GPTAd location={location} type="side"/>
       <GoogleAd location={location} type="bot"/>
       <Footer siteMetadata={siteMetadata}/>
     </Typography>
