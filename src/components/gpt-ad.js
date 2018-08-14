@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-const REFRESH_TIMER = 60000
-
 const VerticalContainer = styled.div`
   margin: auto;
   padding: 0 8px;
@@ -28,24 +26,6 @@ const SideContainer = styled.div`
   }
 `
 
-// TODO: Move into the class ?
-let refreshIntervalConstructor
-if (process.env.NODE_ENV === 'production') {
-  refreshIntervalConstructor = (adSlot) => {
-    return setInterval(
-      function () { window.googletag.pubads().refresh([window.gptAdSlots[adSlot]]) },
-      REFRESH_TIMER
-    )
-  }
-} else {
-  refreshIntervalConstructor = (adSlot) => {
-    return setInterval(
-      function () { console.log(`Refreshed: ${adSlot}`) },
-      REFRESH_TIMER
-    )
-  }
-}
-
 class ProdAd extends React.Component {
   constructor (props) {
     super(props)
@@ -58,21 +38,19 @@ class ProdAd extends React.Component {
         break
     }
     this.containerId = `a-${type}-d`
-    this.adRefreshIntervalId = null
   }
 
   componentDidMount () {
     window.googletag.cmd.push(function () { window.googletag.display(this.adId) })
-    this.adRefreshIntervalId = refreshIntervalConstructor(this.adSlot)
   }
 
   shouldComponentUpdate (nextProps, nextStates, nextContext) {
+    // Once there is a page change, we ask to GPT to refresh the ads
     if (this.props.location.key !== nextProps.location.key) {
-      clearInterval(this.adRefreshIntervalId)
       window.googletag.pubads().refresh([window.gptAdSlots[this.adSlot]])
-      this.adRefreshIntervalId = refreshIntervalConstructor(this.adSlot)
     }
-    return false // we never update the component once mounted, refreshes are handled by GPT
+    // We never update the component once mounted
+    return false
   }
 
   render () {
@@ -105,22 +83,19 @@ class DevAd extends React.Component {
         break
     }
     this.containerId = `a-${type}-d`
-    this.adRefreshIntervalId = null
   }
 
   componentDidMount () {
     console.log(`Mounted: ${this.props.type} | ${this.adSlot} | ${this.adId}`)
-    this.adRefreshIntervalId = refreshIntervalConstructor(this.adSlot)
   }
 
   shouldComponentUpdate (nextProps, nextStates, nextContext) {
+    // Once there is a page change, we ask to GPT to refresh the ads
     if (this.props.location.key !== nextProps.location.key) {
       console.log(`Updated: ${this.props.type} | ${this.adSlot} | ${this.adId}`)
-      clearInterval(this.adRefreshIntervalId)
-      console.log(`Refreshed: ${this.adSlot}`)
-      this.adRefreshIntervalId = refreshIntervalConstructor(this.adSlot)
     }
-    return false // we never update the component once mounted, refreshes are handled by GPT
+    // We never update the component once mounted
+    return false
   }
 
   render () {
