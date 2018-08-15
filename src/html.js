@@ -79,17 +79,17 @@ googletag.cmd.push(function() {
     .addSize([1952, 1066], [[300, 1050], [300, 600], [320, 480], [240, 400], [160, 600], [250, 360], [200, 446], [300, 250], [120, 600], [250, 250], [200, 200], [120, 240], [125, 125]]);
 
   gptAdSlots[0] = googletag
-    .defineSlot('/21735668613/bfa-hd_top', [728, 90], 'div-gpt-ad-1534303848220-0')
+    .defineSlot('/21735668613/bfa-hd_top', [728, 90], 'a-1534303848220-0-d')
     .defineSizeMapping(topBotMapping.build())
     .addService(googletag.pubads());
 
   gptAdSlots[1] = googletag
-    .defineSlot('/21735668613/bfa-hd_side', [120, 600], 'div-gpt-ad-1534304579228-0')
+    .defineSlot('/21735668613/bfa-hd_side', [120, 600], 'a-1534304579228-0-d')
     .defineSizeMapping(sideMapping.build())
     .addService(googletag.pubads());
 
    gptAdSlots[2] = googletag
-    .defineSlot('/21735668613/bfa-hd_bot', [728, 90], 'div-gpt-ad-1534304680941-0')
+    .defineSlot('/21735668613/bfa-hd_bot', [728, 90], 'a-1534304680941-0-d')
     .defineSizeMapping(topBotMapping.build())
     .addService(googletag.pubads());
 

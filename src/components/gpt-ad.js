@@ -26,17 +26,55 @@ const SideContainer = styled.div`
   }
 `
 
-function adsReady () {
-  return window.googletag && window.googletag.apiReady && window.gptAdSlots.length >= 3
+let randomClassName = ''
+for (let i = 0; i < 14; i++) {
+  randomClassName += String.fromCharCode(97 + Math.floor(Math.random() * 26))
 }
 
-// Init the ad and then refresh it (since initial load is disabled)
+/**
+ * Add a message in case the ad fails to render
+ */
+function initBlockersCheck () {
+  setTimeout(() => {
+    const ads = document.querySelectorAll(`div.${randomClassName}`)
+    for (let ad of ads) {
+      if (ad && ad.innerHTML.replace(/\s/g, '').length === 0) {
+        // Check if there isn't a message already
+        const parent = ad.parentElement
+        let messageAlreadyDisplayed = false
+        for (let element of parent.children) {
+          if (element.className === 'blockers-text') messageAlreadyDisplayed = true
+        }
+        // Insert the message
+        if (!messageAlreadyDisplayed) {
+          const blockersMessage = document.createElement('p')
+          blockersMessage.className = 'blockers-text'
+          blockersMessage.innerHTML = 'Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.'
+          parent.appendChild(blockersMessage)
+        }
+      }
+    }
+  }, 1500)
+}
+
+/**
+ * Check if the services are enabled
+ */
+function adsReady () {
+  return window.googletag && window.googletag.apiReady
+}
+
+/**
+ * Init the ad and then refresh it (since initial load is disabled)
+ * @param adId
+ * @param adSlot
+ */
 function initAd (adId, adSlot) {
   if (adsReady()) {
     window.googletag.display(adId)
     window.googletag.pubads().refresh([window.gptAdSlots[adSlot]])
   } else {
-    setTimeout(() => { initAd(adId, adSlot) }, 100)
+    setTimeout(() => { initAd(adId, adSlot) }, 20)
   }
 }
 
@@ -44,25 +82,25 @@ class ProdAd extends React.Component {
   constructor (props) {
     super(props)
 
-    const {type} = props
-    switch (type) {
+    switch (props.type) {
       case 'top':
-        this.adId = 'div-gpt-ad-1534303848220-0'
+        this.adId = 'a-1534303848220-0-d'
         this.adSlot = 0
         break
       case 'side':
-        this.adId = 'div-gpt-ad-1534304579228-0'
+        this.adId = 'a-1534304579228-0-d'
         this.adSlot = 1
         break
       case 'bot':
-        this.adId = 'div-gpt-ad-1534304680941-0'
+        this.adId = 'a-1534304680941-0-d'
         this.adSlot = 2
         break
     }
-    this.containerId = `a-${type}-d`
+    this.className = randomClassName
   }
 
   componentDidMount () {
+    initBlockersCheck()
     initAd(this.adId, this.adSlot)
   }
 
@@ -80,15 +118,15 @@ class ProdAd extends React.Component {
       case 'top':
       case 'bot':
         return (
-          <VerticalContainer id={this.containerId}>
-            <div id={this.adId}>
+          <VerticalContainer>
+            <div id={this.adId} className={this.className}>
             </div>
           </VerticalContainer>
         )
       case 'side':
         return (
-          <SideContainer id={this.containerId}>
-            <div id={this.adId}>
+          <SideContainer>
+            <div id={this.adId} className={this.className}>
             </div>
           </SideContainer>
         )
