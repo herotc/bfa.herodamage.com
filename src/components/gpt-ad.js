@@ -26,6 +26,20 @@ const SideContainer = styled.div`
   }
 `
 
+function adsReady () {
+  return window.googletag && window.googletag.apiReady && window.gptAdSlots.length >= 3
+}
+
+// Init the ad and then refresh it (since initial load is disabled)
+function initAd (adId, adSlot) {
+  if (adsReady()) {
+    window.googletag.display(adId)
+    window.googletag.pubads().refresh([window.gptAdSlots[adSlot]])
+  } else {
+    setTimeout(() => { initAd(adId, adSlot) }, 100)
+  }
+}
+
 class ProdAd extends React.Component {
   constructor (props) {
     super(props)
@@ -49,19 +63,13 @@ class ProdAd extends React.Component {
   }
 
   componentDidMount () {
-    // Init the ad and then refresh it (since initial load is disabled)
-    window.googletag.cmd.push(function () {
-      window.googletag.display(this.adId)
-      window.googletag.pubads().refresh([window.gptAdSlots[this.adSlot]])
-    })
+    initAd(this.adId, this.adSlot)
   }
 
   shouldComponentUpdate (nextProps, nextStates, nextContext) {
     // Once there is a page change, we ask to GPT to refresh the ads
-    if (this.props.location.key !== nextProps.location.key) {
-      window.googletag.cmd.push(function () {
-        window.googletag.pubads().refresh([window.gptAdSlots[this.adSlot]])
-      })
+    if (this.props.location.key !== nextProps.location.key && adsReady()) {
+      window.googletag.pubads().refresh([window.gptAdSlots[this.adSlot]])
     }
     // We never update the component once mounted
     return false

@@ -93,8 +93,9 @@ googletag.cmd.push(function() {
     .defineSizeMapping(topBotMapping.build())
     .addService(googletag.pubads());
 
-  googletag.pubads().disableInitialLoad();
+  googletag.pubads().enableSingleRequest();
   googletag.pubads().collapseEmptyDivs();
+  googletag.pubads().disableInitialLoad();
   googletag.enableServices();
 });`}}>
         </script>
@@ -126,35 +127,35 @@ googletag.cmd.push(function() {
     }
     return (
       <html {...this.props.htmlAttributes}>
-      <head>
-        <meta charSet="utf-8"/>
-        <meta httpEquiv="x-ua-compatible" content="ie=edge"/>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        {this.props.headComponents}
-        {css}
-        {gptScript}
-        {gptLoad}
-        {gptInit}
-      </head>
-      <body {...this.props.bodyAttributes}>
-      {this.props.preBodyComponents}
-      <div
-        key={`body`}
-        id="___gatsby"
-        dangerouslySetInnerHTML={{__html: this.props.body}}
-      />
-      {this.props.postBodyComponents}
-      {cookieconsentStyle}
-      {cookieconsentScript}
-      {cookieconsentLoad}
-      <script dangerouslySetInnerHTML={{__html: `var whTooltips = {colorLinks: true, iconizeLinks: true, iconSize: true};`}}>
-      </script>
-      <script src="https://wow.zamimg.com/widgets/power.js">
-      </script>
-      </body>
+        <head>
+          <meta charSet="utf-8"/>
+          <meta httpEquiv="x-ua-compatible" content="ie=edge"/>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
+          {this.props.headComponents}
+          {css}
+          {gptScript}
+          {gptLoad}
+          {gptInit}
+        </head>
+        <body {...this.props.bodyAttributes}>
+          {this.props.preBodyComponents}
+          <div
+            key={`body`}
+            id="___gatsby"
+            dangerouslySetInnerHTML={{__html: this.props.body}}
+          />
+          {this.props.postBodyComponents}
+          {cookieconsentStyle}
+          {cookieconsentScript}
+          {cookieconsentLoad}
+          <script dangerouslySetInnerHTML={{__html: `var whTooltips = {colorLinks: true, iconizeLinks: true, iconSize: true};`}}>
+          </script>
+          <script src="https://wow.zamimg.com/widgets/power.js">
+          </script>
+        </body>
       </html>
     )
   }
