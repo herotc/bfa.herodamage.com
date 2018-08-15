@@ -27,58 +27,11 @@ const SideContainer = styled.div`
 `
 
 let randomClassName = ''
-for (let i = 0; i < 14; i++) {
+for (let i = 0; i < 10 + Math.floor(Math.random() * 11); i++) {
   randomClassName += String.fromCharCode(97 + Math.floor(Math.random() * 26))
 }
 
-/**
- * Add a message in case the ad fails to render
- */
-function initBlockersCheck () {
-  setTimeout(() => {
-    const ads = document.querySelectorAll(`div.${randomClassName}`)
-    for (let ad of ads) {
-      if (ad && ad.innerHTML.replace(/\s/g, '').length === 0) {
-        // Check if there isn't a message already
-        const parent = ad.parentElement
-        let messageAlreadyDisplayed = false
-        for (let element of parent.children) {
-          if (element.className === 'blockers-text') messageAlreadyDisplayed = true
-        }
-        // Insert the message
-        if (!messageAlreadyDisplayed) {
-          const blockersMessage = document.createElement('p')
-          blockersMessage.className = 'blockers-text'
-          blockersMessage.innerHTML = 'Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.'
-          parent.appendChild(blockersMessage)
-        }
-      }
-    }
-  }, 1500)
-}
-
-/**
- * Check if the services are enabled
- */
-function adsReady () {
-  return window.googletag && window.googletag.apiReady
-}
-
-/**
- * Init the ad and then refresh it (since initial load is disabled)
- * @param adId
- * @param adSlot
- */
-function initAd (adId, adSlot) {
-  if (adsReady()) {
-    window.googletag.display(adId)
-    window.googletag.pubads().refresh([window.gptAdSlots[adSlot]])
-  } else {
-    setTimeout(() => { initAd(adId, adSlot) }, 20)
-  }
-}
-
-class ProdAd extends React.Component {
+class Ad extends React.Component {
   constructor (props) {
     super(props)
 
@@ -97,16 +50,75 @@ class ProdAd extends React.Component {
         break
     }
     this.className = randomClassName
+
+    this.initAd = this.initAd.bind(this)
+  }
+
+  /**
+   * Add a message in case the ads are blocked
+   */
+  static blockersCheck () {
+    const ads = document.querySelectorAll(`div.${randomClassName}`)
+    for (let ad of ads) {
+      if (ad && ad.innerHTML.replace(/\s/g, '').length === 0) {
+        // Skip side one if viewport width < 1552 since we won't render anything inside anyway
+        if (ad.id === 'a-1534304579228-0-d' && window.innerWidth < 1552) continue
+        // Check if there isn't a message already
+        const parent = ad.parentElement
+        let messageAlreadyDisplayed = false
+        for (let element of parent.children) {
+          if (element.className === 'blockers-text') messageAlreadyDisplayed = true
+        }
+        // Insert the message
+        if (!messageAlreadyDisplayed) {
+          const blockersMessage = document.createElement('p')
+          blockersMessage.className = 'blockers-text'
+          blockersMessage.innerHTML = 'Hero Damage is made possible by displaying online advertisements.<br>Please consider supporting us by disabling your ad blocker.'
+          parent.appendChild(blockersMessage)
+        }
+      }
+    }
+  }
+
+  /**
+   * Start the timer before checking for blockers
+   */
+  static scheduleBlockersCheck () {
+    setTimeout(Ad.blockersCheck, 500)
+  }
+
+  /**
+   * Check if the services are enabled
+   * @returns {{}|*}
+   */
+  static adsReady () {
+    return window.googletag && window.googletag.apiReady
+  }
+
+  /**
+   * Init the ad and then refresh it (since initial load is disabled)
+   */
+  initAd () {
+    if (Ad.adsReady()) {
+      window.googletag.display(this.adId)
+      window.googletag.pubads().refresh([window.gptAdSlots[this.adSlot]])
+    } else {
+      setTimeout(this.initAd, 20)
+    }
   }
 
   componentDidMount () {
-    initBlockersCheck()
-    initAd(this.adId, this.adSlot)
+    if (window.document.readyState === 'complete') {
+      Ad.scheduleBlockersCheck()
+    } else {
+      window.addEventListener('load', Ad.scheduleBlockersCheck)
+    }
+    this.initAd()
   }
 
   shouldComponentUpdate (nextProps, nextStates, nextContext) {
     // Once there is a page change, we ask to GPT to refresh the ads
-    if (this.props.location.key !== nextProps.location.key && adsReady()) {
+    if (this.props.location.key !== nextProps.location.key && Ad.adsReady()) {
       window.googletag.pubads().refresh([window.gptAdSlots[this.adSlot]])
     }
     // We never update the component once mounted
@@ -134,12 +146,12 @@ class ProdAd extends React.Component {
   }
 }
 
-ProdAd.propTypes = {
+Ad.propTypes = {
   location: PropTypes.object.isRequired,
   type: PropTypes.string.isRequired
 }
 
-class DevAd extends ProdAd {
+class DevAd extends Ad {
   componentDidMount () {
     // console.log(`Mounted: ${this.props.type} | ${this.adSlot} | ${this.adId}`)
   }
@@ -159,6 +171,6 @@ DevAd.propTypes = {
   type: PropTypes.string.isRequired
 }
 
-const GPTAd = process.env.NODE_ENV === 'production' ? ProdAd : DevAd
+const GPTAd = process.env.NODE_ENV === 'production' ? Ad : DevAd
 
 export default GPTAd
