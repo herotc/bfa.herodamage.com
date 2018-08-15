@@ -32,22 +32,36 @@ class ProdAd extends React.Component {
 
     const {type} = props
     switch (type) {
-      case 'side':
-        this.adId = 'div-gpt-ad-1534216735544-0'
+      case 'top':
+        this.adId = 'div-gpt-ad-1534303848220-0'
         this.adSlot = 0
+        break
+      case 'side':
+        this.adId = 'div-gpt-ad-1534304579228-0'
+        this.adSlot = 1
+        break
+      case 'bot':
+        this.adId = 'div-gpt-ad-1534304680941-0'
+        this.adSlot = 2
         break
     }
     this.containerId = `a-${type}-d`
   }
 
   componentDidMount () {
-    window.googletag.cmd.push(function () { window.googletag.display(this.adId) })
+    // Init the ad and then refresh it (since initial load is disabled)
+    window.googletag.cmd.push(function () {
+      window.googletag.display(this.adId)
+      window.googletag.pubads().refresh([window.gptAdSlots[this.adSlot]])
+    })
   }
 
   shouldComponentUpdate (nextProps, nextStates, nextContext) {
     // Once there is a page change, we ask to GPT to refresh the ads
     if (this.props.location.key !== nextProps.location.key) {
-      window.googletag.pubads().refresh([window.gptAdSlots[this.adSlot]])
+      window.googletag.cmd.push(function () {
+        window.googletag.pubads().refresh([window.gptAdSlots[this.adSlot]])
+      })
     }
     // We never update the component once mounted
     return false
@@ -55,6 +69,14 @@ class ProdAd extends React.Component {
 
   render () {
     switch (this.props.type) {
+      case 'top':
+      case 'bot':
+        return (
+          <VerticalContainer id={this.containerId}>
+            <div id={this.adId}>
+            </div>
+          </VerticalContainer>
+        )
       case 'side':
         return (
           <SideContainer id={this.containerId}>
@@ -71,43 +93,18 @@ ProdAd.propTypes = {
   type: PropTypes.string.isRequired
 }
 
-class DevAd extends React.Component {
-  constructor (props) {
-    super(props)
-
-    const {type} = props
-    switch (type) {
-      case 'side':
-        this.adId = 'div-gpt-ad-1534216735544-0'
-        this.adSlot = 0
-        break
-    }
-    this.containerId = `a-${type}-d`
-  }
-
+class DevAd extends ProdAd {
   componentDidMount () {
-    console.log(`Mounted: ${this.props.type} | ${this.adSlot} | ${this.adId}`)
+    // console.log(`Mounted: ${this.props.type} | ${this.adSlot} | ${this.adId}`)
   }
 
   shouldComponentUpdate (nextProps, nextStates, nextContext) {
     // Once there is a page change, we ask to GPT to refresh the ads
     if (this.props.location.key !== nextProps.location.key) {
-      console.log(`Updated: ${this.props.type} | ${this.adSlot} | ${this.adId}`)
+      // console.log(`Updated: ${this.props.type} | ${this.adSlot} | ${this.adId}`)
     }
     // We never update the component once mounted
     return false
-  }
-
-  render () {
-    switch (this.props.type) {
-      case 'side':
-        return (
-          <SideContainer id={this.containerId}>
-            <div id={this.adId}>
-            </div>
-          </SideContainer>
-        )
-    }
   }
 }
 

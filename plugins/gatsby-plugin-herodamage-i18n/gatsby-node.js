@@ -15,7 +15,6 @@ module.exports.modifyBabelrc = function ({babelrc}) {
 
 // Create i18n routes
 const langs = require('./index').langs
-const defaultLang = require('./index').defaultLang
 const prefix = require('./index').prefix
 module.exports.onCreatePage = function ({page, boundActionCreators}) {
   const {createPage, deletePage} = boundActionCreators
