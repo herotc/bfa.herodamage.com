@@ -37,10 +37,8 @@ class CombinationsSimulationTemplate extends React.Component {
       talentsTree: null
     }
 
-    this.getResults = this.getResults.bind(this)
     this.handleAzeritePowerSelect = this.handleAzeritePowerSelect.bind(this)
     this.handleTalentSelect = this.handleTalentSelect.bind(this)
-    this.isValidResult = this.isValidResult.bind(this)
     this.handleRequestSort = this.handleRequestSort.bind(this)
     this.handleChangePage = this.handleChangePage.bind(this)
     this.handleChangeRowsPerPage = this.handleChangeRowsPerPage.bind(this)
