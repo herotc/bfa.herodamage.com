@@ -6,7 +6,7 @@ import { defaultLang } from '../../plugins/gatsby-plugin-herodamage-i18n'
 import AzeritePowerArray from '../assets/wow-data/AzeritePower.json'
 import ClassSpec from '../assets/wow-data/ClassSpec.json'
 import TalentExpanded from '../assets/wow-data/TalentExpanded.json'
-import TrinketArray from '../assets/wow-data/Trinket.json'
+import Trinket from '../assets/wow-data/Trinket.json'
 import wowClassDeathKnight from '../assets/images/wow/classpicker/death_knight.svg'
 import wowClassDemonHunter from '../assets/images/wow/classpicker/demon_hunter.svg'
 import wowClassDruid from '../assets/images/wow/classpicker/druid.svg'
@@ -152,8 +152,13 @@ const AzeritePowers = Object.assign({}, ...AzeritePowerArray.map((item) => ({[it
 const truncateOptions = {length: 30}
 
 export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
-  const spellName = rawSpellName.split(' / ') // Some labels are concatened, like the Alliance / Horde one, we always take the first one
-  const {spellId, tier} = AzeritePowers[spellName[0]]
+  // Some labels are concatened, like the Alliance / Horde one, we always take the first one
+  const spellName = rawSpellName.split(' / ')
+
+  const azeritePower = AzeritePowers[spellName[0]]
+  if (!azeritePower) return truncate(rawSpellName, truncateOptions)
+
+  const {spellId, tier} = azeritePower
   return `<a href="${getWowheadLink(lang)}spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow">
     <span class="azerite-tier${tier}">${truncate(rawSpellName, truncateOptions)}</span>
   </a>`
@@ -162,12 +167,14 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
 /**
  *
  * @param rawItemName
+ * @param lang
  * @returns {string}
  */
-const Trinkets = Object.assign({}, ...TrinketArray.map((item) => ({[item['name']]: item})))
-
 export function wowTrinketLabel (rawItemName, lang = defaultLang) {
-  const {itemId} = Trinkets[rawItemName]
+  const trinket = Trinket[rawItemName]
+  if (!trinket) return truncate(rawItemName, truncateOptions)
+
+  const {itemId} = Trinket[rawItemName]
   return `<a href="${getWowheadLink(lang)}item=${itemId}" target="_blank" rel="noopener noreferrer nofollow">
     <span>${truncate(rawItemName, truncateOptions)}</span>
   </a>`
