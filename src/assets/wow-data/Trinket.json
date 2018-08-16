@@ -1,941 +1,146 @@
-[
-  {
-    "name": "Azerokk's Resonating Heart",
-    "itemId": 159612,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+{
+  "Azerokk's Resonating Heart": {
+    "itemId": 159612
   },
-  {
-    "name": "Dead-Eye Spyglass",
-    "itemId": 159623,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Azuretho's Singed Plumage": {
+    "itemId": 161377
   },
-  {
-    "name": "Galecaller's Boon",
-    "itemId": 159614,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Balefire Branch": {
+    "itemId": 159630
   },
-  {
-    "name": "Harlan's Loaded Dice",
-    "itemId": 155881,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Briny Barnacle": {
+    "itemId": 159619
   },
-  {
-    "name": "Kul Tiran Cannonball Runner",
-    "itemId": 159628,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Bygone Bee Almanac": {
+    "itemId": 163936
   },
-  {
-    "name": "Lustrous Golden Plumage",
-    "itemId": 159617,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Conch of Dark Whispers": {
+    "itemId": 159620
   },
-  {
-    "name": "My'das Talisman",
-    "itemId": 158319,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Construct Overcharger": {
+    "itemId": 160652
   },
-  {
-    "name": "Tiny Electromental in a Jar",
-    "itemId": 158374,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Darkmoon Deck: Fathoms": {
+    "itemId": 159125
   },
-  {
-    "name": "Doom's Wake",
-    "itemId": 161462,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Darkmoon Deck: Squalls": {
+    "itemId": 159126
   },
-  {
-    "name": "Permafrost-Encrusted Heart",
-    "itemId": 161381,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Dead-Eye Spyglass": {
+    "itemId": 159623
   },
-  {
-    "name": "Plume of the Seaborne Avian",
-    "itemId": 161378,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Disc of Systematic Regression": {
+    "itemId": 160650
   },
-  {
-    "name": "Spiritbound Voodoo Burl",
-    "itemId": 161412,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Doom's Fury": {
+    "itemId": 161463
   },
-  {
-    "name": "Construct Overcharger",
-    "itemId": 160652,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Doom's Hatred": {
+    "itemId": 161461
   },
-  {
-    "name": "Frenetic Corpuscle",
-    "itemId": 160648,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Doom's Wake": {
+    "itemId": 161462
   },
-  {
-    "name": "Vanquished Tendril of G'huun",
-    "itemId": 160654,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Drust-Runed Icicle": {
+    "itemId": 161380
   },
-  {
-    "name": "Darkmoon Deck: Fathoms",
-    "itemId": 159125,
-    "itemLevels": [
-      355
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Endless Tincture of Fractional Power": {
+    "itemId": 152636
   },
-  {
-    "name": "Endless Tincture of Fractional Power",
-    "itemId": 152636,
-    "itemLevels": [
-      300
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Frenetic Corpuscle": {
+    "itemId": 160648
   },
-  {
-    "name": "Surging Alchemist Stone",
-    "itemId": 152632,
-    "itemLevels": [
-      300
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Galecaller's Beak": {
+    "itemId": 161379
   },
-  {
-    "name": "Vessel of Skittering Shadows",
-    "itemId": 159610,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Galecaller's Boon": {
+    "itemId": 159614
   },
-  {
-    "name": "Conch of Dark Whispers",
-    "itemId": 159620,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Gore-Crusted Butcher's Block": {
+    "itemId": 159616
   },
-  {
-    "name": "Hadal's Nautilus",
-    "itemId": 159622,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Hadal's Nautilus": {
+    "itemId": 159622
   },
-  {
-    "name": "Rotcrusted Voodoo Doll",
-    "itemId": 159624,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Harlan's Loaded Dice": {
+    "itemId": 155881
   },
-  {
-    "name": "Ignition Mage's Fuse",
-    "itemId": 159615,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Ignition Mage's Fuse": {
+    "itemId": 159615
   },
-  {
-    "name": "Lady Waycrest's Music Box",
-    "itemId": 159631,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Jes' Howler": {
+    "itemId": 159627
   },
-  {
-    "name": "Balefire Branch",
-    "itemId": 159630,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Kraulok's Claw": {
+    "itemId": 161419
   },
-  {
-    "name": "Azuretho's Singed Plumage",
-    "itemId": 161377,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Kul Tiran Cannonball Runner": {
+    "itemId": 159628
   },
-  {
-    "name": "Doom's Hatred",
-    "itemId": 161461,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Lady Waycrest's Music Box": {
+    "itemId": 159631
   },
-  {
-    "name": "Drust-Runed Icicle",
-    "itemId": 161380,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Landoi's Scrutiny": {
+    "itemId": 163935
   },
-  {
-    "name": "T'zane's Barkspines",
-    "itemId": 161411,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Leyshock's Grand Compilation": {
+    "itemId": 163937
   },
-  {
-    "name": "Twitching Tentacle of Xalzaix",
-    "itemId": 160656,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Lustrous Golden Plumage": {
+    "itemId": 159617
   },
-  {
-    "name": "Vigilant's Bloodshaper",
-    "itemId": 160651,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Merektha's Fang": {
+    "itemId": 158367
   },
-  {
-    "name": "Darkmoon Deck: Squalls",
-    "itemId": 159126,
-    "itemLevels": [
-      355
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "My'das Talisman": {
+    "itemId": 158319
   },
-  {
-    "name": "Rezan's Gleaming Eye",
-    "itemId": 158712,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Permafrost-Encrusted Heart": {
+    "itemId": 161381
   },
-  {
-    "name": "Briny Barnacle",
-    "itemId": 159619,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Plume of the Seaborne Avian": {
+    "itemId": 161378
   },
-  {
-    "name": "Merektha's Fang",
-    "itemId": 158367,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Prism of Dark Intensity": {
+    "itemId": 161376
   },
-  {
-    "name": "Razdunk's Big Red Button",
-    "itemId": 159611,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Razdunk's Big Red Button": {
+    "itemId": 159611
   },
-  {
-    "name": "Vial of Animated Blood",
-    "itemId": 159625,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Rezan's Gleaming Eye": {
+    "itemId": 158712
   },
-  {
-    "name": "Gore-Crusted Butcher's Block",
-    "itemId": 159616,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Rotcrusted Voodoo Doll": {
+    "itemId": 159624
   },
-  {
-    "name": "Jes' Howler",
-    "itemId": 159627,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Spiritbound Voodoo Burl": {
+    "itemId": 161412
   },
-  {
-    "name": "Azuretho's Singed Plumage",
-    "itemId": 161377,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Surging Alchemist Stone": {
+    "itemId": 152632
   },
-  {
-    "name": "Doom's Hatred",
-    "itemId": 161461,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Syringe of Bloodborne Infirmity": {
+    "itemId": 160655
   },
-  {
-    "name": "Drust-Runed Icicle",
-    "itemId": 161380,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "T'zane's Barkspines": {
+    "itemId": 161411
   },
-  {
-    "name": "T'zane's Barkspines",
-    "itemId": 161411,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Tiny Electromental in a Jar": {
+    "itemId": 158374
   },
-  {
-    "name": "Disc of Systematic Regression",
-    "itemId": 160650,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Twitching Tentacle of Xalzaix": {
+    "itemId": 160656
   },
-  {
-    "name": "Syringe of Bloodborne Infirmity",
-    "itemId": 160655,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Vanquished Tendril of G'huun": {
+    "itemId": 160654
   },
-  {
-    "name": "Landoi's Scrutiny",
-    "itemId": 163935,
-    "itemLevels": [
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Vessel of Skittering Shadows": {
+    "itemId": 159610
   },
-  {
-    "name": "Bygone Bee Almanac",
-    "itemId": 163936,
-    "itemLevels": [
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Vial of Animated Blood": {
+    "itemId": 159625
   },
-  {
-    "name": "Leyshock's Grand Compilation",
-    "itemId": 163937,
-    "itemLevels": [
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
-  },
-  {
-    "name": "Balefire Branch",
-    "itemId": 159630,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [],
-    "additionalInput": []
+  "Vigilant's Bloodshaper": {
+    "itemId": 160651
   }
-]
+}
