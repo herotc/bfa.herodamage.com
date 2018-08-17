@@ -43,7 +43,7 @@ class Filters extends React.Component {
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
             <h3 style={{margin: 0}}><Trans>Filters (Click to toggle them on/off from the results)</Trans></h3>
           </ExpansionPanelSummary>
-          <ExpansionPanelDetails>
+          <ExpansionPanelDetails style={{padding: '8px 0 24px 0'}}>
             <Container>
               <div>
                 {Object.values(talentsTree).map((row, rowId) => (
