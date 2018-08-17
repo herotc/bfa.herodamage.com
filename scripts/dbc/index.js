@@ -1,0 +1,2 @@
+require('./expandTalent')
+require('./filterTrinket')
