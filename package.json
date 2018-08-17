@@ -52,6 +52,7 @@
     "preproduction": "npm run build && npm run serve",
     "i18n-extract": "cross-env BABEL_ENV=extract lingui extract",
     "i18n-compile": "lingui compile",
+    "dbc": "node scripts/dbc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
@@ -97,8 +98,8 @@
     "shx": "^0.3.2"
   },
   "engines": {
-    "node": "10.8.0",
-    "npm": "6.3.0"
+    "node": "10.9.0",
+    "npm": "6.4.0"
   },
   "browserslist": [
     "> 1%",

@@ -22,6 +22,10 @@ cd public
 git checkout --quiet ${GH_TARGET_BRANCH} || git checkout --quiet --orphan ${GH_TARGET_BRANCH}
 cd ..
 
+# Run DBC scripts
+echo "[CI] Run DBC scripts"
+npm run dbc
+
 # Build
 echo "[CI] Gatsby build"
 npm run build
