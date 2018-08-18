@@ -9,7 +9,7 @@ const RacesSimulationTemplate = (props) => (
     <div>
       <p><Trans>If you are interested in how the different races in World of Warcraft compare for this build, you can
         check out the following chart. However, keep in mind that race differences are usually rather small and can
-        change with balance and gameplay changes. You can always play the race you want to play and don&apos,t have
+        change with balance and gameplay changes. You can always play the race you want to play and do not have
         to feel compelled to choose based on this chart.</Trans></p>
     </div>
   </StackedChartLayout>

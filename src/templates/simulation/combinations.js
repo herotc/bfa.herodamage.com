@@ -136,12 +136,20 @@ class CombinationsSimulationTemplate extends React.Component {
         </Helmet>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         <p><Trans><b>Information:</b><br/>These simulations are all based on the default profiles from
-          SimulationCraft.<br/>The target error was {targetError}% which means you can consider everything within that
-          DPS range to be mostly equal and requiring a more detailed investigation.</Trans></p>
+          SimulationCraft.<br/>You can consider everything within the target error DPS range to be mostly equal and
+          requiring a more detailed investigation.</Trans></p>
         <p><Trans>The purpose of these simulations is to get a general idea of how different setups will compare with
           each other and not to promote any definitive best builds. Several variables (like different trinkets, WF/TF or
           ingame situations) are not taken into account. This is why you, as always, should <u><b>simulate your own
             character</b></u> to find your optimal setup.</Trans></p>
+        <p><Trans>The fact that generic azerite powers are not included is intended. The goal of such simulations is not
+          to find the best possibilities out of millions possible combinations but rather let you know <b>if a given
+            azerite power alone could impact talents choices</b>. One of the caveat is that it could happen with further
+          stacks or a combination of two of them, those cases are not covered there. You might find more information
+          about such events on your class resources.</Trans></p>
+        <p><Trans>Of course, you can also check how the talents compare each other without any azerite power (just
+          unselect all of them). Which is ideal in case you are using only generic azerite powers for example.</Trans>
+        </p>
         <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
           t={t} tier={tier} variation={variation}/>
         <Metas buildTime={buildTime} gitRevision={gitRevision}
@@ -150,8 +158,9 @@ class CombinationsSimulationTemplate extends React.Component {
         <CircularProgress id="results-loader" color="secondary"/>}
         {results &&
         <div>
-          <Filters name={name} onAzeritePowerSelect={this.handleAzeritePowerSelect} onTalentSelect={this.handleTalentSelect}
-            selectedAzeritePowers={selectedAzeritePowers} talentsTree={talentsTree} wowheadLink={wowheadLink} />
+          <Filters name={name} onAzeritePowerSelect={this.handleAzeritePowerSelect}
+            onTalentSelect={this.handleTalentSelect}
+            selectedAzeritePowers={selectedAzeritePowers} talentsTree={talentsTree} wowheadLink={wowheadLink}/>
           <p style={{textAlign: 'center'}}>
             <span className={'azerite-tier2'}>Inner Ring</span>
             &nbsp;|&nbsp;
