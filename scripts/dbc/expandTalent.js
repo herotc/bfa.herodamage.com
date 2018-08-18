@@ -1,10 +1,10 @@
 const fs = require('fs')
-const Talent = require('../../src/assets/wow-data/Talent.json')
+const TalentRaw = require('../../src/assets/wow-data/raw/Talent.json')
 
-const TalentExpanded = Object.assign({}, Talent)
+const Talents = Object.assign({}, TalentRaw)
 
-for (const classId in TalentExpanded) {
-  const classTalents = TalentExpanded[classId]
+for (const classId in Talents) {
+  const classTalents = Talents[classId]
   const sharedTalents = classTalents[0]
   for (const specId in classTalents) {
     if (specId === 0) continue
@@ -24,4 +24,4 @@ for (const classId in TalentExpanded) {
   delete classTalents[0]
 }
 
-fs.writeFile('src/assets/wow-data/TalentExpanded.json', JSON.stringify(TalentExpanded), (err) => { if (err) console.err(err) })
+fs.writeFile('src/assets/wow-data/Talent.json', JSON.stringify(Talents), (err) => { if (err) console.err(err) })

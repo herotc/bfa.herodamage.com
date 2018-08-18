@@ -3,10 +3,10 @@ import truncate from 'lodash/truncate'
 
 import { defaultLang } from '../../plugins/gatsby-plugin-herodamage-i18n'
 
-import AzeritePowerArray from '../assets/wow-data/AzeritePower.json'
 import ClassSpec from '../assets/wow-data/ClassSpec.json'
-import TalentExpanded from '../assets/wow-data/TalentExpanded.json'
-import Trinket from '../assets/wow-data/Trinket.json'
+import Talents from '../assets/wow-data/Talent.json'
+import Trinkets from '../assets/wow-data/Trinket.json'
+import AzeritePowers from '../assets/wow-data/AzeritePower.json'
 import wowClassDeathKnight from '../assets/images/wow/classpicker/death_knight.svg'
 import wowClassDemonHunter from '../assets/images/wow/classpicker/demon_hunter.svg'
 import wowClassDruid from '../assets/images/wow/classpicker/druid.svg'
@@ -50,7 +50,7 @@ export function getWowClassIdAndSpecId (wowClass, spec) {
  */
 export function getTalentsTree (wowClass, spec) {
   const {classId, specId} = getWowClassIdAndSpecId(wowClass, spec)
-  const classTalents = TalentExpanded[classId]
+  const classTalents = Talents[classId]
   return Object.assign({}, classTalents[specId])
 }
 
@@ -148,7 +148,6 @@ export function getAzeriteInformation (azeritePower) {
  * @param rawSpellName
  * @returns {string}
  */
-const AzeritePowers = Object.assign({}, ...AzeritePowerArray.map((item) => ({[item['spellName']]: item})))
 const truncateOptions = {length: 30}
 
 export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
@@ -171,10 +170,10 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
  * @returns {string}
  */
 export function wowTrinketLabel (rawItemName, lang = defaultLang) {
-  const trinket = Trinket[rawItemName]
+  const trinket = Trinkets[rawItemName]
   if (!trinket) return truncate(rawItemName, truncateOptions)
 
-  const {itemId} = Trinket[rawItemName]
+  const {itemId} = Trinkets[rawItemName]
   return `<a href="${getWowheadLink(lang)}item=${itemId}" target="_blank" rel="noopener noreferrer nofollow">
     <span>${truncate(rawItemName, truncateOptions)}</span>
   </a>`
