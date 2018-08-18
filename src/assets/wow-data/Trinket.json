@@ -1,27 +1,6 @@
 {
-  "Acrid Catalyst Injector": {
-    "itemId": 151955
-  },
-  "Aman'Thul's Vision": {
-    "itemId": 154172
-  },
-  "Aman'Thul's Vision 15-Pantheon": {
-    "itemId": 154172
-  },
-  "Aman'Thul's Vision 5-Pantheon": {
-    "itemId": 154172
-  },
-  "Aman'Thuls Vision": {
-    "itemId": 154172
-  },
-  "Aran's Relaxing Ruby": {
-    "itemId": 142157
-  },
-  "Arcanogolem Digit": {
-    "itemId": 140794
-  },
-  "Astral Alchemist Stone": {
-    "itemId": 151607
+  "'Bygone Bee' Almanac": {
+    "itemId": 163936
   },
   "Azerokk's Resonating Heart": {
     "itemId": 159612
@@ -32,35 +11,11 @@
   "Balefire Branch": {
     "itemId": 159630
   },
-  "Bloodstained Handkerchief": {
-    "itemId": 142159
-  },
-  "Bloodthirsty Instict": {
-    "itemId": 139329
-  },
-  "Bough of Corruption": {
-    "itemId": 139323
+  "Berserker's Juju": {
+    "itemId": 161117
   },
   "Briny Barnacle": {
     "itemId": 159619
-  },
-  "Bygone Bee Almanac": {
-    "itemId": 163936
-  },
-  "Caged Horror": {
-    "itemId": 136716
-  },
-  "Chaos Talisman": {
-    "itemId": 137459
-  },
-  "Charm of the Rising Tide": {
-    "itemId": 147002
-  },
-  "Chrono Shard": {
-    "itemId": 137419
-  },
-  "Claw of the Crystalline Scorpid": {
-    "itemId": 140790
   },
   "Conch of Dark Whispers": {
     "itemId": 159620
@@ -68,23 +23,17 @@
   "Construct Overcharger": {
     "itemId": 160652
   },
-  "Convergence of Fates": {
-    "itemId": 140806
+  "Crawg Gnawed Femur": {
+    "itemId": 163703
   },
-  "Corrupted Starlight": {
-    "itemId": 137301
+  "Cursed Captain's Charm": {
+    "itemId": 161115
   },
-  "Cradle of Anguish": {
-    "itemId": 147010
-  },
-  "Darkmoon Deck: Dominion": {
-    "itemId": 128705
+  "Dadalea's Wing": {
+    "itemId": 158218
   },
   "Darkmoon Deck: Fathoms": {
     "itemId": 159125
-  },
-  "Darkmoon Deck: Hellfire": {
-    "itemId": 128709
   },
   "Darkmoon Deck: Squalls": {
     "itemId": 159126
@@ -92,17 +41,14 @@
   "Dead-Eye Spyglass": {
     "itemId": 159623
   },
-  "Deteriorated Construct Core": {
-    "itemId": 142165
-  },
-  "Devilsaur Shock-Baton": {
-    "itemId": 140030
-  },
   "Dinobone Charm": {
     "itemId": 158155
   },
   "Disc of Systematic Regression": {
     "itemId": 160650
+  },
+  "Doom Shroom": {
+    "itemId": 158555
   },
   "Doom's Fury": {
     "itemId": 161463
@@ -113,17 +59,14 @@
   "Doom's Wake": {
     "itemId": 161462
   },
-  "Draught of Souls": {
-    "itemId": 140808
+  "Dread Aspirant's Medallion": {
+    "itemId": 162897
   },
-  "Dreadstone of Endless Shadows": {
-    "itemId": 144480
+  "Dread Gladiator's Badge": {
+    "itemId": 161902
   },
   "Drust-Runed Icicle": {
     "itemId": 161380
-  },
-  "Elementium Bomb Squirrel Generator": {
-    "itemId": 137446
   },
   "Emblem of Zandalar": {
     "itemId": 158154
@@ -131,56 +74,11 @@
   "Endless Tincture of Fractional Power": {
     "itemId": 152636
   },
-  "Engine of Eradication": {
-    "itemId": 147015
-  },
-  "Engine of Eradication (No Orbs)": {
-    "itemId": 147015
-  },
-  "Engine of Eradication_No Orbs": {
-    "itemId": 147015
-  },
-  "Engine of Eradication_NoOrbs": {
-    "itemId": 147015
-  },
-  "Entwined Elemental Foci": {
-    "itemId": 140796
-  },
-  "Erratic Metronome": {
-    "itemId": 140792
-  },
-  "Ettin Fingernail": {
-    "itemId": 141535
-  },
-  "Eyasu's Mulligan": {
-    "itemId": 141584
-  },
-  "Eye of Command": {
-    "itemId": 142167
-  },
-  "Eye of Skovald": {
-    "itemId": 133641
-  },
-  "Faulty Countermeasure": {
-    "itemId": 137539
-  },
-  "Fel Oiled Infernal Machine": {
-    "itemId": 144482
-  },
-  "Figurehead of the Naglfar": {
-    "itemId": 137329
-  },
-  "Forgefiend's Fabricator": {
-    "itemId": 151963
-  },
-  "ForgefiendsFabricator": {
-    "itemId": 151963
+  "First Mate's Spyglass": {
+    "itemId": 158163
   },
   "Frenetic Corpuscle": {
     "itemId": 160648
-  },
-  "Fury of the Burning Sky": {
-    "itemId": 140801
   },
   "Galecaller's Beak": {
     "itemId": 161379
@@ -188,29 +86,14 @@
   "Galecaller's Boon": {
     "itemId": 159614
   },
-  "Giant Ornamental Pearl": {
-    "itemId": 137369
+  "Galewind Chimes": {
+    "itemId": 155568
   },
   "Gilded Loa Figurine": {
     "itemId": 158153
   },
-  "Golganneth's Vitality": {
-    "itemId": 154174
-  },
-  "Golganneth's Vitality 15-Pantheon": {
-    "itemId": 154174
-  },
-  "Golganneth's Vitality 5-Pantheon": {
-    "itemId": 154174
-  },
   "Gore-Crusted Butcher's Block": {
     "itemId": 159616
-  },
-  "Gorshalach's Legacy": {
-    "itemId": 152093
-  },
-  "Gorshalachs Legacy": {
-    "itemId": 152093
   },
   "Hadal's Nautilus": {
     "itemId": 159622
@@ -218,56 +101,17 @@
   "Harlan's Loaded Dice": {
     "itemId": 155881
   },
-  "Horn of Valor": {
-    "itemId": 133642
-  },
-  "Hunger of the Pack": {
-    "itemId": 136975
-  },
-  "Icon of Rot": {
-    "itemId": 140798
-  },
   "Ignition Mage's Fuse": {
     "itemId": 159615
   },
-  "Infernal Alchemist Stone": {
-    "itemId": 127842
-  },
-  "Infernal Cinders": {
-    "itemId": 147009
-  },
-  "Infernal Cinders (3 Users)": {
-    "itemId": 147009
-  },
-  "Infernal Writ": {
-    "itemId": 137485
-  },
-  "InfernalCinders_3Users": {
-    "itemId": 147009
+  "Incessantly Ticking Clock": {
+    "itemId": 161113
   },
   "Jes' Howler": {
     "itemId": 159627
   },
-  "Khazgoroths Courage": {
-    "itemId": 154176
-  },
-  "Khazgoroths Courage 15-Pantheon": {
-    "itemId": 154176
-  },
-  "Khazgoroths Courage 5-Pantheon": {
-    "itemId": 154176
-  },
-  "Kil'jaeden's Burning Wish": {
-    "itemId": 144259
-  },
-  "Kiljaeden's Burning Wish": {
-    "itemId": 144259
-  },
-  "Kiljaedens Burning Wish": {
-    "itemId": 144259
-  },
-  "KiljaedensBurningWish": {
-    "itemId": 144259
+  "Kaja-fied Banana": {
+    "itemId": 161125
   },
   "Kraulok's Claw": {
     "itemId": 161419
@@ -284,68 +128,20 @@
   "Leyshock's Grand Compilation": {
     "itemId": 163937
   },
+  "Lingering Sporepods": {
+    "itemId": 159626
+  },
+  "Living Oil Cannister": {
+    "itemId": 158216
+  },
   "Lustrous Golden Plumage": {
     "itemId": 159617
-  },
-  "Mark of Dargrul": {
-    "itemId": 137357
-  },
-  "Memento of Angerboda": {
-    "itemId": 133644
   },
   "Merektha's Fang": {
     "itemId": 158367
   },
-  "Might of Krosus": {
-    "itemId": 140799
-  },
-  "Moonlit Prism": {
-    "itemId": 137541
-  },
-  "Mrrgria's Favor": {
-    "itemId": 142160
-  },
   "My'das Talisman": {
     "itemId": 158319
-  },
-  "Naraxas Spiked Tongue": {
-    "itemId": 137349
-  },
-  "Naraxas' Spiked Tongue": {
-    "itemId": 137349
-  },
-  "Nature's Call": {
-    "itemId": 139334
-  },
-  "Natures Call": {
-    "itemId": 139334
-  },
-  "Nightblooming Frond": {
-    "itemId": 140802
-  },
-  "Nightmare Egg Shell": {
-    "itemId": 137312
-  },
-  "Norgannon's Prowess": {
-    "itemId": 154177
-  },
-  "Norgannon's Prowess 15-Pantheon": {
-    "itemId": 154177
-  },
-  "Norgannon's Prowess 5-Pantheon": {
-    "itemId": 154177
-  },
-  "Oakheart's Gnarled Root": {
-    "itemId": 137306
-  },
-  "Oakhearts Gnarled Root": {
-    "itemId": 137306
-  },
-  "Obelisk of the Void": {
-    "itemId": 137433
-  },
-  "Padawsen's Unlucky Charm": {
-    "itemId": 141536
   },
   "Pearl Diver's Compass": {
     "itemId": 158162
@@ -353,47 +149,20 @@
   "Permafrost-Encrusted Heart": {
     "itemId": 161381
   },
-  "Pharameres Forbidden Grimoire": {
-    "itemId": 140800
-  },
   "Plume of the Seaborne Avian": {
     "itemId": 161378
   },
   "Plunderbeard's Flask": {
     "itemId": 158164
   },
-  "Portable Manacracker": {
-    "itemId": 137398
-  },
   "Prism of Dark Intensity": {
     "itemId": 161376
   },
-  "Prototype Personnel Decimator": {
-    "itemId": 151962
-  },
-  "PVP Badge of Conquest": {
-    "itemId": 142773
-  },
-  "PVP Badge of Dominance": {
-    "itemId": 142779
-  },
-  "PVP Insignia of Conquest": {
-    "itemId": 142662
-  },
-  "PVP Insignia of Dominance": {
-    "itemId": 142668
-  },
-  "Pyrite Infuser": {
-    "itemId": 156016
-  },
-  "Ravaged Seed Pod": {
-    "itemId": 139320
+  "Ravasaur Skull Bijou": {
+    "itemId": 161119
   },
   "Razdunk's Big Red Button": {
     "itemId": 159611
-  },
-  "Reality Breacher": {
-    "itemId": 151310
   },
   "Rezan's Gleaming Eye": {
     "itemId": 158712
@@ -401,71 +170,17 @@
   "Rotcrusted Voodoo Doll": {
     "itemId": 159624
   },
-  "Seeping Scourgewing": {
-    "itemId": 151964
+  "Siren's Tongue": {
+    "itemId": 158556
   },
-  "Shadow Singed Fang": {
-    "itemId": 151968
-  },
-  "Shadow-singed Fang": {
-    "itemId": 151968
-  },
-  "Sheath of Asara": {
-    "itemId": 151971
-  },
-  "Six Feather Fan": {
-    "itemId": 141585
-  },
-  "Six-Feather Fan": {
-    "itemId": 141585
-  },
-  "Specter of Betrayal": {
-    "itemId": 151190
-  },
-  "Specter of Betrayal (No Overlap)": {
-    "itemId": 151190
-  },
-  "Specter of Betrayal_NoOverlap": {
-    "itemId": 151190
-  },
-  "Spectral Thurible": {
-    "itemId": 147018
-  },
-  "Spiked Counterweight": {
-    "itemId": 136715
+  "Snowpelt Mangler": {
+    "itemId": 160263
   },
   "Spiritbound Voodoo Burl": {
     "itemId": 161412
   },
-  "Splinters of Agronox": {
-    "itemId": 144477
-  },
-  "Spontaneous Appendages": {
-    "itemId": 139325
-  },
-  "Star Gate": {
-    "itemId": 140804
-  },
-  "Stat Crit": {
-    "itemId": 142508
-  },
-  "Stat Haste": {
-    "itemId": 142506
-  },
-  "Stat Mastery": {
-    "itemId": 142506
-  },
-  "Stat Versatility": {
-    "itemId": 142506
-  },
-  "Stormsinger Fulmination Charge": {
-    "itemId": 137367
-  },
   "Surging Alchemist Stone": {
     "itemId": 152632
-  },
-  "Swarming Plaguehive": {
-    "itemId": 139321
   },
   "Syringe of Bloodborne Infirmity": {
     "itemId": 160655
@@ -473,65 +188,11 @@
   "T'zane's Barkspines": {
     "itemId": 161411
   },
-  "Tarnished Sentinel Medallion": {
-    "itemId": 147017
-  },
-  "Tempered Egg of Serpentrix": {
-    "itemId": 137373
-  },
-  "Terminus Signaling Beacon": {
-    "itemId": 151969
-  },
-  "Terror from Below": {
-    "itemId": 147016
-  },
-  "Terror From Below": {
-    "itemId": 147016
-  },
-  "Terrorbound Nexus": {
-    "itemId": 137406
-  },
-  "Thrice Accursed Compass": {
-    "itemId": 141537
-  },
   "Tiny Electromental in a Jar": {
     "itemId": 158374
   },
-  "Tiny Oozeling in a Jar": {
-    "itemId": 137439
-  },
-  "Tirathon's Betrayal": {
-    "itemId": 137537
-  },
-  "Tirathons Betrayal": {
-    "itemId": 137537
-  },
-  "Toe Knee's Promise": {
-    "itemId": 142164
-  },
-  "Toe Knees Promise": {
-    "itemId": 142164
-  },
-  "Tome of Unraveling Sanity": {
-    "itemId": 147019
-  },
-  "Twisting Wind": {
-    "itemId": 139323
-  },
   "Twitching Tentacle of Xalzaix": {
     "itemId": 160656
-  },
-  "Umbral Moonglaives": {
-    "itemId": 147012
-  },
-  "Unstable Arcanocrystal": {
-    "itemId": 141482
-  },
-  "Unstable Horrorslime": {
-    "itemId": 138224
-  },
-  "Ursocs Rending Paw": {
-    "itemId": 139328
   },
   "Vanquished Tendril of G'huun": {
     "itemId": 160654
@@ -542,34 +203,13 @@
   "Vial of Animated Blood": {
     "itemId": 159625
   },
-  "Vial of Ceaseless Toxins": {
-    "itemId": 147011
+  "Vial of Storms": {
+    "itemId": 158224
   },
   "Vigilant's Bloodshaper": {
     "itemId": 160651
   },
-  "Vitality Resonator": {
-    "itemId": 151970
-  },
-  "Void Stalker's Contract": {
-    "itemId": 151307
-  },
-  "Void Stalkers Contract": {
-    "itemId": 151307
-  },
-  "VoidStalkers Contract": {
-    "itemId": 151307
-  },
-  "Whispers in the Dark": {
-    "itemId": 140809
-  },
-  "Windscar Whetstone": {
-    "itemId": 137486
-  },
-  "Wrathstone": {
-    "itemId": 156000
-  },
-  "Wriggling Sinew": {
-    "itemId": 139326
+  "Whirlwing's Plumage": {
+    "itemId": 158215
   }
 }

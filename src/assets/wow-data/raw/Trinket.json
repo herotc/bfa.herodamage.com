@@ -1,7 +1,7 @@
 [
   {
-    "name": "Azerokk's Resonating Heart",
-    "itemId": 159612,
+    "name": "Frenetic Corpuscle",
+    "itemId": 160648,
     "itemLevels": [
       340,
       345,
@@ -25,8 +25,8 @@
     ]
   },
   {
-    "name": "Dead-Eye Spyglass",
-    "itemId": 159623,
+    "name": "Construct Overcharger",
+    "itemId": 160652,
     "itemLevels": [
       340,
       345,
@@ -50,12 +50,100 @@
     ]
   },
   {
-    "name": "Galecaller's Boon",
-    "itemId": 159614,
+    "name": "Vanquished Tendril of G'huun",
+    "itemId": 160654,
     "itemLevels": [
       340,
       345,
       350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Plume of the Seaborne Avian",
+    "itemId": 161378,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Permafrost-Encrusted Heart",
+    "itemId": 161381,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Spiritbound Voodoo Burl",
+    "itemId": 161412,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Doom's Wake",
+    "itemId": 161462,
+    "itemLevels": [
       355,
       360,
       365,
@@ -77,56 +165,6 @@
   {
     "name": "Harlan's Loaded Dice",
     "itemId": 155881,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Kul Tiran Cannonball Runner",
-    "itemId": 159628,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Lustrous Golden Plumage",
-    "itemId": 159617,
     "itemLevels": [
       340,
       345,
@@ -200,96 +238,8 @@
     ]
   },
   {
-    "name": "Doom's Wake",
-    "itemId": 161462,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Permafrost-Encrusted Heart",
-    "itemId": 161381,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Plume of the Seaborne Avian",
-    "itemId": 161378,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Spiritbound Voodoo Burl",
-    "itemId": 161412,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Construct Overcharger",
-    "itemId": 160652,
+    "name": "Azerokk's Resonating Heart",
+    "itemId": 159612,
     "itemLevels": [
       340,
       345,
@@ -313,8 +263,8 @@
     ]
   },
   {
-    "name": "Frenetic Corpuscle",
-    "itemId": 160648,
+    "name": "Galecaller's Boon",
+    "itemId": 159614,
     "itemLevels": [
       340,
       345,
@@ -338,8 +288,83 @@
     ]
   },
   {
-    "name": "Vanquished Tendril of G'huun",
-    "itemId": 160654,
+    "name": "Lustrous Golden Plumage",
+    "itemId": 159617,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Dead-Eye Spyglass",
+    "itemId": 159623,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Lingering Sporepods",
+    "itemId": 159626,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Kul Tiran Cannonball Runner",
+    "itemId": 159628,
     "itemLevels": [
       340,
       345,
@@ -386,8 +411,8 @@
     ]
   },
   {
-    "name": "Dinobone Charm",
-    "itemId": 158155,
+    "name": "Galewind Chimes",
+    "itemId": 155568,
     "itemLevels": [
       325,
       330,
@@ -470,8 +495,8 @@
     ]
   },
   {
-    "name": "Plunderbeard's Flask",
-    "itemId": 158164,
+    "name": "Dinobone Charm",
+    "itemId": 158155,
     "itemLevels": [
       325,
       330,
@@ -526,10 +551,25 @@
     ]
   },
   {
-    "name": "Darkmoon Deck: Fathoms",
-    "itemId": 159125,
+    "name": "First Mate's Spyglass",
+    "itemId": 158163,
     "itemLevels": [
-      355
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
     ],
     "bonusIds": [
 
@@ -539,10 +579,458 @@
     ]
   },
   {
-    "name": "Endless Tincture of Fractional Power",
-    "itemId": 152636,
+    "name": "Plunderbeard's Flask",
+    "itemId": 158164,
     "itemLevels": [
-      300
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Whirlwing's Plumage",
+    "itemId": 158215,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Living Oil Cannister",
+    "itemId": 158216,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Dadalea's Wing",
+    "itemId": 158218,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Vial of Storms",
+    "itemId": 158224,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Doom Shroom",
+    "itemId": 158555,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Siren's Tongue",
+    "itemId": 158556,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Snowpelt Mangler",
+    "itemId": 160263,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Incessantly Ticking Clock",
+    "itemId": 161113,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Cursed Captain's Charm",
+    "itemId": 161115,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Berserker's Juju",
+    "itemId": 161117,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Ravasaur Skull Bijou",
+    "itemId": 161119,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Kaja-fied Banana",
+    "itemId": 161125,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Dread Aspirant's Medallion",
+    "itemId": 162897,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Dread Gladiator's Badge",
+    "itemId": 161902,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Crawg Gnawed Femur",
+    "itemId": 163703,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Darkmoon Deck: Fathoms",
+    "itemId": 159125,
+    "itemLevels": [
+      355
     ],
     "bonusIds": [
 
@@ -565,8 +1053,209 @@
     ]
   },
   {
+    "name": "Endless Tincture of Fractional Power",
+    "itemId": 152636,
+    "itemLevels": [
+      300
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Vigilant's Bloodshaper",
+    "itemId": 160651,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Vanquished Tendril of G'huun",
+    "itemId": 160654,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Twitching Tentacle of Xalzaix",
+    "itemId": 160656,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Azuretho's Singed Plumage",
+    "itemId": 161377,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Drust-Runed Icicle",
+    "itemId": 161380,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "T'zane's Barkspines",
+    "itemId": 161411,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Doom's Hatred",
+    "itemId": 161461,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
     "name": "Vessel of Skittering Shadows",
     "itemId": 159610,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Ignition Mage's Fuse",
+    "itemId": 159615,
     "itemLevels": [
       340,
       345,
@@ -665,8 +1354,8 @@
     ]
   },
   {
-    "name": "Ignition Mage's Fuse",
-    "itemId": 159615,
+    "name": "Balefire Branch",
+    "itemId": 159630,
     "itemLevels": [
       340,
       345,
@@ -715,194 +1404,6 @@
     ]
   },
   {
-    "name": "Balefire Branch",
-    "itemId": 159630,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Azuretho's Singed Plumage",
-    "itemId": 161377,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Doom's Hatred",
-    "itemId": 161461,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Drust-Runed Icicle",
-    "itemId": 161380,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "T'zane's Barkspines",
-    "itemId": 161411,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Twitching Tentacle of Xalzaix",
-    "itemId": 160656,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Vanquished Tendril of G'huun",
-    "itemId": 160654,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Vigilant's Bloodshaper",
-    "itemId": 160651,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
     "name": "Leyshock's Grand Compilation",
     "itemId": 163937,
     "itemLevels": [
@@ -926,8 +1427,8 @@
     ]
   },
   {
-    "name": "Dinobone Charm",
-    "itemId": 158155,
+    "name": "Galewind Chimes",
+    "itemId": 155568,
     "itemLevels": [
       325,
       330,
@@ -1010,8 +1511,8 @@
     ]
   },
   {
-    "name": "Plunderbeard's Flask",
-    "itemId": 158164,
+    "name": "Dinobone Charm",
+    "itemId": 158155,
     "itemLevels": [
       325,
       330,
@@ -1066,10 +1567,25 @@
     ]
   },
   {
-    "name": "Darkmoon Deck: Squalls",
-    "itemId": 159126,
+    "name": "First Mate's Spyglass",
+    "itemId": 158163,
     "itemLevels": [
-      355
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
     ],
     "bonusIds": [
 
@@ -1079,10 +1595,458 @@
     ]
   },
   {
-    "name": "Endless Tincture of Fractional Power",
-    "itemId": 152636,
+    "name": "Plunderbeard's Flask",
+    "itemId": 158164,
     "itemLevels": [
-      300
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Whirlwing's Plumage",
+    "itemId": 158215,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Living Oil Cannister",
+    "itemId": 158216,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Dadalea's Wing",
+    "itemId": 158218,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Vial of Storms",
+    "itemId": 158224,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Doom Shroom",
+    "itemId": 158555,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Siren's Tongue",
+    "itemId": 158556,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Snowpelt Mangler",
+    "itemId": 160263,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Incessantly Ticking Clock",
+    "itemId": 161113,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Cursed Captain's Charm",
+    "itemId": 161115,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Berserker's Juju",
+    "itemId": 161117,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Ravasaur Skull Bijou",
+    "itemId": 161119,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Kaja-fied Banana",
+    "itemId": 161125,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Dread Aspirant's Medallion",
+    "itemId": 162897,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Dread Gladiator's Badge",
+    "itemId": 161902,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Crawg Gnawed Femur",
+    "itemId": 163703,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Darkmoon Deck: Squalls",
+    "itemId": 159126,
+    "itemLevels": [
+      355
     ],
     "bonusIds": [
 
@@ -1105,6355 +2069,10 @@
     ]
   },
   {
-    "name": "Draught of Souls",
-    "itemId": 140808,
+    "name": "Endless Tincture of Fractional Power",
+    "itemId": 152636,
     "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Convergence of Fates",
-    "itemId": 140806,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Entwined Elemental Foci",
-    "itemId": 140796,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Nightblooming Frond",
-    "itemId": 140802,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Arcanogolem Digit",
-    "itemId": 140794,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Ravaged Seed Pod",
-    "itemId": 139320,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Spontaneous Appendages",
-    "itemId": 139325,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Nature's Call",
-    "itemId": 139334,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Bloodthirsty Instict",
-    "itemId": 139329,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Eye of Command",
-    "itemId": 142167,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Chaos Talisman",
-    "itemId": 137459,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Mastery",
-    "itemId": 142506,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      605
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Versatility",
-    "itemId": 142506,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      607
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Haste",
-    "itemId": 142506,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      604
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Crit",
-    "itemId": 142506,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      603
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Unstable Arcanocrystal",
-    "itemId": 141482,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tirathon's Betrayal",
-    "itemId": 137537,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Six-Feather Fan",
-    "itemId": 141585,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Chrono Shard",
-    "itemId": 137419,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Thrice Accursed Compass",
-    "itemId": 141537,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Windscar Whetstone",
-    "itemId": 137486,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Bloodstained Handkerchief",
-    "itemId": 142159,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Spiked Counterweight",
-    "itemId": 136715,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Nightmare Egg Shell",
-    "itemId": 137312,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tempered Egg of Serpentrix",
-    "itemId": 137373,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Horn of Valor",
-    "itemId": 133642,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Hunger of the Pack",
-    "itemId": 136975,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Memento of Angerboda",
-    "itemId": 133644,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Mark of Dargrul",
-    "itemId": 137357,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Terrorbound Nexus",
-    "itemId": 137406,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Faulty Countermeasure",
-    "itemId": 137539,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Toe Knee's Promise",
-    "itemId": 142164,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tiny Oozeling in a Jar",
-    "itemId": 137439,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Specter of Betrayal",
-    "itemId": 151190,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Specter of Betrayal (No Overlap)",
-    "itemId": 151190,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.specter_of_betrayal_overlap=0"
-    ]
-  },
-  {
-    "name": "Engine of Eradication",
-    "itemId": 147015,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Engine of Eradication (No Orbs)",
-    "itemId": 147015,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.engine_of_eradication_orbs=0"
-    ]
-  },
-  {
-    "name": "Umbral Moonglaives",
-    "itemId": 147012,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Vial of Ceaseless Toxins",
-    "itemId": 147011,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Infernal Cinders",
-    "itemId": 147009,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Infernal Cinders (3 Users)",
-    "itemId": 147009,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.infernal_cinders_users=3"
-    ]
-  },
-  {
-    "name": "Cradle of Anguish",
-    "itemId": 147010,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tome of Unraveling Sanity",
-    "itemId": 147019,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Splinters of Agronox",
-    "itemId": 144477,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Kiljaeden's Burning Wish",
-    "itemId": 144259,
-    "itemLevels": [
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Infernal Alchemist Stone",
-    "itemId": 127842,
-    "itemLevels": [
-      215
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Void Stalker's Contract",
-    "itemId": 151307,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision 5-Pantheon",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision 15-Pantheon",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am/am/am/am/am/am/am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Golganneth's Vitality",
-    "itemId": 154174,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Golganneth's Vitality 5-Pantheon",
-    "itemId": 154174,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Golganneth's Vitality 15-Pantheon",
-    "itemId": 154174,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am/am/am/am/am/am/am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Terminus Signaling Beacon",
-    "itemId": 151969,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Forgefiend's Fabricator",
-    "itemId": 151963,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Seeping Scourgewing",
-    "itemId": 151964,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Gorshalach's Legacy",
-    "itemId": 152093,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Shadow-singed Fang",
-    "itemId": 151968,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Pyrite Infuser",
-    "itemId": 156016,
-    "itemLevels": [
-      210,
-      215,
-      220,
-      225
-    ],
-    "bonusIds": [
-      3625
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Wrathstone",
-    "itemId": 156000,
-    "itemLevels": [
-      210,
-      215,
-      220,
-      225
-    ],
-    "bonusIds": [
-      3625
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Elementium Bomb Squirrel Generator",
-    "itemId": 137446,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Obelisk of the Void",
-    "itemId": 137433,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Caged Horror",
-    "itemId": 136716,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Splinters of Agronox",
-    "itemId": 144477,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Oakhearts Gnarled Root",
-    "itemId": 137306,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stormsinger Fulmination Charge",
-    "itemId": 137367,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tempered Egg of Serpentrix",
-    "itemId": 137373,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Eye of Skovald",
-    "itemId": 133641,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Horn of Valor",
-    "itemId": 133642,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Figurehead of the Naglfar",
-    "itemId": 137329,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Naraxas Spiked Tongue",
-    "itemId": 137349,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Aran's Relaxing Ruby",
-    "itemId": 142157,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Deteriorated Construct Core",
-    "itemId": 142165,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Mrrgria's Favor",
-    "itemId": 142160,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "VoidStalkers Contract",
-    "itemId": 151307,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Chrono Shard",
-    "itemId": 137419,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tirathons Betrayal",
-    "itemId": 137537,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Moonlit Prism",
-    "itemId": 137541,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Splinters of Agronox",
-    "itemId": 144477,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Pyrite Infuser",
-    "itemId": 156016,
-    "itemLevels": [
-      210,
-      215,
-      220,
-      225
-    ],
-    "bonusIds": [
-      3625
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Wrathstone",
-    "itemId": 156000,
-    "itemLevels": [
-      210,
-      215,
-      220,
-      225
-    ],
-    "bonusIds": [
-      3625
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Bloodthirsty Instict",
-    "itemId": 139329,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Twisting Wind",
-    "itemId": 139323,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Unstable Horrorslime",
-    "itemId": 138224,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Convergence of Fates",
-    "itemId": 140806,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Entwined Elemental Foci",
-    "itemId": 140796,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Fury of the Burning Sky",
-    "itemId": 140801,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Icon of Rot",
-    "itemId": 140798,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Nightblooming Frond",
-    "itemId": 140802,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Cradle of Anguish",
-    "itemId": 147010,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Engine of Eradication",
-    "itemId": 147015,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Engine of Eradication_No Orbs",
-    "itemId": 147015,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.engine_of_eradication_orbs=0"
-    ]
-  },
-  {
-    "name": "Spectral Thurible",
-    "itemId": 147018,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tarnished Sentinel Medallion",
-    "itemId": 147017,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Terror from Below",
-    "itemId": 147016,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tome of Unraveling Sanity",
-    "itemId": 147019,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision 5-Pantheon",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision 15-Pantheon",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am/am/am/am/am/am/am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "ForgefiendsFabricator",
-    "itemId": 151963,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Golganneth's Vitality",
-    "itemId": 154174,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Golganneth's Vitality 5-Pantheon",
-    "itemId": 154174,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Golganneth's Vitality 15-Pantheon",
-    "itemId": 154174,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am/am/am/am/am/am/am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Prototype Personnel Decimator",
-    "itemId": 151962,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Shadow Singed Fang",
-    "itemId": 151968,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Terminus Signaling Beacon",
-    "itemId": 151969,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Mastery",
-    "itemId": 142506,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      605
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Versatility",
-    "itemId": 142506,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      607
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Haste",
-    "itemId": 142506,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      604
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Crit",
-    "itemId": 142506,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      603
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Unstable Arcanocrystal",
-    "itemId": 141482,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Six Feather Fan",
-    "itemId": 141585,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Thrice Accursed Compass",
-    "itemId": 141537,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Kil'jaeden's Burning Wish",
-    "itemId": 144259,
-    "itemLevels": [
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "PVP Insignia of Conquest",
-    "itemId": 142662,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "PVP Badge of Conquest",
-    "itemId": 142773,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Darkmoon Deck: Dominion",
-    "itemId": 128705,
-    "itemLevels": [
-      188
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Infernal Alchemist Stone",
-    "itemId": 127842,
-    "itemLevels": [
-      215
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Elementium Bomb Squirrel Generator",
-    "itemId": 137446,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Obelisk of the Void",
-    "itemId": 137433,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Caged Horror",
-    "itemId": 136716,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Dreadstone of Endless Shadows",
-    "itemId": 144480,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Infernal Writ",
-    "itemId": 137485,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Corrupted Starlight",
-    "itemId": 137301,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Oakheart's Gnarled Root",
-    "itemId": 137306,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stormsinger Fulmination Charge",
-    "itemId": 137367,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Eye of Skovald",
-    "itemId": 133641,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Horn of Valor",
-    "itemId": 133642,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Figurehead of the Naglfar",
-    "itemId": 137329,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Naraxas' Spiked Tongue",
-    "itemId": 137349,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Aran's Relaxing Ruby",
-    "itemId": 142157,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Deteriorated Construct Core",
-    "itemId": 142165,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Mrrgria's Favor",
-    "itemId": 142160,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Reality Breacher",
-    "itemId": 151310,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Chrono Shard",
-    "itemId": 137419,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Portable Manacracker",
-    "itemId": 137398,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Moonlit Prism",
-    "itemId": 137541,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Bough of Corruption",
-    "itemId": 139323,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Swarming Plaguehive",
-    "itemId": 139321,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Twisting Wind",
-    "itemId": 139323,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Unstable Horrorslime",
-    "itemId": 138224,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Wriggling Sinew",
-    "itemId": 139326,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Erratic Metronome",
-    "itemId": 140792,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Fury of the Burning Sky",
-    "itemId": 140801,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Icon of Rot",
-    "itemId": 140798,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Pharameres Forbidden Grimoire",
-    "itemId": 140800,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Star Gate",
-    "itemId": 140804,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Whispers in the Dark",
-    "itemId": 140809,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Charm of the Rising Tide",
-    "itemId": 147002,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Spectral Thurible",
-    "itemId": 147018,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tarnished Sentinel Medallion",
-    "itemId": 147017,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Terror From Below",
-    "itemId": 147016,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tome of Unraveling Sanity",
-    "itemId": 147019,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Acrid Catalyst Injector",
-    "itemId": 151955,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision 5-Pantheon",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision 15-Pantheon",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am/am/am/am/am/am/am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Norgannon's Prowess",
-    "itemId": 154177,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Norgannon's Prowess 5-Pantheon",
-    "itemId": 154177,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Norgannon's Prowess 15-Pantheon",
-    "itemId": 154177,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am/am/am/am/am/am/am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Prototype Personnel Decimator",
-    "itemId": 151962,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Sheath of Asara",
-    "itemId": 151971,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Terminus Signaling Beacon",
-    "itemId": 151969,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Vitality Resonator",
-    "itemId": 151970,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Padawsen's Unlucky Charm",
-    "itemId": 141536,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Unstable Arcanocrystal",
-    "itemId": 141482,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Devilsaur Shock-Baton",
-    "itemId": 140030,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Eyasu's Mulligan",
-    "itemId": 141584,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Mastery",
-    "itemId": 142507,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      605
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Versatility",
-    "itemId": 142507,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      607
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Haste",
-    "itemId": 142507,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      604
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Crit",
-    "itemId": 142507,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      603
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "KiljaedensBurningWish",
-    "itemId": 144259,
-    "itemLevels": [
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "PVP Insignia of Dominance",
-    "itemId": 142668,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "PVP Badge of Dominance",
-    "itemId": 142779,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Darkmoon Deck: Hellfire",
-    "itemId": 128709,
-    "itemLevels": [
-      188
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Astral Alchemist Stone",
-    "itemId": 151607,
-    "itemLevels": [
-      215
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Draught of Souls",
-    "itemId": 140808,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Convergence of Fates",
-    "itemId": 140806,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Entwined Elemental Foci",
-    "itemId": 140796,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Claw of the Crystalline Scorpid",
-    "itemId": 140790,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Might of Krosus",
-    "itemId": 140799,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Ravaged Seed Pod",
-    "itemId": 139320,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Spontaneous Appendages",
-    "itemId": 139325,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Natures Call",
-    "itemId": 139334,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Ursocs Rending Paw",
-    "itemId": 139328,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Eye of Command",
-    "itemId": 142167,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Chaos Talisman",
-    "itemId": 137459,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Mastery",
-    "itemId": 142508,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      605
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Versatility",
-    "itemId": 142508,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      607
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Haste",
-    "itemId": 142508,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      604
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Stat Crit",
-    "itemId": 142508,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-      603
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Unstable Arcanocrystal",
-    "itemId": 141482,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Chrono Shard",
-    "itemId": 137419,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Windscar Whetstone",
-    "itemId": 137486,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Bloodstained Handkerchief",
-    "itemId": 142159,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Spiked Counterweight",
-    "itemId": 136715,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Nightmare Egg Shell",
-    "itemId": 137312,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Horn of Valor",
-    "itemId": 133642,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Hunger of the Pack",
-    "itemId": 136975,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Memento of Angerboda",
-    "itemId": 133644,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Mark of Dargrul",
-    "itemId": 137357,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Terrorbound Nexus",
-    "itemId": 137406,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Faulty Countermeasure",
-    "itemId": 137539,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Toe Knees Promise",
-    "itemId": 142164,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Tiny Oozeling in a Jar",
-    "itemId": 137439,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Fel Oiled Infernal Machine",
-    "itemId": 144482,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Giant Ornamental Pearl",
-    "itemId": 137369,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Ettin Fingernail",
-    "itemId": 141535,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Specter of Betrayal",
-    "itemId": 151190,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Specter of Betrayal_NoOverlap",
-    "itemId": 151190,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.specter_of_betrayal_overlap=0"
-    ]
-  },
-  {
-    "name": "Engine of Eradication",
-    "itemId": 147015,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Engine of Eradication_NoOrbs",
-    "itemId": 147015,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.engine_of_eradication_orbs=0"
-    ]
-  },
-  {
-    "name": "Umbral Moonglaives",
-    "itemId": 147012,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Vial of Ceaseless Toxins",
-    "itemId": 147011,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Infernal Cinders",
-    "itemId": 147009,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "InfernalCinders_3Users",
-    "itemId": 147009,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.infernal_cinders_users=3"
-    ]
-  },
-  {
-    "name": "Cradle of Anguish",
-    "itemId": 147010,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Kiljaedens Burning Wish",
-    "itemId": 144259,
-    "itemLevels": [
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Infernal Alchemist Stone",
-    "itemId": 127842,
-    "itemLevels": [
-      215
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Void Stalkers Contract",
-    "itemId": 151307,
-    "itemLevels": [
-      192,
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Shadow Singed Fang",
-    "itemId": 151968,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Terminus Signaling Beacon",
-    "itemId": 151969,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "ForgefiendsFabricator",
-    "itemId": 151963,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Seeping Scourgewing",
-    "itemId": 151964,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Gorshalachs Legacy",
-    "itemId": 152093,
-    "itemLevels": [
-      195,
-      200,
-      205,
-      210,
-      215,
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Khazgoroths Courage",
-    "itemId": 154176,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Khazgoroths Courage 5-Pantheon",
-    "itemId": 154176,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Khazgoroths Courage 15-Pantheon",
-    "itemId": 154176,
-    "itemLevels": [
-      220,
-      225,
-      230,
-      235,
-      240,
-      245,
-      250,
-      255,
-      260,
-      265,
-      270,
-      275,
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am/am/am/am/am/am/am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Aman'Thuls Vision",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision 5-Pantheon",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Aman'Thul's Vision 15-Pantheon",
-    "itemId": 154172,
-    "itemLevels": [
-      280
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-      "legion.pantheon_trinket_users=am/am/am/am/am/am/am/am/am/am/am/am/am/am/am"
-    ]
-  },
-  {
-    "name": "Pyrite Infuser",
-    "itemId": 156016,
-    "itemLevels": [
-      210,
-      215,
-      220,
-      225
-    ],
-    "bonusIds": [
-      3625
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Wrathstone",
-    "itemId": 156000,
-    "itemLevels": [
-      210,
-      215,
-      220,
-      225
-    ],
-    "bonusIds": [
-      3625
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Rezan's Gleaming Eye",
-    "itemId": 158712,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Briny Barnacle",
-    "itemId": 159619,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Merektha's Fang",
-    "itemId": 158367,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Razdunk's Big Red Button",
-    "itemId": 159611,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Vial of Animated Blood",
-    "itemId": 159625,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Gore-Crusted Butcher's Block",
-    "itemId": 159616,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Jes' Howler",
-    "itemId": 159627,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Galecaller's Beak",
-    "itemId": 161379,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Prism of Dark Intensity",
-    "itemId": 161376,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Doom's Fury",
-    "itemId": 161463,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Kraulok's Claw",
-    "itemId": 161419,
-    "itemLevels": [
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
+      300
     ],
     "bonusIds": [
 
@@ -7465,6 +2084,31 @@
   {
     "name": "Disc of Systematic Regression",
     "itemId": 160650,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Vanquished Tendril of G'huun",
+    "itemId": 160654,
     "itemLevels": [
       340,
       345,
@@ -7513,8 +2157,96 @@
     ]
   },
   {
-    "name": "Vanquished Tendril of G'huun",
-    "itemId": 160654,
+    "name": "Prism of Dark Intensity",
+    "itemId": 161376,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Galecaller's Beak",
+    "itemId": 161379,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Kraulok's Claw",
+    "itemId": 161419,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Doom's Fury",
+    "itemId": 161463,
+    "itemLevels": [
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Merektha's Fang",
+    "itemId": 158367,
     "itemLevels": [
       340,
       345,
@@ -7538,7 +2270,182 @@
     ]
   },
   {
-    "name": "Bygone Bee Almanac",
+    "name": "Rezan's Gleaming Eye",
+    "itemId": 158712,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Razdunk's Big Red Button",
+    "itemId": 159611,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Gore-Crusted Butcher's Block",
+    "itemId": 159616,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Briny Barnacle",
+    "itemId": 159619,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Vial of Animated Blood",
+    "itemId": 159625,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Lingering Sporepods",
+    "itemId": 159626,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Jes' Howler",
+    "itemId": 159627,
+    "itemLevels": [
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "'Bygone Bee' Almanac",
     "itemId": 163936,
     "itemLevels": [
       350,
@@ -7561,8 +2468,8 @@
     ]
   },
   {
-    "name": "Dinobone Charm",
-    "itemId": 158155,
+    "name": "Galewind Chimes",
+    "itemId": 155568,
     "itemLevels": [
       325,
       330,
@@ -7645,8 +2552,8 @@
     ]
   },
   {
-    "name": "Plunderbeard's Flask",
-    "itemId": 158164,
+    "name": "Dinobone Charm",
+    "itemId": 158155,
     "itemLevels": [
       325,
       330,
@@ -7701,6 +2608,482 @@
     ]
   },
   {
+    "name": "First Mate's Spyglass",
+    "itemId": 158163,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Plunderbeard's Flask",
+    "itemId": 158164,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Whirlwing's Plumage",
+    "itemId": 158215,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Living Oil Cannister",
+    "itemId": 158216,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Dadalea's Wing",
+    "itemId": 158218,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Vial of Storms",
+    "itemId": 158224,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Doom Shroom",
+    "itemId": 158555,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Siren's Tongue",
+    "itemId": 158556,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Snowpelt Mangler",
+    "itemId": 160263,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Incessantly Ticking Clock",
+    "itemId": 161113,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Cursed Captain's Charm",
+    "itemId": 161115,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Berserker's Juju",
+    "itemId": 161117,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Ravasaur Skull Bijou",
+    "itemId": 161119,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Kaja-fied Banana",
+    "itemId": 161125,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Dread Aspirant's Medallion",
+    "itemId": 162897,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Dread Gladiator's Badge",
+    "itemId": 161902,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Crawg Gnawed Femur",
+    "itemId": 163703,
+    "itemLevels": [
+      325,
+      330,
+      335,
+      340,
+      345,
+      350,
+      355,
+      360,
+      365,
+      370,
+      375,
+      380,
+      385,
+      390,
+      395,
+      400
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
     "name": "Darkmoon Deck: Fathoms",
     "itemId": 159125,
     "itemLevels": [
@@ -7714,8 +3097,8 @@
     ]
   },
   {
-    "name": "Endless Tincture of Fractional Power",
-    "itemId": 152636,
+    "name": "Surging Alchemist Stone",
+    "itemId": 152632,
     "itemLevels": [
       300
     ],
@@ -7727,8 +3110,8 @@
     ]
   },
   {
-    "name": "Surging Alchemist Stone",
-    "itemId": 152632,
+    "name": "Endless Tincture of Fractional Power",
+    "itemId": 152636,
     "itemLevels": [
       300
     ],
