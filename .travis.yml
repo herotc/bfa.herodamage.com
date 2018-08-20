@@ -3,7 +3,7 @@ branches:
     - master
 
 dist: trusty
-sudo: false
+sudo: required
 
 language: node_js
 
