@@ -19,7 +19,6 @@ diff.on('line', function (relativeUrl) {
   urls.push(`${baseUrl}/${relativeUrl}`)
   // Alternative versions
   const patterns = [
-    '.html', // Extensionless filename version for html files, i.e.: https://www.herodamage.com/blog/index
     'index.html', // Indexless version, i.e.: https://www.herodamage.com/blog/
     '/index.html' // Indexless version without trailing slash, i.e.: https://www.herodamage.com/blog
   ]
@@ -38,7 +37,6 @@ diff.on('close', function () {
   jsonFiles.push({files: urls})
   // Make the json files that will be attached to each request
   jsonFiles.forEach((jsonFile, index) => {
-    console.log(jsonFile.files)
     const filename = `urls_to_purge_${index + 1}.json`
     fs.writeFile(filename, JSON.stringify(jsonFile), (err) => { if (err) console.err(err) })
   })
