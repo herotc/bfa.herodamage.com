@@ -61,9 +61,9 @@ cd ..
 # Sleep before purging the CF cache, it takes roughly 30-60s to GitHub Pages to actually push the new content
 echo "[CI] Wait for 90s before clearing CF cache"
 sleep 90s
-echo "[CI] Clear CF cache for changed files by batch of ~450 urls each 5s"
+echo "[CI] Clear CF cache for changed files by batch of ~100 urls each second"
 for urls in urls_to_purge_*.json; do
-    sleep 5s
+    sleep 1s
     curl -s -X DELETE "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data @$urls
     echo ""
 done
