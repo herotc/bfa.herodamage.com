@@ -10,8 +10,8 @@ let urls = []
 const diff = readline.createInterface(fs.createReadStream('public/filenames.diff'))
 
 diff.on('line', function (relativeUrl) {
-  // Split by chunk of ~450 urls since CF limits it to 500 per request
-  if (urls.length >= 450) {
+  // Split by chunk of ~100 urls since CF limits it to 500 per request but got some sort of content length limit
+  if (urls.length >= 100) {
     jsonFiles.push({files: urls})
     urls = []
   }
@@ -38,6 +38,7 @@ diff.on('close', function () {
   jsonFiles.push({files: urls})
   // Make the json files that will be attached to each request
   jsonFiles.forEach((jsonFile, index) => {
+    console.log(jsonFile.files)
     const filename = `urls_to_purge_${index + 1}.json`
     fs.writeFile(filename, JSON.stringify(jsonFile), (err) => { if (err) console.err(err) })
   })
