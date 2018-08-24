@@ -11,10 +11,6 @@
     "spellId": 278676,
     "tier": 3
   },
-  "Agility 20": {
-    "spellId": 41695,
-    "tier": 2
-  },
   "Ancestral Resonance": {
     "spellId": 277666,
     "tier": 3
@@ -37,6 +33,10 @@
   },
   "Arcane Pummeling": {
     "spellId": 270669,
+    "tier": 3
+  },
+  "Archive of the Titans": {
+    "spellId": 280555,
     "tier": 3
   },
   "Auto-Self-Cauterizer": {
@@ -375,6 +375,10 @@
     "spellId": 277681,
     "tier": 3
   },
+  "Excoriate": {
+    "spellId": 276007,
+    "tier": 3
+  },
   "Executioner's Precision": {
     "spellId": 272866,
     "tier": 3
@@ -531,10 +535,6 @@
     "spellId": 275929,
     "tier": 3
   },
-  "Haste": {
-    "spellId": 261582,
-    "tier": 3
-  },
   "Haze of Rage": {
     "spellId": 273262,
     "tier": 3
@@ -575,10 +575,6 @@
     "spellId": 280410,
     "tier": 3
   },
-  "Increase Versatility 15": {
-    "spellId": 55564,
-    "tier": 3
-  },
   "Indomitable Justice": {
     "spellId": 275496,
     "tier": 3
@@ -603,6 +599,10 @@
     "spellId": 275477,
     "tier": 3
   },
+  "Inspiring Beacon": {
+    "spellId": 273130,
+    "tier": 3
+  },
   "Inspiring Vanguard": {
     "spellId": 278609,
     "tier": 3
@@ -621,10 +621,6 @@
   },
   "Iron Jaws": {
     "spellId": 276021,
-    "tier": 3
-  },
-  "Item - Proc Mastery": {
-    "spellId": 92322,
     "tier": 3
   },
   "Judicious Defense": {
@@ -1043,10 +1039,6 @@
     "spellId": 272871,
     "tier": 3
   },
-  "Strength": {
-    "spellId": 27973,
-    "tier": 2
-  },
   "Strength in Numbers": {
     "spellId": 271546,
     "tier": 2
@@ -1177,10 +1169,6 @@
   },
   "Unbound Chaos": {
     "spellId": 275144,
-    "tier": 3
-  },
-  "Uncertainty": {
-    "spellId": 271260,
     "tier": 3
   },
   "Unerring Vision": {
