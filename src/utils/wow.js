@@ -205,11 +205,15 @@ export function wowTalentsLabel (talents, wowClass, spec, lang = defaultLang) {
 /**
  * Does refresh any Wowhead links in the DOM
  */
-export function refreshWowheadLinks () {
+export function refreshWowheadLinks (firstCall = true) {
   const WH = window.WH
   const $WowheadPower = window.$WowheadPower
   if (WH && WH.getLocaleFromDomain && $WowheadPower && $WowheadPower.refreshLinks) {
     $WowheadPower.refreshLinks()
+    // Schedule a second refresh 500ms later since Wowhead might not always refresh every links.
+    if (firstCall) {
+      setTimeout(() => { refreshWowheadLinks(false) }, 500)
+    }
   } else {
     setTimeout(refreshWowheadLinks, 250)
   }
