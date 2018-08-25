@@ -338,31 +338,6 @@
     ]
   },
   {
-    "name": "Lingering Sporepods",
-    "itemId": 159626,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
     "name": "Kul Tiran Cannonball Runner",
     "itemId": 159628,
     "itemLevels": [
@@ -663,34 +638,6 @@
     ]
   },
   {
-    "name": "Dadalea's Wing",
-    "itemId": 158218,
-    "itemLevels": [
-      325,
-      330,
-      335,
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
     "name": "Vial of Storms",
     "itemId": 158224,
     "itemLevels": [
@@ -747,34 +694,6 @@
     ]
   },
   {
-    "name": "Siren's Tongue",
-    "itemId": 158556,
-    "itemLevels": [
-      325,
-      330,
-      335,
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
     "name": "Snowpelt Mangler",
     "itemId": 160263,
     "itemLevels": [
@@ -805,34 +724,6 @@
   {
     "name": "Incessantly Ticking Clock",
     "itemId": 161113,
-    "itemLevels": [
-      325,
-      330,
-      335,
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Cursed Captain's Charm",
-    "itemId": 161115,
     "itemLevels": [
       325,
       330,
@@ -1679,34 +1570,6 @@
     ]
   },
   {
-    "name": "Dadalea's Wing",
-    "itemId": 158218,
-    "itemLevels": [
-      325,
-      330,
-      335,
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
     "name": "Vial of Storms",
     "itemId": 158224,
     "itemLevels": [
@@ -1763,34 +1626,6 @@
     ]
   },
   {
-    "name": "Siren's Tongue",
-    "itemId": 158556,
-    "itemLevels": [
-      325,
-      330,
-      335,
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
     "name": "Snowpelt Mangler",
     "itemId": 160263,
     "itemLevels": [
@@ -1821,34 +1656,6 @@
   {
     "name": "Incessantly Ticking Clock",
     "itemId": 161113,
-    "itemLevels": [
-      325,
-      330,
-      335,
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Cursed Captain's Charm",
-    "itemId": 161115,
     "itemLevels": [
       325,
       330,
@@ -2395,31 +2202,6 @@
     ]
   },
   {
-    "name": "Lingering Sporepods",
-    "itemId": 159626,
-    "itemLevels": [
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
     "name": "Jes' Howler",
     "itemId": 159627,
     "itemLevels": [
@@ -2720,34 +2502,6 @@
     ]
   },
   {
-    "name": "Dadalea's Wing",
-    "itemId": 158218,
-    "itemLevels": [
-      325,
-      330,
-      335,
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
     "name": "Vial of Storms",
     "itemId": 158224,
     "itemLevels": [
@@ -2804,34 +2558,6 @@
     ]
   },
   {
-    "name": "Siren's Tongue",
-    "itemId": 158556,
-    "itemLevels": [
-      325,
-      330,
-      335,
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
     "name": "Snowpelt Mangler",
     "itemId": 160263,
     "itemLevels": [
@@ -2862,34 +2588,6 @@
   {
     "name": "Incessantly Ticking Clock",
     "itemId": 161113,
-    "itemLevels": [
-      325,
-      330,
-      335,
-      340,
-      345,
-      350,
-      355,
-      360,
-      365,
-      370,
-      375,
-      380,
-      385,
-      390,
-      395,
-      400
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Cursed Captain's Charm",
-    "itemId": 161115,
     "itemLevels": [
       325,
       330,

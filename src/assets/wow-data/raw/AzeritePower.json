@@ -362,7 +362,10 @@
     "powerId": 396,
     "spellId": 278615,
     "spellName": "Zealotry",
-    "specsId": [],
+    "specsId": [
+      70,
+      65
+    ],
     "tier": 3,
     "classesId": [
       2
