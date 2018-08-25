@@ -5,7 +5,6 @@ A [Gatsby](https://github.com/gatsbyjs/gatsby) plugin for [js-lingui](https://gi
 ## Prerequisites
 
 ```
-npm install --save gatsby-plugin-react-next react react-dom prop-types
 npm install --save gatsby-source-filesystem gatsby-transformer-remark
 npm install --save @lingui/react @lingui/babel-preset-react
 ```
