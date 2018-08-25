@@ -1,0 +1,32 @@
+{
+  "name": "scripts-herodamage-i18n",
+  "description": "Lingui CLI to extract i18n messages.",
+  "keywords": [
+    "i18n",
+    "lingui",
+    "lingui-cli"
+  ],
+  "bugs": {
+    "url": "https://github.com/herotc/bfa.herodamage.com/issues"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herotc/bfa.herodamage.com/tree/master/scripts/i18n"
+  },
+  "scripts": {
+    "start": "npm run extract",
+    "extract": "lingui extract",
+    "compile": "lingui compile",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0-rc.3",
+    "@babel/preset-env": "^7.0.0-rc.3",
+    "@babel/preset-react": "^7.0.0-rc.3",
+    "@lingui/babel-preset-react": "^2.5.0",
+    "@lingui/cli": "^2.5.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "react": "^16.4.2"
+  }
+}

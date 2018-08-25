@@ -2,6 +2,7 @@
 ###########
 public
 src/locales/_build
+src/locales/**/*.js
 
 # Project dependencies #
 ########################
