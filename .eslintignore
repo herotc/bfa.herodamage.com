@@ -1,0 +1,5 @@
+.cache
+public
+scripts/i18n/node_modules
+src/locales/_build
+src/locales/**/*.js
