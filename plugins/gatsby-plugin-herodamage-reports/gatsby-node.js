@@ -42,7 +42,7 @@ module.exports.onCreateNode = async function ({node, getNode, actions}) {
   if (node.internal.type !== 'File') return
   // Delete unwanted node from reports (things like .DS_Store)
   if (node.extension !== 'json') {
-    deleteNode(node.id, node)
+    deleteNode({node})
     return
   }
 
