@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { I18nProvider } from '@lingui/react'
-import { navigateTo } from 'gatsby-link'
+import { navigate } from 'gatsby'
 import { withStyles } from '@material-ui/core/styles'
 import * as i18nPluginHelper from '../../../plugins/gatsby-plugin-herodamage-i18n/index'
 import withRoot from '../../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
@@ -148,7 +148,7 @@ const IndexLayout = (props) => {
   const lang = i18nPluginHelper.langFromPath(pathname)
   const i18nPlugin = {
     changeLang: (newLang) => {
-      navigateTo(i18nPluginHelper.replacePrefix(newLang, pathname))
+      navigate(i18nPluginHelper.replacePrefix(newLang, pathname))
     },
     lang,
     langs: i18nPluginHelper.langs,

@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 // Components
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import Layout from '../components/layout'
 
 const BlogPostTemplate = ({data, location, pathContext}) => {
