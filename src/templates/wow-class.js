@@ -1,10 +1,12 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
 import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
 import startCase from 'lodash/startCase'
 import { withStyles } from '@material-ui/core/styles'
-
+import { getSpecVariation } from '../utils/wow'
+// Components
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import { Trans, DateFormat } from '@lingui/react'
@@ -17,8 +19,7 @@ import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import Typography from '@material-ui/core/Typography'
-
-import {getSpecVariation} from '../utils/wow'
+import Layout from '../components/layout'
 
 const styles = (theme) => ({
   type: {
@@ -86,36 +87,39 @@ const WowClassTemplate = (props) => {
   const {wowClass} = simulationTypes[0].edges[0].node.context
   const pageTitle = startCase(t(wowClass))
   return (
-    <div>
-      <Helmet title={`${pageTitle} | ${data.site.siteMetadata.title}`}/>
-      <h1>{pageTitle}</h1>
-      <p><Trans>Here you can retrieve all the simulations we run. You will find more details about what they represents
-        in their respective pages. They are updated on a daily basis.</Trans></p>
-      <Grid container spacing={16}>
-        {
-          simulationTypes.map((group, index) => {
-            const {simulationType} = group.edges[0].node.context
-            return (
-              <Grid item key={index} xs={12} lg={6}>
-                <h2 style={{textAlign: 'center'}}>{capitalize(t(simulationType))}</h2>
-                <Grid container spacing={8} alignItems={'flex-start'} justify={'center'}>
-                  <TiersList {...props}
-                    groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
+    <Layout location={location}>
+      <div>
+        <Helmet title={`${pageTitle} | ${data.site.siteMetadata.title}`}/>
+        <h1>{pageTitle}</h1>
+        <p><Trans>Here you can retrieve all the simulations we run. You will find more details about what they
+          represents
+          in their respective pages. They are updated on a daily basis.</Trans></p>
+        <Grid container spacing={16}>
+          {
+            simulationTypes.map((group, index) => {
+              const {simulationType} = group.edges[0].node.context
+              return (
+                <Grid item key={index} xs={12} lg={6}>
+                  <h2 style={{textAlign: 'center'}}>{capitalize(t(simulationType))}</h2>
+                  <Grid container spacing={8} alignItems={'flex-start'} justify={'center'}>
+                    <TiersList {...props}
+                      groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
+                  </Grid>
                 </Grid>
-              </Grid>
-            )
-          })
-        }
-      </Grid>
-    </div>
+              )
+            })
+          }
+        </Grid>
+      </div>
+    </Layout>
   )
 }
 
 WowClassTemplate.propTypes = {
   classes: PropTypes.object,
-  data: PropTypes.object,
-  i18nPlugin: PropTypes.object,
-  location: PropTypes.object
+  data: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(WowClassTemplate)

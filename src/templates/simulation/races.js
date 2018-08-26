@@ -1,7 +1,8 @@
+// Dependencies
 import React from 'react'
-
+import PropTypes from 'prop-types'
+// Components
 import { Trans } from '@lingui/react'
-
 import StackedChartLayout from './common/stacked-chart-layout'
 
 const RacesSimulationTemplate = (props) => (
@@ -14,6 +15,12 @@ const RacesSimulationTemplate = (props) => (
     </div>
   </StackedChartLayout>
 )
+
+RacesSimulationTemplate.propTypes = {
+  data: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
+}
 
 export default RacesSimulationTemplate
 

@@ -1,6 +1,9 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import { refreshWowheadLinks } from '../../utils/wow'
+import { getResultsStates } from './combinations/get-results-states'
+// Components
 import Helmet from 'react-helmet'
 import { Trans } from '@lingui/react'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -9,10 +12,7 @@ import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
-
-import { refreshWowheadLinks } from '../../utils/wow'
-import { getResultsStates } from './combinations/get-results-states'
-
+import Layout from '../../components/layout'
 import RelatedSimulations from './common/related'
 import Metas from './common/metas'
 import Filters from './combinations/filters'
@@ -125,75 +125,80 @@ class CombinationsSimulationTemplate extends React.Component {
   }
 
   render () {
-    const {data, i18nPlugin, pathContext} = this.props
+    const {data, i18nPlugin, location, pathContext} = this.props
     const {filePath, multiTargets, order, orderBy, page, results, rowsPerPage, selectedAzeritePowers, talentsTree} = this.state
     const {t, wowheadLink} = i18nPlugin
     const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pathContext
     return (
-      <div>
-        <Helmet>
-          <link rel="prefetch" href={filePath}/>
-        </Helmet>
-        <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
-        <p><Trans><b>Information:</b><br/>These simulations are all based on the default profiles from
-          SimulationCraft.<br/>You can consider everything within the target error DPS range to be mostly equal and
-          requiring a more detailed investigation.</Trans></p>
-        <p><Trans>The purpose of these simulations is to get a general idea of how different setups will compare with
-          each other and not to promote any definitive best builds. Several variables (like different trinkets, WF/TF or
-          ingame situations) are not taken into account. This is why you, as always, should <u><b>simulate your own
-            character</b></u> to find your optimal setup.</Trans></p>
-        <p><Trans>The fact that generic azerite powers are not included is intended. The goal of such simulations is not
-          to find the best possibilities out of millions possible combinations but rather let you know <b>if a given
-            azerite power alone could impact talents choices</b>. One of the caveat is that it could happen with further
-          stacks or a combination of two of them, those cases are not covered there. You might find more information
-          about such events on your class resources.</Trans></p>
-        <p><Trans>Of course, you can also check how the talents compare each other without any azerite power (just
-          unselect all of them). Which is ideal in case you are using only generic azerite powers for example.</Trans>
-        </p>
-        <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
-          t={t} tier={tier} variation={variation}/>
-        <Metas buildTime={buildTime} gitRevision={gitRevision}
-          targetError={targetError} templateDPS={templateDPS} version={version}/>
-        {!results &&
-        <CircularProgress id="results-loader" color="secondary"/>}
-        {results &&
+      <Layout location={location}>
         <div>
-          <Filters name={name} onAzeritePowerSelect={this.handleAzeritePowerSelect}
-            onTalentSelect={this.handleTalentSelect}
-            selectedAzeritePowers={selectedAzeritePowers} talentsTree={talentsTree} wowheadLink={wowheadLink}/>
-          <p style={{textAlign: 'center'}}>
-            <span className={'azerite-tier2'}>Inner Ring</span>
-            &nbsp;|&nbsp;
-            <span className={'azerite-tier3'}>Outer Ring</span>
+          <Helmet>
+            <link rel="prefetch" href={filePath}/>
+          </Helmet>
+          <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
+          <p><Trans><b>Information:</b><br/>These simulations are all based on the default profiles from
+            SimulationCraft.<br/>You can consider everything within the target error DPS range to be mostly equal and
+            requiring a more detailed investigation.</Trans></p>
+          <p><Trans>The purpose of these simulations is to get a general idea of how different setups will compare with
+            each other and not to promote any definitive best builds. Several variables (like different trinkets, WF/TF
+            or
+            ingame situations) are not taken into account. This is why you, as always, should <u><b>simulate your own
+              character</b></u> to find your optimal setup.</Trans></p>
+          <p><Trans>The fact that generic azerite powers are not included is intended. The goal of such simulations is
+            not
+            to find the best possibilities out of millions possible combinations but rather let you know <b>if a given
+              azerite power alone could impact talents choices</b>. One of the caveat is that it could happen with
+            further
+            stacks or a combination of two of them, those cases are not covered there. You might find more information
+            about such events on your class resources.</Trans></p>
+          <p><Trans>Of course, you can also check how the talents compare each other without any azerite power (just
+            unselect all of them). Which is ideal in case you are using only generic azerite powers for example.</Trans>
           </p>
-          <Table>
-            <EnhancedTableHead multiTargets={multiTargets} onRequestSort={this.handleRequestSort}
-              order={order} orderBy={orderBy}/>
-            <TableBody>
-              {results
-                .filter((result) => this.isValidResult(result))
-                .sort(order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy])
-                .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                .map((result) => (
-                  <TableRow key={`${name}-${result.rank}`} hover>
-                    <TableCell component="th" scope="row" numeric>{result.rank}</TableCell>
-                    <TableCell dangerouslySetInnerHTML={{__html: result.talentsLabel}}/>
-                    <TableCell dangerouslySetInnerHTML={{__html: result.azeritePowerLabel}}/>
-                    <TableCell numeric>{result.dps}</TableCell>
-                    {multiTargets && <TableCell numeric>{result.bossDPS}</TableCell>}
-                    <TableCell numeric>{result.dpsPercentageDifference}</TableCell>
-                  </TableRow>
-                ))
-              }
-            </TableBody>
+          <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
+            t={t} tier={tier} variation={variation}/>
+          <Metas buildTime={buildTime} gitRevision={gitRevision}
+            targetError={targetError} templateDPS={templateDPS} version={version}/>
+          {!results &&
+          <CircularProgress id="results-loader" color="secondary"/>}
+          {results &&
+          <div>
+            <Filters name={name} onAzeritePowerSelect={this.handleAzeritePowerSelect}
+              onTalentSelect={this.handleTalentSelect}
+              selectedAzeritePowers={selectedAzeritePowers} talentsTree={talentsTree} wowheadLink={wowheadLink}/>
+            <p style={{textAlign: 'center'}}>
+              <span className={'azerite-tier2'}>Inner Ring</span>
+              &nbsp;|&nbsp;
+              <span className={'azerite-tier3'}>Outer Ring</span>
+            </p>
+            <Table>
+              <EnhancedTableHead multiTargets={multiTargets} onRequestSort={this.handleRequestSort}
+                order={order} orderBy={orderBy}/>
+              <TableBody>
+                {results
+                  .filter((result) => this.isValidResult(result))
+                  .sort(order === 'desc' ? (a, b) => b[orderBy] - a[orderBy] : (a, b) => a[orderBy] - b[orderBy])
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((result) => (
+                    <TableRow key={`${name}-${result.rank}`} hover>
+                      <TableCell component="th" scope="row" numeric>{result.rank}</TableCell>
+                      <TableCell dangerouslySetInnerHTML={{__html: result.talentsLabel}}/>
+                      <TableCell dangerouslySetInnerHTML={{__html: result.azeritePowerLabel}}/>
+                      <TableCell numeric>{result.dps}</TableCell>
+                      {multiTargets && <TableCell numeric>{result.bossDPS}</TableCell>}
+                      <TableCell numeric>{result.dpsPercentageDifference}</TableCell>
+                    </TableRow>
+                  ))
+                }
+              </TableBody>
 
-          </Table>
-          <TablePagination component="div" count={results.length}
-            rowsPerPage={rowsPerPage} page={page} rowsPerPageOptions={[5, 10, 15, 20, 25, 50, 100, 1000]}
-            backIconButtonProps={{'aria-label': 'Previous Page'}} nextIconButtonProps={{'aria-label': 'Next Page'}}
-            onChangePage={this.handleChangePage} onChangeRowsPerPage={this.handleChangeRowsPerPage}/>
-        </div>}
-      </div>
+            </Table>
+            <TablePagination component="div" count={results.length}
+              rowsPerPage={rowsPerPage} page={page} rowsPerPageOptions={[5, 10, 15, 20, 25, 50, 100, 1000]}
+              backIconButtonProps={{'aria-label': 'Previous Page'}} nextIconButtonProps={{'aria-label': 'Next Page'}}
+              onChangePage={this.handleChangePage} onChangeRowsPerPage={this.handleChangeRowsPerPage}/>
+          </div>}
+        </div>
+      </Layout>
     )
   }
 }
@@ -201,6 +206,7 @@ class CombinationsSimulationTemplate extends React.Component {
 CombinationsSimulationTemplate.propTypes = {
   data: PropTypes.object.isRequired,
   i18nPlugin: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
   pathContext: PropTypes.object.isRequired
 }
 

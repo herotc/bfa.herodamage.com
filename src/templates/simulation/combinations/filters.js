@@ -1,7 +1,8 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-
+// Components
 import { Trans } from '@lingui/react'
 import Divider from '@material-ui/core/Divider'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
