@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "@babel/core": "^7.0.0-rc.3",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-rc.3",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0-rc.3",
     "@babel/preset-env": "^7.0.0-rc.3",
     "@babel/preset-react": "^7.0.0-rc.3",
     "@lingui/babel-preset-react": "^2.5.0",
