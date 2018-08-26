@@ -19,7 +19,6 @@ import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import Typography from '@material-ui/core/Typography'
-import Layout from '../components/layout'
 
 const styles = (theme) => ({
   type: {
@@ -81,45 +80,42 @@ const TiersList = (props) => {
 }
 
 const WowClassTemplate = (props) => {
-  const {data, i18nPlugin, location} = props
+  const {data, i18nPlugin} = props
   const {allSitePage: {group: simulationTypes}} = data
   const {t} = i18nPlugin
   const {wowClass} = simulationTypes[0].edges[0].node.context
   const pageTitle = startCase(t(wowClass))
   return (
-    <Layout location={location}>
-      <div>
-        <Helmet title={`${pageTitle} | ${data.site.siteMetadata.title}`}/>
-        <h1>{pageTitle}</h1>
-        <p><Trans>Here you can retrieve all the simulations we run. You will find more details about what they
-          represents
-          in their respective pages. They are updated on a daily basis.</Trans></p>
-        <Grid container spacing={16}>
-          {
-            simulationTypes.map((group, index) => {
-              const {simulationType} = group.edges[0].node.context
-              return (
-                <Grid item key={index} xs={12} lg={6}>
-                  <h2 style={{textAlign: 'center'}}>{capitalize(t(simulationType))}</h2>
-                  <Grid container spacing={8} alignItems={'flex-start'} justify={'center'}>
-                    <TiersList {...props}
-                      groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
-                  </Grid>
+    <div>
+      <Helmet title={`${pageTitle} | ${data.site.siteMetadata.title}`}/>
+      <h1>{pageTitle}</h1>
+      <p><Trans>Here you can retrieve all the simulations we run. You will find more details about what they
+        represents
+        in their respective pages. They are updated on a daily basis.</Trans></p>
+      <Grid container spacing={16}>
+        {
+          simulationTypes.map((group, index) => {
+            const {simulationType} = group.edges[0].node.context
+            return (
+              <Grid item key={index} xs={12} lg={6}>
+                <h2 style={{textAlign: 'center'}}>{capitalize(t(simulationType))}</h2>
+                <Grid container spacing={8} alignItems={'flex-start'} justify={'center'}>
+                  <TiersList {...props}
+                    groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
                 </Grid>
-              )
-            })
-          }
-        </Grid>
-      </div>
-    </Layout>
+              </Grid>
+            )
+          })
+        }
+      </Grid>
+    </div>
   )
 }
 
 WowClassTemplate.propTypes = {
   classes: PropTypes.object,
   data: PropTypes.object.isRequired,
-  i18nPlugin: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  i18nPlugin: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(WowClassTemplate)

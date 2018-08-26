@@ -4,31 +4,27 @@ import PropTypes from 'prop-types'
 import { Link, graphql } from 'gatsby'
 // Components
 import Helmet from 'react-helmet'
-import Layout from '../components/layout'
 
-const BlogPostTemplate = ({data, location, pageContext}) => {
+const BlogPostTemplate = ({data, pageContext}) => {
   const post = data.markdownRemark
   const {previous, next} = pageContext
   return (
-    <Layout location={location}>
-      <div>
-        <Helmet title={`${post.frontmatter.title} | ${data.site.siteMetadata.title}`}/>
-        <h1>{post.frontmatter.title}</h1>
-        <p>{post.frontmatter.date}</p>
-        <div dangerouslySetInnerHTML={{__html: post.html}}/>
-        <hr/>
-        <ul>
-          {previous && (<li><Link to={previous.fields.slug} rel="prev">← {previous.frontmatter.title}</Link></li>)}
-          {next && (<li><Link to={next.fields.slug} rel="next">{next.frontmatter.title} →</Link></li>)}
-        </ul>
-      </div>
-    </Layout>
+    <div>
+      <Helmet title={`${post.frontmatter.title} | ${data.site.siteMetadata.title}`}/>
+      <h1>{post.frontmatter.title}</h1>
+      <p>{post.frontmatter.date}</p>
+      <div dangerouslySetInnerHTML={{__html: post.html}}/>
+      <hr/>
+      <ul>
+        {previous && (<li><Link to={previous.fields.slug} rel="prev">← {previous.frontmatter.title}</Link></li>)}
+        {next && (<li><Link to={next.fields.slug} rel="next">{next.frontmatter.title} →</Link></li>)}
+      </ul>
+    </div>
   )
 }
 
 BlogPostTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired
 }
 

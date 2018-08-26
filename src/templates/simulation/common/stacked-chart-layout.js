@@ -5,7 +5,6 @@ import { stackedChart } from '../../../browser/charts/stacked'
 // Components
 import Helmet from 'react-helmet'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import Layout from '../../../components/layout'
 import RelatedSimulations from './related'
 import Metas from './metas'
 
@@ -31,34 +30,32 @@ class StackedChartLayout extends React.Component {
   }
 
   render () {
-    const {children, data, i18nPlugin, location, pageContext} = this.props
+    const {children, data, i18nPlugin, pageContext} = this.props
     const {filePath} = this.state
     const {t} = i18nPlugin
     const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pageContext
     return (
-      <Layout location={location}>
-        <div>
-          <Helmet>
-            <link rel="prefetch" href={filePath}/>
-          </Helmet>
-          <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
-          {children}
-          <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
-            t={t} tier={tier} variation={variation}/>
-          <Metas buildTime={buildTime} gitRevision={gitRevision}
-            targetError={targetError} templateDPS={templateDPS} version={version}/>
-          {simulationType.includes('azerite') &&
-          <p style={{textAlign: 'center'}}>
-            <span className={'azerite-tier2'}>Inner Ring</span>
-            &nbsp;|&nbsp;
-            <span className={'azerite-tier3'}>Outer Ring</span>
-          </p>}
-          <CircularProgress id="results-loader" color="secondary"/>
-          <div id="chart-overlay"/>
-          <div id="google-chart-labels"/>
-          <div id="google-chart"/>
-        </div>
-      </Layout>
+      <div>
+        <Helmet>
+          <link rel="prefetch" href={filePath}/>
+        </Helmet>
+        <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
+        {children}
+        <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
+          t={t} tier={tier} variation={variation}/>
+        <Metas buildTime={buildTime} gitRevision={gitRevision}
+          targetError={targetError} templateDPS={templateDPS} version={version}/>
+        {simulationType.includes('azerite') &&
+        <p style={{textAlign: 'center'}}>
+          <span className={'azerite-tier2'}>Inner Ring</span>
+          &nbsp;|&nbsp;
+          <span className={'azerite-tier3'}>Outer Ring</span>
+        </p>}
+        <CircularProgress id="results-loader" color="secondary"/>
+        <div id="chart-overlay"/>
+        <div id="google-chart-labels"/>
+        <div id="google-chart"/>
+      </div>
     )
   }
 }
@@ -68,7 +65,6 @@ StackedChartLayout.propTypes = {
   children: PropTypes.node.isRequired,
   data: PropTypes.object.isRequired,
   i18nPlugin: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired
 }
 

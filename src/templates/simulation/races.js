@@ -19,8 +19,7 @@ const RacesSimulationTemplate = (props) => (
 
 RacesSimulationTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  i18nPlugin: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  i18nPlugin: PropTypes.object.isRequired
 }
 
 export default RacesSimulationTemplate
