@@ -7,7 +7,7 @@ import startCase from 'lodash/startCase'
 import { withStyles } from '@material-ui/core/styles'
 import { getSpecVariation } from '../utils/wow'
 // Components
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import Helmet from 'react-helmet'
 import { Trans, DateFormat } from '@lingui/react'
 import Divider from '@material-ui/core/Divider'

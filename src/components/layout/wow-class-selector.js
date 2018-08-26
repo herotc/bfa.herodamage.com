@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import startCase from 'lodash/startCase'
 
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
 import { wowIcon } from '../../utils/wow'
 

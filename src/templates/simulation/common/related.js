@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { getSpecVariation } from '../../../utils/wow'
 // Components
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import Button from '@material-ui/core/Button'
 import Divider from '@material-ui/core/Divider'
 
