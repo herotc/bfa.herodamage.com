@@ -16,7 +16,7 @@ module.exports.onCreateNode = function ({node, getNode, actions}) {
   if (parentNode.internal.type !== 'File') return
   // Delete unwanted node from posts (things like .DS_Store)
   if (parentNode.extension !== 'md') {
-    deleteNode(parentNode.id, parentNode)
+    deleteNode({node: parentNode})
     return
   }
 
