@@ -6,9 +6,9 @@ import { Link, graphql } from 'gatsby'
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
 
-const BlogPostTemplate = ({data, location, pathContext}) => {
+const BlogPostTemplate = ({data, location, pageContext}) => {
   const post = data.markdownRemark
-  const {previous, next} = pathContext
+  const {previous, next} = pageContext
   return (
     <Layout location={location}>
       <div>
@@ -29,7 +29,7 @@ const BlogPostTemplate = ({data, location, pathContext}) => {
 BlogPostTemplate.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired
 }
 
 export default BlogPostTemplate

@@ -13,28 +13,28 @@ class StackedChartLayout extends React.Component {
   constructor (props) {
     super(props)
 
-    const {data, pathContext} = this.props
+    const {data, pageContext} = this.props
     const {reportsPath} = data.site.siteMetadata
-    const {name} = pathContext
+    const {name} = pageContext
     this.state = {
       filePath: `${reportsPath}${name}.json`
     }
   }
 
   componentDidMount () {
-    const {chartTitle, i18nPlugin, pathContext} = this.props
+    const {chartTitle, i18nPlugin, pageContext} = this.props
     const {filePath} = this.state
     const {lang} = i18nPlugin
-    const {simulationType, templateDPS} = pathContext
+    const {simulationType, templateDPS} = pageContext
     stackedChart(simulationType, filePath, chartTitle, templateDPS, lang)
       .catch((err) => { console.error(err) })
   }
 
   render () {
-    const {children, data, i18nPlugin, location, pathContext} = this.props
+    const {children, data, i18nPlugin, location, pageContext} = this.props
     const {filePath} = this.state
     const {t} = i18nPlugin
-    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pathContext
+    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pageContext
     return (
       <Layout location={location}>
         <div>
@@ -69,7 +69,7 @@ StackedChartLayout.propTypes = {
   data: PropTypes.object.isRequired,
   i18nPlugin: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  pageContext: PropTypes.object.isRequired
 }
 
 export default StackedChartLayout

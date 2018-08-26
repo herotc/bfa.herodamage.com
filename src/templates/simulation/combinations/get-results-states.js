@@ -3,8 +3,8 @@ import merge from 'lodash/merge'
 import { getAzeriteInformation, getTalentsTree, wowAzeriteLabel, wowTalentsLabel } from '../../../utils/wow'
 
 export async function getResultsStates (props, filepath) {
-  const {i18nPlugin: {lang}, pathContext} = props
-  const {spec, wowClass} = pathContext
+  const {i18nPlugin: {lang}, pageContext} = props
+  const {spec, wowClass} = pageContext
 
   // Fetch the .json
   const response = await window.fetch(filepath)
