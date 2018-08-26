@@ -19,11 +19,15 @@ const Container = styled.div`
 `
 
 const Talent = styled(Grid)`
-  opacity: ${({disabled, selected}) => selected ? '1' : disabled ? '0.05' : '0.5'};
+  && {
+    opacity: ${({disabled, selected}) => selected ? '1' : disabled ? '0.05' : '0.5'};
+  }
 `
 
 const AzeritePower = styled(Grid)`
-  opacity: ${({selected}) => selected ? '1' : '0.5'};
+  && {
+    opacity: ${({selected}) => selected ? '1' : '0.5'};
+  }
 `
 
 class Filters extends React.Component {

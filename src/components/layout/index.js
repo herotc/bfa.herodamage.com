@@ -123,7 +123,7 @@ const Layout = ({classes, ...props}) => {
               <Header i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
               <WowClassSelector i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
               <GPTAd location={location} type="top"/>
-              <Main {...props} data={data}/>
+              <Main {...props}/>
               <GPTAd location={location} type="side"/>
               <GPTAd location={location} type="bot"/>
               <Footer siteMetadata={siteMetadata}/>
