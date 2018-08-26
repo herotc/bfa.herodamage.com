@@ -9,7 +9,7 @@ module.exports = {
     reportsPath: '/reports/'
   },
   plugins: [
-    'gatsby-plugin-react-next',
+    'gatsby-plugin-no-sourcemaps',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
