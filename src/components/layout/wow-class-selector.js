@@ -63,7 +63,7 @@ const WowClassSelector = ({i18nPlugin: {tLink}, siteMetadata: {wowClasses}}) => 
 )
 
 WowClassSelector.propTypes = {
-  i18nPlugin: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object,
   siteMetadata: PropTypes.object.isRequired
 }
 

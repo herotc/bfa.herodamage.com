@@ -5,7 +5,7 @@ const {sheetsManager, theme} = require('./theme')
 
 // remove the JSS style tag generated on the server to avoid conflicts with the one added on the client
 exports.onInitialClientRender = () => {
-  const ssStyles = window.document.getElementById(`server-side-jss`)
+  const ssStyles = window.document.getElementById('server-side-jss')
   ssStyles && ssStyles.parentNode.removeChild(ssStyles)
 }
 

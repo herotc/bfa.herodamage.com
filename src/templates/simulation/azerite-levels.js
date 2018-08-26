@@ -21,7 +21,7 @@ const AzeriteLevelsSimulationTemplate = (props) => (
 
 AzeriteLevelsSimulationTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  i18nPlugin: PropTypes.object.isRequired
+  i18nPlugin: PropTypes.object
 }
 
 export default AzeriteLevelsSimulationTemplate

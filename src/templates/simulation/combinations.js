@@ -203,7 +203,7 @@ class CombinationsSimulationTemplate extends React.Component {
 
 CombinationsSimulationTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  i18nPlugin: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object,
   pageContext: PropTypes.object.isRequired
 }
 

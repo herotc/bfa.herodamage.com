@@ -21,7 +21,7 @@ const TrinketsSimulationTemplate = (props) => (
 
 TrinketsSimulationTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  i18nPlugin: PropTypes.object.isRequired
+  i18nPlugin: PropTypes.object
 }
 
 export default TrinketsSimulationTemplate

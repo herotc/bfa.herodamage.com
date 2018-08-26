@@ -115,7 +115,7 @@ const WowClassTemplate = (props) => {
 WowClassTemplate.propTypes = {
   classes: PropTypes.object,
   data: PropTypes.object.isRequired,
-  i18nPlugin: PropTypes.object.isRequired
+  i18nPlugin: PropTypes.object
 }
 
 export default withStyles(styles)(WowClassTemplate)

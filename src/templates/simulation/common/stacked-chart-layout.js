@@ -64,7 +64,7 @@ StackedChartLayout.propTypes = {
   chartTitle: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   data: PropTypes.object.isRequired,
-  i18nPlugin: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object,
   pageContext: PropTypes.object.isRequired
 }
 
