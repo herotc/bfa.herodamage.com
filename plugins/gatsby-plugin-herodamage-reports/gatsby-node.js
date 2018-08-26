@@ -33,8 +33,8 @@ const simulations = {
 
 const wowClasses = {}
 
-module.exports.onCreateNode = async function ({node, getNode, boundActionCreators}) {
-  const {createNodeField, deleteNode} = boundActionCreators
+module.exports.onCreateNode = async function ({node, getNode, actions}) {
+  const {createNodeField, deleteNode} = actions
 
   // Prevents non reports files to be processed
   if (node.sourceInstanceName !== 'reports') return
@@ -102,8 +102,8 @@ module.exports.onCreateNode = async function ({node, getNode, boundActionCreator
   createNodeField({node, name: 'templateDPS', value: Math.round(json['player']['collected_data']['dps']['mean'])})
 }
 
-module.exports.createPages = async function ({graphql, boundActionCreators}) {
-  const {createPage} = boundActionCreators
+module.exports.createPages = async function ({graphql, actions}) {
+  const {createPage} = actions
 
   // Make the class index pages by iterating over discovered classes during onCreateNode
   Object.keys(wowClasses).forEach((wowClass) => {
