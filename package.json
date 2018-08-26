@@ -79,9 +79,6 @@
   },
   "devDependencies": {
     "@lingui/babel-preset-react": "^2.5.0",
-    "babel-core": "^6.26.3",
-    "babel-plugin-transform-regenerator": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
     "cross-env": "^5.2.0",
     "eslint": "^5.4.0",
     "eslint-config-standard": "^11.0.0",
