@@ -1,29 +1,35 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+// Components
 import Helmet from 'react-helmet'
 import Link from 'gatsby-link'
+import Layout from '../components/layout'
 
-const BlogPostTemplate = ({data, pathContext}) => {
+const BlogPostTemplate = ({data, location, pathContext}) => {
   const post = data.markdownRemark
   const {previous, next} = pathContext
   return (
-    <div>
-      <Helmet title={`${post.frontmatter.title} | ${data.site.siteMetadata.title}`}/>
-      <h1>{post.frontmatter.title}</h1>
-      <p>{post.frontmatter.date}</p>
-      <div dangerouslySetInnerHTML={{__html: post.html}}/>
-      <hr/>
-      <ul>
-        {previous && (<li><Link to={previous.fields.slug} rel="prev">← {previous.frontmatter.title}</Link></li>)}
-        {next && (<li><Link to={next.fields.slug} rel="next">{next.frontmatter.title} →</Link></li>)}
-      </ul>
-    </div>
+    <Layout location={location}>
+      <div>
+        <Helmet title={`${post.frontmatter.title} | ${data.site.siteMetadata.title}`}/>
+        <h1>{post.frontmatter.title}</h1>
+        <p>{post.frontmatter.date}</p>
+        <div dangerouslySetInnerHTML={{__html: post.html}}/>
+        <hr/>
+        <ul>
+          {previous && (<li><Link to={previous.fields.slug} rel="prev">← {previous.frontmatter.title}</Link></li>)}
+          {next && (<li><Link to={next.fields.slug} rel="next">{next.frontmatter.title} →</Link></li>)}
+        </ul>
+      </div>
+    </Layout>
   )
 }
 
 BlogPostTemplate.propTypes = {
-  data: PropTypes.object,
-  pathContext: PropTypes.object
+  data: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  pathContext: PropTypes.object.isRequired
 }
 
 export default BlogPostTemplate

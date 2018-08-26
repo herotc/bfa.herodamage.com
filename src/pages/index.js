@@ -1,14 +1,15 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
 import startCase from 'lodash/startCase'
 import { withStyles } from '@material-ui/core/styles/index'
-
+import { wowIcon } from '../utils/wow'
+// Components
 import Link from 'gatsby-link'
 import { Trans } from '@lingui/react'
 import Grid from '@material-ui/core/Grid'
-
-import { wowIcon } from '../utils/wow'
-
+import Layout from '../components/layout'
+// Assets
 import logo from '../assets/images/logo.svg'
 
 const styles = (theme) => ({
@@ -43,45 +44,48 @@ const styles = (theme) => ({
   }
 })
 
-const LangIndexPage = ({classes, data, i18nPlugin}) => {
+const LangIndexPage = ({classes, data, i18nPlugin, location}) => {
   const siteMetadata = data.site.siteMetadata
   const {tLink} = i18nPlugin
   return (
-    <div>
-      <section className={classes.introduction}>
-        <figure>
-          <img src={logo} alt={`${siteMetadata.title} Logo`}/>
-        </figure>
-        <div>
-          <h1 className="site-name">
-            {siteMetadata.title.split(' ').map((titlePart, index) => (
-              <span key={index}>{index > 0 && ' '}{titlePart}</span>))}
-          </h1>
-          <p><Trans>Welcome to Hero Damage, the website where you can see the latest World of Warcraft simulations
-            results for every class.<br/>
-            Please select your class below.
-          </Trans></p>
-        </div>
-      </section>
-      <Grid container spacing={32} className={classes.wowClasses}>
-        {
-          siteMetadata.wowClasses.map((wowClass, index) => {
-            return (
-              <Grid item key={index} component={Link} to={tLink(`/${wowClass}/`)} xs={12} sm={6} md={4} lg={3}>
-                <img src={wowIcon(wowClass)} alt={startCase(wowClass)}/>
-              </Grid>
-            )
-          })
-        }
-      </Grid>
-    </div>
+    <Layout location={location}>
+      <div>
+        <section className={classes.introduction}>
+          <figure>
+            <img src={logo} alt={`${siteMetadata.title} Logo`}/>
+          </figure>
+          <div>
+            <h1 className="site-name">
+              {siteMetadata.title.split(' ').map((titlePart, index) => (
+                <span key={index}>{index > 0 && ' '}{titlePart}</span>))}
+            </h1>
+            <p><Trans>Welcome to Hero Damage, the website where you can see the latest World of Warcraft simulations
+              results for every class.<br/>
+              Please select your class below.
+            </Trans></p>
+          </div>
+        </section>
+        <Grid container spacing={32} className={classes.wowClasses}>
+          {
+            siteMetadata.wowClasses.map((wowClass, index) => {
+              return (
+                <Grid item key={index} component={Link} to={tLink(`/${wowClass}/`)} xs={12} sm={6} md={4} lg={3}>
+                  <img src={wowIcon(wowClass)} alt={startCase(wowClass)}/>
+                </Grid>
+              )
+            })
+          }
+        </Grid>
+      </div>
+    </Layout>
   )
 }
 
 LangIndexPage.propTypes = {
   classes: PropTypes.object,
-  data: PropTypes.object,
-  i18nPlugin: PropTypes.object
+  data: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(LangIndexPage)

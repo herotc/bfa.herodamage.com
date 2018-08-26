@@ -1,6 +1,7 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
-
+// Components
 import { Trans, DateFormat } from '@lingui/react'
 
 const Metas = ({buildTime, gitRevision, targetError, templateDPS, version}) => {
