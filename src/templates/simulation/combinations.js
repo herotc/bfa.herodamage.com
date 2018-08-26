@@ -1,6 +1,7 @@
 // Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 import { refreshWowheadLinks } from '../../utils/wow'
 import { getResultsStates } from './combinations/get-results-states'
 // Components
