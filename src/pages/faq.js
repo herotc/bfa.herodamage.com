@@ -1,6 +1,7 @@
 // Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 // Components
 import Helmet from 'react-helmet'
 import Layout from '../components/layout'
