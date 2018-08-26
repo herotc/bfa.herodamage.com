@@ -1,22 +1,26 @@
-import React from 'react'
-import { renderToString } from 'react-dom/server'
-import { JssProvider } from 'react-jss'
-import getPageContext from './getPageContext'
+const React = require('react')
+const {JssProvider, SheetsRegistry} = require('react-jss')
+const {createGenerateClassName, MuiThemeProvider} = require('@material-ui/core/styles')
+const CssBaseline = require('@material-ui/core/CssBaseline').default
+const {sheetsManager, theme} = require('./theme')
 
-module.exports.replaceRenderer = ({bodyComponent, replaceBodyHTMLString, setHeadComponents}) => {
-  // Get the context of the page to collected side effects.
-  const pageContext = getPageContext()
+// JSS
+const sheets = new SheetsRegistry()
+const generateClassName = createGenerateClassName()
 
-  const body = renderToString(
-    <JssProvider registry={pageContext.sheetsRegistry} generateClassName={pageContext.generateClassName}>
-      {React.cloneElement(bodyComponent, {pageContext})}
-    </JssProvider>
-  )
-  replaceBodyHTMLString(body)
+// eslint-disable-next-line react/prop-types,react/display-name
+exports.wrapRootElement = ({element}) => (
+  <JssProvider registry={sheets} generateClassName={generateClassName}>
+    <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
+      <CssBaseline/>
+      {element}
+    </MuiThemeProvider>
+  </JssProvider>
+)
 
-  const jssStyle = (
+exports.onRenderBody = ({setHeadComponents}) => {
+  setHeadComponents([
     <style type="text/css" id="server-side-jss" key="server-side-jss"
-      dangerouslySetInnerHTML={{__html: pageContext.sheetsRegistry.toString()}}/>
-  )
-  setHeadComponents([jssStyle])
+      dangerouslySetInnerHTML={{__html: sheets.toString()}}/>
+  ])
 }
