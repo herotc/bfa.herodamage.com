@@ -6,8 +6,7 @@ import { I18nProvider } from '@lingui/react'
 import { StaticQuery, graphql, navigate } from 'gatsby'
 import { withStyles } from '@material-ui/core/styles'
 import * as i18nPluginHelper from '../../../plugins/gatsby-plugin-herodamage-i18n/index'
-import withRoot from '../../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
-import { theme } from '../../../plugins/gatsby-plugin-herodamage-material-ui/getPageContext'
+import { theme } from '../../../plugins/gatsby-plugin-herodamage-material-ui/theme'
 import { getWowheadLink } from '../../utils/wow'
 // Components
 import Typography from '@material-ui/core/Typography'
@@ -169,4 +168,4 @@ IndexLayout.propTypes = {
   location: PropTypes.object.isRequired
 }
 
-export default withRoot(withStyles(styles)(IndexLayout))
+export default withStyles(styles)(IndexLayout)
