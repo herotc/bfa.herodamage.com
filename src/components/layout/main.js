@@ -10,11 +10,11 @@ const StyledPaper = styled(Paper)`
   padding: 16px 24px;
 `
 
-const Main = ({children}) => {
+const Main = ({children, ...props}) => {
   return (
     <main>
       <StyledPaper elevation={1}>
-        {children}
+        {React.cloneElement(children, props)}
       </StyledPaper>
     </main>
   )

@@ -21,8 +21,7 @@ const AzeriteStacksSimulationTemplate = (props) => (
 
 AzeriteStacksSimulationTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  i18nPlugin: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  i18nPlugin: PropTypes.object.isRequired
 }
 
 export default AzeriteStacksSimulationTemplate
