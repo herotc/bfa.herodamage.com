@@ -9,7 +9,7 @@ module.exports = {
     reportsPath: '/reports/'
   },
   plugins: [
-    'gatsby-plugin-react-next',
+    'gatsby-plugin-no-sourcemaps',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
@@ -22,6 +22,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-herodamage-material-ui',
     'gatsby-plugin-styled-components',
+    'gatsby-plugin-herodamage-layout',
     'gatsby-plugin-herodamage-i18n',
     {
       resolve: 'gatsby-transformer-remark',

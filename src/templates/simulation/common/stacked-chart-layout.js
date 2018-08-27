@@ -1,11 +1,10 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import { stackedChart } from '../../../browser/charts/stacked'
+// Components
 import Helmet from 'react-helmet'
 import CircularProgress from '@material-ui/core/CircularProgress'
-
-import { stackedChart } from '../../../browser/charts/stacked'
-
 import RelatedSimulations from './related'
 import Metas from './metas'
 
@@ -13,28 +12,28 @@ class StackedChartLayout extends React.Component {
   constructor (props) {
     super(props)
 
-    const {data, pathContext} = this.props
+    const {data, pageContext} = this.props
     const {reportsPath} = data.site.siteMetadata
-    const {name} = pathContext
+    const {name} = pageContext
     this.state = {
       filePath: `${reportsPath}${name}.json`
     }
   }
 
   componentDidMount () {
-    const {chartTitle, i18nPlugin, pathContext} = this.props
+    const {chartTitle, i18nPlugin, pageContext} = this.props
     const {filePath} = this.state
     const {lang} = i18nPlugin
-    const {simulationType, templateDPS} = pathContext
+    const {simulationType, templateDPS} = pageContext
     stackedChart(simulationType, filePath, chartTitle, templateDPS, lang)
       .catch((err) => { console.error(err) })
   }
 
   render () {
-    const {children, data, i18nPlugin, pathContext} = this.props
+    const {children, data, i18nPlugin, pageContext} = this.props
     const {filePath} = this.state
     const {t} = i18nPlugin
-    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pathContext
+    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pageContext
     return (
       <div>
         <Helmet>
@@ -63,10 +62,10 @@ class StackedChartLayout extends React.Component {
 
 StackedChartLayout.propTypes = {
   chartTitle: PropTypes.string.isRequired,
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   data: PropTypes.object.isRequired,
-  i18nPlugin: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  i18nPlugin: PropTypes.object,
+  pageContext: PropTypes.object.isRequired
 }
 
 export default StackedChartLayout

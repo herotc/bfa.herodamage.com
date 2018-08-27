@@ -1,11 +1,13 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
+// Components
 import Helmet from 'react-helmet'
-import Link from 'gatsby-link'
 
-const BlogPostTemplate = ({data, pathContext}) => {
+const BlogPostTemplate = ({data, pageContext}) => {
   const post = data.markdownRemark
-  const {previous, next} = pathContext
+  const {previous, next} = pageContext
   return (
     <div>
       <Helmet title={`${post.frontmatter.title} | ${data.site.siteMetadata.title}`}/>
@@ -22,8 +24,8 @@ const BlogPostTemplate = ({data, pathContext}) => {
 }
 
 BlogPostTemplate.propTypes = {
-  data: PropTypes.object,
-  pathContext: PropTypes.object
+  data: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired
 }
 
 export default BlogPostTemplate

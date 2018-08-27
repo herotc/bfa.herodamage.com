@@ -2,8 +2,8 @@ const defaultLang = 'en'
 module.exports.defaultLang = defaultLang
 
 // ['de', 'en', 'es', 'fr', 'it', 'ko', 'pt', 'ru', 'zh']
-// limited to 1 lang until upgrade to Gatsby V2 since it runs out of memory after ~2k5 pages
-const langs = process.env.NODE_ENV === 'production' ? ['en'] : ['en']
+// Limited to 1 lang in development to save warmup time
+const langs = process.env.NODE_ENV === 'production' ? ['de', 'en', 'es', 'fr', 'it', 'ko', 'pt', 'ru', 'zh'] : ['en', 'fr']
 module.exports.langs = langs
 
 const catalogs = {}

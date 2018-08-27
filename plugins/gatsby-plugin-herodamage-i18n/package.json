@@ -1,11 +1,11 @@
 {
   "name": "gatsby-plugin-herodamage-i18n",
-  "description": "Gatsby plugin to implements i18next and react-i18next",
+  "description": "Gatsby plugin to implements lingui and react-lingui",
   "keywords": [
     "gatsby",
     "gatsby-plugin",
-    "i18next",
-    "react-i18next"
+    "lingui",
+    "react-lingui"
   ],
   "bugs": {
     "url": "https://github.com/herotc/bfa.herodamage.com/issues"
@@ -16,14 +16,10 @@
     "url": "https://github.com/herotc/bfa.herodamage.com/tree/master/plugins/gatsby-plugin-herodamage-i18n"
   },
   "peerDependencies": {
-    "@lingui/babel-preset-react": "^2.3.0",
-    "@lingui/react": "^2.3.0",
-    "gatsby": "^1.9.277",
-    "gatsby-plugin-react-next": "^1.0.11",
-    "gatsby-source-filesystem": "^1.5.39",
-    "gatsby-transformer-remark": "^1.7.44",
-    "prop-types": "^15.6.2",
-    "react": "^16.4.2",
-    "react-dom": "^16.4.2"
+    "@lingui/babel-preset-react": "^2.4.0",
+    "@lingui/react": "^2.4.0",
+    "gatsby": "next",
+    "gatsby-source-filesystem": "next",
+    "gatsby-transformer-remark": "next"
   }
 }

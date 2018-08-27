@@ -1,23 +1,22 @@
 // Add Babel preset
-let babelPresetExists = false
 try {
   require.resolve('@lingui/babel-preset-react')
-  babelPresetExists = true
-} catch (e) {
-  // Ignore
+} catch (err) {
+  throw new Error(
+    '\'@lingui/babel-preset-react\' is not installed which is needed by plugin \'gatsby-plugin-herodamage-i18n\''
+  )
 }
-module.exports.modifyBabelrc = function ({babelrc}) {
-  if (babelPresetExists) {
-    return {...babelrc, presets: babelrc.presets.concat(['@lingui/babel-preset-react'])}
-  }
-  return babelrc
+module.exports.onCreateBabelConfig = ({actions}) => {
+  actions.setBabelPreset({
+    name: '@lingui/babel-preset-react'
+  })
 }
 
 // Create i18n routes
 const langs = require('./index').langs
 const prefix = require('./index').prefix
-module.exports.onCreatePage = function ({page, boundActionCreators}) {
-  const {createPage, deletePage} = boundActionCreators
+module.exports.onCreatePage = function ({page, actions}) {
+  const {createPage, deletePage} = actions
 
   let pagePath
   switch (page.path) {

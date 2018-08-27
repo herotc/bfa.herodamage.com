@@ -1,5 +1,7 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 
 const BlogPage = ({data}) => (
   <div>
@@ -15,7 +17,7 @@ const BlogPage = ({data}) => (
 )
 
 BlogPage.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object.isRequired
 }
 
 export default BlogPage

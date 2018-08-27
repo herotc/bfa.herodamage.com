@@ -1,23 +1,21 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { I18nProvider } from '@lingui/react'
-import { navigateTo } from 'gatsby-link'
+import { StaticQuery, graphql, navigate } from 'gatsby'
 import { withStyles } from '@material-ui/core/styles'
-
+import * as i18nPluginHelper from '../../../plugins/gatsby-plugin-herodamage-i18n/index'
+import { theme } from '../../../plugins/gatsby-plugin-herodamage-material-ui/getPageContext'
+import { getWowheadLink } from '../../utils/wow'
+// Components
 import Typography from '@material-ui/core/Typography'
-
-import * as i18nPluginHelper from '../../plugins/gatsby-plugin-herodamage-i18n'
-import withRoot from '../../plugins/gatsby-plugin-herodamage-material-ui/withRoot'
-import { theme } from '../../plugins/gatsby-plugin-herodamage-material-ui/getPageContext'
-import { getWowheadLink } from '../utils/wow'
-
-import Head from '../components/layout/head'
-import Header from '../components/layout/header'
-import WowClassSelector from '../components/layout/wow-class-selector'
-import Main from '../components/layout/main'
-import Footer from '../components/layout/footer'
-import GPTAd from '../components/gpt-ad'
+import Head from './head'
+import Header from './header'
+import WowClassSelector from './wow-class-selector'
+import Main from './main'
+import Footer from './footer'
+import GPTAd from '../gpt-ad'
 
 const styles = (theme) => ({
   layout: {
@@ -100,27 +98,47 @@ const styles = (theme) => ({
 })
 
 const Layout = ({classes, ...props}) => {
-  const {data, i18nPlugin, location} = props
-  const siteMetadata = data.site.siteMetadata
+  const {i18nPlugin, location} = props
   return (
-    <Typography className={classes.layout} component={'div'}>
-      <Head siteMetadata={siteMetadata}/>
-      <Header i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
-      <WowClassSelector i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
-      <GPTAd location={location} type="top"/>
-      <Main {...props}/>
-      <GPTAd location={location} type="side"/>
-      <GPTAd location={location} type="bot"/>
-      <Footer siteMetadata={siteMetadata}/>
-    </Typography>
+    <StaticQuery
+      query={
+        graphql`{
+          site {
+            siteMetadata {
+              title
+              github
+              description
+              keywords
+              wowClasses
+            }
+          }
+        }`
+      }
+      render={
+        (data) => {
+          const siteMetadata = data.site.siteMetadata
+          return (
+            <Typography className={classes.layout} component={'div'}>
+              <Head siteMetadata={siteMetadata}/>
+              <Header i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
+              <WowClassSelector i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
+              <GPTAd location={location} type="top"/>
+              <Main {...props}/>
+              <GPTAd location={location} type="side"/>
+              <GPTAd location={location} type="bot"/>
+              <Footer siteMetadata={siteMetadata}/>
+            </Typography>
+          )
+        }
+      }/>
   )
 }
 
 Layout.propTypes = {
   classes: PropTypes.object,
   data: PropTypes.object,
-  i18nPlugin: PropTypes.object,
-  location: PropTypes.object
+  i18nPlugin: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 const IndexLayout = (props) => {
@@ -128,7 +146,7 @@ const IndexLayout = (props) => {
   const lang = i18nPluginHelper.langFromPath(pathname)
   const i18nPlugin = {
     changeLang: (newLang) => {
-      navigateTo(i18nPluginHelper.replacePrefix(newLang, pathname))
+      navigate(i18nPluginHelper.replacePrefix(newLang, pathname))
     },
     lang,
     langs: i18nPluginHelper.langs,
@@ -146,21 +164,8 @@ const IndexLayout = (props) => {
 }
 
 IndexLayout.propTypes = {
-  location: PropTypes.object
+  children: PropTypes.node.isRequired,
+  location: PropTypes.object.isRequired
 }
 
-export default withRoot(withStyles(styles)(IndexLayout))
-
-export const query = graphql`
-  query IndexLayout {
-    site {
-      siteMetadata {
-        title
-        github
-        description
-        keywords
-        wowClasses
-      }
-    }
-  }
-`
+export default withStyles(styles)(IndexLayout)

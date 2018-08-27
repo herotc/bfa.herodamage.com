@@ -1,6 +1,10 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
-
+import { graphql } from 'gatsby'
+import { refreshWowheadLinks } from '../../utils/wow'
+import { getResultsStates } from './combinations/get-results-states'
+// Components
 import Helmet from 'react-helmet'
 import { Trans } from '@lingui/react'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -9,10 +13,6 @@ import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
-
-import { refreshWowheadLinks } from '../../utils/wow'
-import { getResultsStates } from './combinations/get-results-states'
-
 import RelatedSimulations from './common/related'
 import Metas from './common/metas'
 import Filters from './combinations/filters'
@@ -22,9 +22,9 @@ class CombinationsSimulationTemplate extends React.Component {
   constructor (props) {
     super(props)
 
-    const {data, pathContext} = this.props
+    const {data, pageContext} = this.props
     const {reportsPath} = data.site.siteMetadata
-    const {name} = pathContext
+    const {name} = pageContext
     this.state = {
       filepath: `${reportsPath}${name}.json`,
       multiTargets: false,
@@ -125,10 +125,10 @@ class CombinationsSimulationTemplate extends React.Component {
   }
 
   render () {
-    const {data, i18nPlugin, pathContext} = this.props
+    const {data, i18nPlugin, pageContext} = this.props
     const {filePath, multiTargets, order, orderBy, page, results, rowsPerPage, selectedAzeritePowers, talentsTree} = this.state
     const {t, wowheadLink} = i18nPlugin
-    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pathContext
+    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pageContext
     return (
       <div>
         <Helmet>
@@ -139,12 +139,15 @@ class CombinationsSimulationTemplate extends React.Component {
           SimulationCraft.<br/>You can consider everything within the target error DPS range to be mostly equal and
           requiring a more detailed investigation.</Trans></p>
         <p><Trans>The purpose of these simulations is to get a general idea of how different setups will compare with
-          each other and not to promote any definitive best builds. Several variables (like different trinkets, WF/TF or
+          each other and not to promote any definitive best builds. Several variables (like different trinkets, WF/TF
+          or
           ingame situations) are not taken into account. This is why you, as always, should <u><b>simulate your own
             character</b></u> to find your optimal setup.</Trans></p>
-        <p><Trans>The fact that generic azerite powers are not included is intended. The goal of such simulations is not
+        <p><Trans>The fact that generic azerite powers are not included is intended. The goal of such simulations is
+          not
           to find the best possibilities out of millions possible combinations but rather let you know <b>if a given
-            azerite power alone could impact talents choices</b>. One of the caveat is that it could happen with further
+            azerite power alone could impact talents choices</b>. One of the caveat is that it could happen with
+          further
           stacks or a combination of two of them, those cases are not covered there. You might find more information
           about such events on your class resources.</Trans></p>
         <p><Trans>Of course, you can also check how the talents compare each other without any azerite power (just
@@ -200,8 +203,8 @@ class CombinationsSimulationTemplate extends React.Component {
 
 CombinationsSimulationTemplate.propTypes = {
   data: PropTypes.object.isRequired,
-  i18nPlugin: PropTypes.object.isRequired,
-  pathContext: PropTypes.object.isRequired
+  i18nPlugin: PropTypes.object,
+  pageContext: PropTypes.object.isRequired
 }
 
 export default CombinationsSimulationTemplate

@@ -1,34 +1,35 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { withStyles } from '@material-ui/core/styles'
+import styled from 'styled-components'
+
 import Paper from '@material-ui/core/Paper'
 
-const styles = (theme) => ({
-  main: {
-    background: theme.custom.color.background.layout,
-    marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 2,
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
-    paddingLeft: theme.spacing.unit * 3,
-    paddingRight: theme.spacing.unit * 3
+const StyledPaper = styled(Paper)`
+  && {
+    background: ${({theme}) => theme.custom.color.background.layout};
+    margin: 16px 0;
+    padding: 16px 24px;
   }
-})
+`
 
-const Main = ({classes, ...props}) => {
-  const {children} = props
+const Main = ({children, ...props}) => {
+  // 1) key is used to re-render the main on page change
+  // 2) cloneElement is used to pass the props to children (which then does props drilling and force re-render)
+  // both things can be seen as anti-pattern on React, solutions:
+  // 1) refactor the children components to not rely on the fact they are mounted/unmounted to change some parts
+  // 2) refactor the children to make usage of the context and thus having the layout updating it
   return (
     <main>
-      <Paper className={classes.main} elevation={1}>
-        {children(props)}
-      </Paper>
+      <StyledPaper key={props.location.key} elevation={1}>
+        {React.cloneElement(children, props)}
+      </StyledPaper>
     </main>
   )
 }
 
 Main.propTypes = {
-  children: PropTypes.func,
-  classes: PropTypes.object
+  children: PropTypes.node,
+  location: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(Main)
+export default Main
