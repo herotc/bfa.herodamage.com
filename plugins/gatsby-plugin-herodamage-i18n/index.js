@@ -3,7 +3,7 @@ module.exports.defaultLang = defaultLang
 
 // ['de', 'en', 'es', 'fr', 'it', 'ko', 'pt', 'ru', 'zh']
 // Limited to 1 lang in development to save warmup time
-const langs = process.env.NODE_ENV === 'production' ? ['de', 'en', 'es', 'fr', 'it', 'ko', 'pt', 'ru', 'zh'] : ['en', 'fr']
+const langs = process.env.NODE_ENV === 'production' ? ['de', 'en', 'fr', 'ko', 'ru', 'zh'] : ['en']
 module.exports.langs = langs
 
 const catalogs = {}
