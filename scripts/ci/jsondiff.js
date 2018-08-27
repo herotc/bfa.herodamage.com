@@ -10,8 +10,8 @@ let urls = []
 const diff = readline.createInterface(fs.createReadStream('public/filenames.diff'))
 
 diff.on('line', function (relativeUrl) {
-  // Split by chunk of ~100 urls since CF limits it to 500 per request but got some sort of content length limit
-  if (urls.length >= 100) {
+  // Split by chunk of ~450 urls since CF limits it to 500 per request
+  if (urls.length >= 450) {
     jsonFiles.push({files: urls})
     urls = []
   }
