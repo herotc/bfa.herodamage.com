@@ -7,7 +7,7 @@ Based on the [official example](https://github.com/mui-org/material-ui/tree/mast
 ## Prerequisites
 
 ```
-npm install --save @material-ui/core @material-ui/icons jss react-jss
+npm install --save @material-ui/core jss react-jss
 ```
 
 ## How to use
