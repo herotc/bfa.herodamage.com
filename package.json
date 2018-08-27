@@ -48,7 +48,7 @@
     "postinstall": "npm install --prefix scripts/i18n",
     "aio-update": "npm update & npm update --prefix scripts/i18n",
     "reinstall": "npm run clear && shx rm -rf scripts/i18n/node_modules && shx rm -rf node_modules && npm install",
-    "clear": "shx rm -rf public && shx rm -rf .cache",
+    "clear": "shx rm -rf public/* && shx rm -rf .cache",
     "start": "npm run develop",
     "develop": "npm run clear && gatsby develop",
     "build": "npm run clear  && gatsby build",
