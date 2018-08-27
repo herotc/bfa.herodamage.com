@@ -1,14 +1,14 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
 import startCase from 'lodash/startCase'
 import { withStyles } from '@material-ui/core/styles/index'
-
-import Link from 'gatsby-link'
+import { wowIcon } from '../utils/wow'
+// Components
 import { Trans } from '@lingui/react'
 import Grid from '@material-ui/core/Grid'
-
-import { wowIcon } from '../utils/wow'
-
+// Assets
 import logo from '../assets/images/logo.svg'
 
 const styles = (theme) => ({
@@ -80,8 +80,8 @@ const LangIndexPage = ({classes, data, i18nPlugin}) => {
 
 LangIndexPage.propTypes = {
   classes: PropTypes.object,
-  data: PropTypes.object,
-  i18nPlugin: PropTypes.object
+  data: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(LangIndexPage)

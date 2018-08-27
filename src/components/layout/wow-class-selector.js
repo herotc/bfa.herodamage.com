@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import startCase from 'lodash/startCase'
 
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
 import { wowIcon } from '../../utils/wow'
 
@@ -63,7 +63,7 @@ const WowClassSelector = ({i18nPlugin: {tLink}, siteMetadata: {wowClasses}}) => 
 )
 
 WowClassSelector.propTypes = {
-  i18nPlugin: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object,
   siteMetadata: PropTypes.object.isRequired
 }
 

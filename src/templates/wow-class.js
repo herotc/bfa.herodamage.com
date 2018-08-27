@@ -1,11 +1,13 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+import { Link, graphql } from 'gatsby'
 import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
 import startCase from 'lodash/startCase'
 import { withStyles } from '@material-ui/core/styles'
-
-import Link from 'gatsby-link'
+import { getSpecVariation } from '../utils/wow'
+// Components
 import Helmet from 'react-helmet'
 import { Trans, DateFormat } from '@lingui/react'
 import Divider from '@material-ui/core/Divider'
@@ -17,8 +19,6 @@ import Grid from '@material-ui/core/Grid'
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
 import Typography from '@material-ui/core/Typography'
-
-import {getSpecVariation} from '../utils/wow'
 
 const styles = (theme) => ({
   type: {
@@ -80,7 +80,7 @@ const TiersList = (props) => {
 }
 
 const WowClassTemplate = (props) => {
-  const {data, i18nPlugin, location} = props
+  const {data, i18nPlugin} = props
   const {allSitePage: {group: simulationTypes}} = data
   const {t} = i18nPlugin
   const {wowClass} = simulationTypes[0].edges[0].node.context
@@ -89,7 +89,8 @@ const WowClassTemplate = (props) => {
     <div>
       <Helmet title={`${pageTitle} | ${data.site.siteMetadata.title}`}/>
       <h1>{pageTitle}</h1>
-      <p><Trans>Here you can retrieve all the simulations we run. You will find more details about what they represents
+      <p><Trans>Here you can retrieve all the simulations we run. You will find more details about what they
+        represents
         in their respective pages. They are updated on a daily basis.</Trans></p>
       <Grid container spacing={16}>
         {
@@ -113,9 +114,8 @@ const WowClassTemplate = (props) => {
 
 WowClassTemplate.propTypes = {
   classes: PropTypes.object,
-  data: PropTypes.object,
-  i18nPlugin: PropTypes.object,
-  location: PropTypes.object
+  data: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object
 }
 
 export default withStyles(styles)(WowClassTemplate)

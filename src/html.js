@@ -1,25 +1,11 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-let stylesStr
-if (process.env.NODE_ENV === `production`) {
-  try {
-    stylesStr = require(`!raw-loader!../public/styles.css`)
-  } catch (e) {
-    console.log(e)
-  }
-}
-
-module.exports = class HTML extends React.Component {
+export default class HTML extends React.Component {
   render () {
-    let css, gptScript, gptLoad, gptInit, cookieconsentStyle, cookieconsentScript, cookieconsentLoad
+    let gptScript, gptLoad, gptInit, cookieconsentStyle, cookieconsentScript, cookieconsentLoad
     if (process.env.NODE_ENV === `production`) {
       // Can't use React.Fragment yet, Gatsby V2 / Babel 7 only
-      css = (
-        <style
-          id="gatsby-inlined-css"
-          dangerouslySetInnerHTML={{__html: stylesStr}}
-        />
-      )
       gptScript = (
         <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'>
         </script>
@@ -121,7 +107,6 @@ googletag.cmd.push(function() {
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           {this.props.headComponents}
-          {css}
           {gptScript}
           {gptLoad}
           {gptInit}
@@ -145,4 +130,13 @@ googletag.cmd.push(function() {
       </html>
     )
   }
+}
+
+HTML.propTypes = {
+  htmlAttributes: PropTypes.object,
+  headComponents: PropTypes.array,
+  bodyAttributes: PropTypes.object,
+  preBodyComponents: PropTypes.array,
+  body: PropTypes.string,
+  postBodyComponents: PropTypes.array
 }

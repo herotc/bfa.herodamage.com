@@ -1,7 +1,9 @@
+// Dependencies
 import React from 'react'
-
+import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
+// Components
 import { Trans } from '@lingui/react'
-
 import StackedChartLayout from './common/stacked-chart-layout'
 
 const AzeriteStacksSimulationTemplate = (props) => (
@@ -16,6 +18,11 @@ const AzeriteStacksSimulationTemplate = (props) => (
     </div>
   </StackedChartLayout>
 )
+
+AzeriteStacksSimulationTemplate.propTypes = {
+  data: PropTypes.object.isRequired,
+  i18nPlugin: PropTypes.object
+}
 
 export default AzeriteStacksSimulationTemplate
 

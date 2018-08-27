@@ -1,7 +1,7 @@
 const path = require('path')
 
-module.exports.onCreateNode = function ({node, getNode, boundActionCreators}) {
-  const {createNodeField, deleteNode} = boundActionCreators
+module.exports.onCreateNode = function ({node, getNode, actions}) {
+  const {createNodeField, deleteNode} = actions
 
   // Prevents non markdown files to be processed
   if (node.internal.type !== 'MarkdownRemark') return
@@ -16,7 +16,7 @@ module.exports.onCreateNode = function ({node, getNode, boundActionCreators}) {
   if (parentNode.internal.type !== 'File') return
   // Delete unwanted node from posts (things like .DS_Store)
   if (parentNode.extension !== 'md') {
-    deleteNode(parentNode.id, parentNode)
+    deleteNode({node: parentNode})
     return
   }
 
@@ -29,8 +29,8 @@ module.exports.onCreateNode = function ({node, getNode, boundActionCreators}) {
   createNodeField({node, name: 'slug', value: `/${year}/${month}/${day}/${nameParts.slice(3).join('-')}`})
 }
 
-module.exports.createPages = async function ({graphql, boundActionCreators}) {
-  const {createPage} = boundActionCreators
+module.exports.createPages = async function ({graphql, actions}) {
+  const {createPage} = actions
 
   const result = await graphql(`
     {

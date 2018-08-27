@@ -1,12 +1,13 @@
 # Project #
 ###########
+.cache
 public
 src/locales/_build
+src/locales/**/*.js
 
 # Project dependencies #
 ########################
 node_modules
-.cache
 
 # IDE #
 #######
