@@ -47,15 +47,18 @@
   "scripts": {
     "postinstall": "npm install --prefix scripts/i18n",
     "aio-update": "npm update & npm update --prefix scripts/i18n",
+    "reinstall": "npm run clear && shx rm -rf scripts/i18n/node_modules && shx rm -rf node_modules && npm install",
+    "clear": "shx rm -rf public && shx rm -rf .cache",
     "start": "npm run develop",
-    "develop": "shx rm -rf public/* && shx rm -rf .cache && gatsby develop",
-    "build": "shx rm -rf public/* && shx rm -rf .cache && gatsby build",
+    "develop": "npm run clear && gatsby develop",
+    "build": "npm run clear  && gatsby build",
     "preproduction": "npm run build && gatsby serve",
     "dbc": "node scripts/dbc",
     "i18n": "npm start --prefix scripts/i18n",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@lingui/babel-preset-react": "^2.5.0",
     "@lingui/react": "^2.5.0",
     "@material-ui/core": "^1.5.1",
     "@material-ui/icons": "^2.0.3",
@@ -78,8 +81,6 @@
     "styled-components": "^3.4.5"
   },
   "devDependencies": {
-    "@lingui/babel-preset-react": "^2.5.0",
-    "cross-env": "^5.2.0",
     "eslint": "^5.4.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-import": "^2.14.0",
