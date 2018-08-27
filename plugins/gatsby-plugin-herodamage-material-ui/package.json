@@ -15,7 +15,6 @@
   },
   "peerDependencies": {
     "@material-ui/core": "^1.5.1",
-    "@material-ui/icons": "^2.0.3",
     "gatsby": "next",
     "jss": "^9.8.7",
     "react-jss": "^8.6.1"

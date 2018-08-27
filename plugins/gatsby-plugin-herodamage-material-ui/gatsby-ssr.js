@@ -1,26 +1,31 @@
 const React = require('react')
-const {JssProvider, SheetsRegistry} = require('react-jss')
-const {createGenerateClassName, MuiThemeProvider} = require('@material-ui/core/styles')
+const JssProvider = require('react-jss').JssProvider
+const MuiThemeProvider = require('@material-ui/core/styles').MuiThemeProvider
 const CssBaseline = require('@material-ui/core/CssBaseline').default
-const {sheetsManager, theme} = require('./theme')
+const getPageContext = require('./getPageContext').default
 
-// JSS
-const sheets = new SheetsRegistry()
-const generateClassName = createGenerateClassName()
+// We need to share the context for each request.
+let muiPageContext
 
 // eslint-disable-next-line react/prop-types,react/display-name
-exports.wrapRootElement = ({element}) => (
-  <JssProvider registry={sheets} generateClassName={generateClassName}>
-    <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
-      <CssBaseline/>
-      {element}
-    </MuiThemeProvider>
-  </JssProvider>
-)
+module.exports.wrapRootElement = ({element}) => {
+  muiPageContext = getPageContext()
+  const {sheetsRegistry, generateClassName, theme, sheetsManager} = muiPageContext
+  return (
+    <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
+      <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
+        <CssBaseline/>
+        {element}
+      </MuiThemeProvider>
+    </JssProvider>
+  )
+}
 
-exports.onRenderBody = ({setHeadComponents}) => {
+module.exports.onRenderBody = ({setHeadComponents}) => {
+  // Makes sure we got a context during develop mode.
+  if (!muiPageContext) muiPageContext = getPageContext()
   setHeadComponents([
     <style type="text/css" id="server-side-jss" key="server-side-jss"
-      dangerouslySetInnerHTML={{__html: sheets.toString()}}/>
+      dangerouslySetInnerHTML={{__html: muiPageContext.sheetsRegistry.toString()}}/>
   ])
 }
