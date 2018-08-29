@@ -61,11 +61,11 @@ cd ..
 # Sleep before purging the CF cache, it takes roughly 30-60s to GitHub Pages to actually push the new content
 echo "[CI] Wait for 120s before clearing CF cache"
 sleep 120s
-# echo "[CI] Clear CF cache entirely"
-# curl -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data '{"purge_everything":true}'
-echo "[CI] Clear CF cache for changed files by batch of ~450 urls each 5 seconds"
-for urls in urls_to_purge_*.json; do
-    sleep 5s
-    curl -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data @$urls
-    echo ""
-done
+echo "[CI] Clear CF cache entirely"
+curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data '{"purge_everything":true}'
+# echo "[CI] Clear CF cache for changed files by batch of ~450 urls each 5 seconds"
+# for urls in urls_to_purge_*.json; do
+#     sleep 5s
+#     curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data @$urls
+#     echo ""
+# done
