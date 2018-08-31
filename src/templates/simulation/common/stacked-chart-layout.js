@@ -5,6 +5,7 @@ import { stackedChart } from '../../../browser/charts/stacked'
 // Components
 import Helmet from 'react-helmet'
 import CircularProgress from '@material-ui/core/CircularProgress'
+import CopyBox from '../../../components/copybox'
 import RelatedSimulations from './related'
 import Metas from './metas'
 
@@ -33,7 +34,7 @@ class StackedChartLayout extends React.Component {
     const {children, data, i18nPlugin, pageContext} = this.props
     const {filePath} = this.state
     const {t} = i18nPlugin
-    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pageContext
+    const {azeritePowerWeights, buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pageContext
     return (
       <div>
         <Helmet>
@@ -45,6 +46,8 @@ class StackedChartLayout extends React.Component {
           t={t} tier={tier} variation={variation}/>
         <Metas buildTime={buildTime} gitRevision={gitRevision}
           targetError={targetError} templateDPS={templateDPS} version={version}/>
+        {azeritePowerWeights &&
+        <CopyBox elementId="azerite-power-weights" text={azeritePowerWeights} title="AzeritePowerWeights Import String"/>}
         {simulationType.includes('azerite') &&
         <p style={{textAlign: 'center'}}>
           <span className={'azerite-tier2'}>Inner Ring</span>
