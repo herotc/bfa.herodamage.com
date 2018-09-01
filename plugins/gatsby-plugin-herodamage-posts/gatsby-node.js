@@ -1,6 +1,6 @@
-const path = require('path')
+import { resolve } from 'path'
 
-module.exports.onCreateNode = function ({ node, getNode, actions }) {
+export function onCreateNode ({ node, getNode, actions }) {
   const { createNodeField, deleteNode } = actions
 
   // Prevents non markdown files to be processed
@@ -29,7 +29,7 @@ module.exports.onCreateNode = function ({ node, getNode, actions }) {
   createNodeField({ node, name: 'slug', value: `/${year}/${month}/${day}/${nameParts.slice(3).join('-')}` })
 }
 
-module.exports.createPages = async function ({ graphql, actions }) {
+export async function createPages ({ graphql, actions }) {
   const { createPage } = actions
 
   const result = await graphql(`
@@ -51,7 +51,7 @@ module.exports.createPages = async function ({ graphql, actions }) {
       const slug = node.fields.slug
       createPage({
         path: slug,
-        component: path.resolve('./src/templates/blog-post.js'),
+        component: resolve('./src/templates/blog-post.js'),
         context: { slug }
       })
     })

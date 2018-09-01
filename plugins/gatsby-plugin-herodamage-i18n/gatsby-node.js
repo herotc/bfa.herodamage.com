@@ -1,3 +1,5 @@
+import { langs, prefix } from './'
+
 // Add Babel preset
 try {
   require.resolve('@lingui/babel-preset-react')
@@ -6,16 +8,15 @@ try {
     '\'@lingui/babel-preset-react\' is not installed which is needed by plugin \'gatsby-plugin-herodamage-i18n\''
   )
 }
-module.exports.onCreateBabelConfig = ({ actions }) => {
+
+export function onCreateBabelConfig ({ actions }) {
   actions.setBabelPreset({
     name: '@lingui/babel-preset-react'
   })
 }
 
 // Create i18n routes
-const langs = require('./index').langs
-const prefix = require('./index').prefix
-module.exports.onCreatePage = function ({ page, actions }) {
+export function onCreatePage ({ page, actions }) {
   const { createPage, deletePage } = actions
 
   let pagePath
