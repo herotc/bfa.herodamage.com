@@ -1,9 +1,10 @@
-const fs = require('fs').promises
-const path = require('path')
-const AzeritePowers = require('../../src/assets/wow-data/AzeritePower.json')
-const ClassSpec = require('../../src/assets/wow-data/ClassSpec.json')
+import { promisify } from 'util'
+import { readFile } from 'fs'
+import { resolve } from 'path'
+import { getAzeriteInformation, getWowClassIdAndSpecId } from '../../src/utils/wow'
 
-if (!fs) throw new Error('You must use a node version containing fs.promises! i.e node >= 10')
+// Until we get promisified version from fs (promises API is still experimental)
+const readFilePromise = promisify(readFile)
 
 const simulations = {
   azeritelevels: {
@@ -33,9 +34,10 @@ const simulations = {
   }
 }
 
+// Hold all the classes index pages to be created
 const wowClasses = {}
 
-module.exports.onCreateNode = async function ({ node, getNode, actions }) {
+export async function onCreateNode ({ node, getNode, actions }) {
   const { createNodeField, deleteNode } = actions
 
   // Prevents non reports files to be processed
@@ -87,7 +89,7 @@ module.exports.onCreateNode = async function ({ node, getNode, actions }) {
   // Get the metas from the file
   let report
   try {
-    const jsonFile = await fs.readFile(node.absolutePath, { encoding: 'utf8', flag: 'r' })
+    const jsonFile = await readFilePromise(node.absolutePath, { encoding: 'utf8', flag: 'r' })
     report = JSON.parse(jsonFile)
   } catch (err) {
     console.error(`Error while processing the '${name}' report:`, err)
@@ -116,7 +118,7 @@ module.exports.onCreateNode = async function ({ node, getNode, actions }) {
         const spellNames = value.shift().split(' / ')
         // Insert each power (powerId and meanDPS)
         for (const spellName of spellNames) {
-          const { powerId } = AzeritePowers[spellName]
+          const { powerId } = getAzeriteInformation(spellName)
           const totalDPS = value.reduce((accumulator, currentValue) => accumulator + currentValue)
           powers.push({ powerId, meanDPS: totalDPS / value.length })
         }
@@ -132,9 +134,7 @@ module.exports.onCreateNode = async function ({ node, getNode, actions }) {
         power.weight = (power.meanDPS / bestPower.meanDPS * bestPower.weight).toFixed(2)
       }
       // Create the weightsString
-      const classSpec = ClassSpec[wowClass]
-      const classId = classSpec.classId
-      const specId = classSpec.specIds[spec]
+      const { classId, specId } = getWowClassIdAndSpecId(wowClass, spec)
       const weigts = powers.map(({ powerId, weight }) => `${powerId}=${weight}`)
       const weightsName = `herodamage.com - ${simulationType === 'azeritelevels' ? 'Levels' : 'Stacks'}_${fightStyle.toUpperCase()}_${tier.toUpperCase()}`
       const weightsString = `( AzeritePowerWeights:1:"${weightsName}":${classId}:${specId}: ${weigts.join(', ')} )`
@@ -143,7 +143,7 @@ module.exports.onCreateNode = async function ({ node, getNode, actions }) {
   }
 }
 
-module.exports.createPages = async function ({ graphql, actions }) {
+export async function createPages ({ graphql, actions }) {
   const { createPage } = actions
 
   // Make the class index pages by iterating over discovered classes during onCreateNode
@@ -151,7 +151,7 @@ module.exports.createPages = async function ({ graphql, actions }) {
     const slug = `/${wowClass}/`
     createPage({
       path: slug,
-      component: path.resolve('./src/templates/wow-class.js'),
+      component: resolve('./src/templates/wow-class.js'),
       context: { slug, wowClass }
     })
   })
@@ -193,7 +193,7 @@ module.exports.createPages = async function ({ graphql, actions }) {
       const fields = node.fields
       createPage({
         path: fields.slug,
-        component: path.resolve(`./src/templates/simulation/${fields.template}.js`),
+        component: resolve(`./src/templates/simulation/${fields.template}.js`),
         context: fields
       })
     })
