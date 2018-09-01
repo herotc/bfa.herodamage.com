@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ThemeProvider } from 'styled-components'
 import { I18nProvider } from '@lingui/react'
-import { StaticQuery, graphql, navigate } from 'gatsby'
+import { graphql, navigate, StaticQuery } from 'gatsby'
 import { withStyles } from '@material-ui/core/styles'
 import * as i18nPluginHelper from '../../../plugins/gatsby-plugin-herodamage-i18n/index'
 import { theme } from '../../../plugins/gatsby-plugin-herodamage-material-ui/getPageContext'
@@ -97,8 +97,8 @@ const styles = (theme) => ({
   }
 })
 
-const Layout = ({classes, ...props}) => {
-  const {i18nPlugin, location} = props
+const Layout = ({ classes, ...props }) => {
+  const { i18nPlugin, location } = props
   return (
     <StaticQuery
       query={
@@ -142,7 +142,7 @@ Layout.propTypes = {
 }
 
 const IndexLayout = (props) => {
-  const {pathname} = props.location
+  const { pathname } = props.location
   const lang = i18nPluginHelper.langFromPath(pathname)
   const i18nPlugin = {
     changeLang: (newLang) => {

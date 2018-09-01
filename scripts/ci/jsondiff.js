@@ -12,7 +12,7 @@ const diff = readline.createInterface(fs.createReadStream('public/filenames.diff
 diff.on('line', function (relativeUrl) {
   // Split by chunk, CF limit is 500 per request
   if (urls.length >= 450) {
-    jsonFiles.push({files: urls})
+    jsonFiles.push({ files: urls })
     urls = []
   }
   // Complete filename version, i.e.: https://www.herodamage.com/blog/index.html
@@ -34,7 +34,7 @@ diff.on('line', function (relativeUrl) {
 
 diff.on('close', function () {
   // Push the remaining urls
-  jsonFiles.push({files: urls})
+  jsonFiles.push({ files: urls })
   // Make the json files that will be attached to each request
   jsonFiles.forEach((jsonFile, index) => {
     const filename = `urls_to_purge_${index + 1}.json`

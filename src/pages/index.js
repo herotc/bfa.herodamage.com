@@ -1,7 +1,7 @@
 // Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import startCase from 'lodash/startCase'
 import { withStyles } from '@material-ui/core/styles/index'
 import { wowIcon } from '../utils/wow'
@@ -43,9 +43,9 @@ const styles = (theme) => ({
   }
 })
 
-const LangIndexPage = ({classes, data, i18nPlugin}) => {
+const LangIndexPage = ({ classes, data, i18nPlugin }) => {
   const siteMetadata = data.site.siteMetadata
-  const {tLink} = i18nPlugin
+  const { tLink } = i18nPlugin
   return (
     <div>
       <section className={classes.introduction}>

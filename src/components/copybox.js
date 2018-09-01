@@ -18,22 +18,22 @@ const Container = styled.div`
     margin-top: 0;
 
     > textarea {
-      background-color: ${({theme}) => theme.palette.primary.light};
+      background-color: ${({ theme }) => theme.palette.primary.light};
       border: none;
-      color: ${({theme}) => theme.palette.common.white};
+      color: ${({ theme }) => theme.palette.common.white};
       padding: 8px;
       resize: vertical;
       width: 100%;
     }
     
     > button {
-      background-color: ${({theme}) => theme.palette.primary.light};
+      background-color: ${({ theme }) => theme.palette.primary.light};
       border-radius: 0;
     }
   }
 `
 
-const CopyBox = ({elementId, text, title, ...props}) => (
+const CopyBox = ({ elementId, text, title, ...props }) => (
   <Container {...props}>
     <h3>{title}</h3>
     <p>

@@ -29,7 +29,7 @@ const Sidebar = styled.aside`
 
     a {
       margin: 0 auto 0 0;
-      transition: ${({theme}) => theme.custom.css.transitionNormal};
+      transition: ${({ theme }) => theme.custom.css.transitionNormal};
 
       &:hover {
         width: ${iconSizeHover};
@@ -52,7 +52,7 @@ const Sidebar = styled.aside`
   }
 `
 
-const WowClassSelector = ({i18nPlugin: {tLink}, siteMetadata: {wowClasses}}) => (
+const WowClassSelector = ({ i18nPlugin: { tLink }, siteMetadata: { wowClasses } }) => (
   <Sidebar>
     {wowClasses.map((wowClass) => (
       <Link key={wowClass} to={tLink(`/${wowClass}/`)}>

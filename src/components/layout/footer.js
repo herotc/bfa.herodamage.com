@@ -12,7 +12,7 @@ const styles = (theme) => ({
   }
 })
 
-const Footer = ({classes, siteMetadata}) => (
+const Footer = ({ classes, siteMetadata }) => (
   <footer>
     <Paper className={classes.footer} elevation={1}>
       <Typography align={'center'}>

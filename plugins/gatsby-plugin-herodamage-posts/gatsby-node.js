@@ -1,7 +1,7 @@
 const path = require('path')
 
-module.exports.onCreateNode = function ({node, getNode, actions}) {
-  const {createNodeField, deleteNode} = actions
+module.exports.onCreateNode = function ({ node, getNode, actions }) {
+  const { createNodeField, deleteNode } = actions
 
   // Prevents non markdown files to be processed
   if (node.internal.type !== 'MarkdownRemark') return
@@ -16,7 +16,7 @@ module.exports.onCreateNode = function ({node, getNode, actions}) {
   if (parentNode.internal.type !== 'File') return
   // Delete unwanted node from posts (things like .DS_Store)
   if (parentNode.extension !== 'md') {
-    deleteNode({node: parentNode})
+    deleteNode({ node: parentNode })
     return
   }
 
@@ -26,11 +26,11 @@ module.exports.onCreateNode = function ({node, getNode, actions}) {
   const nameParts = name.toLowerCase().split('-') // ['2018', '06', '03', 'test', 'post']
   const [year, month, day] = nameParts
   // slug: '/2018/06/03/test-post'
-  createNodeField({node, name: 'slug', value: `/${year}/${month}/${day}/${nameParts.slice(3).join('-')}`})
+  createNodeField({ node, name: 'slug', value: `/${year}/${month}/${day}/${nameParts.slice(3).join('-')}` })
 }
 
-module.exports.createPages = async function ({graphql, actions}) {
-  const {createPage} = actions
+module.exports.createPages = async function ({ graphql, actions }) {
+  const { createPage } = actions
 
   const result = await graphql(`
     {
@@ -45,14 +45,14 @@ module.exports.createPages = async function ({graphql, actions}) {
       }
     }
   `)
-  const {allMarkdownRemark} = result.data
+  const { allMarkdownRemark } = result.data
   if (allMarkdownRemark) {
-    allMarkdownRemark.edges.forEach(({node}) => {
+    allMarkdownRemark.edges.forEach(({ node }) => {
       const slug = node.fields.slug
       createPage({
         path: slug,
         component: path.resolve('./src/templates/blog-post.js'),
-        context: {slug}
+        context: { slug }
       })
     })
   }

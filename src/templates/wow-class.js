@@ -1,7 +1,7 @@
 // Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
 import startCase from 'lodash/startCase'
@@ -9,7 +9,7 @@ import { withStyles } from '@material-ui/core/styles'
 import { getSpecVariation } from '../utils/wow'
 // Components
 import Helmet from 'react-helmet'
-import { Trans, DateFormat } from '@lingui/react'
+import { DateFormat, Trans } from '@lingui/react'
 import Divider from '@material-ui/core/Divider'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import ExpansionPanel from '@material-ui/core/ExpansionPanel'
@@ -35,11 +35,11 @@ const styles = (theme) => ({
   }
 })
 
-const SpecsList = ({classes, i18nPlugin, specs}) => {
-  const {t} = i18nPlugin
-  return specs.map(({node}, index) => {
-    const {context, path} = node
-    const {spec, variation, buildTime} = context
+const SpecsList = ({ classes, i18nPlugin, specs }) => {
+  const { t } = i18nPlugin
+  return specs.map(({ node }, index) => {
+    const { context, path } = node
+    const { spec, variation, buildTime } = context
     const buildDate = new Date(buildTime * 1000)
     return (
       <Grid item key={index} xs={12}>
@@ -47,7 +47,7 @@ const SpecsList = ({classes, i18nPlugin, specs}) => {
         <ListItem button component={Link} to={path} className={classes.name}>
           <Typography>
             {getSpecVariation(t, spec, variation)}
-            <span><DateFormat value={buildDate} format={{month: 'short', day: '2-digit'}}/></span>
+            <span><DateFormat value={buildDate} format={{ month: 'short', day: '2-digit' }}/></span>
           </Typography>
         </ListItem>
       </Grid>
@@ -56,7 +56,7 @@ const SpecsList = ({classes, i18nPlugin, specs}) => {
 }
 
 const TiersList = (props) => {
-  const {classes, groupedEdgesByTier, i18nPlugin: {t}} = props
+  const { classes, groupedEdgesByTier, i18nPlugin: { t } } = props
   return Object.keys(groupedEdgesByTier).map((tier, index) => {
     const specs = groupedEdgesByTier[tier].sort((a, b) => a.node.context.spec > b.node.context.spec)
     return (
@@ -64,7 +64,7 @@ const TiersList = (props) => {
         <ExpansionPanel defaultExpanded elevation={2}>
           <Divider/>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-            <h3 style={{margin: 0}}>{t(tier)}</h3>
+            <h3 style={{ margin: 0 }}>{t(tier)}</h3>
           </ExpansionPanelSummary>
           <ExpansionPanelDetails className={classes.type}>
             <Grid container direction={'column'}>
@@ -80,10 +80,10 @@ const TiersList = (props) => {
 }
 
 const WowClassTemplate = (props) => {
-  const {data, i18nPlugin} = props
-  const {allSitePage: {group: simulationTypes}} = data
-  const {t} = i18nPlugin
-  const {wowClass} = simulationTypes[0].edges[0].node.context
+  const { data, i18nPlugin } = props
+  const { allSitePage: { group: simulationTypes } } = data
+  const { t } = i18nPlugin
+  const { wowClass } = simulationTypes[0].edges[0].node.context
   const pageTitle = startCase(t(wowClass))
   return (
     <div>
@@ -95,10 +95,10 @@ const WowClassTemplate = (props) => {
       <Grid container spacing={16}>
         {
           simulationTypes.map((group, index) => {
-            const {simulationType} = group.edges[0].node.context
+            const { simulationType } = group.edges[0].node.context
             return (
               <Grid item key={index} xs={12} lg={6}>
-                <h2 style={{textAlign: 'center'}}>{capitalize(t(simulationType))}</h2>
+                <h2 style={{ textAlign: 'center' }}>{capitalize(t(simulationType))}</h2>
                 <Grid container spacing={8} alignItems={'flex-start'} justify={'center'}>
                   <TiersList {...props}
                     groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>

@@ -1,5 +1,5 @@
 import { SheetsRegistry } from 'jss'
-import { createMuiTheme, createGenerateClassName } from '@material-ui/core/styles'
+import { createGenerateClassName, createMuiTheme } from '@material-ui/core/styles'
 import grey from '@material-ui/core/colors/grey'
 import red from '@material-ui/core/colors/red'
 

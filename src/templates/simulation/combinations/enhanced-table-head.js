@@ -9,12 +9,12 @@ import TableSortLabel from '@material-ui/core/TableSortLabel'
 
 // TODO: Move into the components for easier i18n
 const columnData = [
-  {id: 'rank', label: '#', numeric: true, sortable: false},
-  {id: 'talents', label: 'Talents', numeric: false, sortable: false},
-  {id: 'special', label: 'Azerite Powers', numeric: false, sortable: false},
-  {id: 'dps', label: 'DPS', numeric: true, sortable: true},
-  {id: 'bossDPS', label: 'Boss DPS', numeric: true, sortable: true},
-  {id: 'dpsPercentageDifference', label: '% Diff', numeric: true, sortable: false}
+  { id: 'rank', label: '#', numeric: true, sortable: false },
+  { id: 'talents', label: 'Talents', numeric: false, sortable: false },
+  { id: 'special', label: 'Azerite Powers', numeric: false, sortable: false },
+  { id: 'dps', label: 'DPS', numeric: true, sortable: true },
+  { id: 'bossDPS', label: 'Boss DPS', numeric: true, sortable: true },
+  { id: 'dpsPercentageDifference', label: '% Diff', numeric: true, sortable: false }
 ]
 
 class EnhancedTableHead extends React.Component {
@@ -23,12 +23,12 @@ class EnhancedTableHead extends React.Component {
   }
 
   render () {
-    const {multiTargets, order, orderBy} = this.props
+    const { multiTargets, order, orderBy } = this.props
     return (
       <TableHead>
         <TableRow>
           {columnData.map((column) => {
-            const {id, label, numeric, sortable} = column
+            const { id, label, numeric, sortable } = column
             if (!multiTargets && id === 'bossDPS') return null
             return (
               <TableCell key={id} numeric={numeric} sortDirection={orderBy === id ? order : false}>

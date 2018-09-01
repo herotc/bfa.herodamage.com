@@ -3,12 +3,12 @@ import merge from 'lodash/merge'
 import { getAzeriteInformation, getTalentsTree, wowAzeriteLabel, wowTalentsLabel } from '../../../utils/wow'
 
 export async function getResultsStates (props, filepath) {
-  const {i18nPlugin: {lang}, pageContext} = props
-  const {spec, wowClass} = pageContext
+  const { i18nPlugin: { lang }, pageContext } = props
+  const { spec, wowClass } = pageContext
 
   // Fetch the .json
   const response = await window.fetch(filepath)
-  const {results: jsonResults} = await response.json()
+  const { results: jsonResults } = await response.json()
 
   // Iterate over the results to add some information
   const results = []
@@ -21,7 +21,7 @@ export async function getResultsStates (props, filepath) {
     const talents = row[1]
     const azeritePower = row[3]
     const dps = row[4]
-    const result = {rank: row[0], talents, azeritePower, dps}
+    const result = { rank: row[0], talents, azeritePower, dps }
     if (multiTargets) result.bossDPS = row[5]
     result.talentsLabel = wowTalentsLabel(talents, wowClass, spec, lang)
     result.azeritePowerLabel = azeritePower !== 'None' ? wowAzeriteLabel(azeritePower, lang) : 'None'
@@ -34,14 +34,14 @@ export async function getResultsStates (props, filepath) {
       const talentChar = parseInt(talents.charAt(row))
       if (talentChar !== 0) {
         const col = talentChar - 1
-        if (!selectedTalents[row][col]) selectedTalents[row][col] = {selected: true}
+        if (!selectedTalents[row][col]) selectedTalents[row][col] = { selected: true }
       }
     }
 
     // filter the azerite powers to get the ones that can be selected
     if (azeritePower !== 'None') {
       if (!selectedAzeritePowers[azeritePower]) {
-        const {spellId, tier} = getAzeriteInformation(azeritePower)
+        const { spellId, tier } = getAzeriteInformation(azeritePower)
         selectedAzeritePowers[azeritePower] = {
           spellName: azeritePower,
           selected: true,
@@ -56,7 +56,7 @@ export async function getResultsStates (props, filepath) {
   for (let rowId in selectedTalents) {
     for (let col = 0; col < 3; col++) {
       if (!selectedTalents[rowId][col]) {
-        selectedTalents[rowId][col] = {disabled: true}
+        selectedTalents[rowId][col] = { disabled: true }
       }
     }
   }
@@ -65,5 +65,5 @@ export async function getResultsStates (props, filepath) {
   const talentsTree = {}
   merge(talentsTree, defaultTalentsTree, selectedTalents)
 
-  return {multiTargets, results, selectedAzeritePowers, talentsTree}
+  return { multiTargets, results, selectedAzeritePowers, talentsTree }
 }

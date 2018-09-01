@@ -20,13 +20,13 @@ const Container = styled.div`
 
 const Talent = styled(Grid)`
   && {
-    opacity: ${({disabled, selected}) => selected ? '1' : disabled ? '0.05' : '0.5'};
+    opacity: ${({ disabled, selected }) => selected ? '1' : disabled ? '0.05' : '0.5'};
   }
 `
 
 const AzeritePower = styled(Grid)`
   && {
-    opacity: ${({selected}) => selected ? '1' : '0.5'};
+    opacity: ${({ selected }) => selected ? '1' : '0.5'};
   }
 `
 
@@ -40,20 +40,20 @@ class Filters extends React.Component {
   }
 
   render () {
-    const {name, selectedAzeritePowers, talentsTree, wowheadLink} = this.props
+    const { name, selectedAzeritePowers, talentsTree, wowheadLink } = this.props
     return (
       <Grid item xs={12}>
         <ExpansionPanel defaultExpanded elevation={1}>
           <Divider/>
           <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-            <h3 style={{margin: 0}}><Trans>Filters (Click to toggle them on/off from the results)</Trans></h3>
+            <h3 style={{ margin: 0 }}><Trans>Filters (Click to toggle them on/off from the results)</Trans></h3>
           </ExpansionPanelSummary>
-          <ExpansionPanelDetails style={{padding: '8px 0 24px 0'}}>
+          <ExpansionPanelDetails style={{ padding: '8px 0 24px 0' }}>
             <Container>
               <div>
                 {Object.values(talentsTree).map((row, rowId) => (
-                  <Grid container key={`${name}-${rowId}`} spacing={8} style={{width: '135px'}}>
-                    {Object.values(row).map(({disabled, selected, spellId}, colId) => (
+                  <Grid container key={`${name}-${rowId}`} spacing={8} style={{ width: '135px' }}>
+                    {Object.values(row).map(({ disabled, selected, spellId }, colId) => (
                       <Talent item key={`${name}-${rowId}-${colId}`} xs={4} disabled={disabled} selected={selected}
                         onClick={this.createTalentSelectHandler(rowId, colId)}>
                         <a href={`${wowheadLink}spell=${spellId}`} data-wh-icon-size="medium"
@@ -64,9 +64,9 @@ class Filters extends React.Component {
                   </Grid>
                 ))}
               </div>
-              <Grid container spacing={8} style={{width: '185px'}}>
+              <Grid container spacing={8} style={{ width: '185px' }}>
                 {Object.values(selectedAzeritePowers).map((azeritePower) => {
-                  const {selected, spellName, spellId, tier} = azeritePower
+                  const { selected, spellName, spellId, tier } = azeritePower
                   return (
                     <AzeritePower item key={`${name}-${spellName}`} xs={12} selected={selected}
                       onClick={this.createAzeritePowerSelectHandler(spellName)}>

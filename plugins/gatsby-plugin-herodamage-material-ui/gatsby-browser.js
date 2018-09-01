@@ -10,8 +10,8 @@ module.exports.onInitialClientRender = () => {
 }
 
 // eslint-disable-next-line react/prop-types,react/display-name
-module.exports.wrapRootElement = ({element}) => {
-  const {theme, sheetsManager} = getPageContext()
+module.exports.wrapRootElement = ({ element }) => {
+  const { theme, sheetsManager } = getPageContext()
   return (
     <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
       <CssBaseline/>

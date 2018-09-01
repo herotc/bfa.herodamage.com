@@ -38,9 +38,9 @@ const styles = (theme) => ({
   }
 })
 
-const LangSelector = ({classes, i18nPlugin, lang, selected}) => (
+const LangSelector = ({ classes, i18nPlugin, lang, selected }) => (
   <a className={classes.langSelector} onClick={() => i18nPlugin.changeLang(lang)}
-    style={{textDecoration: selected ? 'underline' : 'none'}}>{lang}</a>
+    style={{ textDecoration: selected ? 'underline' : 'none' }}>{lang}</a>
 )
 LangSelector.propTypes = {
   classes: PropTypes.object,
@@ -49,7 +49,7 @@ LangSelector.propTypes = {
   selected: PropTypes.bool
 }
 
-const Header = ({classes, i18nPlugin, siteMetadata}) => (
+const Header = ({ classes, i18nPlugin, siteMetadata }) => (
   <header>
     <Paper className={classes.header} elevation={1}>
       <h2 className={classes.logo}>

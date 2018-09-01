@@ -8,9 +8,9 @@ const getPageContext = require('./getPageContext').default
 let muiPageContext
 
 // eslint-disable-next-line react/prop-types,react/display-name
-module.exports.wrapRootElement = ({element}) => {
+module.exports.wrapRootElement = ({ element }) => {
   muiPageContext = getPageContext()
-  const {sheetsRegistry, generateClassName, theme, sheetsManager} = muiPageContext
+  const { sheetsRegistry, generateClassName, theme, sheetsManager } = muiPageContext
   return (
     <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
       <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>
@@ -21,11 +21,11 @@ module.exports.wrapRootElement = ({element}) => {
   )
 }
 
-module.exports.onRenderBody = ({setHeadComponents}) => {
+module.exports.onRenderBody = ({ setHeadComponents }) => {
   // Makes sure we got a context during develop mode.
   if (!muiPageContext) muiPageContext = getPageContext()
   setHeadComponents([
     <style type="text/css" id="server-side-jss" key="server-side-jss"
-      dangerouslySetInnerHTML={{__html: muiPageContext.sheetsRegistry.toString()}}/>
+      dangerouslySetInnerHTML={{ __html: muiPageContext.sheetsRegistry.toString() }}/>
   ])
 }

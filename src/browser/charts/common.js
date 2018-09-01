@@ -22,7 +22,7 @@ export function removeLoading () {
  */
 export function excludeEmptyRows (dataTable) {
   const view = new window.google.visualization.DataView(dataTable)
-  const rowIndexes = view.getFilteredRows([{column: 1, value: null}])
+  const rowIndexes = view.getFilteredRows([{ column: 1, value: null }])
   view.hideRows(rowIndexes)
   return view.toDataTable()
 }

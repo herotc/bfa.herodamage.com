@@ -1,7 +1,7 @@
 import load from 'little-loader'
 
 import { refreshWowheadLinks, wowAzeriteLabel, wowTrinketLabel } from '../../utils/wow'
-import { excludeEmptyRows, initOverlay, formatNumber, removeLoading } from './common'
+import { excludeEmptyRows, formatNumber, initOverlay, removeLoading } from './common'
 
 /**
  *
@@ -11,11 +11,11 @@ import { excludeEmptyRows, initOverlay, formatNumber, removeLoading } from './co
  */
 function processRacesData (data, templateDPS) {
   // Sort
-  data.sort({column: 1, desc: true})
+  data.sort({ column: 1, desc: true })
 
   // Add Tooltip and Style column
-  data.insertColumn(2, {type: 'string', role: 'tooltip', 'p': {'html': true}})
-  data.insertColumn(3, {type: 'string', role: 'style'})
+  data.insertColumn(2, { type: 'string', role: 'tooltip', 'p': { 'html': true } })
+  data.insertColumn(3, { type: 'string', role: 'style' })
 
   const AllianceRaces = ['Human', 'Dwarf', 'Night Elf', 'Gnome', 'Worgen', 'Draenei', 'Lightforged Draenei', 'Void Elf', 'Dark Iron Dwarf']
   const HordeRaces = ['Orc', 'Troll', 'Tauren', 'Goblin', 'Undead', 'Blood Elf', 'Highmountain Tauren', 'Nightborne', 'Mag\'har Orc']
@@ -63,12 +63,12 @@ function processData (simulationType, data, templateDPS, lang) {
     }
     data.setValue(row, sortCol, biggestTotalValue)
   }
-  data.sort([{column: sortCol, desc: true}])
+  data.sort([{ column: sortCol, desc: true }])
   data.removeColumn(sortCol)
 
   // Add Tooltip columns
   for (let col = 2; col <= data.getNumberOfColumns(); col += 2) {
-    data.insertColumn(col, {type: 'string', role: 'tooltip', 'p': {'html': true}})
+    data.insertColumn(col, { type: 'string', role: 'tooltip', 'p': { 'html': true } })
   }
 
   // Calculate Differences
@@ -144,7 +144,7 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
 
   const drawChart = async () => {
     const response = await window.fetch(reportPath)
-    const {results} = await response.json()
+    const { results } = await response.json()
     const rawData = new google.visualization.arrayToDataTable(results)
 
     // Process data
@@ -228,6 +228,6 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
     initOverlay(options.chartArea)
   }
 
-  google.charts.load('current', {'packages': ['corechart']})
+  google.charts.load('current', { 'packages': ['corechart'] })
   google.charts.setOnLoadCallback(drawChart)
 }

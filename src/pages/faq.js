@@ -5,7 +5,7 @@ import { graphql } from 'gatsby'
 // Components
 import Helmet from 'react-helmet'
 
-const FaqPage = ({data}) => (
+const FaqPage = ({ data }) => (
   <div>
     <Helmet title={`FAQ | ${data.site.siteMetadata.title}`}/>
     <h1>Frequently Asked Questions</h1>

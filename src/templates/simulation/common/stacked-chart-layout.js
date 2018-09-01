@@ -13,28 +13,28 @@ class StackedChartLayout extends React.Component {
   constructor (props) {
     super(props)
 
-    const {data, pageContext} = this.props
-    const {reportsPath} = data.site.siteMetadata
-    const {name} = pageContext
+    const { data, pageContext } = this.props
+    const { reportsPath } = data.site.siteMetadata
+    const { name } = pageContext
     this.state = {
       filePath: `${reportsPath}${name}.json`
     }
   }
 
   componentDidMount () {
-    const {chartTitle, i18nPlugin, pageContext} = this.props
-    const {filePath} = this.state
-    const {lang} = i18nPlugin
-    const {simulationType, templateDPS} = pageContext
+    const { chartTitle, i18nPlugin, pageContext } = this.props
+    const { filePath } = this.state
+    const { lang } = i18nPlugin
+    const { simulationType, templateDPS } = pageContext
     stackedChart(simulationType, filePath, chartTitle, templateDPS, lang)
       .catch((err) => { console.error(err) })
   }
 
   render () {
-    const {children, data, i18nPlugin, pageContext} = this.props
-    const {filePath} = this.state
-    const {t} = i18nPlugin
-    const {azeritePowerWeights, buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pageContext
+    const { children, data, i18nPlugin, pageContext } = this.props
+    const { filePath } = this.state
+    const { t } = i18nPlugin
+    const { azeritePowerWeights, buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version } = pageContext
     return (
       <div>
         <Helmet>
@@ -47,9 +47,10 @@ class StackedChartLayout extends React.Component {
         <Metas buildTime={buildTime} gitRevision={gitRevision}
           targetError={targetError} templateDPS={templateDPS} version={version}/>
         {azeritePowerWeights &&
-        <CopyBox elementId="azerite-power-weights" text={azeritePowerWeights} title="AzeritePowerWeights Import String"/>}
+        <CopyBox elementId="azerite-power-weights" text={azeritePowerWeights}
+          title="AzeritePowerWeights Import String"/>}
         {simulationType.includes('azerite') &&
-        <p style={{textAlign: 'center'}}>
+        <p style={{ textAlign: 'center' }}>
           <span className={'azerite-tier2'}>Inner Ring</span>
           &nbsp;|&nbsp;
           <span className={'azerite-tier3'}>Outer Ring</span>

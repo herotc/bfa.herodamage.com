@@ -39,7 +39,7 @@ export function getWowClassIdAndSpecId (wowClass, spec) {
   const classSpec = ClassSpec[wowClass]
   const classId = classSpec.classId
   const specId = classSpec.specIds[spec]
-  return {classId, specId}
+  return { classId, specId }
 }
 
 /**
@@ -49,7 +49,7 @@ export function getWowClassIdAndSpecId (wowClass, spec) {
  * @returns {*}
  */
 export function getTalentsTree (wowClass, spec) {
-  const {classId, specId} = getWowClassIdAndSpecId(wowClass, spec)
+  const { classId, specId } = getWowClassIdAndSpecId(wowClass, spec)
   const classTalents = Talents[classId]
   return Object.assign({}, classTalents[specId])
 }
@@ -148,7 +148,7 @@ export function getAzeriteInformation (azeritePower) {
  * @param rawSpellName
  * @returns {string}
  */
-const truncateOptions = {length: 30}
+const truncateOptions = { length: 30 }
 
 export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
   // Some labels are concatened, like the Alliance / Horde one, we always take the first one
@@ -157,7 +157,7 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
   const azeritePower = AzeritePowers[spellName[0]]
   if (!azeritePower) return truncate(rawSpellName, truncateOptions)
 
-  const {spellId, tier} = azeritePower
+  const { spellId, tier } = azeritePower
   return `<a href="${getWowheadLink(lang)}spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow">
     <span class="azerite-tier${tier}">${truncate(rawSpellName, truncateOptions)}</span>
   </a>`
@@ -173,7 +173,7 @@ export function wowTrinketLabel (rawItemName, lang = defaultLang) {
   const trinket = Trinkets[rawItemName]
   if (!trinket) return truncate(rawItemName, truncateOptions)
 
-  const {itemId} = Trinkets[rawItemName]
+  const { itemId } = Trinkets[rawItemName]
   return `<a href="${getWowheadLink(lang)}item=${itemId}" target="_blank" rel="noopener noreferrer nofollow">
     <span>${truncate(rawItemName, truncateOptions)}</span>
   </a>`
@@ -194,7 +194,7 @@ export function wowTalentsLabel (talents, wowClass, spec, lang = defaultLang) {
     const talentChar = parseInt(talents.charAt(row))
     if (talentChar !== 0) {
       const col = talentChar - 1
-      const {spellId} = talentsTree[row][col]
+      const { spellId } = talentsTree[row][col]
       label += `<a href="${getWowheadLink(lang)}spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow">
         </a>`
     }

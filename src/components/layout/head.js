@@ -21,7 +21,7 @@ import mstile150x150 from '../../assets/images/favicon/mstile-150x150.png'
 import mstile310x150 from '../../assets/images/favicon/mstile-310x150.png'
 import mstile310x310 from '../../assets/images/favicon/mstile-310x310.png'
 
-const Head = ({siteMetadata}) => (
+const Head = ({ siteMetadata }) => (
   <Helmet>
     <title>{siteMetadata.title}</title>
     <meta name="description" content={siteMetadata.description}/>

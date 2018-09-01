@@ -8,7 +8,7 @@ module.exports.langs = langs
 
 const catalogs = {}
 langs.forEach((lang) => {
-  catalogs[lang] = {messages: require(`../../src/locales/${lang}/messages.json`)}
+  catalogs[lang] = { messages: require(`../../src/locales/${lang}/messages.json`) }
 })
 module.exports.catalogs = catalogs
 

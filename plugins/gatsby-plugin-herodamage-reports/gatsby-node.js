@@ -35,8 +35,8 @@ const simulations = {
 
 const wowClasses = {}
 
-module.exports.onCreateNode = async function ({node, getNode, actions}) {
-  const {createNodeField, deleteNode} = actions
+module.exports.onCreateNode = async function ({ node, getNode, actions }) {
+  const { createNodeField, deleteNode } = actions
 
   // Prevents non reports files to be processed
   if (node.sourceInstanceName !== 'reports') return
@@ -44,7 +44,7 @@ module.exports.onCreateNode = async function ({node, getNode, actions}) {
   if (node.internal.type !== 'File') return
   // Delete unwanted node from reports (things like .DS_Store)
   if (node.extension !== 'json') {
-    deleteNode({node})
+    deleteNode({ node })
     return
   }
 
@@ -55,31 +55,31 @@ module.exports.onCreateNode = async function ({node, getNode, actions}) {
   // ['trinketsimulation', '1t', 't21', 'death-knight', 'frost', 'cold-heart-runic-attenuation']
   const [simulationName, fightStyle, tier, wowClass, spec, variation] = name.toLowerCase().split('_')
   // 'trinkets', 4
-  const {simulationType, order, template} = simulations[simulationName]
+  const { simulationType, order, template } = simulations[simulationName]
   // '/death-knight/trinkets/1t-t21-frost
   let slug = `/${wowClass}/${simulationType}/${fightStyle}-${tier}-${spec}`
   if (variation) slug += `-${variation}`
 
   // slug: '/death-knight/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
-  createNodeField({node, name: 'slug', value: slug})
+  createNodeField({ node, name: 'slug', value: slug })
   // name: 'TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
-  createNodeField({node, name: 'name', value: name})
+  createNodeField({ node, name: 'name', value: name })
   // wowClass: 'death-knight'
-  createNodeField({node, name: 'wowClass', value: wowClass})
+  createNodeField({ node, name: 'wowClass', value: wowClass })
   // simulationType: 'trinkets'
-  createNodeField({node, name: 'simulationType', value: simulationType})
+  createNodeField({ node, name: 'simulationType', value: simulationType })
   // order: 4
-  createNodeField({node, name: 'order', value: order})
-  createNodeField({node, name: 'template', value: template})
+  createNodeField({ node, name: 'order', value: order })
+  createNodeField({ node, name: 'template', value: template })
   // template: 'trinkets'
   // tier: 't21'
-  createNodeField({node, name: 'tier', value: tier})
+  createNodeField({ node, name: 'tier', value: tier })
   // fightStyle: '1t'
-  createNodeField({node, name: 'fightStyle', value: fightStyle})
+  createNodeField({ node, name: 'fightStyle', value: fightStyle })
   // spec: 'frost'
-  createNodeField({node, name: 'spec', value: spec})
+  createNodeField({ node, name: 'spec', value: spec })
   // variation: 'cold-heart-runic-attenuation' (optional, if it doesn't exist then it's an empty string '')
-  createNodeField({node, name: 'variation', value: variation || ''})
+  createNodeField({ node, name: 'variation', value: variation || '' })
 
   // Register the wow class to create the corresponding index page if it's the first time we meet it
   if (!wowClasses[wowClass]) wowClasses[wowClass] = true
@@ -87,7 +87,7 @@ module.exports.onCreateNode = async function ({node, getNode, actions}) {
   // Get the metas from the file
   let report
   try {
-    const jsonFile = await fs.readFile(node.absolutePath, {encoding: 'utf8', flag: 'r'})
+    const jsonFile = await fs.readFile(node.absolutePath, { encoding: 'utf8', flag: 'r' })
     report = JSON.parse(jsonFile)
   } catch (err) {
     console.error(`Error while processing the '${name}' report:`, err)
@@ -118,7 +118,7 @@ module.exports.onCreateNode = async function ({node, getNode, actions}) {
         for (const spellName of spellNames) {
           const { powerId } = AzeritePowers[spellName]
           const totalDPS = value.reduce((accumulator, currentValue) => accumulator + currentValue)
-          powers.push({powerId, meanDPS: totalDPS / value.length})
+          powers.push({ powerId, meanDPS: totalDPS / value.length })
         }
       }
       // Descending sort using meanDPS
@@ -135,7 +135,7 @@ module.exports.onCreateNode = async function ({node, getNode, actions}) {
       const classSpec = ClassSpec[wowClass]
       const classId = classSpec.classId
       const specId = classSpec.specIds[spec]
-      const weigts = powers.map(({powerId, weight}) => `${powerId}=${weight}`)
+      const weigts = powers.map(({ powerId, weight }) => `${powerId}=${weight}`)
       const weightsName = `herodamage.com - ${simulationType === 'azeritelevels' ? 'Levels' : 'Stacks'}_${fightStyle.toUpperCase()}_${tier.toUpperCase()}`
       const weightsString = `( AzeritePowerWeights:1:"${weightsName}":${classId}:${specId}: ${weigts.join(', ')} )`
       createNodeField({ node, name: 'azeritePowerWeights', value: weightsString })
@@ -143,8 +143,8 @@ module.exports.onCreateNode = async function ({node, getNode, actions}) {
   }
 }
 
-module.exports.createPages = async function ({graphql, actions}) {
-  const {createPage} = actions
+module.exports.createPages = async function ({ graphql, actions }) {
+  const { createPage } = actions
 
   // Make the class index pages by iterating over discovered classes during onCreateNode
   Object.keys(wowClasses).forEach((wowClass) => {
@@ -152,7 +152,7 @@ module.exports.createPages = async function ({graphql, actions}) {
     createPage({
       path: slug,
       component: path.resolve('./src/templates/wow-class.js'),
-      context: {slug, wowClass}
+      context: { slug, wowClass }
     })
   })
 
@@ -187,9 +187,9 @@ module.exports.createPages = async function ({graphql, actions}) {
       }
     }
   `)
-  const {allFile} = result.data
+  const { allFile } = result.data
   if (allFile) {
-    allFile.edges.forEach(({node}) => {
+    allFile.edges.forEach(({ node }) => {
       const fields = node.fields
       createPage({
         path: fields.slug,

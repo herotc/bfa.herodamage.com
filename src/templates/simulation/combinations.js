@@ -22,9 +22,9 @@ class CombinationsSimulationTemplate extends React.Component {
   constructor (props) {
     super(props)
 
-    const {data, pageContext} = this.props
-    const {reportsPath} = data.site.siteMetadata
-    const {name} = pageContext
+    const { data, pageContext } = this.props
+    const { reportsPath } = data.site.siteMetadata
+    const { name } = pageContext
     this.state = {
       filepath: `${reportsPath}${name}.json`,
       multiTargets: false,
@@ -52,15 +52,15 @@ class CombinationsSimulationTemplate extends React.Component {
   handleAzeritePowerSelect (event, spellName) {
     event.preventDefault()
 
-    const {selectedAzeritePowers} = this.state
+    const { selectedAzeritePowers } = this.state
     selectedAzeritePowers[spellName].selected = !selectedAzeritePowers[spellName].selected
-    this.setState({selectedAzeritePowers})
+    this.setState({ selectedAzeritePowers })
   }
 
   handleTalentSelect (event, rowId, colId) {
     event.preventDefault()
 
-    const {talentsTree} = this.state
+    const { talentsTree } = this.state
     const row = talentsTree[rowId]
     const talent = row[colId]
 
@@ -77,14 +77,14 @@ class CombinationsSimulationTemplate extends React.Component {
       }
       if (inactiveCount < 2) {
         talent.selected = !talent.selected
-        this.setState({talentsTree})
+        this.setState({ talentsTree })
       }
     }
   }
 
   isValidResult (result) {
-    const {talents, azeritePower} = result
-    const {selectedAzeritePowers, talentsTree} = this.state
+    const { talents, azeritePower } = result
+    const { selectedAzeritePowers, talentsTree } = this.state
     if (talents) {
       for (let row = 0; row < talents.length; row++) {
         const talentChar = parseInt(talents.charAt(row))
@@ -105,15 +105,15 @@ class CombinationsSimulationTemplate extends React.Component {
     if (this.state.orderBy === orderBy && this.state.order === 'desc') {
       order = 'asc'
     }
-    this.setState({order, orderBy})
+    this.setState({ order, orderBy })
   }
 
   handleChangePage (event, page) {
-    this.setState({page})
+    this.setState({ page })
   }
 
   handleChangeRowsPerPage (event) {
-    this.setState({rowsPerPage: event.target.value})
+    this.setState({ rowsPerPage: event.target.value })
   }
 
   componentDidMount () {
@@ -125,10 +125,10 @@ class CombinationsSimulationTemplate extends React.Component {
   }
 
   render () {
-    const {data, i18nPlugin, pageContext} = this.props
-    const {filePath, multiTargets, order, orderBy, page, results, rowsPerPage, selectedAzeritePowers, talentsTree} = this.state
-    const {t, wowheadLink} = i18nPlugin
-    const {buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version} = pageContext
+    const { data, i18nPlugin, pageContext } = this.props
+    const { filePath, multiTargets, order, orderBy, page, results, rowsPerPage, selectedAzeritePowers, talentsTree } = this.state
+    const { t, wowheadLink } = i18nPlugin
+    const { buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version } = pageContext
     return (
       <div>
         <Helmet>
@@ -164,7 +164,7 @@ class CombinationsSimulationTemplate extends React.Component {
           <Filters name={name} onAzeritePowerSelect={this.handleAzeritePowerSelect}
             onTalentSelect={this.handleTalentSelect}
             selectedAzeritePowers={selectedAzeritePowers} talentsTree={talentsTree} wowheadLink={wowheadLink}/>
-          <p style={{textAlign: 'center'}}>
+          <p style={{ textAlign: 'center' }}>
             <span className={'azerite-tier2'}>Inner Ring</span>
             &nbsp;|&nbsp;
             <span className={'azerite-tier3'}>Outer Ring</span>
@@ -180,8 +180,8 @@ class CombinationsSimulationTemplate extends React.Component {
                 .map((result) => (
                   <TableRow key={`${name}-${result.rank}`} hover>
                     <TableCell component="th" scope="row" numeric>{result.rank}</TableCell>
-                    <TableCell dangerouslySetInnerHTML={{__html: result.talentsLabel}}/>
-                    <TableCell dangerouslySetInnerHTML={{__html: result.azeritePowerLabel}}/>
+                    <TableCell dangerouslySetInnerHTML={{ __html: result.talentsLabel }}/>
+                    <TableCell dangerouslySetInnerHTML={{ __html: result.azeritePowerLabel }}/>
                     <TableCell numeric>{result.dps}</TableCell>
                     {multiTargets && <TableCell numeric>{result.bossDPS}</TableCell>}
                     <TableCell numeric>{result.dpsPercentageDifference}</TableCell>
@@ -193,7 +193,7 @@ class CombinationsSimulationTemplate extends React.Component {
           </Table>
           <TablePagination component="div" count={results.length}
             rowsPerPage={rowsPerPage} page={page} rowsPerPageOptions={[5, 10, 15, 20, 25, 50, 100, 1000]}
-            backIconButtonProps={{'aria-label': 'Previous Page'}} nextIconButtonProps={{'aria-label': 'Next Page'}}
+            backIconButtonProps={{ 'aria-label': 'Previous Page' }} nextIconButtonProps={{ 'aria-label': 'Next Page' }}
             onChangePage={this.handleChangePage} onChangeRowsPerPage={this.handleChangeRowsPerPage}/>
         </div>}
       </div>
