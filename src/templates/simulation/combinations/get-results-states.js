@@ -1,6 +1,7 @@
 // Dependencies
 import merge from 'lodash/merge'
-import { getAzeriteInformation, getTalentsTree, wowAzeriteLabel, wowTalentsLabel } from '../../../utils/wow'
+import { getAzeriteInformation, getTalentsTree } from '../../../utils/wow/core'
+import { wowAzeriteLabel, wowTalentsLabel } from '../../../utils/wow/ui'
 
 export async function getResultsStates (props, filepath) {
   const { i18nPlugin: { lang }, pageContext } = props

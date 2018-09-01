@@ -6,7 +6,7 @@ import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
 import startCase from 'lodash/startCase'
 import { withStyles } from '@material-ui/core/styles'
-import { getSpecVariation } from '../utils/wow'
+import { getSpecVariation } from '../utils/wow/ui'
 // Components
 import Helmet from 'react-helmet'
 import { DateFormat, Trans } from '@lingui/react'

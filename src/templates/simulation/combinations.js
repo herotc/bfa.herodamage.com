@@ -2,7 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { refreshWowheadLinks } from '../../utils/wow'
+import { refreshWowheadLinks } from '../../utils/wow/ui'
 import { getResultsStates } from './combinations/get-results-states'
 // Components
 import Helmet from 'react-helmet'

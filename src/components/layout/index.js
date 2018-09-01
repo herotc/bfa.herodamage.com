@@ -7,7 +7,7 @@ import { graphql, navigate, StaticQuery } from 'gatsby'
 import { withStyles } from '@material-ui/core/styles'
 import * as i18nPluginHelper from '../../../plugins/gatsby-plugin-herodamage-i18n/index'
 import { theme } from '../../../plugins/gatsby-plugin-herodamage-material-ui/getPageContext'
-import { getWowheadLink } from '../../utils/wow'
+import { getWowheadLink } from '../../utils/wow/ui'
 // Components
 import Typography from '@material-ui/core/Typography'
 import Head from './head'

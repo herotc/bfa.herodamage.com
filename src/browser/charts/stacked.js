@@ -1,6 +1,6 @@
 import load from 'little-loader'
 
-import { refreshWowheadLinks, wowAzeriteLabel, wowTrinketLabel } from '../../utils/wow'
+import { refreshWowheadLinks, wowAzeriteLabel, wowTrinketLabel } from '../../utils/wow/ui'
 import { excludeEmptyRows, formatNumber, initOverlay, removeLoading } from './common'
 
 /**

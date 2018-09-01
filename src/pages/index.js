@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import startCase from 'lodash/startCase'
 import { withStyles } from '@material-ui/core/styles/index'
-import { wowIcon } from '../utils/wow'
+import { wowIcon } from '../utils/wow/ui'
 // Components
 import { Trans } from '@lingui/react'
 import Grid from '@material-ui/core/Grid'

@@ -1,58 +1,21 @@
-import startCase from 'lodash/startCase'
+// Dependencies
+import { getAzeriteInformation, getTalentsTree, getTrinketInformation } from './core'
 import truncate from 'lodash/truncate'
-
-import { defaultLang } from '../../plugins/gatsby-plugin-herodamage-i18n'
-
-import ClassSpec from '../assets/wow-data/ClassSpec.json'
-import Talents from '../assets/wow-data/Talent.json'
-import Trinkets from '../assets/wow-data/Trinket.json'
-import AzeritePowers from '../assets/wow-data/AzeritePower.json'
-import wowClassDeathKnight from '../assets/images/wow/classpicker/death_knight.svg'
-import wowClassDemonHunter from '../assets/images/wow/classpicker/demon_hunter.svg'
-import wowClassDruid from '../assets/images/wow/classpicker/druid.svg'
-import wowClassHunter from '../assets/images/wow/classpicker/hunter.svg'
-import wowClassMage from '../assets/images/wow/classpicker/mage.svg'
-import wowClassMonk from '../assets/images/wow/classpicker/monk.svg'
-import wowClassPaladin from '../assets/images/wow/classpicker/paladin.svg'
-import wowClassPriest from '../assets/images/wow/classpicker/priest.svg'
-import wowClassRogue from '../assets/images/wow/classpicker/rogue.svg'
-import wowClassShaman from '../assets/images/wow/classpicker/shaman.svg'
-import wowClassWarlock from '../assets/images/wow/classpicker/warlock.svg'
-import wowClassWarrior from '../assets/images/wow/classpicker/warrior.svg'
-
-/**
- * Get the class id from the class string
- * @param wowClass
- * @returns {*}
- */
-export function getWowClassId (wowClass) {
-  return ClassSpec[wowClass].classId
-}
-
-/**
- * Get the class id and the spec id from the class and spec string
- * @param wowClass
- * @param spec
- * @returns {{classId, specId: *}}
- */
-export function getWowClassIdAndSpecId (wowClass, spec) {
-  const classSpec = ClassSpec[wowClass]
-  const classId = classSpec.classId
-  const specId = classSpec.specIds[spec]
-  return { classId, specId }
-}
-
-/**
- *
- * @param wowClass
- * @param spec
- * @returns {*}
- */
-export function getTalentsTree (wowClass, spec) {
-  const { classId, specId } = getWowClassIdAndSpecId(wowClass, spec)
-  const classTalents = Talents[classId]
-  return Object.assign({}, classTalents[specId])
-}
+import startCase from 'lodash/startCase'
+import { defaultLang } from '../../../plugins/gatsby-plugin-herodamage-i18n'
+// Assets
+import wowClassDeathKnight from '../../assets/images/wow/classpicker/death_knight.svg'
+import wowClassDemonHunter from '../../assets/images/wow/classpicker/demon_hunter.svg'
+import wowClassDruid from '../../assets/images/wow/classpicker/druid.svg'
+import wowClassHunter from '../../assets/images/wow/classpicker/hunter.svg'
+import wowClassMage from '../../assets/images/wow/classpicker/mage.svg'
+import wowClassMonk from '../../assets/images/wow/classpicker/monk.svg'
+import wowClassPaladin from '../../assets/images/wow/classpicker/paladin.svg'
+import wowClassPriest from '../../assets/images/wow/classpicker/priest.svg'
+import wowClassRogue from '../../assets/images/wow/classpicker/rogue.svg'
+import wowClassShaman from '../../assets/images/wow/classpicker/shaman.svg'
+import wowClassWarlock from '../../assets/images/wow/classpicker/warlock.svg'
+import wowClassWarrior from '../../assets/images/wow/classpicker/warrior.svg'
 
 /**
  *
@@ -136,15 +99,6 @@ export function getWowheadLink (lang) {
 
 /**
  *
- * @param azeritePower
- * @returns {*}
- */
-export function getAzeriteInformation (azeritePower) {
-  return AzeritePowers[azeritePower]
-}
-
-/**
- *
  * @param rawSpellName
  * @returns {string}
  */
@@ -154,7 +108,7 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
   // Some labels are concatened, like the Alliance / Horde one, we always take the first one
   const spellName = rawSpellName.split(' / ')
 
-  const azeritePower = AzeritePowers[spellName[0]]
+  const azeritePower = getAzeriteInformation(spellName[0])
   if (!azeritePower) return truncate(rawSpellName, truncateOptions)
 
   const { spellId, tier } = azeritePower
@@ -170,10 +124,10 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
  * @returns {string}
  */
 export function wowTrinketLabel (rawItemName, lang = defaultLang) {
-  const trinket = Trinkets[rawItemName]
+  const trinket = getTrinketInformation(rawItemName)
   if (!trinket) return truncate(rawItemName, truncateOptions)
 
-  const { itemId } = Trinkets[rawItemName]
+  const { itemId } = trinket
   return `<a href="${getWowheadLink(lang)}item=${itemId}" target="_blank" rel="noopener noreferrer nofollow">
     <span>${truncate(rawItemName, truncateOptions)}</span>
   </a>`
@@ -204,6 +158,7 @@ export function wowTalentsLabel (talents, wowClass, spec, lang = defaultLang) {
 
 /**
  * Does refresh any Wowhead links in the DOM
+ * @param firstCall
  */
 export function refreshWowheadLinks (firstCall = true) {
   const WH = window.WH

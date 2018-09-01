@@ -1,7 +1,7 @@
 import { promisify } from 'util'
 import { readFile } from 'fs'
 import { resolve } from 'path'
-import { getAzeriteInformation, getWowClassIdAndSpecId } from '../../src/utils/wow'
+import { getAzeriteInformation, getWowClassIdAndSpecId } from '../../src/utils/wow/core'
 
 // Until we get promisified version from fs (promises API is still experimental)
 const readFilePromise = promisify(readFile)

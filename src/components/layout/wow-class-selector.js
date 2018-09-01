@@ -5,7 +5,7 @@ import startCase from 'lodash/startCase'
 
 import { Link } from 'gatsby'
 
-import { wowIcon } from '../../utils/wow'
+import { wowIcon } from '../../utils/wow/ui'
 
 const iconSize = 'calc((100vh - 32px) / 12 / 1.4)'
 const iconSizeHover = 'calc((100vh - 32px) / 12)'
