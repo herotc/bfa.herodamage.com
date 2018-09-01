@@ -1,6 +1,7 @@
 # Project #
 ###########
 .cache
+.firebase
 public
 src/locales/_build
 src/locales/**/*.js
