@@ -21,7 +21,12 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-herodamage-material-ui',
-    'gatsby-plugin-styled-components',
+    {
+      resolve: 'gatsby-plugin-styled-components',
+      options: {
+        displayName: process.env.NODE_ENV !== 'production'
+      }
+    },
     'gatsby-plugin-herodamage-layout',
     'gatsby-plugin-herodamage-i18n',
     {

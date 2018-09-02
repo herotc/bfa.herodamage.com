@@ -1,6 +1,9 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+
+const adIds = []
 
 const VerticalContainer = styled.div`
   margin: auto;
@@ -26,11 +29,6 @@ const SideContainer = styled.div`
   }
 `
 
-let randomClassName = ''
-for (let i = 0; i < 10 + Math.floor(Math.random() * 11); i++) {
-  randomClassName += String.fromCharCode(97 + Math.floor(Math.random() * 26))
-}
-
 class Ad extends React.Component {
   constructor (props) {
     super(props)
@@ -49,7 +47,7 @@ class Ad extends React.Component {
         this.adSlot = 2
         break
     }
-    this.className = randomClassName
+    adIds.push(this.adId)
 
     this.initAd = this.initAd.bind(this)
   }
@@ -58,11 +56,11 @@ class Ad extends React.Component {
    * Add a message in case the ads are blocked
    */
   static blockersCheck () {
-    const ads = document.querySelectorAll(`div.${randomClassName}`)
-    for (let ad of ads) {
+    for (let adId of adIds) {
+      // Skip side one if viewport width < 1552 since we won't render anything inside anyway
+      if (adId === 'a-1534304579228-0-d' && window.innerWidth < 1552) continue
+      const ad = document.getElementById(adId)
       if (ad && ad.innerHTML.replace(/\s/g, '').length === 0) {
-        // Skip side one if viewport width < 1552 since we won't render anything inside anyway
-        if (ad.id === 'a-1534304579228-0-d' && window.innerWidth < 1552) continue
         // Check if there isn't a message already
         const parent = ad.parentElement
         let messageAlreadyDisplayed = false
@@ -131,14 +129,14 @@ class Ad extends React.Component {
       case 'bot':
         return (
           <VerticalContainer>
-            <div id={this.adId} className={this.className}>
+            <div id={this.adId}>
             </div>
           </VerticalContainer>
         )
       case 'side':
         return (
           <SideContainer>
-            <div id={this.adId} className={this.className}>
+            <div id={this.adId}>
             </div>
           </SideContainer>
         )
