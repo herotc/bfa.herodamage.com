@@ -9,14 +9,14 @@ try {
   )
 }
 
-export function onCreateBabelConfig ({ actions }) {
+export const onCreateBabelConfig = ({ actions }) => {
   actions.setBabelPreset({
     name: '@lingui/babel-preset-react'
   })
 }
 
 // Create i18n routes
-export function onCreatePage ({ page, actions }) {
+export const onCreatePage = ({ page, actions }) => {
   const { createPage, deletePage } = actions
 
   let pagePath

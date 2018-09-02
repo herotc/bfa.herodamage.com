@@ -1,16 +1,16 @@
-const React = require('react')
-const MuiThemeProvider = require('@material-ui/core/styles').MuiThemeProvider
-const CssBaseline = require('@material-ui/core/CssBaseline').default
-const getPageContext = require('./getPageContext').default
+import React from 'react'
+import { MuiThemeProvider } from '@material-ui/core/styles'
+import CssBaseline from '@material-ui/core/CssBaseline'
+import getPageContext from './getPageContext'
 
 // Remove the JSS style tag generated on the server to avoid conflicts with the one added on the client.
-module.exports.onInitialClientRender = () => {
+export const onInitialClientRender = () => {
   const ssStyles = window.document.getElementById('server-side-jss')
   ssStyles && ssStyles.parentNode.removeChild(ssStyles)
 }
 
 // eslint-disable-next-line react/prop-types,react/display-name
-module.exports.wrapRootElement = ({ element }) => {
+export const wrapRootElement = ({ element }) => {
   const { theme, sheetsManager } = getPageContext()
   return (
     <MuiThemeProvider theme={theme} sheetsManager={sheetsManager}>

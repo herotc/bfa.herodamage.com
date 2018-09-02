@@ -37,7 +37,7 @@ const simulations = {
 // Hold all the classes index pages to be created
 const wowClasses = {}
 
-export async function onCreateNode ({ node, getNode, actions }) {
+export const onCreateNode = async ({ node, getNode, actions }) => {
   const { createNodeField, deleteNode } = actions
 
   // Prevents non reports files to be processed
@@ -143,7 +143,7 @@ export async function onCreateNode ({ node, getNode, actions }) {
   }
 }
 
-export async function createPages ({ graphql, actions }) {
+export const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   // Make the class index pages by iterating over discovered classes during onCreateNode

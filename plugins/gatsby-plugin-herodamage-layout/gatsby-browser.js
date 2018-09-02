@@ -1,1 +1,3 @@
-module.exports.wrapPageElement = require('./wrap-page')
+import WrapPage from './wrap-page'
+
+export const wrapPageElement = WrapPage

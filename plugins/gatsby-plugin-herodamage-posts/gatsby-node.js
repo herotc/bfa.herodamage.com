@@ -1,6 +1,6 @@
 import { resolve } from 'path'
 
-export function onCreateNode ({ node, getNode, actions }) {
+export const onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField, deleteNode } = actions
 
   // Prevents non markdown files to be processed
@@ -29,7 +29,7 @@ export function onCreateNode ({ node, getNode, actions }) {
   createNodeField({ node, name: 'slug', value: `/${year}/${month}/${day}/${nameParts.slice(3).join('-')}` })
 }
 
-export async function createPages ({ graphql, actions }) {
+export const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const result = await graphql(`

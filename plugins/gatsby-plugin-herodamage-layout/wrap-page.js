@@ -1,13 +1,9 @@
-const React = require('react')
-const Layout = require('../../src/components/layout').default
+import React from 'react'
+import Layout from '../../src/components/layout'
 
 // eslint-disable-next-line react/prop-types,react/display-name
-module.exports = ({ element, props }) => {
-  // eslint-disable-next-line react/prop-types
-  const { location } = props
-  return (
-    <Layout location={location}>
-      {element}
-    </Layout>
-  )
-}
+const WrapPage = ({ element, props }) => (
+  <Layout {...props}>{element}</Layout>
+)
+
+export default WrapPage
