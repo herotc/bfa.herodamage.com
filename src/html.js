@@ -11,12 +11,12 @@ export default class HTML extends React.Component {
         </script>
       )
       gptLoad = (
-        <script dangerouslySetInnerHTML={{__html: `var googletag = googletag || {};
-            googletag.cmd = googletag.cmd || [];`}}>
+        <script dangerouslySetInnerHTML={ { __html: `var googletag = googletag || {};
+            googletag.cmd = googletag.cmd || [];` } }>
         </script>
       )
       gptInit = (
-        <script dangerouslySetInnerHTML={{__html: `var gptAdSlots = [];
+        <script dangerouslySetInnerHTML={ { __html: `var gptAdSlots = [];
 googletag.cmd.push(function() {
   var topBotMapping = googletag.sizeMapping()
     .addSize([141, 0], [125, 125])
@@ -69,7 +69,7 @@ googletag.cmd.push(function() {
   googletag.pubads().collapseEmptyDivs();
   googletag.pubads().disableInitialLoad();
   googletag.enableServices();
-});`}}>
+});` } }>
         </script>
       )
       cookieconsentStyle = (
@@ -79,7 +79,7 @@ googletag.cmd.push(function() {
         <script async src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"/>
       )
       cookieconsentLoad = (
-        <script dangerouslySetInnerHTML={{__html: `window.addEventListener("load", function(){
+        <script dangerouslySetInnerHTML={ { __html: `window.addEventListener("load", function(){
   window.cookieconsent.initialise({
     "palette": {
       "popup": {
@@ -93,7 +93,7 @@ googletag.cmd.push(function() {
     },
     "theme": "classic"
   })
-});`}}>
+});` } }>
         </script>
       )
     }
@@ -116,13 +116,13 @@ googletag.cmd.push(function() {
           <div
             key={`body`}
             id="___gatsby"
-            dangerouslySetInnerHTML={{__html: this.props.body}}
+            dangerouslySetInnerHTML={ { __html: this.props.body } }
           />
           {this.props.postBodyComponents}
           {cookieconsentStyle}
           {cookieconsentScript}
           {cookieconsentLoad}
-          <script dangerouslySetInnerHTML={{__html: `var whTooltips = {colorLinks: true, iconizeLinks: true, iconSize: true};`}}>
+          <script dangerouslySetInnerHTML={ { __html: `var whTooltips = {colorLinks: true, iconizeLinks: true, iconSize: true, renameLinks: true};` } }>
           </script>
           <script src="https://wow.zamimg.com/widgets/power.js">
           </script>

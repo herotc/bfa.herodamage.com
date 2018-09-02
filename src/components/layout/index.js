@@ -33,7 +33,7 @@ const styles = (theme) => ({
       color: theme.palette.secondary.main,
       textDecoration: 'none',
       '&:hover': {
-        color: theme.palette.secondary.light
+        color: `${theme.palette.secondary.light} !important`
       }
     },
     '& .site-name': {
@@ -59,14 +59,29 @@ const styles = (theme) => ({
       display: 'flex',
       flexDirection: 'column',
       float: 'left',
-      marginTop: 54,
+      marginTop: 53,
       position: 'relative',
       width: 240,
       zIndex: 1,
-      '& > a': {
-        height: 16,
-        marginBottom: 9.6
+      '& .label-container': {
+        color: theme.palette.secondary.main, // Needed to have the same color for ellipsis
+        display: 'block',
+        height: 20,
+        marginBottom: 5.6,
+        maxWidth: '100%',
+        overflow: 'hidden',
+        textOverflow: 'ellipsis',
+        whiteSpace: 'nowrap',
+        '&.azerite-tier2': {
+          color: '#9ccc65'
+        },
+        '&.azerite-tier3': {
+          color: '#29b6f6'
+        }
       }
+    },
+    '& .whlink-icon-only > span': {
+      display: 'none'
     },
     '& .azerite-tier2': {
       color: '#9ccc65'
@@ -79,7 +94,7 @@ const styles = (theme) => ({
       position: 'absolute',
       backgroundColor: '#FFF',
       pointerEvents: 'none',
-      zIndex: 2,
+      zIndex: 2
     },
     '& .chart-tooltip': {
       color: '#000',

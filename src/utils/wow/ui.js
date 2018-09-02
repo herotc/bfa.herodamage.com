@@ -1,6 +1,5 @@
 // Dependencies
 import { getAzeriteInformation, getTalentsTree, getTrinketInformation } from './core'
-import truncate from 'lodash/truncate'
 import startCase from 'lodash/startCase'
 import { defaultLang } from '../../../plugins/gatsby-plugin-herodamage-i18n'
 // Assets
@@ -100,21 +99,36 @@ export function getWowheadLink (lang) {
 /**
  *
  * @param rawSpellName
+ * @param lang
+ * @param container
  * @returns {string}
  */
-const truncateOptions = { length: 30 }
-
-export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
+export function wowAzeriteLabel (rawSpellName, lang = defaultLang, container = true) {
   // Some labels are concatened, like the Alliance / Horde one, we always take the first one
-  const spellName = rawSpellName.split(' / ')
+  const spellNames = rawSpellName.split(' / ')
 
-  const azeritePower = getAzeriteInformation(spellName[0])
-  if (!azeritePower) return truncate(rawSpellName, truncateOptions)
+  const labels = []
+  let tierClassName
+  for (const spellName of spellNames) {
+    const azeritePower = getAzeriteInformation(spellName)
+    if (!azeritePower) continue
 
-  const { spellId, tier } = azeritePower
-  return `<a href="${getWowheadLink(lang)}spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow">
-    <span class="azerite-tier${tier}">${truncate(rawSpellName, truncateOptions)}</span>
-  </a>`
+    const { spellId, tier } = azeritePower
+    if (!tierClassName) tierClassName = `azerite-tier${tier}` // Save the tier
+    labels.push(`<a href="${getWowheadLink(lang)}spell=${spellId}" class="${tierClassName}" target="_blank" rel="noopener noreferrer nofollow">
+      <span>${rawSpellName}</span>
+    </a>`)
+  }
+
+  if (container) {
+    if (labels.length === 0) {
+      return `<div class="label-container">${rawSpellName}</div>`
+    } else {
+      return `<div class="label-container ${tierClassName}">${labels.join(' ')}</div>`
+    }
+  } else {
+    return (labels.length === 0 && `${rawSpellName}`) || `${labels.join(' ')}`
+  }
 }
 
 /**
@@ -125,12 +139,14 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang) {
  */
 export function wowTrinketLabel (rawItemName, lang = defaultLang) {
   const trinket = getTrinketInformation(rawItemName)
-  if (!trinket) return truncate(rawItemName, truncateOptions)
+  if (!trinket) return rawItemName
 
   const { itemId } = trinket
-  return `<a href="${getWowheadLink(lang)}item=${itemId}" target="_blank" rel="noopener noreferrer nofollow">
-    <span>${truncate(rawItemName, truncateOptions)}</span>
-  </a>`
+  return `<div class="label-container">
+    <a href="${getWowheadLink(lang)}item=${itemId}" target="_blank" rel="noopener noreferrer nofollow">
+      <span>${rawItemName}</span>
+    </a>
+  </div>`
 }
 
 /**
@@ -149,7 +165,7 @@ export function wowTalentsLabel (talents, wowClass, spec, lang = defaultLang) {
     if (talentChar !== 0) {
       const col = talentChar - 1
       const { spellId } = talentsTree[row][col]
-      label += `<a href="${getWowheadLink(lang)}spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow">
+      label += `<a href="${getWowheadLink(lang)}spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow" data-wh-rename-link="false">
         </a>`
     }
   }

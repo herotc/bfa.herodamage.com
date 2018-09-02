@@ -56,8 +56,8 @@ class Filters extends React.Component {
                     {Object.values(row).map(({ disabled, selected, spellId }, colId) => (
                       <Talent item key={`${name}-${rowId}-${colId}`} xs={4} disabled={disabled} selected={selected}
                         onClick={this.createTalentSelectHandler(rowId, colId)}>
-                        <a href={`${wowheadLink}spell=${spellId}`} data-wh-icon-size="medium"
-                          target="_blank" rel="noopener noreferrer nofollow">
+                        <a href={`${wowheadLink}spell=${spellId}`} target="_blank" rel="noopener noreferrer nofollow"
+                          data-wh-rename-link="false" data-wh-icon-size="medium">
                         </a>
                       </Talent>
                     ))}
@@ -70,8 +70,8 @@ class Filters extends React.Component {
                   return (
                     <AzeritePower item key={`${name}-${spellName}`} xs={12} selected={selected}
                       onClick={this.createAzeritePowerSelectHandler(spellName)}>
-                      <a href={`${wowheadLink}spell=${spellId}`} target="_blank" rel="noopener noreferrer nofollow">
-                        <span className={`azerite-tier${tier}`}>{spellName}</span>
+                      <a href={`${wowheadLink}spell=${spellId}`} className={`azerite-tier${tier}`} target="_blank" rel="noopener noreferrer nofollow">
+                        <span>{spellName}</span>
                       </a>
                     </AzeritePower>
                   )
