@@ -2,6 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
+import { getWowClassColor } from '../utils/wow/core'
 // Components
 import { Chart } from 'react-google-charts'
 import RelatedSimulations from './simulation/common/related'
@@ -54,11 +55,15 @@ class SimCPerformance extends React.Component {
     const chartData = data.statistics.edges.map((edge) => {
       const { context } = edge.node
       const { wowClass, spec, variation, elapsedTime, totalIterations } = context
-      return [`${wowClass} - ${spec}${variation && ` - ${variation}`}`, Math.round(totalIterations / elapsedTime)]
+      return [
+        `${wowClass} - ${spec}${variation && ` - ${variation}`}`,
+        Math.round(totalIterations / elapsedTime),
+        `color: ${getWowClassColor(wowClass)}`
+      ]
     })
     options.height = 130 + chartData.length * 25.5
     chartData.sort((a, b) => b[1] - a[1])
-    chartData.unshift(['Name', ''])
+    chartData.unshift(['Name', '', { role: 'style' }])
     return (
       <div>
         <h1>SimC Performance</h1>

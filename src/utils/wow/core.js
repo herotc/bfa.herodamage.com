@@ -13,6 +13,15 @@ export function getWowClassId (wowClass) {
 }
 
 /**
+ * Get the class color from the class string
+ * @param wowClass
+ * @returns {*}
+ */
+export function getWowClassColor (wowClass) {
+  return ClassSpec[wowClass].classColor
+}
+
+/**
  * Get the class id and the spec id from the class and spec string
  * @param wowClass
  * @param spec
