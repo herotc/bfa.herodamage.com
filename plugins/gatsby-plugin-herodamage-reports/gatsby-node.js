@@ -34,8 +34,11 @@ const simulations = {
   }
 }
 
-// Hold all the classes index pages to be created
-const wowClasses = {}
+// Hold all the additionnal pages to create
+const wowClasses = []
+const simulationTypes = []
+const fightStyles = []
+const tiers = []
 
 export const onCreateNode = async ({ node, getNode, actions }) => {
   const { createNodeField, deleteNode } = actions
@@ -72,19 +75,22 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
   createNodeField({ node, name: 'simulationType', value: simulationType })
   // order: 4
   createNodeField({ node, name: 'order', value: order })
-  createNodeField({ node, name: 'template', value: template })
   // template: 'trinkets'
-  // tier: 't21'
-  createNodeField({ node, name: 'tier', value: tier })
+  createNodeField({ node, name: 'template', value: template })
   // fightStyle: '1t'
   createNodeField({ node, name: 'fightStyle', value: fightStyle })
+  // tier: 't21'
+  createNodeField({ node, name: 'tier', value: tier })
   // spec: 'frost'
   createNodeField({ node, name: 'spec', value: spec })
   // variation: 'cold-heart-runic-attenuation' (optional, if it doesn't exist then it's an empty string '')
   createNodeField({ node, name: 'variation', value: variation || '' })
 
-  // Register the wow class to create the corresponding index page if it's the first time we meet it
-  if (!wowClasses[wowClass]) wowClasses[wowClass] = true
+  // Register the wow class / simulation type / fight style to create the corresponding pages
+  if (!wowClasses.includes(wowClass)) wowClasses.push(wowClass)
+  if (!simulationTypes.includes(simulationType)) simulationTypes.push(simulationType)
+  if (!fightStyles.includes(fightStyle)) fightStyles.push(fightStyle)
+  if (!tiers.includes(tier)) tiers.push(tier)
 
   // Get the metas from the file
   let report
@@ -105,7 +111,11 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
   createNodeField({ node, name: 'buildTime', value: metas['build_timestamp'] })
   createNodeField({ node, name: 'gitRevision', value: metas['git_revision'] || '' })
   createNodeField({ node, name: 'templateDPS', value: Math.round(metas.player['collected_data'].dps.mean) })
+  createNodeField({ node, name: 'elapsedTime', value: metas.statistics['elapsed_time_seconds'].toFixed(2) })
+  createNodeField({ node, name: 'totalIterations', value: metas.statistics['total_iterations'] })
+  createNodeField({ node, name: 'totalActors', value: metas.statistics['total_actors'] })
 
+  // AzeritePowerWeights Import String
   switch (simulationType) {
     case 'azeritelevels':
     case 'azeritestacks':
@@ -146,8 +156,8 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
 export const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  // Make the class index pages by iterating over discovered classes during onCreateNode
-  Object.keys(wowClasses).forEach((wowClass) => {
+  // Class index
+  wowClasses.forEach((wowClass) => {
     const slug = `/${wowClass}/`
     createPage({
       path: slug,
@@ -155,8 +165,21 @@ export const createPages = async ({ graphql, actions }) => {
       context: { slug, wowClass }
     })
   })
+  // SimC Performance
+  for (const simulationType of simulationTypes) {
+    for (const fightStyle of fightStyles) {
+      for (const tier of tiers) {
+        const slug = `/simc-performance/${simulationType}/${fightStyle}-${tier}`
+        createPage({
+          path: slug,
+          component: resolve('./src/templates/simc-performance.js'),
+          context: { slug, simulationType, fightStyle, tier }
+        })
+      }
+    }
+  }
 
-  // Makes the simulations pages
+  // Simulations
   const result = await graphql(`
     {
       allFile(filter: {sourceInstanceName: {eq: "reports"}}) {
@@ -169,8 +192,8 @@ export const createPages = async ({ graphql, actions }) => {
               simulationType
               order
               template
-              tier
               fightStyle
+              tier
               spec
               variation
               targetError
@@ -180,6 +203,9 @@ export const createPages = async ({ graphql, actions }) => {
               buildTime
               gitRevision
               templateDPS
+              elapsedTime
+              totalIterations
+              totalActors
               azeritePowerWeights
             }
           }

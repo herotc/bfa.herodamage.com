@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
 
-import { langs } from '../../../plugins/gatsby-plugin-herodamage-i18n/index'
+import { langs } from '../../../plugins/gatsby-plugin-herodamage-i18n'
 
 import logo from '../../assets/images/logo.svg'
 

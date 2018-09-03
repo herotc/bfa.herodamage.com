@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql, Link } from 'gatsby'
 import startCase from 'lodash/startCase'
-import { withStyles } from '@material-ui/core/styles/index'
+import { withStyles } from '@material-ui/core/styles'
 import { wowIcon } from '../utils/wow/ui'
 // Components
 import { Trans } from '@lingui/react'
