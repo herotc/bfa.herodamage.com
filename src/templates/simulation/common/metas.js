@@ -13,7 +13,7 @@ const Metas = ({ buildTime, gitRevision, targetError, templateDPS, version }) =>
         <DateFormat value={buildDate}
           format={{ month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' }}/> (CEST)<br/>
         <Trans><b>WoW-Build:</b></Trans> {version}
-        <a href={`https://github.com/simulationcraft/simc/commit/${gitRevision}`} title="Corresponding SimC commit"
+        <a href={`https://github.com/simulationcraft/simc/commits/${gitRevision}`} title="Corresponding SimC commit"
           target="_blank" rel="noopener noreferrer nofollow">#{gitRevision}</a><br/>
         <Trans><b>Target Error:</b></Trans> {targetError}% (~{Math.round(templateDPS * targetError / 100)} DPS)
       </p>
