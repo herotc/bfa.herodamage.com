@@ -112,6 +112,7 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
   createNodeField({ node, name: 'gitRevision', value: metas['git_revision'] || '' })
   createNodeField({ node, name: 'templateDPS', value: Math.round(metas.player['collected_data'].dps.mean) })
   createNodeField({ node, name: 'elapsedTime', value: metas.statistics['elapsed_time_seconds'].toFixed(2) })
+  createNodeField({ node, name: 'totalEventsProcessed', value: metas.statistics['total_events_processed'] })
   createNodeField({ node, name: 'totalIterations', value: metas.statistics['total_iterations'] })
   createNodeField({ node, name: 'totalActors', value: metas.statistics['total_actors'] })
 
@@ -204,6 +205,7 @@ export const createPages = async ({ graphql, actions }) => {
               gitRevision
               templateDPS
               elapsedTime
+              totalEventsProcessed
               totalIterations
               totalActors
               azeritePowerWeights
