@@ -64,37 +64,45 @@ const SimCPerformance = ({ data, i18nPlugin, pageContext }) => {
   })
   options.height = 80 + baseChartData.length * 25.5
 
-  // Avg. Iterations per second per actor
+  // Avg. Iterations per second [totalIterations / elapsedTime]
   const ipsData = baseChartData.map((data) => {
-    const { elapsedTime, totalIterations, totalActors } = data[1]
-    return [data[0], Math.round(totalIterations / totalActors / elapsedTime), data[2]]
+    const { elapsedTime, totalIterations } = data[1]
+    return [data[0], Math.round(totalIterations / elapsedTime), data[2]]
   })
   ipsData.sort(sortDESC)
   ipsData.unshift(chartDataLabels)
 
-  // Avg. Duration (ns) per iteration per actor
+  // Avg. Events processed per iteration [totalEventsProcessed / totalIterations]
+  const eventsIterationData = baseChartData.map((data) => {
+    const { totalEventsProcessed, totalIterations } = data[1]
+    return [data[0], Math.round(totalEventsProcessed / totalIterations), data[2]]
+  })
+  eventsIterationData.sort(sortASC)
+  eventsIterationData.unshift(chartDataLabels)
+
+  // Avg. Duration (μs) per iteration [elapsedTime * 1000000 / totalIterations]
   const durationIterationData = baseChartData.map((data) => {
-    const { elapsedTime, totalIterations, totalActors } = data[1]
-    return [data[0], Math.round(elapsedTime * 1000000000 / totalIterations / totalActors), data[2]]
+    const { elapsedTime, totalIterations } = data[1]
+    return [data[0], Math.round(elapsedTime * 1000000 / totalIterations), data[2]]
   })
   durationIterationData.sort(sortASC)
   durationIterationData.unshift(chartDataLabels)
 
-  // Avg. Duration (ms) per actor for % target error
-  const durationActorData = baseChartData.map((data) => {
+  // Avg. Duration (ms) per actor for % target error [elapsedTime * 1000 / totalActors]
+  const durationTargetErrorData = baseChartData.map((data) => {
     const { elapsedTime, totalActors } = data[1]
     return [data[0], Math.round(elapsedTime * 1000 / totalActors), data[2]]
   })
-  durationActorData.sort(sortASC)
-  durationActorData.unshift(chartDataLabels)
+  durationTargetErrorData.sort(sortASC)
+  durationTargetErrorData.unshift(chartDataLabels)
 
-  // Avg. Iterations per actor for % target error
-  const iterationsData = baseChartData.map((data) => {
+  // Avg. Iterations per actor for % target error [totalIterations / totalActors]
+  const iterationsTargetErrorData = baseChartData.map((data) => {
     const { totalIterations, totalActors } = data[1]
     return [data[0], Math.round(totalIterations / totalActors), data[2]]
   })
-  iterationsData.sort(sortASC)
-  iterationsData.unshift(chartDataLabels)
+  iterationsTargetErrorData.sort(sortASC)
+  iterationsTargetErrorData.unshift(chartDataLabels)
 
   return (
     <div>
@@ -102,22 +110,26 @@ const SimCPerformance = ({ data, i18nPlugin, pageContext }) => {
       <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} t={t} tier={tier}/>
       <div>
         <Chart chartType="BarChart" data={ipsData}
-          options={{ ...options, title: 'SimC Performance - Avg. Iterations per actor per second' }}/>
+          options={{ ...options, title: 'Avg. Iterations per second [iterations / time]' }}/>
+      </div>
+      <div>
+        <Chart chartType="BarChart" data={eventsIterationData}
+          options={{ ...options, title: 'Avg. Events processed per iteration [events / iterations]' }}/>
       </div>
       <div>
         <Chart chartType="BarChart" data={durationIterationData}
-          options={{ ...options, title: 'SimC Performance - Avg. Duration (nanosecond) per iteration per actor' }}/>
+          options={{ ...options, title: 'Avg. Duration (μs) per iteration [time * 1000000 / iterations]' }}/>
       </div>
       <div>
-        <Chart chartType="BarChart" data={durationActorData} options={{
+        <Chart chartType="BarChart" data={durationTargetErrorData} options={{
           ...options,
-          title: `SimC Performance - Avg. Duration (millisecond) per actor for 0.${simulationType === 'combinations' ? '4' : '2'}% Target Error`
+          title: `Avg. Duration (ms) per actor for 0.${simulationType === 'combinations' ? '4' : '2'}% Target Error [time * 1000 / actors]`
         }}/>
       </div>
       <div>
-        <Chart chartType="BarChart" data={iterationsData} options={{
+        <Chart chartType="BarChart" data={iterationsTargetErrorData} options={{
           ...options,
-          title: `SimC Performance - Avg. Iterations per actor for 0.${simulationType === 'combinations' ? '4' : '2'}% Target Error`
+          title: `Avg. Iterations per actor for 0.${simulationType === 'combinations' ? '4' : '2'}% Target Error [iterations / actors]`
         }}/>
       </div>
     </div>
