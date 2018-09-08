@@ -5,7 +5,8 @@ import { stackedChart } from '../../../browser/charts/stacked'
 // Components
 import Helmet from 'react-helmet'
 import CircularProgress from '@material-ui/core/CircularProgress'
-import CopyBox from '../../../components/copybox'
+import CopyBox from '../../../components/copy-box'
+import TextBox from '../../../components/text-box'
 import RelatedSimulations from './related'
 import Metas from './metas'
 
@@ -34,7 +35,7 @@ class StackedChartLayout extends React.Component {
     const { children, data, i18nPlugin, pageContext } = this.props
     const { filePath } = this.state
     const { t } = i18nPlugin
-    const { azeritePowerWeights, buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version } = pageContext
+    const { azeritePowerWeights, buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version, wowClass } = pageContext
     return (
       <div>
         <Helmet>
@@ -46,6 +47,8 @@ class StackedChartLayout extends React.Component {
           t={t} tier={tier} variation={variation}/>
         <Metas buildTime={buildTime} gitRevision={gitRevision}
           targetError={targetError} templateDPS={templateDPS} version={version}/>
+        {wowClass === 'rogue' &&
+        <TextBox text="Includes upcoming hotfixes that will takes effect on next week reset." variant="warning" />}
         {azeritePowerWeights &&
         <CopyBox elementId="azerite-power-weights" text={azeritePowerWeights}
           title="AzeritePowerWeights Import String"/>}

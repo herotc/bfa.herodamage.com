@@ -13,6 +13,7 @@ import TableBody from '@material-ui/core/TableBody'
 import TableCell from '@material-ui/core/TableCell'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
+import TextBox from '../../components/text-box'
 import RelatedSimulations from './common/related'
 import Metas from './common/metas'
 import Filters from './combinations/filters'
@@ -128,7 +129,7 @@ class CombinationsSimulationTemplate extends React.Component {
     const { data, i18nPlugin, pageContext } = this.props
     const { filePath, multiTargets, order, orderBy, page, results, rowsPerPage, selectedAzeritePowers, talentsTree } = this.state
     const { t, wowheadLink } = i18nPlugin
-    const { buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version } = pageContext
+    const { buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version, wowClass } = pageContext
     return (
       <div>
         <Helmet>
@@ -140,8 +141,7 @@ class CombinationsSimulationTemplate extends React.Component {
           requiring a more detailed investigation.</Trans></p>
         <p><Trans>The purpose of these simulations is to get a general idea of how different setups will compare with
           each other and not to promote any definitive best builds. Several variables (like different trinkets, WF/TF
-          or
-          ingame situations) are not taken into account. This is why you, as always, should <u><b>simulate your own
+          or ingame situations) are not taken into account. This is why you, as always, should <u><b>simulate your own
             character</b></u> to find your optimal setup.</Trans></p>
         <p><Trans>The fact that generic azerite powers are not included is intended. The goal of such simulations is
           not
@@ -157,6 +157,8 @@ class CombinationsSimulationTemplate extends React.Component {
           t={t} tier={tier} variation={variation}/>
         <Metas buildTime={buildTime} gitRevision={gitRevision}
           targetError={targetError} templateDPS={templateDPS} version={version}/>
+        {wowClass === 'rogue' &&
+        <TextBox text="Includes upcoming hotfixes that will takes effect on next week reset." variant="warning"/>}
         {!results &&
         <CircularProgress id="results-loader" color="secondary"/>}
         {results &&
