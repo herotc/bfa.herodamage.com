@@ -25,7 +25,6 @@ const Container = styled.p`
 
 const TextBox = ({ text, variant, ...props }) => {
   const { Icon } = variants[variant]
-  console.log(variants[variant])
   return (
     <Container {...props} variant={variant}>
       <Icon/>
