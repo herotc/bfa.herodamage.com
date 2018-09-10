@@ -162,8 +162,6 @@ class CombinationsSimulationTemplate extends React.Component {
           variation={variation}/>
         <Metas buildTime={buildTime} gitRevision={gitRevision}
           targetError={targetError} templateDPS={templateDPS} version={version}/>
-        {wowClass === 'rogue' &&
-        <TextBox text="Includes upcoming hotfixes that will takes effect on next week reset." variant="warning"/>}
         {!results &&
         <CircularProgress id="results-loader" color="secondary"/>}
         {results &&
