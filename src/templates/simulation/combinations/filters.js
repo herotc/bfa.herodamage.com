@@ -40,7 +40,7 @@ class Filters extends React.Component {
   }
 
   render () {
-    const { name, selectedAzeritePowers, talentsTree, wowheadLink } = this.props
+    const { name, azeritePowers, talentsTree, wowheadLink } = this.props
     return (
       <Grid item xs={12}>
         <ExpansionPanel defaultExpanded elevation={1}>
@@ -65,7 +65,7 @@ class Filters extends React.Component {
                 ))}
               </div>
               <Grid container spacing={8} style={{ width: '185px' }}>
-                {Object.values(selectedAzeritePowers).map((azeritePower) => {
+                {Object.values(azeritePowers).map((azeritePower) => {
                   const { selected, spellName, spellId, tier } = azeritePower
                   return (
                     <AzeritePower item key={`${name}-${spellName}`} xs={12} selected={selected}
@@ -89,7 +89,7 @@ Filters.propTypes = {
   name: PropTypes.string.isRequired,
   onAzeritePowerSelect: PropTypes.func.isRequired,
   onTalentSelect: PropTypes.func.isRequired,
-  selectedAzeritePowers: PropTypes.object.isRequired,
+  azeritePowers: PropTypes.object.isRequired,
   talentsTree: PropTypes.object.isRequired,
   wowheadLink: PropTypes.string.isRequired
 }

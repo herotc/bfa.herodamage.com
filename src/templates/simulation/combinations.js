@@ -34,7 +34,7 @@ class CombinationsSimulationTemplate extends React.Component {
       orderBy: 'dps',
       page: 0,
       rowsPerPage: 15,
-      selectedAzeritePowers: null,
+      azeritePowers: null,
       talentsTree: null
     }
 
@@ -53,9 +53,13 @@ class CombinationsSimulationTemplate extends React.Component {
   handleAzeritePowerSelect (event, spellName) {
     event.preventDefault()
 
-    const { selectedAzeritePowers } = this.state
-    selectedAzeritePowers[spellName].selected = !selectedAzeritePowers[spellName].selected
-    this.setState({ selectedAzeritePowers })
+    const { azeritePowers } = this.state
+    const selectedAzeritePowers = Object.entries(azeritePowers).filter(([spellName, azeritePower]) => azeritePower.selected)
+    // Make sure we always have at least 1 azeritePower selected
+    if (selectedAzeritePowers.length > 1 || spellName !== selectedAzeritePowers[0][0]) {
+      azeritePowers[spellName].selected = !azeritePowers[spellName].selected
+      this.setState({ azeritePowers })
+    }
   }
 
   handleTalentSelect (event, rowId, colId) {
@@ -85,7 +89,7 @@ class CombinationsSimulationTemplate extends React.Component {
 
   isValidResult (result) {
     const { talents, azeritePower } = result
-    const { selectedAzeritePowers, talentsTree } = this.state
+    const { azeritePowers, talentsTree } = this.state
     if (talents) {
       for (let row = 0; row < talents.length; row++) {
         const talentChar = parseInt(talents.charAt(row))
@@ -96,7 +100,7 @@ class CombinationsSimulationTemplate extends React.Component {
       }
     }
     if (azeritePower && azeritePower !== 'None') {
-      if (!selectedAzeritePowers[azeritePower].selected) return false
+      if (!azeritePowers[azeritePower].selected) return false
     }
     return true
   }
@@ -127,7 +131,7 @@ class CombinationsSimulationTemplate extends React.Component {
 
   render () {
     const { data, i18nPlugin, pageContext } = this.props
-    const { filePath, multiTargets, order, orderBy, page, results, rowsPerPage, selectedAzeritePowers, talentsTree } = this.state
+    const { filePath, multiTargets, order, orderBy, page, results, rowsPerPage, azeritePowers, talentsTree } = this.state
     const { t, wowheadLink } = i18nPlugin
     const { buildTime, fightStyle, gitRevision, name, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateDPS, tier, variation, version, wowClass } = pageContext
     return (
@@ -166,7 +170,7 @@ class CombinationsSimulationTemplate extends React.Component {
         <div>
           <Filters name={name} onAzeritePowerSelect={this.handleAzeritePowerSelect}
             onTalentSelect={this.handleTalentSelect}
-            selectedAzeritePowers={selectedAzeritePowers} talentsTree={talentsTree} wowheadLink={wowheadLink}/>
+            azeritePowers={azeritePowers} talentsTree={talentsTree} wowheadLink={wowheadLink}/>
           <p style={{ textAlign: 'center' }}>
             <span className={'azerite-tier2'}>Inner Ring</span>
             &nbsp;|&nbsp;

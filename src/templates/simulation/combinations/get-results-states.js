@@ -16,7 +16,7 @@ export async function getResultsStates (props, filepath) {
   const multiTargets = jsonResults[0].length === 6 // whether the results contains a bossDPS column
   const maxDPS = jsonResults[0][4] // used to compute the % Diff
   const selectedTalents = {} // used for talents filter
-  const selectedAzeritePowers = {} // used for azerite filter
+  const azeritePowers = {} // used for azerite filter
   for (let row of jsonResults) {
     // result filtering
     const talents = row[1]
@@ -41,9 +41,9 @@ export async function getResultsStates (props, filepath) {
 
     // filter the azerite powers to get the ones that can be selected
     if (azeritePower !== 'None') {
-      if (!selectedAzeritePowers[azeritePower]) {
+      if (!azeritePowers[azeritePower]) {
         const { spellId, tier } = getAzeriteInformation(azeritePower)
-        selectedAzeritePowers[azeritePower] = {
+        azeritePowers[azeritePower] = {
           spellName: azeritePower,
           selected: true,
           spellId,
@@ -66,5 +66,5 @@ export async function getResultsStates (props, filepath) {
   const talentsTree = {}
   merge(talentsTree, defaultTalentsTree, selectedTalents)
 
-  return { multiTargets, results, selectedAzeritePowers, talentsTree }
+  return { multiTargets, results, azeritePowers, talentsTree }
 }
