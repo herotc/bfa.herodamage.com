@@ -14,7 +14,7 @@ import TableCell from '@material-ui/core/TableCell'
 import TablePagination from '@material-ui/core/TablePagination'
 import TableRow from '@material-ui/core/TableRow'
 import TextBox from '../../components/text-box'
-import RelatedSimulations from './common/related'
+import Related from './common/related'
 import Metas from './common/metas'
 import Filters from './combinations/filters'
 import EnhancedTableHead from './combinations/enhanced-table-head'
@@ -129,7 +129,7 @@ class CombinationsSimulationTemplate extends React.Component {
     const { data, i18nPlugin, pageContext } = this.props
     const { filePath, multiTargets, order, orderBy, page, results, rowsPerPage, selectedAzeritePowers, talentsTree } = this.state
     const { t, wowheadLink } = i18nPlugin
-    const { buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version, wowClass } = pageContext
+    const { buildTime, fightStyle, gitRevision, name, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateDPS, tier, variation, version, wowClass } = pageContext
     return (
       <div>
         <Helmet>
@@ -153,8 +153,9 @@ class CombinationsSimulationTemplate extends React.Component {
         <p><Trans>Of course, you can also check how the talents compare each other without any azerite power (just
           unselect all of them). Which is ideal in case you are using only generic azerite powers for example.</Trans>
         </p>
-        <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
-          t={t} tier={tier} variation={variation}/>
+        <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
+          simulationCategory={simulationCategory} simulationType={simulationType} spec={spec} t={t} tier={tier}
+          variation={variation}/>
         <Metas buildTime={buildTime} gitRevision={gitRevision}
           targetError={targetError} templateDPS={templateDPS} version={version}/>
         {wowClass === 'rogue' &&
@@ -218,11 +219,13 @@ export const query = graphql`
         reportsPath
       }
     }
-    relatedSimulationTypes: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, fightStyle: {eq: $fightStyle}, tier: {eq: $tier}, spec: {eq: $spec}, variation: {eq: $variation}}}, sort: {fields: [context___order], order: ASC}) {
+    relatedSimulations: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, fightStyle: {eq: $fightStyle}, tier: {eq: $tier}, spec: {eq: $spec}, variation: {eq: $variation}}}, sort: {fields: [context___simulationFeaturedOrder], order: ASC}) {
       edges {
         node {
           path
           context {
+            simulationFeaturedOrder
+            simulationCategory
             simulationType
           }
         }

@@ -7,7 +7,7 @@ import Helmet from 'react-helmet'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import CopyBox from '../../../components/copy-box'
 import TextBox from '../../../components/text-box'
-import RelatedSimulations from './related'
+import Related from './related'
 import Metas from './metas'
 
 class StackedChartLayout extends React.Component {
@@ -35,7 +35,7 @@ class StackedChartLayout extends React.Component {
     const { children, data, i18nPlugin, pageContext } = this.props
     const { filePath } = this.state
     const { t } = i18nPlugin
-    const { azeritePowerWeights, buildTime, fightStyle, gitRevision, name, simulationType, spec, targetError, templateDPS, tier, variation, version, wowClass } = pageContext
+    const { azeritePowerWeights, buildTime, fightStyle, gitRevision, name, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateDPS, tier, variation, version, wowClass } = pageContext
     return (
       <div>
         <Helmet>
@@ -43,8 +43,9 @@ class StackedChartLayout extends React.Component {
         </Helmet>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         {children}
-        <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} spec={spec}
-          t={t} tier={tier} variation={variation}/>
+        <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
+          simulationCategory={simulationCategory} simulationType={simulationType} spec={spec} t={t} tier={tier}
+          variation={variation}/>
         <Metas buildTime={buildTime} gitRevision={gitRevision}
           targetError={targetError} templateDPS={templateDPS} version={version}/>
         {wowClass === 'rogue' &&

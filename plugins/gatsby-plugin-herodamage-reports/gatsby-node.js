@@ -7,36 +7,55 @@ import { getAzeriteInformation, getWowClassIdAndSpecId } from '../../src/utils/w
 const readFilePromise = promisify(readFile)
 
 const simulations = {
-  azeritelevels: {
-    simulationType: 'azeritelevels',
-    order: 1,
-    template: 'azerite-levels'
+  'azerite-levels': {
+    simulationFeaturedOrder: 1,
+    simulationCategory: 'azerite',
+    simulationType: 'azerite-levels',
+    simulationTemplate: 'azerite-levels'
   },
-  azeritestacks: {
-    simulationType: 'azeritestacks',
-    order: 2,
-    template: 'azerite-stacks'
+  'azerite-stacks': {
+    simulationCategory: 'azerite',
+    simulationType: 'azerite-stacks',
+    simulationTemplate: 'azerite-stacks'
   },
-  combinator: {
-    simulationType: 'combinations',
-    order: 3,
-    template: 'combinations'
+  'combinator-0a': {
+    simulationFeaturedOrder: 3,
+    simulationCategory: 'combinations',
+    simulationType: 'combinations-0a',
+    simulationTemplate: 'combinations'
+  },
+  'combinator-1a': {
+    simulationCategory: 'combinations',
+    simulationType: 'combinations-1a',
+    simulationTemplate: 'combinations'
+  },
+  'combinator-2a': {
+    simulationCategory: 'combinations',
+    simulationType: 'combinations-2a',
+    simulationTemplate: 'combinations'
+  },
+  'combinator-3a': {
+    simulationCategory: 'combinations',
+    simulationType: 'combinations-3a',
+    simulationTemplate: 'combinations'
   },
   racesimulation: {
+    simulationFeaturedOrder: 4,
+    simulationCategory: 'races',
     simulationType: 'races',
-    order: 5,
-    template: 'races'
+    simulationTemplate: 'races'
   },
   trinketsimulation: {
+    simulationFeaturedOrder: 2,
+    simulationCategory: 'trinkets',
     simulationType: 'trinkets',
-    order: 4,
-    template: 'trinkets'
+    simulationTemplate: 'trinkets'
   }
 }
 
 // Hold all the additionnal pages to create
 const wowClasses = []
-const simulationTypes = []
+const simulationNames = []
 const fightStyles = []
 const tiers = []
 
@@ -60,7 +79,7 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
   // ['trinketsimulation', '1t', 't21', 'death-knight', 'frost', 'cold-heart-runic-attenuation']
   const [simulationName, fightStyle, tier, wowClass, spec, variation] = name.toLowerCase().split('_')
   // 'trinkets', 4
-  const { simulationType, order, template } = simulations[simulationName]
+  const { simulationFeaturedOrder, simulationCategory, simulationType, simulationTemplate } = simulations[simulationName]
   // '/death-knight/trinkets/1t-t21-frost
   let slug = `/${wowClass}/${simulationType}/${fightStyle}-${tier}-${spec}`
   if (variation) slug += `-${variation}`
@@ -71,12 +90,16 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
   createNodeField({ node, name: 'name', value: name })
   // wowClass: 'death-knight'
   createNodeField({ node, name: 'wowClass', value: wowClass })
+  // simulationFeaturedOrder: 2
+  if (simulationFeaturedOrder) {
+    createNodeField({ node, name: 'simulationFeaturedOrder', value: simulationFeaturedOrder })
+  }
+  // simulationCategory: 'trinkets'
+  createNodeField({ node, name: 'simulationCategory', value: simulationCategory })
   // simulationType: 'trinkets'
   createNodeField({ node, name: 'simulationType', value: simulationType })
-  // order: 4
-  createNodeField({ node, name: 'order', value: order })
-  // template: 'trinkets'
-  createNodeField({ node, name: 'template', value: template })
+  // simulationTemplate: 'trinkets'
+  createNodeField({ node, name: 'simulationTemplate', value: simulationTemplate })
   // fightStyle: '1t'
   createNodeField({ node, name: 'fightStyle', value: fightStyle })
   // tier: 't21'
@@ -88,7 +111,7 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
 
   // Register the wow class / simulation type / fight style to create the corresponding pages
   if (!wowClasses.includes(wowClass)) wowClasses.push(wowClass)
-  if (!simulationTypes.includes(simulationType)) simulationTypes.push(simulationType)
+  if (!simulationNames.includes(simulationName)) simulationNames.push(simulationName)
   if (!fightStyles.includes(fightStyle)) fightStyles.push(fightStyle)
   if (!tiers.includes(tier)) tiers.push(tier)
 
@@ -118,8 +141,8 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
 
   // AzeritePowerWeights Import String
   switch (simulationType) {
-    case 'azeritelevels':
-    case 'azeritestacks':
+    case 'azerite-levels':
+    case 'azerite-stacks':
       const { results } = report
       // Build the powers array
       const powers = []
@@ -167,14 +190,15 @@ export const createPages = async ({ graphql, actions }) => {
     })
   })
   // SimC Performance
-  for (const simulationType of simulationTypes) {
+  for (const simulationName of simulationNames) {
     for (const fightStyle of fightStyles) {
       for (const tier of tiers) {
+        const { simulationFeaturedOrder, simulationCategory, simulationType } = simulations[simulationName]
         const slug = `/simc-performance/${simulationType}/${fightStyle}-${tier}`
         createPage({
           path: slug,
           component: resolve('./src/templates/simc-performance.js'),
-          context: { slug, simulationType, fightStyle, tier }
+          context: { slug, simulationFeaturedOrder, simulationCategory, simulationType, fightStyle, tier }
         })
       }
     }
@@ -190,9 +214,10 @@ export const createPages = async ({ graphql, actions }) => {
               slug
               name
               wowClass
+              simulationFeaturedOrder
+              simulationCategory
               simulationType
-              order
-              template
+              simulationTemplate
               fightStyle
               tier
               spec
@@ -221,7 +246,7 @@ export const createPages = async ({ graphql, actions }) => {
       const fields = node.fields
       createPage({
         path: fields.slug,
-        component: resolve(`./src/templates/simulation/${fields.template}.js`),
+        component: resolve(`./src/templates/simulation/${fields.simulationTemplate}.js`),
         context: fields
       })
     })

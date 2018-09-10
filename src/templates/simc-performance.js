@@ -6,7 +6,7 @@ import { getWowClassColor } from '../utils/wow/core'
 import { getSpecVariation } from '../utils/wow/ui'
 // Components
 import { Chart } from 'react-google-charts'
-import RelatedSimulations from './simulation/common/related'
+import Related from './simulation/common/related'
 
 const bgColor = '#303030'
 const textColor = 'white'
@@ -51,7 +51,7 @@ const chartDataLabels = ['Name', '', { role: 'style' }]
 
 const SimCPerformance = ({ data, i18nPlugin, pageContext }) => {
   const { t } = i18nPlugin
-  const { fightStyle, simulationType, tier } = pageContext
+  const { fightStyle, simulationFeaturedOrder, simulationCategory, simulationType, tier } = pageContext
 
   const baseChartData = data.statistics.edges.map((edge) => {
     const { context } = edge.node
@@ -107,7 +107,8 @@ const SimCPerformance = ({ data, i18nPlugin, pageContext }) => {
   return (
     <div>
       <h1>SimC Performance</h1>
-      <RelatedSimulations data={data} fightStyle={fightStyle} simulationType={simulationType} t={t} tier={tier}/>
+      <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
+        simulationCategory={simulationCategory} simulationType={simulationType} t={t} tier={tier}/>
       <div>
         <Chart chartType="BarChart" data={ipsData}
           options={{ ...options, title: 'Avg. Iterations per second [iterations / time]' }}/>
@@ -123,13 +124,13 @@ const SimCPerformance = ({ data, i18nPlugin, pageContext }) => {
       <div>
         <Chart chartType="BarChart" data={durationTargetErrorData} options={{
           ...options,
-          title: `Avg. Duration (ms) per actor for 0.${simulationType === 'combinations' ? '4' : '2'}% Target Error [time * 1000 / actors]`
+          title: `Avg. Duration (ms) per actor for 0.${simulationType.indexOf('combinations') !== -1 ? '4' : '2'}% Target Error [time * 1000 / actors]`
         }}/>
       </div>
       <div>
         <Chart chartType="BarChart" data={iterationsTargetErrorData} options={{
           ...options,
-          title: `Avg. Iterations per actor for 0.${simulationType === 'combinations' ? '4' : '2'}% Target Error [iterations / actors]`
+          title: `Avg. Iterations per actor for 0.${simulationType.indexOf('combinations') !== -1 ? '4' : '2'}% Target Error [iterations / actors]`
         }}/>
       </div>
     </div>
@@ -162,11 +163,13 @@ export const query = graphql`
         }
       }
     }
-    relatedSimulationTypes: allSitePage(filter: {context: {lang: {eq: $lang}, slug: {regex: "/^\/simc-performance\//i"}, fightStyle: {eq: $fightStyle}, tier: {eq: $tier}}}, sort: {fields: [context___order], order: ASC}) {
+    relatedSimulations: allSitePage(filter: {context: {lang: {eq: $lang}, slug: {regex: "/^\/simc-performance\//i"}, fightStyle: {eq: $fightStyle}, tier: {eq: $tier}}}, sort: {fields: [context___simulationFeaturedOrder], order: ASC}) {
       edges {
         node {
           path
           context {
+            simulationFeaturedOrder
+            simulationCategory
             simulationType
           }
         }

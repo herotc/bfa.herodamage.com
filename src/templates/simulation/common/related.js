@@ -15,26 +15,53 @@ const RelatedContainer = styled.div`
   text-align: center;
 `
 
-const RelatedSimulationTypes = ({ data: { relatedSimulationTypes }, simulationType, t }) => {
-  if (!relatedSimulationTypes || relatedSimulationTypes.edges.length <= 1) return null
+const RelatedSimulations = ({ data: { relatedSimulations }, simulationFeaturedOrder, simulationCategory, simulationType, t }) => {
+  if (!relatedSimulations || relatedSimulations.edges.length <= 1) return null
+  const relatedSimulationCategories = relatedSimulations.edges.filter((edge) => {
+    return !!edge.node.context.simulationFeaturedOrder
+  })
+  const relatedSimulationTypes = relatedSimulations.edges.filter((edge) => {
+    return edge.node.context.simulationCategory === simulationCategory
+  })
   return (
-    <div>
-      {relatedSimulationTypes.edges.map((edge, index) => {
-        const { node: { context, path } } = edge
-        const { simulationType: nodeSimulationType } = context
-        return (
-          <Button key={index} variant="contained" color="primary" disabled={simulationType === nodeSimulationType}
-            component={Link} to={path} style={{ margin: '4px 8px' }}>
-            {t(nodeSimulationType)}
-          </Button>
-        )
-      })}
-    </div>
+    <>
+      {relatedSimulationCategories.length > 1 &&
+      <div>
+        {relatedSimulationCategories.map((edge, index) => {
+          const { node: { context, path } } = edge
+          const { simulationCategory: nodeSimulationCategory } = context
+          return (
+            <Button key={index} variant="contained" color="primary"
+              disabled={simulationCategory === nodeSimulationCategory}
+              component={Link} to={path} style={{ margin: '4px 8px' }}>
+              {t(nodeSimulationCategory)}
+            </Button>
+          )
+        })}
+      </div>}
+      {relatedSimulationTypes.length > 1 &&
+      <div>
+        <Divider/>
+        {relatedSimulationTypes.map((edge, index) => {
+          const { node: { context, path } } = edge
+          const { simulationType: nodeSimulationType } = context
+          return (
+            <Button key={index} variant="contained" color="primary"
+              disabled={simulationType === nodeSimulationType}
+              component={Link} to={path} style={{ margin: '4px 8px' }}>
+              {t(nodeSimulationType)}
+            </Button>
+          )
+        })}
+      </div>}
+    </>
   )
 }
 
-RelatedSimulationTypes.propTypes = {
+RelatedSimulations.propTypes = {
   data: PropTypes.object.isRequired,
+  simulationFeaturedOrder: PropTypes.number,
+  simulationCategory: PropTypes.string,
   simulationType: PropTypes.string,
   t: PropTypes.func.isRequired
 }
@@ -116,18 +143,21 @@ RelatedFightStyles.propTypes = {
   t: PropTypes.func.isRequired
 }
 
-const RelatedSimulations = ({ data, fightStyle, variation, simulationType, spec, t, tier }) => (
+const Related = ({ data, fightStyle, simulationFeaturedOrder, simulationCategory, simulationType, spec, t, tier, variation }) => (
   <RelatedContainer>
-    <RelatedSimulationTypes data={data} simulationType={simulationType} t={t}/>
+    <RelatedSimulations data={data} simulationFeaturedOrder={simulationFeaturedOrder}
+      simulationCategory={simulationCategory} simulationType={simulationType} t={t}/>
     <RelatedTiers data={data} tier={tier} t={t}/>
     <RelatedSpecs data={data} spec={spec} variation={variation} t={t}/>
     <RelatedFightStyles data={data} fightStyle={fightStyle} t={t}/>
   </RelatedContainer>
 )
 
-RelatedSimulations.propTypes = {
+Related.propTypes = {
   data: PropTypes.object.isRequired,
   fightStyle: PropTypes.string,
+  simulationFeaturedOrder: PropTypes.number,
+  simulationCategory: PropTypes.string,
   simulationType: PropTypes.string,
   spec: PropTypes.string,
   t: PropTypes.func.isRequired,
@@ -135,4 +165,4 @@ RelatedSimulations.propTypes = {
   variation: PropTypes.string
 }
 
-export default RelatedSimulations
+export default Related

@@ -94,18 +94,20 @@ const WowClassTemplate = (props) => {
         in their respective pages. They are updated on a daily basis.</Trans></p>
       <Grid container spacing={16}>
         {
-          simulationTypes.map((group, index) => {
-            const { simulationType } = group.edges[0].node.context
-            return (
-              <Grid item key={index} xs={12} lg={6}>
-                <h2 style={{ textAlign: 'center' }}>{capitalize(t(simulationType))}</h2>
-                <Grid container spacing={8} alignItems={'flex-start'} justify={'center'}>
-                  <TiersList {...props}
-                    groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
+          simulationTypes
+            .sort((a, b) => a.edges[0].node.context.simulationFeaturedOrder - b.edges[0].node.context.simulationFeaturedOrder)
+            .map((group, index) => {
+              const { simulationCategory } = group.edges[0].node.context
+              return (
+                <Grid item key={index} xs={12} lg={6}>
+                  <h2 style={{ textAlign: 'center' }}>{capitalize(t(simulationCategory))}</h2>
+                  <Grid container spacing={8} alignItems={'flex-start'} justify={'center'}>
+                    <TiersList {...props}
+                      groupedEdgesByTier={groupBy(group.edges, (edge) => edge.node.context.tier)}/>
+                  </Grid>
                 </Grid>
-              </Grid>
-            )
-          })
+              )
+            })
         }
       </Grid>
     </div>
@@ -127,7 +129,7 @@ export const query = graphql`
         title
       }
     }
-    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationType: {ne: null}, fightStyle: {eq: "1t"}}}, sort: {fields: [context___order, context___spec, context___variation], order: ASC}) {
+    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationFeaturedOrder: {ne: null}, simulationType: {ne: null}, fightStyle: {eq: "1t"}}}, sort: {fields: [context___spec, context___variation], order: ASC}) {
       group(field: context___simulationType) {
         edges {
           node {
@@ -135,6 +137,8 @@ export const query = graphql`
             path
             context {
               wowClass
+              simulationFeaturedOrder
+              simulationCategory
               simulationType
               tier
               spec

@@ -82,7 +82,7 @@ function processData (simulationType, data, templateDPS, lang) {
       const stepVal = curVal - prevVal
       const tooltip = `
         <div class="chart-tooltip">
-          <b>${data.getValue(row, 0)}<br/> ${simulationType === 'azeritestacks' ? 'Stack' : 'Item Level'} ${data.getColumnLabel(col)}</b><br/>
+          <b>${data.getValue(row, 0)}<br/> ${simulationType === 'azerite-stacks' ? 'Stack' : 'Item Level'} ${data.getColumnLabel(col)}</b><br/>
           <b>Total:</b> ${formatNumber(curVal.toFixed(2))} % (${formatNumber(curAbsVal.toFixed())})<br/>
           <b>Increase:</b> ${formatNumber(stepVal.toFixed(2))}% (${formatNumber(absStepVal.toFixed())} )
         </div>`
@@ -96,8 +96,8 @@ function processData (simulationType, data, templateDPS, lang) {
   // Remove labels from data to add interactive ones in HTML
   const labels = []
   switch (simulationType) {
-    case 'azeritelevels':
-    case 'azeritestacks':
+    case 'azerite-levels':
+    case 'azerite-stacks':
       for (let row = 0; row < data.getNumberOfRows(); row++) {
         const wowLabel = data.getValue(row, 0)
         labels.push(wowAzeriteLabel(wowLabel, lang))
@@ -153,8 +153,8 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
       case 'races':
         data = processRacesData(rawData, templateDPS)
         break
-      case 'azeritelevels':
-      case 'azeritestacks':
+      case 'azerite-levels':
+      case 'azerite-stacks':
       case 'trinkets':
         data = processData(simulationType, rawData, templateDPS, lang)
     }
