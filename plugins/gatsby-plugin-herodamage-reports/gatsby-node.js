@@ -19,7 +19,6 @@ const simulations = {
     simulationTemplate: 'azerite-stacks'
   },
   'combinator-0a': {
-    simulationFeaturedOrder: 3,
     simulationCategory: 'combinations',
     simulationType: 'combinations-0a',
     simulationTemplate: 'combinations'
@@ -35,6 +34,7 @@ const simulations = {
     simulationTemplate: 'combinations'
   },
   'combinator-3a': {
+    simulationFeaturedOrder: 3,
     simulationCategory: 'combinations',
     simulationType: 'combinations-3a',
     simulationTemplate: 'combinations'
