@@ -5,7 +5,8 @@ import { wowAzeriteLabel, wowTalentsLabel } from '../../../utils/wow/ui'
 
 export async function getResultsStates (props, filepath) {
   const { i18nPlugin: { lang }, pageContext } = props
-  const { spec, wowClass } = pageContext
+  const { spec, wowClass, simulationType } = pageContext
+  const stacksCount = parseInt(simulationType.split('-')[1].charAt(0))
 
   // Fetch the .json
   const response = await window.fetch(filepath)
@@ -25,7 +26,7 @@ export async function getResultsStates (props, filepath) {
     const result = { rank: row[0], talents, azeritePower, dps }
     if (multiTargets) result.bossDPS = row[5]
     result.talentsLabel = wowTalentsLabel(talents, wowClass, spec, lang)
-    result.azeritePowerLabel = azeritePower !== 'None' ? wowAzeriteLabel(azeritePower, lang, false) + ' (x1)' : 'None'
+    result.azeritePowerLabel = azeritePower !== 'None' ? wowAzeriteLabel(azeritePower, lang, false) + ` (x${stacksCount})` : 'None'
     result.dpsPercentageDifference = (100 * dps / maxDPS - 100).toFixed(1)
     results.push(result)
 
