@@ -28,7 +28,7 @@ npm run dbc
 
 # Build
 echo "[CI] Gatsby build"
-travis_wait 30 npm run build
+npm run build
 
 # Should we deploy ?
 cd public
