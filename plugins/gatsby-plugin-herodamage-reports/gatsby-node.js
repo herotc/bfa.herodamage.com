@@ -109,7 +109,7 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
   // variation: 'cold-heart-runic-attenuation' (optional, if it doesn't exist then it's an empty string '')
   createNodeField({ node, name: 'variation', value: variation || '' })
 
-  // Register the wow class / simulation type / fight style to create the corresponding pages
+  // Register the wow class / simulation name / fight style / tier to create the corresponding pages
   if (!wowClasses.includes(wowClass)) wowClasses.push(wowClass)
   if (!simulationNames.includes(simulationName)) simulationNames.push(simulationName)
   if (!fightStyles.includes(fightStyle)) fightStyles.push(fightStyle)

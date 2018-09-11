@@ -53,6 +53,18 @@ const SimCPerformance = ({ data, i18nPlugin, pageContext }) => {
   const { t } = i18nPlugin
   const { fightStyle, simulationFeaturedOrder, simulationCategory, simulationType, tier } = pageContext
 
+  // Some reports may not entirely exists since we do combine ourself the parameters assuming everything exists
+  if (!data.statistics) {
+    return (
+      <div>
+        <h1>SimC Performance</h1>
+        <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
+          simulationCategory={simulationCategory} simulationType={simulationType} t={t} tier={tier}/>
+        <div><p>No statistics found.</p></div>
+      </div>
+    )
+  }
+
   const baseChartData = data.statistics.edges.map((edge) => {
     const { context } = edge.node
     const { wowClass, spec, variation, elapsedTime, totalEventsProcessed, totalIterations, totalActors } = context
