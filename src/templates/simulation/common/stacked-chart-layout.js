@@ -6,7 +6,6 @@ import { stackedChart } from '../../../browser/charts/stacked'
 import Helmet from 'react-helmet'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import CopyBox from '../../../components/copy-box'
-import TextBox from '../../../components/text-box'
 import Related from './related'
 import Metas from './metas'
 

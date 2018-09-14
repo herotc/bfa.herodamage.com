@@ -17,12 +17,10 @@ const Footer = ({ classes, siteMetadata }) => (
     <Paper className={classes.footer} elevation={1}>
       <Typography align={'center'}>
         Copyright © 2017-2018 Hero Damage |&nbsp;
-        <a href={siteMetadata.github} title="GitHub Repository" target="_blank"
-          rel="noopener noreferrer nofollow">GitHub</a>&nbsp;|&nbsp;
-        <a href="https://bfa-prepatch.herodamage.com/" title="BfA PrePatch version of Hero Damage" target="_blank"
-          rel="noopener noreferrer nofollow">BfA PrePatch Version</a>&nbsp;|&nbsp;
-        <a href="https://legion.herodamage.com/" title="Legion version of Hero Damage" target="_blank"
-          rel="noopener noreferrer nofollow">Legion Version</a>
+        <a href={siteMetadata.github} title="GitHub Repository">GitHub</a>&nbsp;|&nbsp;
+        <a href="https://bfa-prepatch.herodamage.com/" title="BfA PrePatch version of Hero Damage">BfA PrePatch
+          Version</a>&nbsp;|&nbsp;
+        <a href="https://legion.herodamage.com/" title="Legion version of Hero Damage">Legion Version</a>
       </Typography>
     </Paper>
   </footer>

@@ -115,7 +115,7 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang, container = t
 
     const { spellId, tier } = azeritePower
     if (!tierClassName) tierClassName = `azerite-tier${tier}` // Save the tier
-    labels.push(`<a href="${getWowheadLink(lang)}spell=${spellId}" class="${tierClassName}" target="_blank" rel="noopener noreferrer nofollow">
+    labels.push(`<a href="${getWowheadLink(lang)}spell=${spellId}" class="${tierClassName}">
       <span>${rawSpellName}</span>
     </a>`)
   }
@@ -143,7 +143,7 @@ export function wowTrinketLabel (rawItemName, lang = defaultLang) {
 
   const { itemId } = trinket
   return `<div class="label-container">
-    <a href="${getWowheadLink(lang)}item=${itemId}" target="_blank" rel="noopener noreferrer nofollow">
+    <a href="${getWowheadLink(lang)}item=${itemId}">
       <span>${rawItemName}</span>
     </a>
   </div>`
@@ -165,7 +165,7 @@ export function wowTalentsLabel (talents, wowClass, spec, lang = defaultLang) {
     if (talentChar !== 0) {
       const col = talentChar - 1
       const { spellId } = talentsTree[row][col]
-      label += `<a href="${getWowheadLink(lang)}spell=${spellId}" target="_blank" rel="noopener noreferrer nofollow" data-wh-rename-link="false">
+      label += `<a href="${getWowheadLink(lang)}spell=${spellId}" data-wh-rename-link="false">
         </a>`
     }
   }

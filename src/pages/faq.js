@@ -28,18 +28,17 @@ const FaqPage = ({ data }) => (
         <li>
           <h3>How are these results generated?</h3>
           <p>These results are generated using the <a href="http://www.simulationcraft.org/"
-            title="SimulationCraft Website" target="_blank"
-            rel="noopener noreferrer nofollow">SimulationCraft</a> software, our <a
-            href="https://github.com/Ravenholdt-TC/SimcScripts" title="Ruby scripts we use to generate datas"
-            target="_blank" rel="noopener noreferrer nofollow">Ruby scripts</a>, and several simulation profiles to
-            obtain an overview on multiple aspects of a specialization.</p>
+            title="SimulationCraft Website">SimulationCraft</a> software, our <a
+            href="https://github.com/Ravenholdt-TC/SimcScripts" title="Ruby scripts we use to generate datas">Ruby
+            scripts</a>, and several simulation profiles to obtain an overview on multiple aspects of a specialization.
+          </p>
         </li>
         <li>
           <h3>Where can I find the SimC profiles that are used for the website?</h3>
           <p>We are almost always using SimulationCraft default profiles with our scripts changing things as necessary
             for each setup. If you are interested in the details behind the scenes, you can check out our base
             profiles<a href="https://github.com/Ravenholdt-TC/SimcScripts/tree/master/profiles"
-              title="Profiles used to generate datas" target="_blank" rel="noopener noreferrer nofollow">here</a>.
+              title="Profiles used to generate datas">here</a>.
           </p>
         </li>
       </ul>
