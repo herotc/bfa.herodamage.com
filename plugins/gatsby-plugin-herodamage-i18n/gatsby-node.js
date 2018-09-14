@@ -10,9 +10,7 @@ try {
 }
 
 export const onCreateBabelConfig = ({ actions }) => {
-  actions.setBabelPreset({
-    name: '@lingui/babel-preset-react'
-  })
+  actions.setBabelPreset({ name: '@lingui/babel-preset-react' })
 }
 
 // Create i18n routes

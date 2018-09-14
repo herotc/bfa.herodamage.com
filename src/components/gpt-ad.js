@@ -90,7 +90,7 @@ class Ad extends React.Component {
    * @returns {{}|*}
    */
   static adsReady () {
-    return window.googletag && window.googletag.apiReady
+    return window.gptAdSlots && window.googletag?.apiReady
   }
 
   /**
