@@ -132,7 +132,7 @@ class CombinationsSimulationTemplate extends React.Component {
     const { data, i18nPlugin, pageContext } = this.props
     const { filePath, multiTargets, order, orderBy, page, results, rowsPerPage, azeritePowers, talentsTree } = this.state
     const { t, wowheadLink } = i18nPlugin
-    const { buildTime, fightStyle, gitRevision, name, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateDPS, tier, variation, version, wowClass } = pageContext
+    const { simcBuildTimestamp, fightStyle, simcGitRevision, name, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateDPS, tier, variation, wowVersion, wowClass } = pageContext
     return (
       <div>
         <Helmet>
@@ -159,8 +159,8 @@ class CombinationsSimulationTemplate extends React.Component {
         <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
           simulationCategory={simulationCategory} simulationType={simulationType} spec={spec} t={t} tier={tier}
           variation={variation}/>
-        <Metas buildTime={buildTime} gitRevision={gitRevision}
-          targetError={targetError} templateDPS={templateDPS} version={version}/>
+        <Metas simcBuildTimestamp={simcBuildTimestamp} simcGitRevision={simcGitRevision}
+          targetError={targetError} templateDPS={templateDPS} wowVersion={wowVersion}/>
         {!results &&
         <CircularProgress id="results-loader" color="secondary"/>}
         {results &&

@@ -39,8 +39,8 @@ const SpecsList = ({ classes, i18nPlugin, specs }) => {
   const { t } = i18nPlugin
   return specs.map(({ node }, index) => {
     const { context, path } = node
-    const { spec, variation, buildTime } = context
-    const buildDate = new Date(buildTime * 1000)
+    const { spec, variation, simcBuildTimestamp } = context
+    const buildDate = new Date(simcBuildTimestamp * 1000)
     return (
       <Grid item key={index} xs={12}>
         {index > 0 && <Divider/>}
@@ -143,7 +143,7 @@ export const query = graphql`
               tier
               spec
               variation
-              buildTime
+              simcBuildTimestamp
             }
           }
         }

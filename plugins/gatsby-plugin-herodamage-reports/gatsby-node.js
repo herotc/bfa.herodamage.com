@@ -125,19 +125,20 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
     return
   }
   const { metas } = report
-  const optionsDbc = metas.options.dbc
-  const versionUsed = optionsDbc[optionsDbc['version_used']]
-  createNodeField({ node, name: 'targetError', value: metas.options['target_error'] })
-  createNodeField({ node, name: 'resultTime', value: metas['result_timestamp'] })
-  createNodeField({ node, name: 'version', value: versionUsed['wow_version'] })
-  createNodeField({ node, name: 'build', value: versionUsed['build_level'] })
-  createNodeField({ node, name: 'buildTime', value: metas['build_timestamp'] })
-  createNodeField({ node, name: 'gitRevision', value: metas['git_revision'] || '' })
-  createNodeField({ node, name: 'templateDPS', value: Math.round(metas.player['collected_data'].dps.mean) })
-  createNodeField({ node, name: 'elapsedTime', value: metas.statistics['elapsed_time_seconds'].toFixed(2) })
-  createNodeField({ node, name: 'totalEventsProcessed', value: metas.statistics['total_events_processed'] })
-  createNodeField({ node, name: 'totalIterations', value: metas.statistics['total_iterations'] })
-  createNodeField({ node, name: 'totalActors', value: metas.statistics['total_actors'] })
+  createNodeField({ node, name: 'fightLength', value: metas.fightLength })
+  createNodeField({ node, name: 'fightLengthVariation', value: metas.fightLengthVariation })
+  createNodeField({ node, name: 'targetError', value: metas.targetError })
+  createNodeField({ node, name: 'templateGear', value: metas.templateGear })
+  createNodeField({ node, name: 'templateTalents', value: metas.templateTalents })
+  createNodeField({ node, name: 'templateDPS', value: metas.templateDPS })
+  createNodeField({ node, name: 'elapsedTime', value: metas.elapsedTime })
+  createNodeField({ node, name: 'totalEventsProcessed', value: metas.totalEventsProcessed })
+  createNodeField({ node, name: 'totalIterations', value: metas.totalIterations })
+  createNodeField({ node, name: 'totalActors', value: metas.totalActors })
+  createNodeField({ node, name: 'simcBuildTimestamp', value: metas.simcBuildTimestamp })
+  createNodeField({ node, name: 'simcGitRevision', value: metas.simcGitRevision || '' })
+  createNodeField({ node, name: 'wowVersion', value: metas.wowVersion })
+  createNodeField({ node, name: 'wowBuild', value: metas.wowBuild })
 
   // AzeritePowerWeights Import String
   switch (simulationType) {
@@ -222,17 +223,20 @@ export const createPages = async ({ graphql, actions }) => {
               tier
               spec
               variation
+              fightLength
+              fightLengthVariation
               targetError
-              resultTime
-              version
-              build
-              buildTime
-              gitRevision
+              templateGear
+              templateTalents
               templateDPS
               elapsedTime
               totalEventsProcessed
               totalIterations
               totalActors
+              simcBuildTimestamp
+              simcGitRevision
+              wowVersion
+              wowBuild
               azeritePowerWeights
             }
           }

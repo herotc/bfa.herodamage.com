@@ -34,7 +34,7 @@ class StackedChartLayout extends React.Component {
     const { children, data, i18nPlugin, pageContext } = this.props
     const { filePath } = this.state
     const { t } = i18nPlugin
-    const { azeritePowerWeights, buildTime, fightStyle, gitRevision, name, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateDPS, tier, variation, version, wowClass } = pageContext
+    const { azeritePowerWeights, simcBuildTimestamp, fightStyle, simcGitRevision, name, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateDPS, tier, variation, wowVersion, wowClass } = pageContext
     return (
       <div>
         <Helmet>
@@ -45,8 +45,8 @@ class StackedChartLayout extends React.Component {
         <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
           simulationCategory={simulationCategory} simulationType={simulationType} spec={spec} t={t} tier={tier}
           variation={variation}/>
-        <Metas buildTime={buildTime} gitRevision={gitRevision}
-          targetError={targetError} templateDPS={templateDPS} version={version}/>
+        <Metas simcBuildTimestamp={simcBuildTimestamp} simcGitRevision={simcGitRevision}
+          targetError={targetError} templateDPS={templateDPS} wowVersion={wowVersion}/>
         {azeritePowerWeights &&
         <CopyBox elementId="azerite-power-weights" text={azeritePowerWeights}
           title="AzeritePowerWeights Import String"/>}
