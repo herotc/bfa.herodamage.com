@@ -132,7 +132,7 @@ class CombinationsSimulationTemplate extends React.Component {
     const { data, i18nPlugin, pageContext } = this.props
     const { filePath, multiTargets, order, orderBy, page, results, rowsPerPage, azeritePowers, talentsTree } = this.state
     const { t, wowheadLink } = i18nPlugin
-    const { simcBuildTimestamp, fightStyle, simcGitRevision, name, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateDPS, tier, variation, wowVersion, wowClass } = pageContext
+    const { simcBuildTimestamp, fightStyle, fightLength, fightLengthVariation, name, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
     return (
       <div>
         <Helmet>
@@ -159,8 +159,9 @@ class CombinationsSimulationTemplate extends React.Component {
         <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
           simulationCategory={simulationCategory} simulationType={simulationType} spec={spec} t={t} tier={tier}
           variation={variation}/>
-        <Metas simcBuildTimestamp={simcBuildTimestamp} simcGitRevision={simcGitRevision}
-          targetError={targetError} templateDPS={templateDPS} wowVersion={wowVersion}/>
+        <Metas fightLength={fightLength} fightLengthVariation={fightLengthVariation}
+          simcBuildTimestamp={simcBuildTimestamp} simcGitRevision={simcGitRevision}
+          targetError={targetError} templateDPS={templateDPS} wowBuild={wowBuild} wowVersion={wowVersion}/>
         {!results &&
         <CircularProgress id="results-loader" color="secondary"/>}
         {results &&
@@ -169,11 +170,11 @@ class CombinationsSimulationTemplate extends React.Component {
             onTalentSelect={this.handleTalentSelect}
             azeritePowers={azeritePowers} talentsTree={talentsTree} wowheadLink={wowheadLink}/>
           <p style={{ textAlign: 'center' }}>
-            <span className={'azerite-tier2'}>Inner Ring</span>
+            <span className={'azerite-tier3-specific'}>Outer Ring (Spec Specific)</span>
             &nbsp;|&nbsp;
             <span className={'azerite-tier3-generic'}>Outer Ring (Generic)</span>
             &nbsp;|&nbsp;
-            <span className={'azerite-tier3-specific'}>Outer Ring (Specific)</span>
+            <span className={'azerite-tier2'}>Inner Ring</span>
           </p>
           <Table>
             <EnhancedTableHead multiTargets={multiTargets} onRequestSort={this.handleRequestSort}

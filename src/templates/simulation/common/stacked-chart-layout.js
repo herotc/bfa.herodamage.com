@@ -34,7 +34,7 @@ class StackedChartLayout extends React.Component {
     const { children, data, i18nPlugin, pageContext } = this.props
     const { filePath } = this.state
     const { t } = i18nPlugin
-    const { azeritePowerWeights, simcBuildTimestamp, fightStyle, simcGitRevision, name, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateDPS, tier, variation, wowVersion, wowClass } = pageContext
+    const { azeritePowerWeights, simcBuildTimestamp, fightStyle, fightLength, fightLengthVariation, name, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateTalents, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
     return (
       <div>
         <Helmet>
@@ -45,18 +45,20 @@ class StackedChartLayout extends React.Component {
         <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
           simulationCategory={simulationCategory} simulationType={simulationType} spec={spec} t={t} tier={tier}
           variation={variation}/>
-        <Metas simcBuildTimestamp={simcBuildTimestamp} simcGitRevision={simcGitRevision}
-          targetError={targetError} templateDPS={templateDPS} wowVersion={wowVersion}/>
+        <Metas i18nPlugin={i18nPlugin} fightLength={fightLength} fightLengthVariation={fightLengthVariation}
+          simcBuildTimestamp={simcBuildTimestamp} simcGitRevision={simcGitRevision}
+          targetError={targetError} templateTalents={templateTalents} templateDPS={templateDPS}
+          wowBuild={wowBuild} wowVersion={wowVersion}/>
         {azeritePowerWeights &&
         <CopyBox elementId="azerite-power-weights" text={azeritePowerWeights}
           title="AzeritePowerWeights Import String"/>}
         {simulationType.includes('azerite') &&
         <p style={{ textAlign: 'center' }}>
-          <span className={'azerite-tier2'}>Inner Ring</span>
+          <span className={'azerite-tier3-specific'}>Outer Ring (Spec Specific)</span>
           &nbsp;|&nbsp;
           <span className={'azerite-tier3-generic'}>Outer Ring (Generic)</span>
           &nbsp;|&nbsp;
-          <span className={'azerite-tier3-specific'}>Outer Ring (Specific)</span>
+          <span className={'azerite-tier2'}>Inner Ring</span>
         </p>}
         <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>
