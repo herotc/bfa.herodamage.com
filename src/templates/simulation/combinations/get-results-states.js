@@ -43,12 +43,13 @@ export async function getResultsStates (props, filepath) {
     // filter the azerite powers to get the ones that can be selected
     if (azeritePower !== 'None') {
       if (!azeritePowers[azeritePower]) {
-        const { spellId, tier } = getAzeriteInformation(azeritePower)
+        const { spellId, tier, classesId } = getAzeriteInformation(azeritePower)
         azeritePowers[azeritePower] = {
           spellName: azeritePower,
           selected: true,
           spellId,
-          tier
+          tier,
+          classesId
         }
       }
     }

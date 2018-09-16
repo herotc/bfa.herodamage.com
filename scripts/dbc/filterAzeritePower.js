@@ -5,8 +5,8 @@ export function filterAzeritePower () {
   const AzeritePowersSorted = AzeritePowersRaw.sort((a, b) => a.spellName.localeCompare(b.spellName))
   const AzeritePowers = {}
   for (const azeritePower of AzeritePowersSorted) {
-    const { spellName, powerId, spellId, tier } = azeritePower
-    if (!AzeritePowers[spellName]) AzeritePowers[spellName] = { powerId, spellId, tier }
+    const { spellName, powerId, spellId, tier, classesId } = azeritePower
+    if (!AzeritePowers[spellName]) AzeritePowers[spellName] = { powerId, spellId, tier, classesId }
   }
 
   writeFile('src/assets/wow-data/AzeritePower.json', JSON.stringify(AzeritePowers), (err) => { if (err) console.err(err) })

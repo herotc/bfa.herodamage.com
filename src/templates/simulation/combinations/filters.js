@@ -2,6 +2,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { getAzeriteClassName } from '../../../utils/wow/ui'
 // Components
 import { Trans } from '@lingui/react'
 import Divider from '@material-ui/core/Divider'
@@ -66,11 +67,11 @@ class Filters extends React.Component {
               </div>
               <Grid container spacing={8} style={{ width: '185px' }}>
                 {Object.values(azeritePowers).map((azeritePower) => {
-                  const { selected, spellName, spellId, tier } = azeritePower
+                  const { selected, spellName, spellId, tier, classesId } = azeritePower
                   return (
                     <AzeritePower item key={`${name}-${spellName}`} xs={12} selected={selected}
                       onClick={this.createAzeritePowerSelectHandler(spellName)}>
-                      <a href={`${wowheadLink}spell=${spellId}`} className={`azerite-tier${tier}`}>
+                      <a href={`${wowheadLink}spell=${spellId}`} className={getAzeriteClassName(tier, classesId)}>
                         <span>{spellName}</span>
                       </a>
                     </AzeritePower>

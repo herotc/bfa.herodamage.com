@@ -98,6 +98,20 @@ export function getWowheadLink (lang) {
 
 /**
  *
+ * @param tier
+ * @param classesId
+ * @returns {string}
+ */
+export function getAzeriteClassName (tier, classesId) {
+  let tierClassName = `azerite-tier${tier}`
+  if (tier === 3) {
+    tierClassName += `-${classesId.length > 1 ? 'generic' : 'specific'}`
+  }
+  return tierClassName
+}
+
+/**
+ *
  * @param rawSpellName
  * @param lang
  * @param container
@@ -113,8 +127,8 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang, container = t
     const azeritePower = getAzeriteInformation(spellName)
     if (!azeritePower) continue
 
-    const { spellId, tier } = azeritePower
-    if (!tierClassName) tierClassName = `azerite-tier${tier}` // Save the tier
+    const { spellId, tier, classesId } = azeritePower
+    if (!tierClassName) tierClassName = getAzeriteClassName(tier, classesId) // Save the tier
     labels.push(`<a href="${getWowheadLink(lang)}spell=${spellId}" class="${tierClassName}">
       <span>${rawSpellName}</span>
     </a>`)

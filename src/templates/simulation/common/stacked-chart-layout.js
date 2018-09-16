@@ -54,7 +54,9 @@ class StackedChartLayout extends React.Component {
         <p style={{ textAlign: 'center' }}>
           <span className={'azerite-tier2'}>Inner Ring</span>
           &nbsp;|&nbsp;
-          <span className={'azerite-tier3'}>Outer Ring</span>
+          <span className={'azerite-tier3-generic'}>Outer Ring (Generic)</span>
+          &nbsp;|&nbsp;
+          <span className={'azerite-tier3-specific'}>Outer Ring (Specific)</span>
         </p>}
         <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>
