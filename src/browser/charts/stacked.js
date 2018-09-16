@@ -11,6 +11,11 @@ import { excludeEmptyRows, formatNumber, initOverlay, removeLoading } from './co
  */
 function processRacesData (data, templateDPS) {
   // Sort
+  let maxDPS = 0
+  for (let row = 0; row < data.getNumberOfRows(); row++) {
+    const dps = data.getValue(row, 1)
+    if (dps > maxDPS) maxDPS = dps
+  }
   data.sort({ column: 1, desc: true })
 
   // Add Tooltip and Style column
@@ -43,7 +48,7 @@ function processRacesData (data, templateDPS) {
     data.setValue(row, 1, curVal)
   }
 
-  return data
+  return { data, maxDPS }
 }
 
 /**
@@ -56,12 +61,14 @@ function processRacesData (data, templateDPS) {
 function processData (simulationType, data, templateDPS, lang) {
   // Sorting
   const sortCol = data.addColumn('number')
+  let maxDPS = 0
   for (let row = 0; row < data.getNumberOfRows(); row++) {
-    let biggestTotalValue = 0
+    let dps = 0
     for (let col = 1; col < sortCol; col++) {
-      if (data.getValue(row, col) > biggestTotalValue) { biggestTotalValue = data.getValue(row, col) }
+      if (data.getValue(row, col) > dps) dps = data.getValue(row, col)
     }
-    data.setValue(row, sortCol, biggestTotalValue)
+    if (dps > maxDPS) maxDPS = dps
+    data.setValue(row, sortCol, dps)
   }
   data.sort([{ column: sortCol, desc: true }])
   data.removeColumn(sortCol)
@@ -118,7 +125,7 @@ function processData (simulationType, data, templateDPS, lang) {
   }
   refreshWowheadLinks()
 
-  return data
+  return { data, maxDPS }
 }
 
 /**
@@ -148,15 +155,36 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
     const rawData = new google.visualization.arrayToDataTable(results)
 
     // Process data
-    let data
+    let rawDataProcessed
     switch (simulationType) {
       case 'races':
-        data = processRacesData(rawData, templateDPS)
+        rawDataProcessed = processRacesData(rawData, templateDPS)
         break
       case 'azerite-levels':
       case 'azerite-stacks':
       case 'trinkets':
-        data = processData(simulationType, rawData, templateDPS, lang)
+        rawDataProcessed = processData(simulationType, rawData, templateDPS, lang)
+    }
+    const { data, maxDPS } = rawDataProcessed
+
+    // Compute the horizontal axis stacks value
+    const maxPercentageGain = Math.floor(100 * ((templateDPS + maxDPS) / templateDPS - 1))
+    const maxPercentageGainHAxis = maxPercentageGain % 2 === 0 ? maxPercentageGain : maxPercentageGain + 1
+    const hAxisStacks = []
+    switch (simulationType) {
+      case 'races':
+        // A gridline every 0.5%
+        for (let i = 1; i <= maxPercentageGainHAxis * 2; i++) {
+          hAxisStacks.push(i * 0.5)
+        }
+        break
+      case 'azerite-levels':
+      case 'azerite-stacks':
+      case 'trinkets':
+        // A gridline every 2%
+        for (let i = 1; i <= maxPercentageGainHAxis / 2; i++) {
+          hAxisStacks.push(i * 2)
+        }
     }
 
     // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
@@ -192,13 +220,14 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
       },
       hAxis: {
         gridlines: {
-          count: 10
+          count: hAxisStacks.length
         },
         format: '#.#\'%\'',
         textStyle: {
           fontSize: 14,
           color: textColor
         },
+        ticks: hAxisStacks,
         title: '% DPS Gain',
         titleTextStyle: {
           fontSize: 18,
