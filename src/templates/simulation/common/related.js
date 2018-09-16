@@ -129,7 +129,7 @@ const RelatedFightStyles = ({ data: { relatedFightStyles }, fightStyle, t }) => 
         return (
           <Button key={index} variant="contained" color="primary" disabled={fightStyle === nodeFightStyle}
             component={Link} to={path} style={{ margin: '4px 8px' }}>
-            {t(nodeFightStyle)}
+            {`[${nodeFightStyle.toUpperCase()}] ${t(`fightstyle-${nodeFightStyle}`)}`}
           </Button>
         )
       })}
