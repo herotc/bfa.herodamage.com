@@ -74,9 +74,6 @@ export const onInitialClientRender = () => {
     })
   }
 
-  // Wowhead
-  window.whTooltips = { colorLinks: true, iconizeLinks: true, iconSize: true, renameLinks: true }
-
   // Prevent further initialization
   hd.hasInitialized = true
 }

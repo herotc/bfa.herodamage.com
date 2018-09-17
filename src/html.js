@@ -29,6 +29,7 @@ export default class HTML extends React.Component {
           <div key={'body'} id="___gatsby" dangerouslySetInnerHTML={{ __html: body }}/>
           {postBodyComponents}
           {cookieconsent}
+          <script dangerouslySetInnerHTML={ { __html: `var whTooltips = {colorLinks: true, iconizeLinks: true, iconSize: true, renameLinks: true};` } }/>
           <script src="https://wow.zamimg.com/widgets/power.js"/>
         </body>
       </html>
