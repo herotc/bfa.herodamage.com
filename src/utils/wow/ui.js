@@ -118,8 +118,10 @@ export function getAzeriteClassName (tier, classesId) {
  * @returns {string}
  */
 export function wowAzeriteLabel (rawSpellName, lang = defaultLang, container = true) {
+  // Split up the variations
+  const parts = rawSpellName.split(' -- ')
   // Some labels are concatened, like the Alliance / Horde one, we always take the first one
-  const spellNames = rawSpellName.split(' / ')
+  const spellNames = parts[0].split(' / ')
 
   const labels = []
   let tierClassName
@@ -134,14 +136,28 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang, container = t
     </a>`)
   }
 
-  if (container) {
-    if (labels.length === 0) {
-      return `<div class="label-container">${rawSpellName}</div>`
-    } else {
-      return `<div class="label-container ${tierClassName}">${labels.join(' ')}</div>`
-    }
+  if (labels.length === 0) {
+    return (container && `<div class="label-container">${rawSpellName}</div>`) || `${rawSpellName}`
   } else {
-    return (labels.length === 0 && `${rawSpellName}`) || `${labels.join(' ')}`
+    let label = labels.join(' ')
+
+    // Add back the formatted variations
+    if (parts[1]) {
+      const variations = parts[1].split(',')
+      for (const variation of variations) {
+        const parts = variation.split(':')
+        const variationName = parts[0]
+        const variationValue = parts[1]
+        switch (variationName) {
+          case 'ra':
+            label += ` (<a href="${getWowheadLink(lang)}spell=280573" data-wh-rename-link="false">
+            </a>x${variationValue})`
+            break
+        }
+      }
+    }
+
+    return (container && `<div class="label-container ${tierClassName}">${label}</div>`) || `${label}`
   }
 }
 

@@ -149,8 +149,10 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
       const powers = []
       for (let i = 1; i < results.length; i++) {
         const value = results[i]
-        // Some labels are concatened, like the Alliance / Horde one, we split them
-        const spellNames = value.shift().split(' / ')
+        // Split up the variations, those aren't supported by the addons atm
+        const parts = value.shift().split(' -- ')
+        // Some labels are concatened, like the Alliance / Horde one, we always take the first one
+        const spellNames = parts[0].split(' / ')
         // Insert each power (powerId and meanDPS)
         for (const spellName of spellNames) {
           const { powerId } = getAzeriteInformation(spellName)
