@@ -170,8 +170,9 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang, container = t
         const variationValue = parts[1]
         switch (variationName) {
           case 'ra':
-            label += ` (<a href="${getWowheadLink(lang)}spell=280573" data-wh-rename-link="false">
-            </a>x${variationValue})`
+            label += ` (<a href="${getWowheadLink(lang)}spell=280573" class="${tierClassName}" data-wh-rename-link="false">
+              <span>x${variationValue}</span>
+            </a>)`
             break
         }
       }
