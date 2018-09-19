@@ -132,7 +132,7 @@ class CombinationsSimulationTemplate extends React.Component {
     const { data, i18nPlugin, pageContext } = this.props
     const { filePath, multiTargets, order, orderBy, page, results, rowsPerPage, azeritePowers, talentsTree } = this.state
     const { t, wowheadLink } = i18nPlugin
-    const { simcBuildTimestamp, fightStyle, fightLength, fightLengthVariation, name, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateGear, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
+    const { fightStyle, fightLength, fightLengthVariation, name, simcBuildTimestamp, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateGear, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
     return (
       <div>
         <Helmet>
@@ -159,9 +159,10 @@ class CombinationsSimulationTemplate extends React.Component {
         <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
           simulationCategory={simulationCategory} simulationType={simulationType} spec={spec} t={t} tier={tier}
           variation={variation}/>
-        <Metas fightLength={fightLength} fightLengthVariation={fightLengthVariation}
-          simcBuildTimestamp={simcBuildTimestamp} simcGitRevision={simcGitRevision} targetError={targetError}
-          templateGear={templateGear} templateDPS={templateDPS} wowBuild={wowBuild} wowVersion={wowVersion}/>
+        <Metas i18nPlugin={i18nPlugin} fightLength={fightLength} fightLengthVariation={fightLengthVariation}
+          simcBuildTimestamp={simcBuildTimestamp} simulationCategory={simulationCategory}
+          simcGitRevision={simcGitRevision} targetError={targetError} templateGear={templateGear}
+          templateDPS={templateDPS} wowBuild={wowBuild} wowVersion={wowVersion}/>
         {!results &&
         <CircularProgress id="results-loader" color="secondary"/>}
         {results &&

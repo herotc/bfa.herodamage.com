@@ -12,7 +12,7 @@ function timeAgo (date) {
   }
 }
 
-const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimestamp, simcGitRevision, targetError, templateGear, templateTalents, templateDPS, wowBuild, wowVersion }) => {
+const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimestamp, simulationCategory, simcGitRevision, targetError, templateGear, templateTalents, templateDPS, wowBuild, wowVersion }) => {
   const buildDate = new Date(simcBuildTimestamp * 1000)
   const lang = i18nPlugin?.lang
   return (
@@ -54,13 +54,12 @@ const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimesta
                   wowheadArgs += `&bonus=${value.split('/').join(':')}`
                   break
                 case 'azerite_powers':
+                  if (simulationCategory === 'azerite' || simulationCategory === 'combinations') break
                   wowheadArgs += `&azerite-powers=${value.split('/').join(':')}`
                   break
               }
             }
-            return (
-              <a key={simcEncoded} href={`${getWowheadLink(lang)}${wowheadArgs}`} data-wh-rename-link="false"/>
-            )
+            return <a key={simcEncoded} href={`${getWowheadLink(lang)}${wowheadArgs}`} data-wh-rename-link="false"/>
           })}
         </>
         }
@@ -75,8 +74,9 @@ Metas.propTypes = {
   fightLengthVariation: PropTypes.number.isRequired,
   simcBuildTimestamp: PropTypes.number.isRequired,
   simcGitRevision: PropTypes.string.isRequired,
+  simulationCategory: PropTypes.string,
   targetError: PropTypes.number.isRequired,
-  templateGear: PropTypes.string,
+  templateGear: PropTypes.array,
   templateTalents: PropTypes.array,
   templateDPS: PropTypes.number.isRequired,
   wowBuild: PropTypes.number.isRequired,
