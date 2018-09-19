@@ -123,7 +123,6 @@ function processData (simulationType, data, templateDPS, lang) {
   for (let label of labels) {
     interactiveLabels.innerHTML += label
   }
-  refreshWowheadLinks()
 
   return { data, maxDPS }
 }
@@ -165,6 +164,7 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
       case 'trinkets':
         rawDataProcessed = processData(simulationType, rawData, templateDPS, lang)
     }
+    refreshWowheadLinks()
     const { data, maxDPS } = rawDataProcessed
 
     // Compute the horizontal axis stacks value
