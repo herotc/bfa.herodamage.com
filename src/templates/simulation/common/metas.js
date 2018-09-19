@@ -12,7 +12,7 @@ function timeAgo (date) {
   }
 }
 
-const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimestamp, simcGitRevision, targetError, templateTalents, templateDPS, wowBuild, wowVersion }) => {
+const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimestamp, simcGitRevision, targetError, templateGear, templateTalents, templateDPS, wowBuild, wowVersion }) => {
   const buildDate = new Date(simcBuildTimestamp * 1000)
   const lang = i18nPlugin?.lang
   return (
@@ -37,6 +37,33 @@ const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimesta
           ))}
         </>
         }
+        {templateGear && lang &&
+        <>
+          <br/>
+          <Trans><b>Gear:</b></Trans>&nbsp;
+          {templateGear.map((simcEncoded) => {
+            const parts = simcEncoded.split(',')
+            let wowheadArgs = ''
+            for (const part of parts) {
+              const [option, value] = part.split('=')
+              switch (option){
+                case 'id':
+                  wowheadArgs += `item=${value}`
+                  break
+                case 'bonus_id':
+                  wowheadArgs += `&bonus=${value.split('/').join(':')}`
+                  break
+                case 'azerite_powers':
+                  wowheadArgs += `&azerite-powers=${value.split('/').join(':')}`
+                  break
+              }
+            }
+            return (
+              <a key={simcEncoded} href={`${getWowheadLink(lang)}${wowheadArgs}`} data-wh-rename-link="false"/>
+            )
+          })}
+        </>
+        }
       </p>
     </div>
   )
@@ -49,6 +76,7 @@ Metas.propTypes = {
   simcBuildTimestamp: PropTypes.number.isRequired,
   simcGitRevision: PropTypes.string.isRequired,
   targetError: PropTypes.number.isRequired,
+  templateGear: PropTypes.string,
   templateTalents: PropTypes.array,
   templateDPS: PropTypes.number.isRequired,
   wowBuild: PropTypes.number.isRequired,

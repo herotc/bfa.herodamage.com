@@ -34,7 +34,7 @@ class StackedChartLayout extends React.Component {
     const { children, data, i18nPlugin, pageContext } = this.props
     const { filePath } = this.state
     const { t } = i18nPlugin
-    const { azeritePowerWeights, simcBuildTimestamp, fightStyle, fightLength, fightLengthVariation, name, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateTalents, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
+    const { azeritePowerWeights, simcBuildTimestamp, fightStyle, fightLength, fightLengthVariation, name, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateGear, templateTalents, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
     return (
       <div>
         <Helmet>
@@ -46,8 +46,8 @@ class StackedChartLayout extends React.Component {
           simulationCategory={simulationCategory} simulationType={simulationType} spec={spec} t={t} tier={tier}
           variation={variation}/>
         <Metas i18nPlugin={i18nPlugin} fightLength={fightLength} fightLengthVariation={fightLengthVariation}
-          simcBuildTimestamp={simcBuildTimestamp} simcGitRevision={simcGitRevision}
-          targetError={targetError} templateTalents={templateTalents} templateDPS={templateDPS}
+          simcBuildTimestamp={simcBuildTimestamp} simcGitRevision={simcGitRevision} targetError={targetError}
+          templateGear={templateGear} templateTalents={templateTalents} templateDPS={templateDPS}
           wowBuild={wowBuild} wowVersion={wowVersion}/>
         {azeritePowerWeights &&
         <CopyBox elementId="azerite-power-weights" text={azeritePowerWeights}
