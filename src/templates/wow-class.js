@@ -6,7 +6,7 @@ import capitalize from 'lodash/capitalize'
 import groupBy from 'lodash/groupBy'
 import startCase from 'lodash/startCase'
 import { withStyles } from '@material-ui/core/styles'
-import { getSpecVariation } from '../utils/wow/ui'
+import { getSpecWithVariation } from '../utils/wow/ui'
 // Components
 import Helmet from 'react-helmet'
 import { DateFormat, Trans } from '@lingui/react'
@@ -46,7 +46,7 @@ const SpecsList = ({ classes, i18nPlugin, specs }) => {
         {index > 0 && <Divider/>}
         <ListItem button component={Link} to={path} className={classes.name}>
           <Typography>
-            {getSpecVariation(t, spec, variation)}
+            {getSpecWithVariation(t, spec, variation)}
             <span><DateFormat value={buildDate} format={{ month: 'short', day: '2-digit' }}/></span>
           </Typography>
         </ListItem>
@@ -129,7 +129,7 @@ export const query = graphql`
         title
       }
     }
-    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationFeaturedOrder: {ne: null}, simulationType: {ne: null}, fightStyle: {eq: "1t"}}}, sort: {fields: [context___spec, context___variation], order: ASC}) {
+    allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, simulationFeaturedOrder: {ne: null}, simulationType: {ne: null}, fightStyle: {eq: "1t"}, variation: {eq: ""}}}, sort: {fields: [context___spec, context___variation], order: ASC}) {
       group(field: context___simulationType) {
         edges {
           node {

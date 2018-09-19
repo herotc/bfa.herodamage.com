@@ -53,16 +53,36 @@ export function wowIcon (wowClass) {
  *
  * @param t
  * @param spec
+ * @param formatted
+ * @returns {string}
+ */
+export function getSpec (t, spec, formatted = true) {
+  return (formatted && startCase(t(spec))) || t(spec)
+}
+
+/**
+ *
+ * @param t
  * @param variation
  * @param formatted
  * @returns {string}
  */
-export function getSpecVariation (t, spec, variation, formatted = true) {
-  if (formatted) {
-    return `${startCase(t(spec))}${variation !== '' ? ` ${startCase(t(variation))}` : ''}`
-  } else {
-    return `${t(spec)}${variation !== '' ? ` ${t(variation)}` : ''}`
-  }
+export function getSpecVariation (t, variation, formatted = true) {
+  return (formatted && startCase(t(variation))) || t(variation)
+}
+
+/**
+ *
+ * @param t
+ * @param spec
+ * @param variation
+ * @param formatted
+ * @returns {string}
+ */
+export function getSpecWithVariation (t, spec, variation, formatted = true) {
+  const spec2 = getSpec(t, spec, formatted)
+  const variation2 = getSpecVariation(t, variation, formatted)
+  return (variation2 !== '' && `${spec2} ${variation2}`) || `${spec2}`
 }
 
 /**

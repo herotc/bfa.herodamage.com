@@ -3,7 +3,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { getWowClassColor } from '../utils/wow/core'
-import { getSpecVariation } from '../utils/wow/ui'
+import { getSpecWithVariation } from '../utils/wow/ui'
 // Components
 import { Chart } from 'react-google-charts'
 import Related from './simulation/common/related'
@@ -69,7 +69,7 @@ const SimCPerformance = ({ data, i18nPlugin, pageContext }) => {
     const { context } = edge.node
     const { wowClass, spec, variation, elapsedTime, totalEventsProcessed, totalIterations, totalActors } = context
     return [
-      getSpecVariation(t, spec, variation),
+      getSpecWithVariation(t, spec, variation),
       { elapsedTime, totalEventsProcessed, totalIterations, totalActors },
       `color: ${getWowClassColor(wowClass)}`
     ]
