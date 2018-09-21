@@ -145,8 +145,11 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
     case 'azerite-levels':
     case 'azerite-stacks':
       const { results } = report
-      // Build the powers array
-      const powers = []
+      // Build the powers arrays
+      // AzeritePowerWeights (APW)
+      const apwPowers = []
+      // AzeriteForge (AF)
+      const afPowers = []
       for (let i = 1; i < results.length; i++) {
         const value = results[i]
         // Split up the variations, those aren't supported by the addons atm
@@ -156,26 +159,38 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
         // Insert each power (powerId and meanDPS)
         for (const spellName of spellNames) {
           const { powerId } = getAzeriteInformation(spellName)
+
+          // Calculate mean DPS for AzeritePowerWeights
           const totalDPS = value.reduce((accumulator, currentValue) => accumulator + currentValue)
-          powers.push({ powerId, meanDPS: totalDPS / value.length })
+          apwPowers.push({ powerId, meanDPS: totalDPS / value.length })
+
+          // Use actual values for AzeriteForge
+          const afWeights = []
+          for (let j = 1; j < results[0].length; j++) {
+            afWeights.push(`${results[0][j]}:${value[j - 1]}`)
+          }
+          afPowers.push(`[${powerId}]${afWeights.join(',')},^`)
         }
       }
       // Descending sort using meanDPS
-      powers.sort((a, b) => b.meanDPS - a.meanDPS)
+      apwPowers.sort((a, b) => b.meanDPS - a.meanDPS)
       // Compute the weights
-      const bestPower = powers[0]
+      const bestPower = apwPowers[0]
       bestPower.weight = 10 // Defined by the addon as reference
-      for (let i = 1; i < powers.length; i++) {
-        const power = powers[i]
+      for (let i = 1; i < apwPowers.length; i++) {
+        const power = apwPowers[i]
         // Compute the weight relatively to the best power
         power.weight = (power.meanDPS / bestPower.meanDPS * bestPower.weight).toFixed(2)
       }
-      // Create the weightsString
+      // Create the import string for AzeritePowerWeights
       const { classId, specId } = getWowClassIdAndSpecId(wowClass, spec)
-      const weigts = powers.map(({ powerId, weight }) => `${powerId}=${weight}`)
-      const weightsName = `herodamage.com - ${simulationType === 'azeritelevels' ? 'Levels' : 'Stacks'}_${fightStyle.toUpperCase()}_${tier.toUpperCase()}`
-      const weightsString = `( AzeritePowerWeights:1:"${weightsName}":${classId}:${specId}: ${weigts.join(', ')} )`
-      createNodeField({ node, name: 'azeritePowerWeights', value: weightsString })
+      const apwWeights = apwPowers.map(({ powerId, weight }) => `${powerId}=${weight}`)
+      const apwWeightsName = `herodamage.com - ${simulationType === 'azeritelevels' ? 'Levels' : 'Stacks'}_${fightStyle.toUpperCase()}_${tier.toUpperCase()}`
+      const apwWeightsString = `( AzeritePowerWeights:1:"${apwWeightsName}":${classId}:${specId}: ${apwWeights.join(', ')} )`
+      createNodeField({ node, name: 'azeritePowerWeights', value: apwWeightsString })
+      // Create the import string for AzeriteForge
+      const afWeightsString = `AZFORGE:${classId}:${specId}^${afPowers.join('')}`
+      createNodeField({ node, name: 'azeriteForgeWeights', value: afWeightsString })
       break
   }
 }
@@ -240,6 +255,7 @@ export const createPages = async ({ graphql, actions }) => {
               wowVersion
               wowBuild
               azeritePowerWeights
+              azeriteForgeWeights
             }
           }
         }
