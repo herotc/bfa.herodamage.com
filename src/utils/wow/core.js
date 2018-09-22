@@ -42,8 +42,37 @@ export function getWowClassIdAndSpecId (wowClass, spec) {
  */
 export function getTalentsTree (wowClass, spec) {
   const { classId, specId } = getWowClassIdAndSpecId(wowClass, spec)
-  const classTalents = Talents[classId]
+  const classTalents = Talents.mapping[classId]
   return Object.assign({}, classTalents[specId])
+}
+
+/**
+ *
+ * @param talentSpellIds
+ * @returns {string}
+ */
+export function getTalentsMappingFromSpellIds (talentSpellIds) {
+  let mapping = ''
+  for (const talentSpellId of talentSpellIds) {
+    mapping += Talents.spellIdsToColumn[talentSpellId]
+  }
+  return mapping
+}
+
+/**
+ *
+ * @param mappingA
+ * @param mappingB
+ * @returns {string}
+ */
+export function getTalentsMappingDifference (mappingA, mappingB) {
+  let mapping = ''
+  for (let i = 0; i < mappingA.length; i++) {
+    const columnA = mappingA.charAt(i)
+    const columnB = mappingB.charAt(i)
+    mapping += columnA === columnB ? '0' : columnB
+  }
+  return mapping
 }
 
 /**

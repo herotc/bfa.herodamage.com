@@ -26,7 +26,7 @@ export async function getResultsStates (props, filepath) {
     const result = { rank: row[0], talents, azeritePower, dps }
     if (multiTargets) result.bossDPS = row[5]
     result.talentsLabel = wowTalentsLabel(talents, wowClass, spec, lang)
-    result.azeritePowerLabel = azeritePower !== 'None' ? wowAzeriteLabel(azeritePower, lang, false) + ` (x${stacksCount})` : 'None'
+    result.azeritePowerLabel = azeritePower !== 'None' ? wowAzeriteLabel(azeritePower, wowClass, spec, talents, lang, false) + ` (x${stacksCount})` : 'None'
     result.dpsPercentageDifference = (100 * dps / maxDPS - 100).toFixed(1)
     results.push(result)
 

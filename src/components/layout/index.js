@@ -61,7 +61,7 @@ const styles = (theme) => ({
       float: 'left',
       marginTop: 53,
       position: 'relative',
-      width: 240,
+      width: 320,
       zIndex: 1,
       '& .label-container': {
         color: theme.palette.secondary.main, // Needed to have the same color for ellipsis

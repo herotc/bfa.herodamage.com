@@ -32,9 +32,10 @@ const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimesta
         <>
           <br/>
           <Trans><b>Talents:</b></Trans>&nbsp;
-          {templateTalents.map((spellId) => (
-            <a key={spellId} href={`${getWowheadLink(lang)}spell=${spellId}`} data-wh-rename-link="false"/>
-          ))}
+          {templateTalents.map((spellId) => {
+            if (spellId === 0) return null
+            return <a key={spellId} href={`${getWowheadLink(lang)}spell=${spellId}`} data-wh-rename-link="false"/>
+          })}
         </>
         }
         {templateGear && lang &&
@@ -46,7 +47,7 @@ const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimesta
             let wowheadArgs = ''
             for (const part of parts) {
               const [option, value] = part.split('=')
-              switch (option){
+              switch (option) {
                 case 'id':
                   wowheadArgs += `item=${value}`
                   break

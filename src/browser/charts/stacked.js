@@ -2,6 +2,7 @@ import load from 'little-loader'
 
 import { refreshWowheadLinks, wowAzeriteLabel, wowTrinketLabel } from '../../utils/wow/ui'
 import { excludeEmptyRows, formatNumber, initOverlay, removeLoading } from './common'
+import { getTalentsMappingFromSpellIds } from '../../utils/wow/core'
 
 /**
  *
@@ -55,10 +56,14 @@ function processRacesData (data, templateDPS) {
  *
  * @param simulationType
  * @param data
+ * @param wowClass
+ * @param spec
+ * @param talentsMapping
  * @param templateDPS
+ * @param lang
  * @returns {*}
  */
-function processData (simulationType, data, templateDPS, lang) {
+function processData (simulationType, data, wowClass, spec, talentsMapping, templateDPS, lang) {
   // Sorting
   const sortCol = data.addColumn('number')
   let maxDPS = 0
@@ -107,7 +112,7 @@ function processData (simulationType, data, templateDPS, lang) {
     case 'azerite-stacks':
       for (let row = 0; row < data.getNumberOfRows(); row++) {
         const wowLabel = data.getValue(row, 0)
-        labels.push(wowAzeriteLabel(wowLabel, lang))
+        labels.push(wowAzeriteLabel(wowLabel, wowClass, spec, talentsMapping, lang))
         data.setValue(row, 0, '')
       }
       break
@@ -129,14 +134,13 @@ function processData (simulationType, data, templateDPS, lang) {
 
 /**
  *
- * @param simulationType
+ * @param pageContext
  * @param reportPath
  * @param chartTitle
- * @param templateDPS
  * @param lang
  * @returns {Promise<void>}
  */
-export async function stackedChart (simulationType, reportPath, chartTitle, templateDPS, lang) {
+export async function stackedChart (pageContext, reportPath, chartTitle, lang) {
   if (!window.google) {
     await new Promise((resolve, reject) => {
       load('https://www.gstatic.com/charts/loader.js', (err) => {
@@ -147,6 +151,9 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
   }
   const google = window.google
   const googleChartElement = document.getElementById('google-chart')
+
+  const { simulationType, spec, templateTalents, templateDPS, wowClass } = pageContext
+  const talentsMapping = getTalentsMappingFromSpellIds(templateTalents)
 
   const drawChart = async () => {
     const response = await window.fetch(reportPath)
@@ -162,7 +169,7 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
       case 'azerite-levels':
       case 'azerite-stacks':
       case 'trinkets':
-        rawDataProcessed = processData(simulationType, rawData, templateDPS, lang)
+        rawDataProcessed = processData(simulationType, rawData, wowClass, spec, talentsMapping, templateDPS, lang)
     }
     refreshWowheadLinks()
     const { data, maxDPS } = rawDataProcessed
@@ -205,7 +212,7 @@ export async function stackedChart (simulationType, reportPath, chartTitle, temp
         top: 50,
         bottom: 100,
         right: 100,
-        left: 250
+        left: 330
       },
       fontName: '"Roboto", "Helvetica", "Arial", sans-serif',
       titleTextStyle: {

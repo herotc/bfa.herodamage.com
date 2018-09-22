@@ -58,8 +58,7 @@ class Filters extends React.Component {
                       <Talent item key={`${name}-${rowId}-${colId}`} xs={4} disabled={disabled} selected={selected}
                         onClick={this.createTalentSelectHandler(rowId, colId)}>
                         <a href={`${wowheadLink}spell=${spellId}`} data-wh-rename-link="false"
-                          data-wh-icon-size="medium">
-                        </a>
+                          data-wh-icon-size="medium"/>
                       </Talent>
                     ))}
                   </Grid>

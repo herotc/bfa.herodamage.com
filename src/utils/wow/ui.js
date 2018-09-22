@@ -1,5 +1,5 @@
 // Dependencies
-import { getAzeriteInformation, getTalentsTree, getTrinketInformation } from './core'
+import { getAzeriteInformation, getTalentsMappingDifference, getTalentsTree, getTrinketInformation } from './core'
 import startCase from 'lodash/startCase'
 import { defaultLang } from '../../../plugins/gatsby-plugin-herodamage-i18n'
 // Assets
@@ -133,13 +133,16 @@ export function getAzeriteClassName (tier, classesId) {
 /**
  *
  * @param rawSpellName
+ * @param wowClass
+ * @param spec
+ * @param templateTalentsMapping
  * @param lang
  * @param container
  * @returns {string}
  */
-export function wowAzeriteLabel (rawSpellName, lang = defaultLang, container = true) {
+export function wowAzeriteLabel (rawSpellName, wowClass, spec, templateTalentsMapping, lang = defaultLang, container = true) {
   // Split up the variations
-  const parts = rawSpellName.split(' -- ')
+  const parts = rawSpellName.split('--')
   // Some labels are concatened, like the Alliance / Horde one, we always take the first one
   const spellNames = parts[0].split(' / ')
 
@@ -163,19 +166,26 @@ export function wowAzeriteLabel (rawSpellName, lang = defaultLang, container = t
 
     // Add back the formatted variations
     if (parts[1]) {
-      const variations = parts[1].split(',')
+      const variations = parts[1].split(';')
+      const variationStrings = []
       for (const variation of variations) {
         const parts = variation.split(':')
         const variationName = parts[0]
         const variationValue = parts[1]
         switch (variationName) {
+          case 'talents':
+            const talents = getTalentsMappingDifference(templateTalentsMapping, variationValue)
+            console.log(templateTalentsMapping, variationValue, talents)
+            variationStrings.push(`${wowTalentsLabel(talents, wowClass, spec, lang)}`)
+            break
           case 'ra':
-            label += ` (<a href="${getWowheadLink(lang)}spell=280573" class="${tierClassName}" data-wh-rename-link="false">
+            variationStrings.push(`<a href="${getWowheadLink(lang)}spell=280573" class="${tierClassName}" data-wh-rename-link="false">
               <span>x${variationValue}</span>
-            </a>)`
+            </a>`)
             break
         }
       }
+      label += `&nbsp;|&nbsp;${variationStrings.join(' - ')}`
     }
 
     return (container && `<div class="label-container ${tierClassName}">${label}</div>`) || `${label}`
@@ -216,8 +226,7 @@ export function wowTalentsLabel (talents, wowClass, spec, lang = defaultLang) {
     if (talentChar !== 0) {
       const col = talentChar - 1
       const { spellId } = talentsTree[row][col]
-      label += `<a href="${getWowheadLink(lang)}spell=${spellId}" data-wh-rename-link="false">
-        </a>`
+      label += `<a href="${getWowheadLink(lang)}spell=${spellId}" data-wh-rename-link="false"></a>`
     }
   }
   return label
