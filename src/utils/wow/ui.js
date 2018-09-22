@@ -175,7 +175,6 @@ export function wowAzeriteLabel (rawSpellName, wowClass, spec, templateTalentsMa
         switch (variationName) {
           case 'talents':
             const talents = getTalentsMappingDifference(templateTalentsMapping, variationValue)
-            console.log(templateTalentsMapping, variationValue, talents)
             variationStrings.push(`${wowTalentsLabel(talents, wowClass, spec, lang)}`)
             break
           case 'ra':

@@ -47,7 +47,8 @@ class StackedChartLayout extends React.Component {
         <Metas i18nPlugin={i18nPlugin} fightLength={fightLength} fightLengthVariation={fightLengthVariation}
           simcBuildTimestamp={simcBuildTimestamp} simulationCategory={simulationCategory}
           simcGitRevision={simcGitRevision} targetError={targetError} templateGear={templateGear}
-          templateTalents={templateTalents} templateDPS={templateDPS} wowBuild={wowBuild} wowVersion={wowVersion}/>
+          templateTalents={templateTalents} templateDPS={templateDPS} wowBuild={wowBuild} wowClass={wowClass}
+          wowVersion={wowVersion}/>
         {azeriteForgeWeights &&
         <CopyBox elementId="azerite-forge-weights" text={azeriteForgeWeights}
           title="AzeriteForge Import String"/>}

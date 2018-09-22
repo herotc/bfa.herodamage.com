@@ -162,7 +162,7 @@ class CombinationsSimulationTemplate extends React.Component {
         <Metas i18nPlugin={i18nPlugin} fightLength={fightLength} fightLengthVariation={fightLengthVariation}
           simcBuildTimestamp={simcBuildTimestamp} simulationCategory={simulationCategory}
           simcGitRevision={simcGitRevision} targetError={targetError} templateGear={templateGear}
-          templateDPS={templateDPS} wowBuild={wowBuild} wowVersion={wowVersion}/>
+          templateDPS={templateDPS} wowBuild={wowBuild} wowClass={wowClass} wowVersion={wowVersion}/>
         {!results &&
         <CircularProgress id="results-loader" color="secondary"/>}
         {results &&

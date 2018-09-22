@@ -1,6 +1,7 @@
 // Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+import { getWowClassId } from '../../../utils/wow/core'
 import { getWowheadLink } from '../../../utils/wow/ui'
 // Components
 import { DateFormat, Trans } from '@lingui/react'
@@ -12,7 +13,7 @@ function timeAgo (date) {
   }
 }
 
-const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimestamp, simulationCategory, simcGitRevision, targetError, templateGear, templateTalents, templateDPS, wowBuild, wowVersion }) => {
+const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimestamp, simulationCategory, simcGitRevision, targetError, templateGear, templateTalents, templateDPS, wowBuild, wowClass, wowVersion }) => {
   const buildDate = new Date(simcBuildTimestamp * 1000)
   const lang = i18nPlugin?.lang
   return (
@@ -56,7 +57,9 @@ const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimesta
                   break
                 case 'azerite_powers':
                   if (simulationCategory === 'azerite' || simulationCategory === 'combinations') break
-                  wowheadArgs += `&azerite-powers=${value.split('/').join(':')}`
+                  const powers = value.split('/')
+                  if (!parseInt(powers[0]) <= 12) powers.unshift(getWowClassId(wowClass).toString())
+                  wowheadArgs += `&azerite-powers=${powers.join(':')}`
                   break
               }
             }
@@ -81,6 +84,7 @@ Metas.propTypes = {
   templateTalents: PropTypes.array,
   templateDPS: PropTypes.number.isRequired,
   wowBuild: PropTypes.number.isRequired,
+  wowClass: PropTypes.string,
   wowVersion: PropTypes.string.isRequired
 }
 
