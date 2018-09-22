@@ -37,7 +37,7 @@ const CopyBox = ({ elementId, text, title, ...props }) => (
   <Container {...props}>
     <h3>{title}</h3>
     <p>
-      <textarea id={elementId} rows="3" defaultValue={text} readOnly/>
+      <textarea id={elementId} rows="1" defaultValue={text} readOnly/>
       <Button onClick={() => { copyToClipboard(elementId) }}>Copy</Button>
     </p>
   </Container>

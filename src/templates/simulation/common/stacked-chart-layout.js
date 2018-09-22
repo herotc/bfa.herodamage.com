@@ -25,8 +25,7 @@ class StackedChartLayout extends React.Component {
     const { chartTitle, i18nPlugin, pageContext } = this.props
     const { filePath } = this.state
     const { lang } = i18nPlugin
-    const { simulationType, templateDPS } = pageContext
-    stackedChart(simulationType, filePath, chartTitle, templateDPS, lang)
+    stackedChart(pageContext, filePath, chartTitle, lang)
       .catch((err) => { console.error(err) })
   }
 
@@ -34,7 +33,7 @@ class StackedChartLayout extends React.Component {
     const { children, data, i18nPlugin, pageContext } = this.props
     const { filePath } = this.state
     const { t } = i18nPlugin
-    const { azeritePowerWeights, azeriteForgeWeights, fightStyle, fightLength, fightLengthVariation, name, simcBuildTimestamp, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateGear, templateTalents, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
+    const { azeriteForgeWeights, azeritePowerWeights, fightStyle, fightLength, fightLengthVariation, name, simcBuildTimestamp, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateGear, templateTalents, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
     return (
       <div>
         <Helmet>
@@ -49,12 +48,12 @@ class StackedChartLayout extends React.Component {
           simcBuildTimestamp={simcBuildTimestamp} simulationCategory={simulationCategory}
           simcGitRevision={simcGitRevision} targetError={targetError} templateGear={templateGear}
           templateTalents={templateTalents} templateDPS={templateDPS} wowBuild={wowBuild} wowVersion={wowVersion}/>
-        {azeritePowerWeights &&
-        <CopyBox elementId="azerite-power-weights" text={azeritePowerWeights}
-          title="AzeritePowerWeights Import String"/>}
         {azeriteForgeWeights &&
         <CopyBox elementId="azerite-forge-weights" text={azeriteForgeWeights}
           title="AzeriteForge Import String"/>}
+        {azeritePowerWeights &&
+        <CopyBox elementId="azerite-power-weights" text={azeritePowerWeights}
+          title="AzeritePowerWeights Import String"/>}
         {simulationType.includes('azerite') &&
         <p style={{ textAlign: 'center' }}>
           <span className={'azerite-tier3-specific'}>Outer Ring (Spec Specific)</span>
