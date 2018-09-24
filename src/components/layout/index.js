@@ -67,7 +67,7 @@ const styles = (theme) => ({
         color: theme.palette.secondary.main, // Needed to have the same color for ellipsis
         display: 'block',
         height: 20,
-        marginBottom: 5.6,
+        marginBottom: 5.58,
         maxWidth: '100%',
         overflow: 'hidden',
         textOverflow: 'ellipsis',
