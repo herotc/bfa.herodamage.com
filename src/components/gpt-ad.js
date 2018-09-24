@@ -82,7 +82,11 @@ class Ad extends React.Component {
    * Start the timer before checking for blockers
    */
   static scheduleBlockersCheck () {
-    setTimeout(Ad.blockersCheck, 500)
+    if (window.herodamage.hasInitialized) {
+      setTimeout(Ad.blockersCheck, 500)
+    } else {
+      setTimeout(Ad.scheduleBlockersCheck, 20)
+    }
   }
 
   /**
