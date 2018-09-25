@@ -152,20 +152,35 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
         const value = results[i]
         const parts = value.shift().split('--') // Split up the variations, those aren't supported by the addons atm
         const spellNames = parts[0].split(' / ') // Some labels are concatened, like the Alliance / Horde one, we always take the first one
-        // Insert each power (powerId and meanDPS)
-        for (const spellName of spellNames) {
-          const { powerId } = getAzeriteInformation(spellName)
+        // Discard RA results
+        if (!parts[1] || !parts[1].includes('ra:')) {
+          // Insert each power (powerId and meanDPS)
+          for (const spellName of spellNames) {
+            const { powerId } = getAzeriteInformation(spellName)
 
-          // Calculate mean DPS for AzeritePowerWeights
-          const totalDPS = value.reduce((accumulator, currentValue) => accumulator + currentValue)
-          apwPowers.push({ powerId, meanDPS: totalDPS / value.length })
+            // Use actual values for AzeriteForge
+            const afWeights = []
+            for (let j = 1; j < results[0].length; j++) {
+              afWeights.push(`${results[0][j]}:${value[j - 1]}`)
+            }
+            const afString = `[${powerId}]${afWeights.join(',')},^`
+            let existingIdx = afPowers.findIndex(item => item.includes(`[${powerId}]`))
+            if (existingIdx < 0) {
+              afPowers.push(afString)
+            } else if (parts[1] && parts[1].includes('talents:')) {
+              afPowers[existingIdx] = afString
+            }
 
-          // Use actual values for AzeriteForge
-          const afWeights = []
-          for (let j = 1; j < results[0].length; j++) {
-            afWeights.push(`${results[0][j]}:${value[j - 1]}`)
+            // Calculate mean DPS for AzeritePowerWeights
+            const totalDPS = value.reduce((accumulator, currentValue) => accumulator + currentValue)
+            const meanDPS = totalDPS / value.length
+            existingIdx = apwPowers.findIndex(item => item.powerId == powerId)
+            if (existingIdx < 0) {
+              apwPowers.push({ powerId, meanDPS })
+            } else if (parts[1] && parts[1].includes('talents:')) {
+              apwPowers[existingIdx].meanDPS = meanDPS
+            }
           }
-          afPowers.push(`[${powerId}]${afWeights.join(',')},^`)
         }
       }
 
