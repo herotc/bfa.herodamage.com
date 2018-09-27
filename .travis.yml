@@ -39,5 +39,5 @@ before_script:
   - chmod +x ./scripts/ci/deploy.sh
 
 script:
-  - travis_wait 40 ./scripts/ci/build.sh
-  - travis_wait 40 ./scripts/ci/deploy.sh
+  - travis_wait 50 ./scripts/ci/build.sh
+  - travis_wait 50 ./scripts/ci/deploy.sh
