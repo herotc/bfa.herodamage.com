@@ -1,5 +1,11 @@
+// Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+// Assets
+import appleTouchIcon from './assets/images/favicon/apple-touch-icon.png'
+import favicon16x16 from './assets/images/favicon/favicon-16x16.png'
+import favicon32x32 from './assets/images/favicon/favicon-32x32.png'
+import safariPinnedTab from './assets/images/favicon/safari-pinned-tab.svg'
 
 export default class HTML extends React.Component {
   render () {
@@ -21,6 +27,14 @@ export default class HTML extends React.Component {
           <meta charSet="utf-8"/>
           <meta httpEquiv="x-ua-compatible" content="ie=edge"/>
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+          <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon}/>
+          <link rel="icon" type="image/png" sizes="32x32" href={favicon32x32}/>
+          <link rel="icon" type="image/png" sizes="16x16" href={favicon16x16}/>
+          <link rel="manifest" href="/site.webmanifest"/>
+          <link rel="mask-icon" href={safariPinnedTab} color="#b71c1c"/>
+          <meta name="msapplication-TileColor" content="#212121"/>
+          <meta name="theme-color" content="#ffffff"/>
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500"/>
           {headComponents}
           {googlePublisherTag}
         </head>
@@ -29,7 +43,8 @@ export default class HTML extends React.Component {
           <div key={'body'} id="___gatsby" dangerouslySetInnerHTML={{ __html: body }}/>
           {postBodyComponents}
           {cookieconsent}
-          <script dangerouslySetInnerHTML={ { __html: `var whTooltips = {colorLinks: true, iconizeLinks: true, iconSize: true, renameLinks: true};` } }/>
+          <script
+            dangerouslySetInnerHTML={{ __html: `var whTooltips = {colorLinks: true, iconizeLinks: true, iconSize: true, renameLinks: true};` }}/>
           <script src="https://wow.zamimg.com/widgets/power.js"/>
         </body>
       </html>

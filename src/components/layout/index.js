@@ -10,7 +10,6 @@ import { theme } from '../../../plugins/gatsby-plugin-herodamage-material-ui/get
 import { getWowheadLink } from '../../utils/wow/ui'
 // Components
 import Typography from '@material-ui/core/Typography'
-import Head from './head'
 import Header from './header'
 import WowClassSelector from './wow-class-selector'
 import Main from './main'
@@ -140,7 +139,6 @@ const Layout = ({ classes, ...props }) => {
           const siteMetadata = data.site.siteMetadata
           return (
             <Typography className={classes.layout} component={'div'}>
-              <Head siteMetadata={siteMetadata}/>
               <Header i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
               <WowClassSelector i18nPlugin={i18nPlugin} siteMetadata={siteMetadata}/>
               <GPTAd location={location} type="top"/>
