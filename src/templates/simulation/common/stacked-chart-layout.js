@@ -3,42 +3,25 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { stackedChart } from '../../../browser/charts/stacked'
 // Components
-import Helmet from 'react-helmet'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import CopyBox from '../../../components/copy-box'
 import Related from './related'
 import Metas from './metas'
 
 class StackedChartLayout extends React.Component {
-  constructor (props) {
-    super(props)
-
-    const { data, pageContext } = this.props
-    const { reportsPath } = data.site.siteMetadata
-    const { name } = pageContext
-    this.state = {
-      filePath: `${reportsPath}${name}.json`
-    }
-  }
-
   componentDidMount () {
     const { chartTitle, i18nPlugin, pageContext } = this.props
-    const { filePath } = this.state
     const { lang } = i18nPlugin
-    stackedChart(pageContext, filePath, chartTitle, lang)
+    stackedChart(pageContext, chartTitle, lang)
       .catch((err) => { console.error(err) })
   }
 
   render () {
     const { children, data, i18nPlugin, pageContext } = this.props
-    const { filePath } = this.state
     const { t } = i18nPlugin
     const { azeriteForgeWeights, azeritePowerWeights, fightStyle, fightLength, fightLengthVariation, name, simcBuildTimestamp, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateGear, templateTalents, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
     return (
       <div>
-        <Helmet>
-          <link rel="prefetch" href={filePath}/>
-        </Helmet>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         {children}
         <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}

@@ -19,7 +19,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'reports',
-        path: `${__dirname}/static/reports/`
+        path: `${__dirname}/src/reports/`
       }
     },
     'gatsby-plugin-herodamage-reports'

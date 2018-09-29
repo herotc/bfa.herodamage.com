@@ -3,14 +3,12 @@ import merge from 'lodash/merge'
 import { getAzeriteInformation, getTalentsTree } from '../../../utils/wow/core'
 import { wowAzeriteLabel, wowTalentsLabel } from '../../../utils/wow/ui'
 
-export async function getResultsStates (props, filepath) {
+export function getResultsStates (props) {
   const { i18nPlugin: { lang }, pageContext } = props
-  const { spec, wowClass, simulationType } = pageContext
-  const stacksCount = parseInt(simulationType.split('-')[1].charAt(0))
+  const { resultsRaw, spec, wowClass, simulationType } = pageContext
 
-  // Fetch the .json
-  const response = await window.fetch(filepath)
-  const { results: jsonResults } = await response.json()
+  const jsonResults = JSON.parse(resultsRaw)
+  const stacksCount = parseInt(simulationType.split('-')[1].charAt(0))
 
   // Iterate over the results to add some information
   const results = []

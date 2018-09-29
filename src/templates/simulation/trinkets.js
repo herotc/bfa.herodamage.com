@@ -28,11 +28,6 @@ export default TrinketsSimulationTemplate
 
 export const query = graphql`
   query TrinketsSimulation($lang: String!, $wowClass: String!, $simulationType: String!, $fightStyle: String!, $tier: String!, $spec: String!, $variation: String!) {
-    site {
-      siteMetadata {
-        reportsPath
-      }
-    }
     relatedSimulations: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, fightStyle: {eq: $fightStyle}, tier: {eq: $tier}, spec: {eq: $spec}, variation: {eq: $variation}}}, sort: {fields: [context___simulationType], order: ASC}) {
       edges {
         node {

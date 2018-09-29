@@ -5,7 +5,6 @@ import { graphql } from 'gatsby'
 import { refreshWowheadLinks } from '../../utils/wow/ui'
 import { getResultsStates } from './combinations/get-results-states'
 // Components
-import Helmet from 'react-helmet'
 import { Trans } from '@lingui/react'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Table from '@material-ui/core/Table'
@@ -22,19 +21,13 @@ class CombinationsSimulationTemplate extends React.Component {
   constructor (props) {
     super(props)
 
-    const { data, pageContext } = this.props
-    const { reportsPath } = data.site.siteMetadata
-    const { name } = pageContext
+    const resultsStates = getResultsStates(this.props)
     this.state = {
-      filepath: `${reportsPath}${name}.json`,
-      multiTargets: false,
-      results: null,
       order: 'desc',
       orderBy: 'dps',
       page: 0,
       rowsPerPage: 15,
-      azeritePowers: null,
-      talentsTree: null
+      ...resultsStates
     }
 
     this.handleAzeritePowerSelect = this.handleAzeritePowerSelect.bind(this)
@@ -42,11 +35,6 @@ class CombinationsSimulationTemplate extends React.Component {
     this.handleRequestSort = this.handleRequestSort.bind(this)
     this.handleChangePage = this.handleChangePage.bind(this)
     this.handleChangeRowsPerPage = this.handleChangeRowsPerPage.bind(this)
-  }
-
-  async getResults () {
-    const state = await getResultsStates(this.props, this.state.filepath)
-    this.setState(state)
   }
 
   handleAzeritePowerSelect (event, spellName) {
@@ -121,7 +109,7 @@ class CombinationsSimulationTemplate extends React.Component {
   }
 
   componentDidMount () {
-    this.getResults().catch((err) => { console.error(err) })
+    refreshWowheadLinks()
   }
 
   componentDidUpdate (prevProps, prevState, snapshot) {
@@ -130,14 +118,11 @@ class CombinationsSimulationTemplate extends React.Component {
 
   render () {
     const { data, i18nPlugin, pageContext } = this.props
-    const { filePath, multiTargets, order, orderBy, page, results, rowsPerPage, azeritePowers, talentsTree } = this.state
+    const { multiTargets, order, orderBy, page, results, rowsPerPage, azeritePowers, talentsTree } = this.state
     const { t, wowheadLink } = i18nPlugin
     const { fightStyle, fightLength, fightLengthVariation, name, simcBuildTimestamp, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateGear, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
     return (
       <div>
-        <Helmet>
-          <link rel="prefetch" href={filePath}/>
-        </Helmet>
         <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
         <p><Trans><b>Information:</b><br/>These simulations are all based on the default profiles from
           SimulationCraft.<br/>You can consider everything within the target error DPS range to be mostly equal and
@@ -219,11 +204,6 @@ export default CombinationsSimulationTemplate
 
 export const query = graphql`
   query CombinationsSimulation($lang: String!, $wowClass: String!, $simulationType: String!, $fightStyle: String!, $tier: String!, $spec: String!, $variation: String!) {
-    site {
-      siteMetadata {
-        reportsPath
-      }
-    }
     relatedSimulations: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {eq: $wowClass}, fightStyle: {eq: $fightStyle}, tier: {eq: $tier}, spec: {eq: $spec}, variation: {eq: $variation}}}, sort: {fields: [context___simulationType], order: ASC}) {
       edges {
         node {

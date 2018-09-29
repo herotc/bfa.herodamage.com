@@ -115,7 +115,7 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
   if (!fightStyles.includes(fightStyle)) fightStyles.push(fightStyle)
   if (!tiers.includes(tier)) tiers.push(tier)
 
-  // Get the metas from the file
+  // Fetch the report file
   let report
   try {
     const jsonFile = await readFilePromise(node.absolutePath, { encoding: 'utf8', flag: 'r' })
@@ -124,7 +124,10 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
     console.error(`Error while processing the '${name}' report:`, err)
     return
   }
-  const { metas } = report
+
+  // Save report data
+  const { metas, results } = report
+  createNodeField({ node, name: 'resultsRaw', value: JSON.stringify(results) })
   createNodeField({ node, name: 'fightLength', value: metas.fightLength })
   createNodeField({ node, name: 'fightLengthVariation', value: metas.fightLengthVariation })
   createNodeField({ node, name: 'targetError', value: metas.targetError })
@@ -140,11 +143,10 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
   createNodeField({ node, name: 'wowVersion', value: metas.wowVersion })
   createNodeField({ node, name: 'wowBuild', value: metas.wowBuild })
 
-  // AzeritePowerWeights Import String
+  // Generate AzeriteForge & AzeritePowerWeights Import String
   switch (simulationType) {
     case 'azerite-levels':
     case 'azerite-stacks':
-      const { results } = report
       // Build the powers arrays
       const afPowers = [] // AzeriteForge (AF)
       const apwPowers = [] // AzeritePowerWeights (APW)
@@ -174,7 +176,7 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
             // Calculate mean DPS for AzeritePowerWeights
             const totalDPS = value.reduce((accumulator, currentValue) => accumulator + currentValue)
             const meanDPS = totalDPS / value.length
-            existingIdx = apwPowers.findIndex(item => item.powerId == powerId)
+            existingIdx = apwPowers.findIndex(item => item.powerId === powerId)
             if (existingIdx < 0) {
               apwPowers.push({ powerId, meanDPS })
             } else if (parts[1] && parts[1].includes('talents:')) {
@@ -211,7 +213,7 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
 export const createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  // Class index
+  // Classes index
   wowClasses.forEach((wowClass) => {
     const slug = `/${wowClass}/`
     createPage({
@@ -220,6 +222,7 @@ export const createPages = async ({ graphql, actions }) => {
       context: { slug, wowClass }
     })
   })
+
   // SimC Performance
   for (const simulationName of simulationNames) {
     for (const fightStyle of fightStyles) {
@@ -253,6 +256,7 @@ export const createPages = async ({ graphql, actions }) => {
               tier
               spec
               variation
+              resultsRaw
               fightLength
               fightLengthVariation
               targetError

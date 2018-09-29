@@ -159,7 +159,7 @@ export default SimCPerformance
 
 export const query = graphql`
   query SimCPerformance($lang: String!, $simulationType: String!, $fightStyle: String!, $tier: String!) {
-    statistics: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {ne: null}, simulationType: {eq: $simulationType}, fightStyle: {eq: $fightStyle}, tier: {eq: $tier}, spec: {ne: "holy"}}}, sort: {fields: [context___elapsedTime], order: DESC}) {
+    statistics: allSitePage(filter: {context: {lang: {eq: $lang}, wowClass: {ne: null}, simulationType: {eq: $simulationType}, fightStyle: {eq: $fightStyle}, tier: {eq: $tier}}}, sort: {fields: [context___elapsedTime], order: DESC}) {
       edges {
         node {
           path

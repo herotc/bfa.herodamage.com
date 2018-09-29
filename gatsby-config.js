@@ -5,8 +5,7 @@ module.exports = {
     github: 'https://github.com/herotc/bfa.herodamage.com',
     description: 'Class theorycrafting community, latest simulation results and resources -based on SimulationCraft- for World of Warcraft.',
     keywords: 'herotc, herodamage, world of warcraft, battle for azeroth, wow bfa, theorycrafting, simulationcraft, simc',
-    wowClasses: ['death-knight', 'demon-hunter', 'druid', 'hunter', 'mage', 'monk', 'paladin', 'priest', 'rogue', 'shaman', 'warlock', 'warrior'],
-    reportsPath: '/reports/'
+    wowClasses: ['death-knight', 'demon-hunter', 'druid', 'hunter', 'mage', 'monk', 'paladin', 'priest', 'rogue', 'shaman', 'warlock', 'warrior']
   },
   plugins: [
     'gatsby-plugin-no-sourcemaps',
@@ -39,7 +38,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'reports',
-        path: `${__dirname}/static/reports/`
+        path: `${__dirname}/src/reports/`
       }
     },
     'gatsby-plugin-herodamage-reports',

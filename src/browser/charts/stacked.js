@@ -135,12 +135,11 @@ function processData (simulationType, data, wowClass, spec, talentsMapping, temp
 /**
  *
  * @param pageContext
- * @param reportPath
  * @param chartTitle
  * @param lang
  * @returns {Promise<void>}
  */
-export async function stackedChart (pageContext, reportPath, chartTitle, lang) {
+export async function stackedChart (pageContext, chartTitle, lang) {
   if (!window.google) {
     await new Promise((resolve, reject) => {
       load('https://www.gstatic.com/charts/loader.js', (err) => {
@@ -152,12 +151,11 @@ export async function stackedChart (pageContext, reportPath, chartTitle, lang) {
   const google = window.google
   const googleChartElement = document.getElementById('google-chart')
 
-  const { simulationType, spec, templateTalents, templateDPS, wowClass } = pageContext
+  const { resultsRaw, simulationType, spec, templateTalents, templateDPS, wowClass } = pageContext
+  const results = JSON.parse(resultsRaw)
   const talentsMapping = getTalentsMappingFromSpellIds(templateTalents)
 
-  const drawChart = async () => {
-    const response = await window.fetch(reportPath)
-    const { results } = await response.json()
+  const drawChart = () => {
     const rawData = new google.visualization.arrayToDataTable(results)
 
     // Process data
