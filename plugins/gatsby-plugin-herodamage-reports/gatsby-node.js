@@ -89,11 +89,9 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
   const [simulationName, fightStyle, tier, wowClass, spec, variation] = name.toLowerCase().split('_')
   // 'trinkets', 4
   const { simulationFeaturedOrder, simulationCategory, simulationType, simulationTemplate } = simulations[simulationName]
-  // '/death-knight/trinkets/1t-t21-frost
+  // '/death-knight/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
   let slug = `/${wowClass}/${simulationType}/${fightStyle}-${tier}-${spec}`
   if (variation) slug += `-${variation}`
-
-  // slug: '/death-knight/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
   createNodeField({ node, name: 'slug', value: slug })
   // name: 'TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
   createNodeField({ node, name: 'name', value: name })
@@ -152,7 +150,7 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
                 if (parseInt(powerId) <= 12) continue
                 const azeriteInformation = getAzeriteInformationById(powerId)
                 if (!azeriteInformation) {
-                  console.log(`Cannot find information about azerite powerId: ${powerId}`)
+                  console.log(`Cannot find information about azerite powerId "${powerId}" in "${name}"`)
                   continue
                 }
                 const { spellName, tier } = azeriteInformation
