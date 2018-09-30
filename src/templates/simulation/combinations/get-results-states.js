@@ -1,31 +1,45 @@
 // Dependencies
 import merge from 'lodash/merge'
-import { getAzeriteInformation, getTalentsTree } from '../../../utils/wow/core'
+import { getAzeriteInformationByName, getTalentsTree } from '../../../utils/wow/core'
 import { wowAzeriteLabel, wowTalentsLabel } from '../../../utils/wow/ui'
+
+function getStacksCount (simulationType) {
+  if (simulationType === 'combinations-default') return 1
+  return parseInt(simulationType.split('-')[1].charAt(0))
+}
 
 export function getResultsStates (props) {
   const { i18nPlugin: { lang }, pageContext } = props
   const { resultsRaw, spec, wowClass, simulationType } = pageContext
 
   const jsonResults = JSON.parse(resultsRaw)
-  const stacksCount = parseInt(simulationType.split('-')[1].charAt(0))
+  const stacksCount = getStacksCount(simulationType)
 
   // Iterate over the results to add some information
   const results = []
   const multiTargets = jsonResults[0].length === 6 // whether the results contains a bossDPS column
   const maxDPS = jsonResults[0][4] // used to compute the % Diff
   const selectedTalents = {} // used for talents filter
-  const azeritePowers = {} // used for azerite filter
+  const azeritePowersFilter = {} // used for azerite filter
   for (let row of jsonResults) {
     // result filtering
     const talents = row[1]
-    const azeritePower = row[3]
+    const azeritePowers = row[3]
     const dps = row[4]
-    const result = { rank: row[0], talents, azeritePower, dps }
+    const result = { rank: row[0], talents, azeritePowers, dps }
     if (multiTargets) result.bossDPS = row[5]
     result.talentsLabel = wowTalentsLabel(talents, wowClass, spec, lang)
-    result.azeritePowerLabel = azeritePower !== 'None' ? wowAzeriteLabel(azeritePower, wowClass, spec, talents, lang, false) + ` (x${stacksCount})` : 'None'
     result.dpsPercentageDifference = (100 * dps / maxDPS - 100).toFixed(1)
+    const azeritePowersArray = azeritePowers.split(' / ')
+    let azeritePowerLabels = []
+    for (const azeritePower of azeritePowersArray) {
+      if (azeritePower === 'None') {
+        azeritePowerLabels.push('None')
+        continue
+      }
+      azeritePowerLabels.push(wowAzeriteLabel(azeritePower, wowClass, spec, talents, lang, false) + ` (x${stacksCount})`)
+    }
+    result.azeritePowerLabel = azeritePowerLabels.join(' ')
     results.push(result)
 
     // filter the talents to get the ones that can be selected
@@ -39,17 +53,11 @@ export function getResultsStates (props) {
     }
 
     // filter the azerite powers to get the ones that can be selected
-    if (azeritePower !== 'None') {
-      if (!azeritePowers[azeritePower]) {
-        const { spellId, tier, classesId } = getAzeriteInformation(azeritePower)
-        azeritePowers[azeritePower] = {
-          spellName: azeritePower,
-          selected: true,
-          spellId,
-          tier,
-          classesId
-        }
-      }
+    for (const azeritePower of azeritePowersArray) {
+      if (simulationType === 'combinations-default' || azeritePower === 'None') continue
+      if (azeritePowersFilter[azeritePower]) continue
+      const { spellId, tier, classesId } = getAzeriteInformationByName(azeritePower)
+      azeritePowersFilter[azeritePower] = { spellName: azeritePower, selected: true, spellId, tier, classesId }
     }
   }
 
@@ -66,5 +74,5 @@ export function getResultsStates (props) {
   const talentsTree = {}
   merge(talentsTree, defaultTalentsTree, selectedTalents)
 
-  return { multiTargets, results, azeritePowers, talentsTree }
+  return { multiTargets, results, azeritePowersFilter, talentsTree }
 }

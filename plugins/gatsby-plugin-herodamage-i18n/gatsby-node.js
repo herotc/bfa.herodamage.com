@@ -36,7 +36,7 @@ export const onCreatePage = ({ page, actions }) => {
     // Object.assign is used to avoid mutating the page object
     const context = Object.assign({}, page.context, { lang })
     const path = `${prefix(lang)}${pagePath}`
-    const newPage = Object.assign({}, page, { path }, { context })
+    const newPage = { ...page, context, path }
     createPage(newPage)
   })
 }

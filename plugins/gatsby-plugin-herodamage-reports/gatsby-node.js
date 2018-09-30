@@ -1,7 +1,11 @@
 import { promisify } from 'util'
 import { readFile } from 'fs'
 import { resolve } from 'path'
-import { getAzeriteInformation, getWowClassIdAndSpecId } from '../../src/utils/wow/core'
+import {
+  getAzeriteInformationById,
+  getAzeriteInformationByName,
+  getWowClassIdAndSpecId
+} from '../../src/utils/wow/core'
 
 // Until we get promisified version from fs (promises API is still experimental)
 const readFilePromise = promisify(readFile)
@@ -17,6 +21,11 @@ const simulations = {
     simulationCategory: 'azerite',
     simulationType: 'azerite-stacks',
     simulationTemplate: 'azerite-stacks'
+  },
+  'combinator': {
+    simulationCategory: 'combinations',
+    simulationType: 'combinations-default',
+    simulationTemplate: 'combinations'
   },
   'combinator-0a': {
     simulationCategory: 'combinations',
@@ -124,10 +133,52 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
     console.error(`Error while processing the '${name}' report:`, err)
     return
   }
-
-  // Save report data
   const { metas, results } = report
-  createNodeField({ node, name: 'resultsRaw', value: JSON.stringify(results) })
+
+  // Save report results
+  let processedResults
+  switch (simulationType) {
+    case 'combinations-default':
+      let label = ''
+      const powerLabels = []
+      for (const simcEncoded of metas.templateGear) {
+        const parts = simcEncoded.split(',')
+        for (const part of parts) {
+          const [option, value] = part.split('=')
+          switch (option) {
+            case 'azerite_powers':
+              const powersId = value.split('/')
+              for (const powerId of powersId) {
+                if (parseInt(powerId) <= 12) continue
+                const azeriteInformation = getAzeriteInformationById(powerId)
+                if (!azeriteInformation) {
+                  console.log(`Cannot find information about azerite powerId: ${powerId}`)
+                  continue
+                }
+                const { spellName, tier } = azeriteInformation
+                if (tier === 3) powerLabels.push(spellName)
+              }
+              break
+          }
+        }
+      }
+      label += powerLabels.join(' / ')
+      processedResults = results.map((result) => {
+        result[3] = label
+        return result
+      })
+      break
+    case 'races':
+      // TODO: Proper handling of Races labels instead of ignoring variations
+      processedResults = results.filter((result) => typeof result[0] !== 'string' || !result[0].includes('--'))
+      break
+    default:
+      processedResults = results
+      break
+  }
+  createNodeField({ node, name: 'resultsRaw', value: JSON.stringify(processedResults) })
+
+  // Save report metas
   createNodeField({ node, name: 'fightLength', value: metas.fightLength })
   createNodeField({ node, name: 'fightLengthVariation', value: metas.fightLengthVariation })
   createNodeField({ node, name: 'targetError', value: metas.targetError })
@@ -158,7 +209,7 @@ export const onCreateNode = async ({ node, getNode, actions }) => {
         if (!parts[1] || !parts[1].includes('ra:')) {
           // Insert each power (powerId and meanDPS)
           for (const spellName of spellNames) {
-            const { powerId } = getAzeriteInformation(spellName)
+            const { powerId } = getAzeriteInformationByName(spellName)
 
             // Use actual values for AzeriteForge
             const afWeights = []
