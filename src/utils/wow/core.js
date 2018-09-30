@@ -1,7 +1,8 @@
 import ClassSpec from '../../assets/wow-data/ClassSpec.json'
 import Talents from '../../assets/wow-data/Talent.json'
 import Trinkets from '../../assets/wow-data/Trinket.json'
-import AzeritePowers from '../../assets/wow-data/AzeritePower.json'
+import AzeritePowersById from '../../assets/wow-data/AzeritePowerById.json'
+import AzeritePowersByName from '../../assets/wow-data/AzeritePowerByName.json'
 
 /**
  * Get the class id from the class string
@@ -86,9 +87,18 @@ export function getTrinketInformation (trinketName) {
 
 /**
  *
+ * @param azeritePowerId
+ * @returns {*}
+ */
+export function getAzeriteInformationById (azeritePowerId) {
+  return AzeritePowersById[azeritePowerId]
+}
+
+/**
+ *
  * @param azeritePowerName
  * @returns {*}
  */
-export function getAzeriteInformation (azeritePowerName) {
-  return AzeritePowers[azeritePowerName]
+export function getAzeriteInformationByName (azeritePowerName) {
+  return AzeritePowersByName[azeritePowerName]
 }
