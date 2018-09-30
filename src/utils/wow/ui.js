@@ -1,5 +1,5 @@
 // Dependencies
-import { getAzeriteInformation, getTalentsMappingDifference, getTalentsTree, getTrinketInformation } from './core'
+import { getAzeriteInformationByName, getTalentsMappingDifference, getTalentsTree, getTrinketInformation } from './core'
 import startCase from 'lodash/startCase'
 import { defaultLang } from '../../../plugins/gatsby-plugin-herodamage-i18n'
 // Assets
@@ -149,7 +149,7 @@ export function wowAzeriteLabel (rawSpellName, wowClass, spec, templateTalentsMa
   const labels = []
   let tierClassName
   for (const spellName of spellNames) {
-    const azeritePower = getAzeriteInformation(spellName)
+    const azeritePower = getAzeriteInformationByName(spellName)
     if (!azeritePower) continue
 
     const { spellId, tier, classesId } = azeritePower
@@ -194,19 +194,41 @@ export function wowAzeriteLabel (rawSpellName, wowClass, spec, templateTalentsMa
 /**
  *
  * @param rawItemName
+ * @param wowClass
+ * @param spec
+ * @param templateTalentsMapping
  * @param lang
+ * @param container
  * @returns {string}
  */
-export function wowTrinketLabel (rawItemName, lang = defaultLang) {
-  const trinket = getTrinketInformation(rawItemName)
-  if (!trinket) return rawItemName
+export function wowTrinketLabel (rawItemName, wowClass, spec, templateTalentsMapping, lang = defaultLang, container = true) {
+  // Split up the variations
+  const parts = rawItemName.split('--')
+  const trinket = getTrinketInformation(parts[0])
+  if (!trinket) return (container && `<div class="label-container">${rawItemName}</div>`) || `${rawItemName}`
 
   const { itemId } = trinket
-  return `<div class="label-container">
-    <a href="${getWowheadLink(lang)}item=${itemId}">
+  let label = `<a href="${getWowheadLink(lang)}item=${itemId}">
       <span>${rawItemName}</span>
-    </a>
-  </div>`
+    </a>`
+  // Add back the formatted variations
+  if (parts[1]) {
+    const variations = parts[1].split(';')
+    const variationStrings = []
+    for (const variation of variations) {
+      const parts = variation.split(':')
+      const variationName = parts[0]
+      const variationValue = parts[1]
+      switch (variationName) {
+        case 'talents':
+          const talents = getTalentsMappingDifference(templateTalentsMapping, variationValue)
+          variationStrings.push(`${wowTalentsLabel(talents, wowClass, spec, lang)}`)
+          break
+      }
+    }
+    label += `&nbsp;|&nbsp;${variationStrings.join(' - ')}`
+  }
+  return (container && `<div class="label-container">${label}</div>`) || `${label}`
 }
 
 /**

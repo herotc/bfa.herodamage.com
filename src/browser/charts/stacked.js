@@ -119,7 +119,7 @@ function processData (simulationType, data, wowClass, spec, talentsMapping, temp
     case 'trinkets':
       for (let row = 0; row < data.getNumberOfRows(); row++) {
         const wowLabel = data.getValue(row, 0)
-        labels.push(wowTrinketLabel(wowLabel, lang))
+        labels.push(wowTrinketLabel(wowLabel, wowClass, spec, talentsMapping, lang))
         data.setValue(row, 0, '')
       }
       break
