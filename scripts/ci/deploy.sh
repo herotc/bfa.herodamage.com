@@ -58,11 +58,11 @@ git commit --quiet -m "Deployment ${GH_SHA}"
 git push --quiet ${GH_REPO} ${GH_TARGET_BRANCH}
 cd ..
 
-# Sleep before purging the CF cache, it takes roughly 15-30s to GitHub Pages to actually push the new content and up to 10 minutes to clear their CDN
-echo "[CI] Wait for 630s before clearing CF cache"
-sleep 630s
-echo "[CI] Clear CF cache entirely"
-curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data '{"purge_everything":true}'
+# # Sleep before purging the CF cache, it takes roughly 15-30s to GitHub Pages to actually push the new content and up to 10 minutes to clear their CDN
+# echo "[CI] Wait for 630s before clearing CF cache"
+# sleep 630s
+# echo "[CI] Clear CF cache entirely"
+# curl -s -X POST "https://api.cloudflare.com/client/v4/zones/${CF_ZONE_ID}/purge_cache" -H "X-Auth-Email: ${CF_AUTH_EMAIL}" -H "X-Auth-Key: ${CF_AUTH_KEY}" -H "Content-Type: application/json" --data '{"purge_everything":true}'
 # echo "[CI] Clear CF cache for changed files by batch of ~450 urls each 5 seconds"
 # for urls in urls_to_purge_*.json; do
 #     sleep 5s
