@@ -1,0 +1,3153 @@
+{
+  "13": {
+    "spellId": 263978,
+    "spellName": "Azerite Empowered",
+    "tier": 0,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "14": {
+    "spellId": 268594,
+    "spellName": "Longstrider",
+    "tier": 1,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "15": {
+    "spellId": 263962,
+    "spellName": "Resounding Protection",
+    "tier": 1,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "18": {
+    "spellId": 264108,
+    "spellName": "Blood Siphon",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "19": {
+    "spellId": 267880,
+    "spellName": "Woundbinder",
+    "tier": 2,
+    "classesId": [
+      2,
+      5,
+      7,
+      10,
+      11
+    ]
+  },
+  "20": {
+    "spellId": 267665,
+    "spellName": "Lifespeed",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      12
+    ]
+  },
+  "21": {
+    "spellId": 263984,
+    "spellName": "Elemental Whirl",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "22": {
+    "spellId": 263987,
+    "spellName": "Heed My Call",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "30": {
+    "spellId": 266180,
+    "spellName": "Overwhelming Power",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "31": {
+    "spellId": 266937,
+    "spellName": "Gutripper",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "36": {
+    "spellId": 264198,
+    "spellName": "In The Rhythm",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "38": {
+    "spellId": 267879,
+    "spellName": "On My Way",
+    "tier": 2,
+    "classesId": [
+      2,
+      5,
+      7,
+      10,
+      11
+    ]
+  },
+  "42": {
+    "spellId": 267883,
+    "spellName": "Savior",
+    "tier": 2,
+    "classesId": [
+      2,
+      5,
+      7,
+      10,
+      11
+    ]
+  },
+  "43": {
+    "spellId": 267671,
+    "spellName": "Winds of War",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      12
+    ]
+  },
+  "44": {
+    "spellId": 268599,
+    "spellName": "Vampiric Speed",
+    "tier": 1,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "76": {
+    "spellId": 269621,
+    "spellName": "Invigorating Brew",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "82": {
+    "spellId": 280710,
+    "spellName": "Champion of Azeroth",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "83": {
+    "spellId": 268437,
+    "spellName": "Impassive Visage",
+    "tier": 1,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "84": {
+    "spellId": 268595,
+    "spellName": "Bulwark of the Masses",
+    "tier": 1,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "85": {
+    "spellId": 268596,
+    "spellName": "Gemhide",
+    "tier": 1,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "86": {
+    "spellId": 268435,
+    "spellName": "Azerite Fortification",
+    "tier": 1,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "87": {
+    "spellId": 268600,
+    "spellName": "Self Reliance",
+    "tier": 1,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "88": {
+    "spellId": 270669,
+    "spellName": "Arcane Pummeling",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "89": {
+    "spellId": 267683,
+    "spellName": "Azerite Veins",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      12
+    ]
+  },
+  "98": {
+    "spellId": 271536,
+    "spellName": "Crystalline Carapace",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      12
+    ]
+  },
+  "99": {
+    "spellId": 271540,
+    "spellName": "Ablative Shielding",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      12
+    ]
+  },
+  "100": {
+    "spellId": 271546,
+    "spellName": "Strength in Numbers",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      12
+    ]
+  },
+  "101": {
+    "spellId": 271557,
+    "spellName": "Shimmering Haven",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      6,
+      10,
+      11,
+      12
+    ]
+  },
+  "102": {
+    "spellId": 267892,
+    "spellName": "Synergistic Growth",
+    "tier": 2,
+    "classesId": [
+      2,
+      5,
+      7,
+      10,
+      11
+    ]
+  },
+  "103": {
+    "spellId": 267882,
+    "spellName": "Concentrated Mending",
+    "tier": 2,
+    "classesId": [
+      2,
+      5,
+      7,
+      10,
+      11
+    ]
+  },
+  "104": {
+    "spellId": 267884,
+    "spellName": "Bracing Chill",
+    "tier": 2,
+    "classesId": [
+      2,
+      5,
+      7,
+      10,
+      11
+    ]
+  },
+  "105": {
+    "spellId": 267886,
+    "spellName": "Ephemeral Recovery",
+    "tier": 2,
+    "classesId": [
+      2,
+      5,
+      7,
+      10,
+      11
+    ]
+  },
+  "106": {
+    "spellId": 272684,
+    "spellName": "Deep Cuts",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "107": {
+    "spellId": 272717,
+    "spellName": "Serrated Jaws",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "108": {
+    "spellId": 272718,
+    "spellName": "Icy Citadel",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "109": {
+    "spellId": 272738,
+    "spellName": "Festering Doom",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "110": {
+    "spellId": 272742,
+    "spellName": "Wildfire Cluster",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "111": {
+    "spellId": 279524,
+    "spellName": "Blood Mist",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "112": {
+    "spellId": 279552,
+    "spellName": "Layered Mane",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "113": {
+    "spellId": 272775,
+    "spellName": "Moment of Repose",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "114": {
+    "spellId": 272780,
+    "spellName": "Permeating Glow",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "115": {
+    "spellId": 272788,
+    "spellName": "Searing Dialogue",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "116": {
+    "spellId": 272792,
+    "spellName": "Boiling Brew",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "117": {
+    "spellId": 272804,
+    "spellName": "Iron Fists",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "118": {
+    "spellId": 272824,
+    "spellName": "Deafening Crash",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "119": {
+    "spellId": 272836,
+    "spellName": "Trample the Weak",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "120": {
+    "spellId": 272802,
+    "spellName": "Fungal Essence",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "121": {
+    "spellId": 272866,
+    "spellName": "Executioner's Precision",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "122": {
+    "spellId": 272871,
+    "spellName": "Streaking Stars",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "123": {
+    "spellId": 272891,
+    "spellName": "Wracking Brilliance",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "124": {
+    "spellId": 272911,
+    "spellName": "Sharpened Blades",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "125": {
+    "spellId": 272898,
+    "spellName": "Avenger's Might",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "126": {
+    "spellId": 279581,
+    "spellName": "Revolving Blades",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "127": {
+    "spellId": 279867,
+    "spellName": "Anomalous Impact",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "128": {
+    "spellId": 272932,
+    "spellName": "Flames of Alacrity",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "129": {
+    "spellId": 272935,
+    "spellName": "Deadshot",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "130": {
+    "spellId": 272944,
+    "spellName": "Shadow's Bite",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "131": {
+    "spellId": 272955,
+    "spellName": "Accelerant",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "132": {
+    "spellId": 272968,
+    "spellName": "Packed Ice",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "133": {
+    "spellId": 272976,
+    "spellName": "Bulwark of Light",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "134": {
+    "spellId": 272983,
+    "spellName": "Revel in Pain",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "136": {
+    "spellId": 273007,
+    "spellName": "Double Dose",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "137": {
+    "spellId": 272992,
+    "spellName": "Primal Primer",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "138": {
+    "spellId": 272989,
+    "spellName": "Soothing Waters",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "139": {
+    "spellId": 273027,
+    "spellName": "Martyr's Breath",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "140": {
+    "spellId": 273088,
+    "spellName": "Bone Spike Graveyard",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "141": {
+    "spellId": 273093,
+    "spellName": "Latent Chill",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "142": {
+    "spellId": 273095,
+    "spellName": "Horrid Experimentation",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "143": {
+    "spellId": 273130,
+    "spellName": "Inspiring Beacon",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "144": {
+    "spellId": 273131,
+    "spellName": "Rejuvenating Grace",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "145": {
+    "spellId": 273134,
+    "spellName": "Fortifying Auras",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "146": {
+    "spellId": 273136,
+    "spellName": "Critical Flash",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "148": {
+    "spellId": 273140,
+    "spellName": "Righteous Flames",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "149": {
+    "spellId": 273142,
+    "spellName": "Healing Hammer",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "150": {
+    "spellId": 278605,
+    "spellName": "Soaring Shield",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "153": {
+    "spellId": 273147,
+    "spellName": "Deferred Sentence",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "154": {
+    "spellId": 278617,
+    "spellName": "Relentless Inquisitor",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "156": {
+    "spellId": 273150,
+    "spellName": "Ruinous Bolt",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "157": {
+    "spellId": 273790,
+    "spellName": "Rezan's Fury",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "159": {
+    "spellId": 273231,
+    "spellName": "Furious Gaze",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "160": {
+    "spellId": 273236,
+    "spellName": "Infernal Armor",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "161": {
+    "spellId": 273262,
+    "spellName": "Haze of Rage",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "162": {
+    "spellId": 273265,
+    "spellName": "Arcane Flurry",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "163": {
+    "spellId": 273283,
+    "spellName": "Latent Poison",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "164": {
+    "spellId": 273307,
+    "spellName": "Weal and Woe",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "165": {
+    "spellId": 273313,
+    "spellName": "Blessed Sanctuary",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "166": {
+    "spellId": 273319,
+    "spellName": "Thought Harvester",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "167": {
+    "spellId": 273326,
+    "spellName": "Brain Storm",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "168": {
+    "spellId": 273331,
+    "spellName": "Preheat",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "169": {
+    "spellId": 273338,
+    "spellName": "Raking Ferocity",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "170": {
+    "spellId": 273346,
+    "spellName": "Winter's Reach",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "171": {
+    "spellId": 273344,
+    "spellName": "Masterful Instincts",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "172": {
+    "spellId": 279778,
+    "spellName": "Grove Tending",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "173": {
+    "spellId": 273367,
+    "spellName": "Power of the Moon",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "174": {
+    "spellId": 273409,
+    "spellName": "Gathering Storm",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "175": {
+    "spellId": 273418,
+    "spellName": "Night's Vengeance",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "176": {
+    "spellId": 273420,
+    "spellName": "Bloodcraze",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "177": {
+    "spellId": 279172,
+    "spellName": "Bloodsport",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "178": {
+    "spellId": 273448,
+    "spellName": "Lava Shock",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "179": {
+    "spellId": 273461,
+    "spellName": "Strength of Earth",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "180": {
+    "spellId": 273452,
+    "spellName": "Storm of Steel",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "181": {
+    "spellId": 273488,
+    "spellName": "Twist the Knife",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "183": {
+    "spellId": 273521,
+    "spellName": "Inevitable Demise",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "184": {
+    "spellId": 273291,
+    "spellName": "Sunrise Technique",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "185": {
+    "spellId": 273328,
+    "spellName": "Overflowing Mists",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "186": {
+    "spellId": 273464,
+    "spellName": "Staggering Strikes",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "187": {
+    "spellId": 273473,
+    "spellName": "Expurgation",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "188": {
+    "spellId": 273513,
+    "spellName": "Moment of Compassion",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "189": {
+    "spellId": 273553,
+    "spellName": "Dauntless Divinity",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "190": {
+    "spellId": 273523,
+    "spellName": "Umbral Blaze",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "191": {
+    "spellId": 273597,
+    "spellName": "Ebb and Flow",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "192": {
+    "spellId": 273682,
+    "spellName": "Meticulous Scheming",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "193": {
+    "spellId": 273823,
+    "spellName": "Blightborne Infusion",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "194": {
+    "spellId": 273834,
+    "spellName": "Filthy Transfusion",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "195": {
+    "spellId": 273829,
+    "spellName": "Secrets of the Deep",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "196": {
+    "spellId": 280429,
+    "spellName": "Swirling Sands",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "197": {
+    "spellId": 274057,
+    "spellName": "Marrowblood",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "198": {
+    "spellId": 274070,
+    "spellName": "Glacial Contagion",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "199": {
+    "spellId": 274081,
+    "spellName": "Festermight",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "200": {
+    "spellId": 274397,
+    "spellName": "Sunblaze",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "201": {
+    "spellId": 280010,
+    "spellName": "Runic Barrier",
+    "tier": 1,
+    "classesId": [
+      6
+    ]
+  },
+  "202": {
+    "spellId": 274344,
+    "spellName": "Soulmonger",
+    "tier": 1,
+    "classesId": [
+      12
+    ]
+  },
+  "203": {
+    "spellId": 274355,
+    "spellName": "Shellshock",
+    "tier": 1,
+    "classesId": [
+      3
+    ]
+  },
+  "204": {
+    "spellId": 274366,
+    "spellName": "Sanctum",
+    "tier": 1,
+    "classesId": [
+      5
+    ]
+  },
+  "205": {
+    "spellId": 274379,
+    "spellName": "Eldritch Warding",
+    "tier": 1,
+    "classesId": [
+      8
+    ]
+  },
+  "206": {
+    "spellId": 274388,
+    "spellName": "Stalwart Protector",
+    "tier": 1,
+    "classesId": [
+      2
+    ]
+  },
+  "207": {
+    "spellId": 274412,
+    "spellName": "Serene Spirit",
+    "tier": 1,
+    "classesId": [
+      7
+    ]
+  },
+  "208": {
+    "spellId": 274418,
+    "spellName": "Lifeblood",
+    "tier": 1,
+    "classesId": [
+      9
+    ]
+  },
+  "209": {
+    "spellId": 274424,
+    "spellName": "Shredding Fury",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "210": {
+    "spellId": 274432,
+    "spellName": "Autumn Leaves",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "211": {
+    "spellId": 274441,
+    "spellName": "Dance of Death",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "212": {
+    "spellId": 274444,
+    "spellName": "Unerring Vision",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "213": {
+    "spellId": 274590,
+    "spellName": "Venomous Fangs",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "214": {
+    "spellId": 274594,
+    "spellName": "Arcane Pressure",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "215": {
+    "spellId": 274596,
+    "spellName": "Blaster Master",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "217": {
+    "spellId": 274692,
+    "spellName": "Footpad",
+    "tier": 1,
+    "classesId": [
+      4
+    ]
+  },
+  "218": {
+    "spellId": 274762,
+    "spellName": "Strength of Spirit",
+    "tier": 1,
+    "classesId": [
+      10
+    ]
+  },
+  "219": {
+    "spellId": 274813,
+    "spellName": "Reawakening",
+    "tier": 1,
+    "classesId": [
+      11
+    ]
+  },
+  "220": {
+    "spellId": 275144,
+    "spellName": "Unbound Chaos",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "221": {
+    "spellId": 275350,
+    "spellName": "Rigid Carapace",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "222": {
+    "spellId": 275381,
+    "spellName": "Echo of the Elementals",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "223": {
+    "spellId": 275388,
+    "spellName": "Lightning Conduit",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "224": {
+    "spellId": 275488,
+    "spellName": "Swelling Stream",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "225": {
+    "spellId": 279854,
+    "spellName": "Glacial Assault",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "226": {
+    "spellId": 275529,
+    "spellName": "Test of Might",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "227": {
+    "spellId": 275541,
+    "spellName": "Depth of the Shadows",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "228": {
+    "spellId": 275602,
+    "spellName": "Prayerful Litany",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "229": {
+    "spellId": 275632,
+    "spellName": "Pulverizing Blows",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "230": {
+    "spellId": 275372,
+    "spellName": "Cascading Calamity",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "231": {
+    "spellId": 275395,
+    "spellName": "Explosive Potential",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "232": {
+    "spellId": 275425,
+    "spellName": "Flashpoint",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "233": {
+    "spellId": 275463,
+    "spellName": "Divine Revelations",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "234": {
+    "spellId": 275477,
+    "spellName": "Inner Light",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "235": {
+    "spellId": 275496,
+    "spellName": "Indomitable Justice",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "236": {
+    "spellId": 275722,
+    "spellName": "Whispers of the Damned",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "237": {
+    "spellId": 275860,
+    "spellName": "Reinforced Plating",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "238": {
+    "spellId": 275892,
+    "spellName": "Fit to Burst",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "239": {
+    "spellId": 275846,
+    "spellName": "Snake Eyes",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "240": {
+    "spellId": 275896,
+    "spellName": "Blade In The Shadows",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "241": {
+    "spellId": 275906,
+    "spellName": "Twisted Claws",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "242": {
+    "spellId": 275917,
+    "spellName": "Echoing Howl",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "243": {
+    "spellId": 275924,
+    "spellName": "Embrace of the Darkfallen",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "244": {
+    "spellId": 275929,
+    "spellName": "Harrowing Decay",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "245": {
+    "spellId": 275934,
+    "spellName": "Seething Power",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "246": {
+    "spellId": 275968,
+    "spellName": "Gaping Maw",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "247": {
+    "spellId": 276021,
+    "spellName": "Iron Jaws",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "248": {
+    "spellId": 275975,
+    "spellName": "Misty Peaks",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "249": {
+    "spellId": 276072,
+    "spellName": "Poisoned Wire",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "250": {
+    "spellId": 276152,
+    "spellName": "Dawning Sun",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "251": {
+    "spellId": 276155,
+    "spellName": "Craggy Bark",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "346": {
+    "spellId": 278480,
+    "spellName": "Killer Frost",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "347": {
+    "spellId": 278487,
+    "spellName": "Frozen Tempest",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "348": {
+    "spellId": 278479,
+    "spellName": "Eternal Rune Weapon",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "349": {
+    "spellId": 278484,
+    "spellName": "Bones of the Damned",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "350": {
+    "spellId": 278482,
+    "spellName": "Cankerous Wounds",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "351": {
+    "spellId": 278489,
+    "spellName": "Last Surprise",
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  "352": {
+    "spellId": 278493,
+    "spellName": "Thirsting Blades",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "353": {
+    "spellId": 278500,
+    "spellName": "Eyes of Rage",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "354": {
+    "spellId": 278502,
+    "spellName": "Cycle of Binding",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "355": {
+    "spellId": 278501,
+    "spellName": "Essence Sever",
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  "356": {
+    "spellId": 278505,
+    "spellName": "High Noon",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "357": {
+    "spellId": 278507,
+    "spellName": "Lunar Shrapnel",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "358": {
+    "spellId": 278509,
+    "spellName": "Gushing Lacerations",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "359": {
+    "spellId": 279527,
+    "spellName": "Wild Fleshrending",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "360": {
+    "spellId": 278510,
+    "spellName": "Gory Regeneration",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "361": {
+    "spellId": 278511,
+    "spellName": "Guardian's Wrath",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "362": {
+    "spellId": 278515,
+    "spellName": "Rampant Growth",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "363": {
+    "spellId": 278513,
+    "spellName": "Waking Dream",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "364": {
+    "spellId": 279642,
+    "spellName": "Lively Spirit",
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  "365": {
+    "spellId": 278528,
+    "spellName": "Pack Alpha",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "366": {
+    "spellId": 279806,
+    "spellName": "Primal Instincts",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "367": {
+    "spellId": 278529,
+    "spellName": "Feeding Frenzy",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "368": {
+    "spellId": 277651,
+    "spellName": "Steady Aim",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "369": {
+    "spellId": 278530,
+    "spellName": "Rapid Reload",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "370": {
+    "spellId": 278531,
+    "spellName": "Focused Fire",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "371": {
+    "spellId": 277653,
+    "spellName": "Blur of Talons",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "372": {
+    "spellId": 278532,
+    "spellName": "Wilderness Survival",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "373": {
+    "spellId": 278533,
+    "spellName": "Up Close And Personal",
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  "374": {
+    "spellId": 278536,
+    "spellName": "Galvanizing Spark",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "375": {
+    "spellId": 278537,
+    "spellName": "Explosive Echo",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "376": {
+    "spellId": 277656,
+    "spellName": "Trailing Embers",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "377": {
+    "spellId": 278538,
+    "spellName": "Duplicative Incineration",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "378": {
+    "spellId": 278539,
+    "spellName": "Firemind",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "379": {
+    "spellId": 277663,
+    "spellName": "Tunnel of Ice",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "380": {
+    "spellId": 278541,
+    "spellName": "Whiteout",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "381": {
+    "spellId": 278542,
+    "spellName": "Frigid Grasp",
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  "382": {
+    "spellId": 277665,
+    "spellName": "Niuzao's Blessing",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "383": {
+    "spellId": 278569,
+    "spellName": "Training of Niuzao",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "384": {
+    "spellId": 278571,
+    "spellName": "Elusive Footwork",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "385": {
+    "spellId": 277667,
+    "spellName": "Burst of Life",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "386": {
+    "spellId": 279875,
+    "spellName": "Font of Life",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "387": {
+    "spellId": 278576,
+    "spellName": "Uplifted Spirits",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "388": {
+    "spellId": 277669,
+    "spellName": "Swift Roundhouse",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "389": {
+    "spellId": 279918,
+    "spellName": "Open Palm Strikes",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "390": {
+    "spellId": 278577,
+    "spellName": "Pressure Point",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "391": {
+    "spellId": 278580,
+    "spellName": "Meridian Strikes",
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  "393": {
+    "spellId": 278593,
+    "spellName": "Grace of the Justicar",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "394": {
+    "spellId": 278594,
+    "spellName": "Breaking Dawn",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "395": {
+    "spellId": 278609,
+    "spellName": "Inspiring Vanguard",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "396": {
+    "spellId": 278615,
+    "spellName": "Zealotry",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "397": {
+    "spellId": 277680,
+    "spellName": "Gift of Forgiveness",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "398": {
+    "spellId": 278629,
+    "spellName": "Contemptuous Homily",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "399": {
+    "spellId": 278643,
+    "spellName": "Enduring Luminescence",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "400": {
+    "spellId": 277681,
+    "spellName": "Everlasting Light",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "401": {
+    "spellId": 278645,
+    "spellName": "Word of Mending",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "402": {
+    "spellId": 278655,
+    "spellName": "Sacred Flame",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "403": {
+    "spellId": 277682,
+    "spellName": "Spiteful Apparitions",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "404": {
+    "spellId": 278659,
+    "spellName": "Death Throes",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "405": {
+    "spellId": 278661,
+    "spellName": "Chorus of Insanity",
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  "406": {
+    "spellId": 277679,
+    "spellName": "Scent of Blood",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "407": {
+    "spellId": 278664,
+    "spellName": "Fan of Blades",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "408": {
+    "spellId": 278666,
+    "spellName": "Shrouded Suffocation",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "410": {
+    "spellId": 278675,
+    "spellName": "Paradise Lost",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "411": {
+    "spellId": 278676,
+    "spellName": "Ace Up Your Sleeve",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "413": {
+    "spellId": 278681,
+    "spellName": "The First Dance",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "414": {
+    "spellId": 278683,
+    "spellName": "Inevitability",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "416": {
+    "spellId": 278697,
+    "spellName": "Natural Harmony",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "417": {
+    "spellId": 278709,
+    "spellName": "Rumbling Tremors",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "420": {
+    "spellId": 278719,
+    "spellName": "Roiling Storm",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "422": {
+    "spellId": 278713,
+    "spellName": "Surging Tides",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "423": {
+    "spellId": 278715,
+    "spellName": "Spouting Spirits",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "425": {
+    "spellId": 278721,
+    "spellName": "Sudden Onset",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "426": {
+    "spellId": 278727,
+    "spellName": "Dreadful Calling",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "428": {
+    "spellId": 278737,
+    "spellName": "Demonic Meteor",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "429": {
+    "spellId": 278738,
+    "spellName": "Forbidden Knowledge",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "431": {
+    "spellId": 278747,
+    "spellName": "Rolling Havoc",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "432": {
+    "spellId": 278748,
+    "spellName": "Chaotic Inferno",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "433": {
+    "spellId": 277639,
+    "spellName": "Seismic Wave",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "434": {
+    "spellId": 278751,
+    "spellName": "Crushing Assault",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "435": {
+    "spellId": 278752,
+    "spellName": "Lord of War",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "437": {
+    "spellId": 278757,
+    "spellName": "Simmering Rage",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "438": {
+    "spellId": 278758,
+    "spellName": "Reckless Flurry",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "440": {
+    "spellId": 278760,
+    "spellName": "Callous Reprisal",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "441": {
+    "spellId": 278765,
+    "spellName": "Iron Fortress",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "442": {
+    "spellId": 275974,
+    "spellName": "Deathbloom",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "443": {
+    "spellId": 276007,
+    "spellName": "Excoriate",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "444": {
+    "spellId": 277644,
+    "spellName": "Crashing Chaos",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "445": {
+    "spellId": 277673,
+    "spellName": "Perforate",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "446": {
+    "spellId": 277676,
+    "spellName": "Brigand's Blitz",
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  "447": {
+    "spellId": 277666,
+    "spellName": "Ancestral Resonance",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "448": {
+    "spellId": 277671,
+    "spellName": "Synapse Shock",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "449": {
+    "spellId": 277658,
+    "spellName": "Overflowing Shores",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "450": {
+    "spellId": 277636,
+    "spellName": "Brace for Impact",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "451": {
+    "spellId": 277638,
+    "spellName": "Infinite Fury",
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  "452": {
+    "spellId": 277674,
+    "spellName": "Radiant Incandescence",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "453": {
+    "spellId": 277678,
+    "spellName": "Divine Right",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "454": {
+    "spellId": 277675,
+    "spellName": "Judicious Defense",
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  "457": {
+    "spellId": 279829,
+    "spellName": "Igneous Potential",
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  "458": {
+    "spellId": 279878,
+    "spellName": "Supreme Commander",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "459": {
+    "spellId": 279899,
+    "spellName": "Unstable Flames",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "460": {
+    "spellId": 279909,
+    "spellName": "Bursting Flare",
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  "461": {
+    "spellId": 279926,
+    "spellName": "Earthlink",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "462": {
+    "spellId": 266936,
+    "spellName": "Azerite Globules",
+    "tier": 2,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "463": {
+    "spellId": 267889,
+    "spellName": "Blessed Portents",
+    "tier": 2,
+    "classesId": [
+      2,
+      5,
+      7,
+      10,
+      11
+    ]
+  },
+  "465": {
+    "spellId": 280011,
+    "spellName": "March of the Damned",
+    "tier": 1,
+    "classesId": [
+      6
+    ]
+  },
+  "466": {
+    "spellId": 280012,
+    "spellName": "Burning Soul",
+    "tier": 1,
+    "classesId": [
+      12
+    ]
+  },
+  "467": {
+    "spellId": 280013,
+    "spellName": "Ursoc's Endurance",
+    "tier": 1,
+    "classesId": [
+      11
+    ]
+  },
+  "468": {
+    "spellId": 280015,
+    "spellName": "Cauterizing Blink",
+    "tier": 1,
+    "classesId": [
+      8
+    ]
+  },
+  "469": {
+    "spellId": 280014,
+    "spellName": "Duck and Cover",
+    "tier": 1,
+    "classesId": [
+      3
+    ]
+  },
+  "470": {
+    "spellId": 280016,
+    "spellName": "Sweep the Leg",
+    "tier": 1,
+    "classesId": [
+      10
+    ]
+  },
+  "471": {
+    "spellId": 280017,
+    "spellName": "Gallant Steed",
+    "tier": 1,
+    "classesId": [
+      2
+    ]
+  },
+  "472": {
+    "spellId": 280018,
+    "spellName": "Twist Magic",
+    "tier": 1,
+    "classesId": [
+      5
+    ]
+  },
+  "473": {
+    "spellId": 280020,
+    "spellName": "Shrouded Mantle",
+    "tier": 1,
+    "classesId": [
+      4
+    ]
+  },
+  "474": {
+    "spellId": 280021,
+    "spellName": "Pack Spirit",
+    "tier": 1,
+    "classesId": [
+      7
+    ]
+  },
+  "475": {
+    "spellId": 280022,
+    "spellName": "Desperate Power",
+    "tier": 1,
+    "classesId": [
+      9
+    ]
+  },
+  "476": {
+    "spellId": 280023,
+    "spellName": "Moment of Glory",
+    "tier": 1,
+    "classesId": [
+      1
+    ]
+  },
+  "477": {
+    "spellId": 280128,
+    "spellName": "Bury the Hatchet",
+    "tier": 1,
+    "classesId": [
+      1
+    ]
+  },
+  "478": {
+    "spellId": 280402,
+    "spellName": "Tidal Surge",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "479": {
+    "spellId": 280284,
+    "spellName": "Dagger in the Back",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "480": {
+    "spellId": 280407,
+    "spellName": "Blood Rite",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "481": {
+    "spellId": 280410,
+    "spellName": "Incite the Pack",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "482": {
+    "spellId": 280380,
+    "spellName": "Thunderous Blast",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "483": {
+    "spellId": 280555,
+    "spellName": "Archive of the Titans",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "485": {
+    "spellId": 280559,
+    "spellName": "Laser Matrix",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "486": {
+    "spellId": 280577,
+    "spellName": "Glory in Battle",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "487": {
+    "spellId": 280579,
+    "spellName": "Retaliatory Fury",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "488": {
+    "spellId": 280582,
+    "spellName": "Battlefield Focus",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "489": {
+    "spellId": 280598,
+    "spellName": "Sylvanas' Resolve",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "490": {
+    "spellId": 280580,
+    "spellName": "Combined Might",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "491": {
+    "spellId": 280581,
+    "spellName": "Collective Will",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "492": {
+    "spellId": 280623,
+    "spellName": "Liberator's Might",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "493": {
+    "spellId": 280624,
+    "spellName": "Last Gift",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "494": {
+    "spellId": 280627,
+    "spellName": "Battlefield Precision",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "495": {
+    "spellId": 280628,
+    "spellName": "Anduin's Dedication",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "496": {
+    "spellId": 280625,
+    "spellName": "Stronger Together",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "497": {
+    "spellId": 280626,
+    "spellName": "Stand As One",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "498": {
+    "spellId": 280163,
+    "spellName": "Barrage Of Many Bombs",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "499": {
+    "spellId": 280168,
+    "spellName": "Ricocheting Inflatable Pyrosaw",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "500": {
+    "spellId": 280174,
+    "spellName": "Synaptic Spark Capacitor",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "501": {
+    "spellId": 280178,
+    "spellName": "Relational Normalization Gizmo",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "502": {
+    "spellId": 280181,
+    "spellName": "Personal Absorb-o-Tron",
+    "tier": 1,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "503": {
+    "spellId": 280172,
+    "spellName": "Auto-Self-Cauterizer",
+    "tier": 1,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "504": {
+    "spellId": 281514,
+    "spellName": "Unstable Catalyst",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "505": {
+    "spellId": 281841,
+    "spellName": "Tradewinds",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  }
+}

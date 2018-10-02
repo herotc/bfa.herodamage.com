@@ -1,6 +1,7 @@
 // Dependencies
 import React from 'react'
 import PropTypes from 'prop-types'
+import { siteMetadata } from '../gatsby-config'
 // Assets
 import appleTouchIcon from './assets/images/favicon/apple-touch-icon.png'
 import favicon16x16 from './assets/images/favicon/favicon-16x16.png'
@@ -25,6 +26,9 @@ export default class HTML extends React.Component {
           <meta charSet="utf-8"/>
           <meta httpEquiv="x-ua-compatible" content="ie=edge"/>
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+          <title>{siteMetadata.title}</title>
+          <meta name="description" content={siteMetadata.description}/>
+          <meta name="keywords" content={siteMetadata.keywords}/>
           <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon}/>
           <link rel="icon" type="image/png" sizes="32x32" href={favicon32x32}/>
           <link rel="icon" type="image/png" sizes="16x16" href={favicon16x16}/>

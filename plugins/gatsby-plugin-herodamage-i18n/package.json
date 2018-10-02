@@ -1,0 +1,25 @@
+{
+  "name": "gatsby-plugin-herodamage-i18n",
+  "description": "Gatsby plugin to implements lingui and react-lingui",
+  "keywords": [
+    "gatsby",
+    "gatsby-plugin",
+    "lingui",
+    "react-lingui"
+  ],
+  "bugs": {
+    "url": "https://github.com/herotc/bfa.herodamage.com/issues"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herotc/bfa.herodamage.com/tree/master/plugins/gatsby-plugin-herodamage-i18n"
+  },
+  "peerDependencies": {
+    "@lingui/babel-preset-react": "latest",
+    "@lingui/react": "latest",
+    "gatsby": "latest",
+    "gatsby-source-filesystem": "latest",
+    "gatsby-transformer-remark": "latest"
+  }
+}

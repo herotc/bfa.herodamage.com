@@ -1,0 +1,110 @@
+{
+  "warrior": {
+    "classId": 1,
+    "classColor": "#C79C6E",
+    "specIds": {
+      "arms": 71,
+      "fury": 72,
+      "protection": 73
+    }
+  },
+  "paladin": {
+    "classId": 2,
+    "classColor": "#F58CBA",
+    "specIds": {
+      "holy": 65,
+      "protection": 66,
+      "retribution": 70
+    }
+  },
+  "hunter": {
+    "classId": 3,
+    "classColor": "#ABD473",
+    "specIds": {
+      "beast-mastery": 253,
+      "marksmanship": 254,
+      "survival": 255
+    }
+  },
+  "rogue": {
+    "classId": 4,
+    "classColor": "#FFF569",
+    "specIds": {
+      "assassination": 259,
+      "outlaw": 260,
+      "subtlety": 261
+    }
+  },
+  "priest": {
+    "classId": 5,
+    "classColor": "#FFFFFF",
+    "specIds": {
+      "discipline": 256,
+      "holy": 257,
+      "shadow": 258
+    }
+  },
+  "death-knight": {
+    "classId": 6,
+    "classColor": "#C41F3B",
+    "specIds": {
+      "blood": 250,
+      "frost": 251,
+      "unholy": 252
+    }
+  },
+  "shaman": {
+    "classId": 7,
+    "classColor": "#0070DE",
+    "specIds": {
+      "elemental": 262,
+      "enhancement": 263,
+      "restoration": 264
+    }
+  },
+  "mage": {
+    "classId": 8,
+    "classColor": "#40C7EB",
+    "specIds": {
+      "arcane": 62,
+      "fire": 63,
+      "frost": 64
+    }
+  },
+  "warlock": {
+    "classId": 9,
+    "classColor": "#8787ED",
+    "specIds": {
+      "affliction": 265,
+      "demonology": 266,
+      "destruction": 267
+    }
+  },
+  "monk": {
+    "classId": 10,
+    "classColor": "#00FF96",
+    "specIds": {
+      "brewmaster": 268,
+      "windwalker": 269,
+      "mistweaver": 270
+    }
+  },
+  "druid": {
+    "classId": 11,
+    "classColor": "#FF7D0A",
+    "specIds": {
+      "balance": 102,
+      "feral": 103,
+      "guardian": 104,
+      "restoration": 105
+    }
+  },
+  "demon-hunter": {
+    "classId": 12,
+    "classColor": "#A330C9",
+    "specIds": {
+      "havoc": 577,
+      "vengeance": 581
+    }
+  }
+}

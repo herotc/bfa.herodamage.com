@@ -1,0 +1,114 @@
+{
+  "name": "herodamage-bfa",
+  "version": "0.0.1",
+  "description": "Battle for Azeroth version of HeroDamage",
+  "keywords": [
+    "herotc",
+    "herodamage",
+    "world of warcraft",
+    "battle for azeroth",
+    "wow bfa",
+    "theorycrafting",
+    "simulationcraft",
+    "simc",
+    "gatsby"
+  ],
+  "homepage": "https://www.herodamage.com/",
+  "bugs": {
+    "url": "https://github.com/herotc/bfa.herodamage.com/issues"
+  },
+  "license": "EUPL-1.2",
+  "author": {
+    "name": "HeroTC",
+    "email": "contact@hero.tc",
+    "url": "https://www.hero.tc/"
+  },
+  "contributors": [
+    {
+      "name": "Quentin Giraud",
+      "email": "dev@aethys.io",
+      "url": "https://quentin.giraud.pro/"
+    },
+    {
+      "name": "Florian Meißner",
+      "email": "developer@mystler.eu",
+      "url": "https://www.mystler.eu/"
+    },
+    {
+      "name": "Océane Skowronski",
+      "email": "dev.oceaneskow@gmail.com",
+      "url": "https://nianel.github.io/CV/"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/herotc/bfa.herodamage.com.git"
+  },
+  "scripts": {
+    "postinstall": "cd scripts/i18n && npm install",
+    "aio-update": "npm update && cd scripts/i18n && npm update",
+    "reinstall": "npm run clear && shx rm -rf scripts/i18n/node_modules && shx rm -rf node_modules && npm install",
+    "clear": "shx rm -rf public/* && shx rm -rf .cache",
+    "develop": "npm run clear && cross-env NODE_OPTIONS=\"--max_old_space_size=3072 -r esm\" gatsby develop",
+    "build": "npm run clear && cross-env NODE_OPTIONS=\"--max_old_space_size=3072 -r esm\" gatsby build",
+    "pre-production": "npm run build && gatsby serve",
+    "dbc": "node -r esm scripts/dbc",
+    "i18n": "cd scripts/i18n && npm start",
+    "start": "npm run develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@lingui/react": "^2.7.0",
+    "@material-ui/core": "3.0.2",
+    "@material-ui/icons": "^3.0.1",
+    "esm": "^3.0.84",
+    "gatsby": "^2.0.12",
+    "gatsby-plugin-google-analytics": "^2.0.6",
+    "gatsby-plugin-no-sourcemaps": "^2.0.0",
+    "gatsby-plugin-react-helmet": "^3.0.0",
+    "gatsby-plugin-styled-components": "^3.0.0",
+    "gatsby-source-filesystem": "^2.0.1",
+    "gatsby-transformer-remark": "^2.1.4",
+    "jss": "^9.8.7",
+    "little-loader": "^0.2.0",
+    "lodash": "^4.17.11",
+    "prop-types": "^15.6.2",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-google-charts": "^3.0.8",
+    "react-helmet": "^5.2.0",
+    "react-jss": "^8.6.1",
+    "react-timeago": "^4.1.9",
+    "styled-components": "^3.4.9"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.0.0",
+    "@lingui/babel-preset-react": "^2.7.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-styled-components": "^1.8.0",
+    "eslint": "^5.6.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "firebase-tools": "^4.2.1",
+    "shx": "^0.3.2"
+  },
+  "engines": {
+    "node": "10.11.0",
+    "npm": "6.4.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 Chrome versions",
+    "last 2 Edge versions",
+    "last 2 Firefox versions",
+    "last 2 Opera versions",
+    "last 2 Safari versions",
+    "last 2 ChromeAndroid versions",
+    "last 2 FirefoxAndroid versions",
+    "last 2 iOS versions"
+  ]
+}
