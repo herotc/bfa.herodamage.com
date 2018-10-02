@@ -1,4 +1,4 @@
-export const onInitialClientRender = () => {
+export const onClientEntry = () => {
   // Make sure the main script exists
   if (!window.herodamage) window.herodamage = {}
   const hd = window.herodamage
@@ -8,7 +8,7 @@ export const onInitialClientRender = () => {
 
   if (process.env.NODE_ENV === 'production') {
     // Google Publisher Tag
-    const googletag = window.googletag || {}
+    const googletag = window.googletag = window.googletag || {}
     googletag.cmd = googletag.cmd || []
     googletag.cmd.push(function () {
       const topBotMapping = googletag.sizeMapping()
@@ -62,7 +62,7 @@ export const onInitialClientRender = () => {
       googletag.enableServices()
     })
 
-    // CookieConsent
+    // Cookie Consent
     window.addEventListener('load', function () {
       window.cookieconsent.initialise({
         palette: {
@@ -75,5 +75,5 @@ export const onInitialClientRender = () => {
   }
 
   // Prevent further initialization
-  hd.hasInitialized = true
+  hd.hasInitialized = Date.now()
 }

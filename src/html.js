@@ -12,13 +12,11 @@ export default class HTML extends React.Component {
     let googlePublisherTag, cookieconsent
     if (process.env.NODE_ENV === 'production') {
       googlePublisherTag = <script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'/>
-      cookieconsent = (
-        <>
-          <link type="text/css" rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.css"/>
-          <script async src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"/>
-        </>
-      )
+      cookieconsent = (<>
+        <link type="text/css" rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.4/cookieconsent.min.css"/>
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.0/cookieconsent.min.js"/>
+      </>)
     }
     const { body, bodyAttributes, headComponents, htmlAttributes, postBodyComponents, preBodyComponents } = this.props
     return (
