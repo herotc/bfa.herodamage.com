@@ -30,6 +30,6 @@
     "@lingui/babel-preset-react": "^2.7.0",
     "@lingui/cli": "^2.7.0",
     "babel-core": "^7.0.0-bridge.0",
-    "react": "^16.5.2"
+    "react": "^16.6.0"
   }
 }
