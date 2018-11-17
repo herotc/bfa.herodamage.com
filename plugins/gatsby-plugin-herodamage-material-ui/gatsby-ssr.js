@@ -5,11 +5,12 @@ import CssBaseline from '@material-ui/core/CssBaseline'
 import getPageContext from './getPageContext'
 
 // We need to share the context for each request.
-let muiPageContext
+const muiPageContextManager = new Map()
 
 // eslint-disable-next-line react/prop-types,react/display-name
-export const wrapRootElement = ({ element }) => {
-  muiPageContext = getPageContext()
+export const wrapRootElement = ({ element, pathname }) => {
+  const muiPageContext = getPageContext()
+  muiPageContextManager.set(pathname, muiPageContext)
   const { sheetsRegistry, generateClassName, theme, sheetsManager } = muiPageContext
   return (
     <JssProvider registry={sheetsRegistry} generateClassName={generateClassName}>
@@ -21,11 +22,12 @@ export const wrapRootElement = ({ element }) => {
   )
 }
 
-export const onRenderBody = ({ setHeadComponents }) => {
-  // Makes sure we got a context during develop mode.
-  if (!muiPageContext) muiPageContext = getPageContext()
-  setHeadComponents([
-    <style type="text/css" id="server-side-jss" key="server-side-jss"
-      dangerouslySetInnerHTML={{ __html: muiPageContext.sheetsRegistry.toString() }}/>
-  ])
+export const onRenderBody = ({ pathname, setHeadComponents }) => {
+  const muiPageContext = muiPageContextManager.get(pathname)
+  if (muiPageContext) {
+    setHeadComponents([
+      <style type="text/css" id="server-side-jss" key="server-side-jss"
+        dangerouslySetInnerHTML={{ __html: muiPageContext.sheetsRegistry.toString() }}/>
+    ])
+  }
 }

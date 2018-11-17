@@ -59,7 +59,7 @@
   },
   "dependencies": {
     "@lingui/react": "^2.7.2",
-    "@material-ui/core": "3.0.2",
+    "@material-ui/core": "^3.5.1",
     "@material-ui/icons": "^3.0.1",
     "esm": "^3.0.84",
     "gatsby": "^2.0.50",

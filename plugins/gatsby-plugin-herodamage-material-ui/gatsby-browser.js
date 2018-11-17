@@ -5,8 +5,8 @@ import getPageContext from './getPageContext'
 
 // Remove the JSS style tag generated on the server to avoid conflicts with the one added on the client.
 export const onInitialClientRender = () => {
-  const ssStyles = window.document.getElementById('server-side-jss')
-  ssStyles && ssStyles.parentNode.removeChild(ssStyles)
+  const serverSideStyles = window.document.getElementById('server-side-jss')
+  if (serverSideStyles) serverSideStyles.parentNode.removeChild(serverSideStyles)
 }
 
 // eslint-disable-next-line react/prop-types,react/display-name
