@@ -1,5 +1,8 @@
 # bfa.herodamage.com
-Battle for Azeroth version of HeroDamage (see the [original repository made for Legion expansion](https://github.com/herotc/legion.herodamage.com)).
+Battle for Azeroth version of HeroDamage.
+
+This website was created in order to serve Rogue Theorycrafting Resources and Simulation results before being extended to every classes.
+Simulations are powered by [SimcScripts](https://github.com/Ravenholdt-TC/SimcScripts).
 
 ## Quick Start
 
@@ -13,7 +16,7 @@ nvm use
 And it will use the correct version (under the hood, it does use the `.nvmrc` file)
 
 Also, make sure to have the latest stable version of the package manager of your choice ([npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)).  
-For the rest of this quick start, we will use `npm`.
+For the rest of this quick start, we will use `npm`, and this is the package manager used by this project.
 
 ### Installation
 
@@ -39,10 +42,15 @@ npm run build
 ```
 Then check the `public` folder.
 
+In addition, if you want to see the result in the browser, you can do:
+```
+npm run serve
+```
+
 ## Contributing
-This project follows [StandardJS](https://standardjs.com/) coding style with [ESLint](https://eslint.org/) linter.  
+This project follows [StandardJS](https://standardjs.com/) coding style using [ESLint](https://eslint.org/) linter.  
 The main dependency is [GatsbyJS](https://www.gatsbyjs.org/) that does use [React](https://reactjs.org/), [GraphQL](https://graphql.org/), [webpack](https://webpack.js.org/) and [Babel](https://babeljs.io/).  
-We also use [React Helmet](https://github.com/nfl/react-helmet), [i18next](https://www.i18next.com/), [Styled Components](https://github.com/styled-components/styled-components) and [MDC-React](https://github.com/material-components/material-components-web-react).  
+We also use [LinguiJS](https://lingui.js.org/), [styled-components](https://www.styled-components.com/) and [material-ui](https://material-ui.com/).  
 **Make sure to have the corresponding plugins (if available) in your IDE for a better support of those.**
 
 ## Contributors
