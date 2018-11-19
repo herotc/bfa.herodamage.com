@@ -23,7 +23,7 @@ function processRacesData (data, templateDPS) {
   data.insertColumn(2, { type: 'string', role: 'tooltip', 'p': { 'html': true } })
   data.insertColumn(3, { type: 'string', role: 'style' })
 
-  const AllianceRaces = ['Human', 'Dwarf', 'Night Elf', 'Gnome', 'Worgen', 'Draenei', 'Lightforged Draenei', 'Void Elf', 'Dark Iron Dwarf']
+  const AllianceRaces = ['Human', 'Dwarf', 'Night Elf', 'Night Elf (Day)', 'Night Elf (Night)', 'Gnome', 'Worgen', 'Draenei', 'Lightforged Draenei', 'Void Elf', 'Dark Iron Dwarf']
   const HordeRaces = ['Orc', 'Troll', 'Tauren', 'Goblin', 'Undead', 'Blood Elf', 'Highmountain Tauren', 'Nightborne', 'Mag\'har Orc']
 
   // Process data
