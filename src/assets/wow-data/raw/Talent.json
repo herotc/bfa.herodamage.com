@@ -527,7 +527,7 @@
           "talentId": 22093
         },
         "1": {
-          "spellId": 261715,
+          "spellId": 116847,
           "spellName": "Rushing Jade Wind",
           "talentId": 23122
         },
@@ -766,13 +766,13 @@
     "103": {
       "0": {
         "0": {
-          "spellId": 202022,
-          "spellName": "Blood Scent",
+          "spellId": 202021,
+          "spellName": "Predator",
           "talentId": 22363
         },
         "1": {
-          "spellId": 202021,
-          "spellName": "Predator",
+          "spellId": 202031,
+          "spellName": "Sabertooth",
           "talentId": 22364
         },
         "2": {
@@ -795,8 +795,8 @@
           "talentId": 21708
         },
         "1": {
-          "spellId": 202032,
-          "spellName": "Jagged Wounds",
+          "spellId": 52610,
+          "spellName": "Savage Roar",
           "talentId": 18579
         },
         "2": {
@@ -807,8 +807,8 @@
       },
       "5": {
         "0": {
-          "spellId": 202031,
-          "spellName": "Sabertooth",
+          "spellId": 285564,
+          "spellName": "Scent of Blood",
           "talentId": 21714
         },
         "1": {
@@ -817,8 +817,8 @@
           "talentId": 21711
         },
         "2": {
-          "spellId": 52610,
-          "spellName": "Savage Roar",
+          "spellId": 285381,
+          "spellName": "Primal Wrath",
           "talentId": 22370
         }
       },
@@ -860,8 +860,8 @@
       },
       "1": {
         "1": {
-          "spellId": 236748,
-          "spellName": "Intimidating Roar",
+          "spellId": 102793,
+          "spellName": "Ursol's Vortex",
           "talentId": 22916
         }
       },
@@ -2458,8 +2458,8 @@
           "talentId": 23374
         },
         "2": {
-          "spellId": 193173,
-          "spellName": "Mania",
+          "spellId": 288733,
+          "spellName": "Intangibility",
           "talentId": 21976
         }
       },
@@ -2958,8 +2958,8 @@
     "262": {
       "0": {
         "0": {
-          "spellId": 260694,
-          "spellName": "Exposed Elements",
+          "spellId": 170374,
+          "spellName": "Earthen Rage",
           "talentId": 22356
         },
         "1": {
@@ -2980,8 +2980,8 @@
           "talentId": 23108
         },
         "1": {
-          "spellId": 16166,
-          "spellName": "Master of the Elements",
+          "spellId": 260897,
+          "spellName": "Call the Thunder",
           "talentId": 22139
         },
         "2": {
@@ -3009,8 +3009,8 @@
       },
       "3": {
         "0": {
-          "spellId": 260890,
-          "spellName": "High Voltage",
+          "spellId": 16166,
+          "spellName": "Master of the Elements",
           "talentId": 19271
         },
         "1": {
@@ -3033,8 +3033,8 @@
       },
       "5": {
         "0": {
-          "spellId": 170374,
-          "spellName": "Earthen Rage",
+          "spellId": 262303,
+          "spellName": "Surge of Power",
           "talentId": 22145
         },
         "1": {
