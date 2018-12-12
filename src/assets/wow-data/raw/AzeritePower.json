@@ -276,7 +276,7 @@
   {
     "powerId": 176,
     "spellId": 288080,
-    "spellName": "Cold Steel Hot Blood",
+    "spellName": "Cold Steel, Hot Blood",
     "specsId": [
       72
     ],
@@ -2257,7 +2257,7 @@
   {
     "powerId": 382,
     "spellId": 285958,
-    "spellName": "Straight No Chaser",
+    "spellName": "Straight, No Chaser",
     "specsId": [
       268
     ],
@@ -4403,7 +4403,7 @@
   {
     "powerId": 545,
     "spellId": 288080,
-    "spellName": "Cold Steel Hot Blood",
+    "spellName": "Cold Steel, Hot Blood",
     "specsId": [
       72
     ],
@@ -4524,7 +4524,7 @@
   {
     "powerId": 513,
     "spellId": 285958,
-    "spellName": "Straight No Chaser",
+    "spellName": "Straight, No Chaser",
     "specsId": [
       268
     ],

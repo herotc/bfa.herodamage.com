@@ -1003,7 +1003,7 @@
   },
   "176": {
     "spellId": 288080,
-    "spellName": "Cold Steel Hot Blood",
+    "spellName": "Cold Steel, Hot Blood",
     "tier": 3,
     "classesId": [
       1
@@ -1938,7 +1938,7 @@
   },
   "382": {
     "spellId": 285958,
-    "spellName": "Straight No Chaser",
+    "spellName": "Straight, No Chaser",
     "tier": 3,
     "classesId": [
       10
@@ -3176,7 +3176,7 @@
   },
   "513": {
     "spellId": 285958,
-    "spellName": "Straight No Chaser",
+    "spellName": "Straight, No Chaser",
     "tier": 3,
     "classesId": [
       10
@@ -3479,7 +3479,7 @@
   },
   "545": {
     "spellId": 288080,
-    "spellName": "Cold Steel Hot Blood",
+    "spellName": "Cold Steel, Hot Blood",
     "tier": 3,
     "classesId": [
       1
