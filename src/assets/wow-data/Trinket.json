@@ -2,6 +2,9 @@
   "'Bygone Bee' Almanac": {
     "itemId": 163936
   },
+  "Ancient Knot of Wisdom": {
+    "itemId": 166793
+  },
   "Azerokk's Resonating Heart": {
     "itemId": 159612
   },
@@ -62,6 +65,9 @@
   "Drust-Runed Icicle": {
     "itemId": 161380
   },
+  "Emblazoned Alchemist Stone": {
+    "itemId": 166976
+  },
   "Emblem of Zandalar": {
     "itemId": 158154
   },
@@ -70,6 +76,9 @@
   },
   "First Mate's Spyglass": {
     "itemId": 158163
+  },
+  "Forest Lord's Razorleaf": {
+    "itemId": 166794
   },
   "Frenetic Corpuscle": {
     "itemId": 160648
@@ -106,6 +115,9 @@
   },
   "Kaja-fied Banana": {
     "itemId": 161125
+  },
+  "Knot of Ancient Fury": {
+    "itemId": 166795
   },
   "Kraulok's Claw": {
     "itemId": 161419
@@ -166,9 +178,6 @@
   },
   "Spiritbound Voodoo Burl": {
     "itemId": 161412
-  },
-  "Surging Alchemist Stone": {
-    "itemId": 152632
   },
   "Syringe of Bloodborne Infirmity": {
     "itemId": 160655
