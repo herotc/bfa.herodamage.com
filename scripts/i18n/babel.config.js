@@ -7,6 +7,7 @@ module.exports = function (api) {
     '@lingui/babel-preset-react'
   ]
   const plugins = [
+    'macros',
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-syntax-dynamic-import',
     '@babel/plugin-proposal-optional-chaining'

@@ -1,6 +1,7 @@
-import { promisify } from 'util'
+import { createHash } from 'crypto'
 import { readFile } from 'fs'
 import { resolve } from 'path'
+import { promisify } from 'util'
 import {
   getAzeriteInformationById,
   getAzeriteInformationByName,
@@ -12,19 +13,20 @@ import * as mapping from './mapping'
 const readFilePromise = promisify(readFile)
 
 export class ReportTransformer {
-  constructor (node) {
+  constructor (node, actions) {
     this.node = node
-    this.nodeFields = {} // Hold all the fields that will be registered to the corresponding page node
+    this.actions = actions
+    this.reportFields = {} // Hold all the fields that will be registered
     this.extraFields = {} // Hold all the fields that will not be registered but can be used by the transformer
 
     const { name } = this.node
     const [simulationName, fightStyle, tier, wowClass, spec, variation] = name.toLowerCase().split('_')
-    this.extraFields.simulationName = simulationName
+    Object.assign(this.extraFields, { simulationName })
 
     const { simulationFeaturedOrder, simulationCategory, simulationType, simulationTemplate } = mapping.simulationDetails[simulationName]
     let slug = `/${wowClass}/${simulationType}/${fightStyle}-${tier}-${spec}`
     if (variation) slug += `-${variation}`
-    Object.assign(this.nodeFields, {
+    Object.assign(this.reportFields, {
       slug, // '/death-knight/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
       name, // 'TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
       wowClass, // 'death-knight'
@@ -39,9 +41,19 @@ export class ReportTransformer {
     })
   }
 
+  /*
+  |=====================================================================================================================
+  | generateReportNode
+  |=====================================================================================================================
+  */
+
+  /**
+   *
+   * @returns {Promise<void>}
+   */
   async extractDataFromFile () {
     const { absolutePath, name } = this.node
-    const { simulationType } = this.nodeFields
+    const { simulationType } = this.reportFields
 
     // Fetch the report file
     let report
@@ -53,8 +65,7 @@ export class ReportTransformer {
       return
     }
     const { metas, results } = report
-
-    this.extraFields.results = results
+    Object.assign(this.extraFields, { results })
 
     let processedResults
     switch (simulationType) {
@@ -97,7 +108,7 @@ export class ReportTransformer {
         break
     }
 
-    Object.assign(this.nodeFields, {
+    Object.assign(this.reportFields, {
       resultsRaw: JSON.stringify(processedResults),
       fightLength: metas.fightLength,
       fightLengthVariation: metas.fightLengthVariation,
@@ -116,8 +127,8 @@ export class ReportTransformer {
     })
   }
 
-  generateAdditionalNodeFields () {
-    const { fightStyle, simulationType, spec, tier, wowClass } = this.nodeFields
+  generateAdditionalReportFields () {
+    const { fightStyle, simulationType, spec, tier, wowClass } = this.reportFields
     const { results } = this.extraFields
 
     // Generate AzeriteForge & AzeritePowerWeights Import String
@@ -183,7 +194,7 @@ export class ReportTransformer {
         const apwWeightsString = `( AzeritePowerWeights:1:"${apwWeightsName}":${classId}:${specId}: ${apwWeights.join(', ')} )`
 
         // Save them
-        Object.assign(this.nodeFields, {
+        Object.assign(this.reportFields, {
           azeriteForgeWeights: afWeightsString,
           azeritePowerWeights: apwWeightsString
         })
@@ -192,8 +203,8 @@ export class ReportTransformer {
   }
 
   registerPagesDetails () {
-    const { wowClasses, simulationsName, fightStyles, tiers, nodeFieldsName } = ReportTransformer.pagesDetails
-    const { wowClass, fightStyle, tier } = this.nodeFields
+    const { wowClasses, simulationsName, fightStyles, tiers, reportFieldsName } = ReportTransformer.pagesDetails
+    const { wowClass, fightStyle, tier } = this.reportFields
     const { simulationName } = this.extraFields
 
     // Used to create WoW classes & Performance pages
@@ -202,25 +213,57 @@ export class ReportTransformer {
     if (!fightStyles.includes(fightStyle)) fightStyles.push(fightStyle)
     if (!tiers.includes(tier)) tiers.push(tier)
 
-    // Used to automatically retrieve all nodeFields registered through the transformer in the simulation query
-    for (const nodeFieldName of Object.keys(this.nodeFields)) {
-      if (!nodeFieldsName.includes(nodeFieldName)) nodeFieldsName.push(nodeFieldName)
+    // Used to automatically retrieve all reportFields registered through the transformer in the simulation query
+    for (const nodeFieldName of Object.keys(this.reportFields)) {
+      if (!reportFieldsName.includes(nodeFieldName)) reportFieldsName.push(nodeFieldName)
     }
   }
 
-  createNodeFields (actions) {
+  createNodeFields () {
     const node = this.node
-    const { createNodeField } = actions
+    const { createNode, createParentChildLink } = this.actions
+    const fields = this.reportFields
 
-    for (const name in this.nodeFields) {
-      const value = this.nodeFields[name]
-      createNodeField({ node, name, value })
+    const nodeData = {
+      id: `${node.id} >>> HeroDamageReport`,
+      parent: node.id,
+      children: [],
+      internal: {
+        type: 'HeroDamageReport',
+        contentDigest: createHash('md5').update(JSON.stringify(fields)).digest('hex'),
+        description: 'Node representing the data from the json reports processed by the reports plugin.'
+      },
+      reportFields: { ...fields }
     }
+    createNode(nodeData)
+    createParentChildLink({ parent: node, child: nodeData })
   }
 
+  /**
+   *
+   * @returns {Promise<void>}
+   */
+  async generateReportNode () {
+    await this.extractDataFromFile()
+    this.generateAdditionalReportFields()
+    this.createNodeFields()
+    this.registerPagesDetails()
+  }
+
+  /*
+  |=====================================================================================================================
+  | createPages
+  |=====================================================================================================================
+  */
+
+  /**
+   *
+   * @param api
+   * @returns {Promise<void>}
+   */
   static async createPages (api) {
     const { graphql, actions: { createPage } } = api
-    const { wowClasses, simulationsName, fightStyles, tiers, nodeFieldsName } = ReportTransformer.pagesDetails
+    const { wowClasses, simulationsName, fightStyles, tiers, reportFieldsName } = ReportTransformer.pagesDetails
 
     // WoW classes
     for (const wowClass of wowClasses) {
@@ -246,25 +289,24 @@ export class ReportTransformer {
     // Simulations
     const result = await graphql(`
       {
-        allFile(filter: {sourceInstanceName: {eq: "reports"}}) {
+        allHeroDamageReport {
           edges {
             node {
-              fields {
-                ${nodeFieldsName.join(' ')}
+              reportFields {
+                ${reportFieldsName.join(' ')}
               }
             }
           }
         }
       }
     `)
-    const { data: { allFile: { edges } } } = result
-    edges.forEach(({ node }) => {
-      const fields = node.fields
-      const { slug, simulationTemplate } = fields
+    const { data: { allHeroDamageReport: { edges } } } = result
+    edges.forEach(({ node: { reportFields } }) => {
+      const { slug, simulationTemplate } = reportFields
       createPage({
         path: slug,
         component: resolve(`./src/templates/simulation/${simulationTemplate}.js`),
-        context: fields
+        context: reportFields
       })
     })
   }
@@ -272,12 +314,12 @@ export class ReportTransformer {
 
 /**
  * Hold all the details to create the pages
- * @type {{wowClasses: Array, simulationsName: Array, fightStyles: Array, tiers: Array, nodeFieldsName: Array}}
+ * @type {{wowClasses: Array, simulationsName: Array, fightStyles: Array, tiers: Array, reportFieldsName: Array}}
  */
 ReportTransformer.pagesDetails = {
   wowClasses: [],
   simulationsName: [],
   fightStyles: [],
   tiers: [],
-  nodeFieldsName: []
+  reportFieldsName: []
 }

@@ -13,15 +13,8 @@ export const onCreateNode = async ({ node, actions }) => {
     return
   }
 
-  const report = new ReportTransformer(node)
-
-  await report.extractDataFromFile()
-
-  report.generateAdditionalNodeFields()
-
-  report.createNodeFields(actions)
-
-  report.registerPagesDetails()
+  const report = new ReportTransformer(node, actions)
+  await report.generateReportNode()
 }
 
 export const createPages = async (api) => {
