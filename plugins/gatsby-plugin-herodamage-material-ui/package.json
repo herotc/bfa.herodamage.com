@@ -14,9 +14,11 @@
     "url": "https://github.com/herotc/bfa.herodamage.com/tree/master/plugins/gatsby-plugin-herodamage-material-ui"
   },
   "peerDependencies": {
-    "@material-ui/core": "3.0.2",
+    "@material-ui/core": "latest",
     "gatsby": "latest",
     "jss": "latest",
+    "react": "latest",
+    "react-dom": "latest",
     "react-jss": "latest"
   }
 }
