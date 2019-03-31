@@ -4,6 +4,9 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import { refreshWowheadLinks } from '../../utils/wow/ui'
 import { getResultsStates } from './combinations/get-results-states'
+import toUpper from 'lodash/toUpper'
+import startCase from 'lodash/startCase'
+import { getSpecWithVariation } from '../../utils/wow/ui'
 // Components
 import { Trans } from '@lingui/react'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -126,7 +129,7 @@ class CombinationsSimulationTemplate extends React.Component {
     const { fightStyle, fightLength, fightLengthVariation, name, simcBuildTimestamp, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateGear, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
     return (
       <div>
-        <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
+        <h1>{startCase(simulationType)} {toUpper(fightStyle)} {toUpper(tier)} {getSpecWithVariation(t, spec, variation)} {startCase(t(wowClass))}</h1>
         <p><Trans><b>Information:</b><br/>These simulations are all based on the default profiles from
           SimulationCraft.<br/>You can consider everything within the target error DPS range to be mostly equal and
           requiring a more detailed investigation.</Trans></p>

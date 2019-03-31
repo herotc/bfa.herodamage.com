@@ -2,6 +2,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { stackedChart } from '../../../browser/charts/stacked'
+import toUpper from 'lodash/toUpper'
+import startCase from 'lodash/startCase'
+import { getSpecWithVariation } from '../../../utils/wow/ui'
 // Components
 import CircularProgress from '@material-ui/core/CircularProgress'
 import CopyBox from '../../../components/copy-box'
@@ -22,7 +25,7 @@ class StackedChartLayout extends React.Component {
     const { azeriteForgeWeights, azeritePowerWeights, fightStyle, fightLength, fightLengthVariation, name, simcBuildTimestamp, simcGitRevision, simulationFeaturedOrder, simulationCategory, simulationType, spec, targetError, templateGear, templateTalents, templateDPS, tier, variation, wowBuild, wowClass, wowVersion } = pageContext
     return (
       <div>
-        <h1>{name.replace(new RegExp('_', 'g'), ' ').replace(new RegExp('-', 'g'), ' ')}</h1>
+        <h1>{startCase(simulationType)} {toUpper(fightStyle)} {toUpper(tier)} {getSpecWithVariation(t, spec, variation)} {startCase(t(wowClass))}</h1>
         {children}
         <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
           simulationCategory={simulationCategory} simulationType={simulationType} spec={spec} t={t} tier={tier}
