@@ -10,6 +10,12 @@ export const simulationDetails = {
     simulationType: 'azerite-stacks',
     simulationTemplate: 'azerite-stacks'
   },
+  'essences': {
+    simulationFeaturedOrder: 2,
+    simulationCategory: 'essences',
+    simulationType: 'essences',
+    simulationTemplate: 'essences'
+  },
   'combinator': {
     simulationCategory: 'combinations',
     simulationType: 'combinations-default',
@@ -31,19 +37,19 @@ export const simulationDetails = {
     simulationTemplate: 'combinations'
   },
   'combinator-3a': {
-    simulationFeaturedOrder: 3,
+    simulationFeaturedOrder: 4,
     simulationCategory: 'combinations',
     simulationType: 'combinations-3a',
     simulationTemplate: 'combinations'
   },
   racesimulation: {
-    simulationFeaturedOrder: 4,
+    simulationFeaturedOrder: 5,
     simulationCategory: 'races',
     simulationType: 'races',
     simulationTemplate: 'races'
   },
   trinketsimulation: {
-    simulationFeaturedOrder: 2,
+    simulationFeaturedOrder: 3,
     simulationCategory: 'trinkets',
     simulationType: 'trinkets',
     simulationTemplate: 'trinkets'

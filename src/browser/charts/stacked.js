@@ -166,6 +166,7 @@ export async function stackedChart (pageContext, chartTitle, lang) {
         break
       case 'azerite-levels':
       case 'azerite-stacks':
+      case 'essences':
       case 'trinkets':
         rawDataProcessed = processData(simulationType, rawData, wowClass, spec, talentsMapping, templateDPS, lang)
     }
@@ -185,6 +186,7 @@ export async function stackedChart (pageContext, chartTitle, lang) {
         break
       case 'azerite-levels':
       case 'azerite-stacks':
+      case 'essences':
       case 'trinkets':
         // A gridline every 2%
         for (let i = 1; i <= maxPercentageGainHAxis / 2; i++) {
