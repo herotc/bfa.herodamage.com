@@ -1,6 +1,6 @@
 import load from 'little-loader'
 
-import { refreshWowheadLinks, wowAzeriteLabel, wowTrinketLabel } from '../../utils/wow/ui'
+import { refreshWowheadLinks, wowAzeriteEssenceLabel, wowAzeriteLabel, wowTrinketLabel } from '../../utils/wow/ui'
 import { excludeEmptyRows, formatNumber, initOverlay, removeLoading } from './common'
 import { getTalentsMappingFromSpellIds } from '../../utils/wow/core'
 
@@ -113,6 +113,13 @@ function processData (simulationType, data, wowClass, spec, talentsMapping, temp
       for (let row = 0; row < data.getNumberOfRows(); row++) {
         const wowLabel = data.getValue(row, 0)
         labels.push(wowAzeriteLabel(wowLabel, wowClass, spec, talentsMapping, lang))
+        data.setValue(row, 0, '')
+      }
+      break
+    case 'essences':
+      for (let row = 0; row < data.getNumberOfRows(); row++) {
+        const wowLabel = data.getValue(row, 0)
+        labels.push(wowAzeriteEssenceLabel(wowLabel, wowClass, spec, talentsMapping, lang))
         data.setValue(row, 0, '')
       }
       break

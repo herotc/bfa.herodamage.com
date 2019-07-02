@@ -1,6 +1,7 @@
 import ClassSpec from '../../assets/wow-data/ClassSpec.json'
 import Talents from '../../assets/wow-data/Talent.json'
 import Trinkets from '../../assets/wow-data/Trinket.json'
+import AzeriteEssences from '../../assets/wow-data/AzeriteEssence.json'
 import AzeritePowersById from '../../assets/wow-data/AzeritePowerById.json'
 import AzeritePowersByName from '../../assets/wow-data/AzeritePowerByName.json'
 
@@ -83,6 +84,15 @@ export function getTalentsMappingDifference (mappingA, mappingB) {
  */
 export function getTrinketInformation (trinketName) {
   return Trinkets[trinketName]
+}
+
+/**
+ *
+ * @param azeriteEssenceName
+ * @return {*}
+ */
+export function getAzeriteEssenceInformation (azeriteEssenceName) {
+  return AzeriteEssences[azeriteEssenceName]
 }
 
 /**

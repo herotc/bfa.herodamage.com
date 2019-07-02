@@ -1,5 +1,11 @@
 // Dependencies
-import { getAzeriteInformationByName, getTalentsMappingDifference, getTalentsTree, getTrinketInformation } from './core'
+import {
+  getAzeriteEssenceInformation,
+  getAzeriteInformationByName,
+  getTalentsMappingDifference,
+  getTalentsTree,
+  getTrinketInformation
+} from './core'
 import startCase from 'lodash/startCase'
 import { defaultLang } from '../../../plugins/gatsby-plugin-herodamage-i18n'
 // Assets
@@ -189,6 +195,46 @@ export function wowAzeriteLabel (rawSpellName, wowClass, spec, templateTalentsMa
 
     return (container && `<div class="label-container ${tierClassName}">${label}</div>`) || `${label}`
   }
+}
+
+/**
+ *
+ * @param rawName
+ * @param wowClass
+ * @param spec
+ * @param templateTalentsMapping
+ * @param lang
+ * @param container
+ * @return {boolean|string|string}
+ */
+export function wowAzeriteEssenceLabel (rawName, wowClass, spec, templateTalentsMapping, lang = defaultLang, container = true) {
+  // Split up the variations
+  const parts = rawName.split('--')
+  const essence = getAzeriteEssenceInformation(parts[0].replace(' (Major)', '').replace(' (Minor)', ''))
+  if (!essence) return (container && `<div class="label-container">${rawName}</div>`) || `${rawName}`
+
+  const { itemId } = essence
+  let label = `<a href="${getWowheadLink(lang)}item=${itemId}">
+      <span>${rawName}</span>
+    </a>`
+  // Add back the formatted variations
+  if (parts[1]) {
+    const variations = parts[1].split(';')
+    const variationStrings = []
+    for (const variation of variations) {
+      const parts = variation.split(':')
+      const variationName = parts[0]
+      const variationValue = parts[1]
+      switch (variationName) {
+        case 'talents':
+          const talents = getTalentsMappingDifference(templateTalentsMapping, variationValue)
+          variationStrings.push(`${wowTalentsLabel(talents, wowClass, spec, lang)}`)
+          break
+      }
+    }
+    label += `&nbsp;|&nbsp;${variationStrings.join(' - ')}`
+  }
+  return (container && `<div class="label-container">${label}</div>`) || `${label}`
 }
 
 /**

@@ -1,0 +1,50 @@
+{
+  "Blood of the Enemy": {
+    "essenceId": 23,
+    "itemId": 168444
+  },
+  "Condensed Life-Force": {
+    "essenceId": 14,
+    "itemId": 168856
+  },
+  "Conflict and Strife": {
+    "essenceId": 32,
+    "itemId": 169900
+  },
+  "Essence of the Focusing Iris": {
+    "essenceId": 5,
+    "itemId": 168622
+  },
+  "Memory of Lucid Dreams": {
+    "essenceId": 27,
+    "itemId": 168848
+  },
+  "Purification Protocol": {
+    "essenceId": 6,
+    "itemId": 168860
+  },
+  "Ripple in Space": {
+    "essenceId": 15,
+    "itemId": 168852
+  },
+  "The Crucible of Flame": {
+    "essenceId": 12,
+    "itemId": 168613
+  },
+  "The Unbound Force": {
+    "essenceId": 28,
+    "itemId": 168865
+  },
+  "Vision of Perfection": {
+    "essenceId": 22,
+    "itemId": 168844
+  },
+  "Worldvein Resonance": {
+    "essenceId": 4,
+    "itemId": 168617
+  },
+  "Worldvein Resonance (3 Allies)": {
+    "essenceId": 4,
+    "itemId": 168617
+  }
+}
