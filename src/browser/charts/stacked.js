@@ -94,7 +94,7 @@ function processData (simulationType, data, wowClass, spec, talentsMapping, temp
       const stepVal = curVal - prevVal
       const tooltip = `
         <div class="chart-tooltip">
-          <b>${data.getValue(row, 0)}<br/> ${simulationType === 'azerite-stacks' ? 'Stack' : 'Item Level'} ${data.getColumnLabel(col)}</b><br/>
+          <b>${data.getValue(row, 0).split('--')[0]}<br/> ${simulationType === 'azerite-stacks' ? 'Stack' : 'Item Level'} ${data.getColumnLabel(col)}</b><br/>
           <b>Total:</b> ${formatNumber(curVal.toFixed(2))} % (${formatNumber(curAbsVal.toFixed())})<br/>
           <b>Increase:</b> ${formatNumber(stepVal.toFixed(2))}% (${formatNumber(absStepVal.toFixed())} )
         </div>`
@@ -219,7 +219,7 @@ export async function stackedChart (pageContext, chartTitle, lang) {
         top: 50,
         bottom: 100,
         right: 100,
-        left: 330
+        left: 410
       },
       fontName: '"Roboto", "Helvetica", "Arial", sans-serif',
       titleTextStyle: {

@@ -217,6 +217,8 @@ export function wowAzeriteEssenceLabel (rawName, wowClass, spec, templateTalents
   let label = `<a href="${getWowheadLink(lang)}item=${itemId}">
       <span>${rawName}</span>
     </a>`
+  if (parts[0].includes('(Major)')) label += `&nbsp;(Major)`
+  if (parts[0].includes('(Minor)')) label += `&nbsp;(Minor)`
   // Add back the formatted variations
   if (parts[1]) {
     const variations = parts[1].split(';')
