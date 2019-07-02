@@ -5,8 +5,17 @@
   "Ancient Knot of Wisdom": {
     "itemId": 166793
   },
+  "Aquipotent Nautilus": {
+    "itemId": 169305
+  },
+  "Ashvane's Razor Coral": {
+    "itemId": 169311
+  },
   "Azerokk's Resonating Heart": {
     "itemId": 159612
+  },
+  "Azshara's Font of Power": {
+    "itemId": 169314
   },
   "Azuretho's Singed Plumage": {
     "itemId": 161377
@@ -31,6 +40,12 @@
   },
   "Crest of Pa'ku": {
     "itemId": 165581
+  },
+  "Crushing Alchemist Stone": {
+    "itemId": 168675
+  },
+  "Cyclotronic Blast": {
+    "itemId": 167672
   },
   "Darkmoon Deck: Fathoms": {
     "itemId": 159125
@@ -59,11 +74,8 @@
   "Doom's Wake": {
     "itemId": 161462
   },
-  "Dread Aspirant's Medallion": {
-    "itemId": 162897
-  },
-  "Dread Gladiator's Badge": {
-    "itemId": 161902
+  "Dribbling Inkpod": {
+    "itemId": 169319
   },
   "Drust-Runed Icicle": {
     "itemId": 161380
@@ -71,8 +83,8 @@
   "Emblem of Zandalar": {
     "itemId": 158154
   },
-  "Eternal Alchemist Stone": {
-    "itemId": 165928
+  "Enthraller's Bindstone": {
+    "itemId": 169317
   },
   "Everchill Anchor": {
     "itemId": 165570
@@ -107,8 +119,29 @@
   "Hadal's Nautilus": {
     "itemId": 159622
   },
+  "Harbinger's Inscrutable Will": {
+    "itemId": 167867
+  },
+  "Harbinger's Inscrutable Will (20% Silenced)": {
+    "itemId": 167867
+  },
+  "Harbinger's Inscrutable Will (50% Silenced)": {
+    "itemId": 167867
+  },
   "Harlan's Loaded Dice": {
     "itemId": 155881
+  },
+  "Harmonic Dematerializer": {
+    "itemId": 167677
+  },
+  "Highborne Compendium of Storms": {
+    "itemId": 169328
+  },
+  "Highborne Compendium of Sundering": {
+    "itemId": 169321
+  },
+  "Idol of Indiscriminate Consumption": {
+    "itemId": 167868
   },
   "Ignition Mage's Fuse": {
     "itemId": 159615
@@ -118,6 +151,9 @@
   },
   "Incessantly Ticking Clock": {
     "itemId": 161113
+  },
+  "Ingenious Mana Battery": {
+    "itemId": 169344
   },
   "Invocation of Yu'lon": {
     "itemId": 165568
@@ -146,11 +182,23 @@
   "Landoi's Scrutiny": {
     "itemId": 163935
   },
+  "Leviathan's Lure": {
+    "itemId": 169304
+  },
   "Leyshock's Grand Compilation": {
     "itemId": 163937
   },
   "Living Oil Cannister": {
     "itemId": 158216
+  },
+  "Lurker's Insidious Gift (10s)": {
+    "itemId": 167866
+  },
+  "Lurker's Insidious Gift (20s)": {
+    "itemId": 167866
+  },
+  "Lurker's Insidious Gift (Full)": {
+    "itemId": 167866
   },
   "Lustrous Golden Plumage": {
     "itemId": 159617
@@ -158,14 +206,32 @@
   "Merektha's Fang": {
     "itemId": 158367
   },
+  "Moonstone of Zin-Azshari": {
+    "itemId": 165666
+  },
   "My'das Talisman": {
     "itemId": 158319
+  },
+  "Notorious Gladiator's Badge": {
+    "itemId": 167380
+  },
+  "Notorious Gladiator's Maledict": {
+    "itemId": 167383
+  },
+  "Notorious Gladiator's Medallion": {
+    "itemId": 167377
+  },
+  "Oxidized Refuse Remover": {
+    "itemId": 170273
   },
   "Pearl Diver's Compass": {
     "itemId": 158162
   },
   "Permafrost-Encrusted Heart": {
     "itemId": 161381
+  },
+  "Phial of the Arcane Tempest": {
+    "itemId": 169313
   },
   "Plume of the Seaborne Avian": {
     "itemId": 161378
@@ -185,17 +251,32 @@
   "Razdunk's Big Red Button": {
     "itemId": 159611
   },
+  "Remote Guidance Device": {
+    "itemId": 169769
+  },
   "Rezan's Gleaming Eye": {
     "itemId": 158712
   },
   "Rotcrusted Voodoo Doll": {
     "itemId": 159624
   },
+  "Shiver Venom Relic": {
+    "itemId": 168905
+  },
+  "Shockbiter's Fang": {
+    "itemId": 169318
+  },
   "Snowpelt Mangler": {
     "itemId": 160263
   },
   "Spiritbound Voodoo Burl": {
     "itemId": 161412
+  },
+  "Subroutine: Overclock": {
+    "itemId": 167556
+  },
+  "Subroutine: Recalibration": {
+    "itemId": 168800
   },
   "Syringe of Bloodborne Infirmity": {
     "itemId": 160655
@@ -230,7 +311,13 @@
   "Vigilant's Bloodshaper": {
     "itemId": 160651
   },
+  "Vision of Demise": {
+    "itemId": 169307
+  },
   "Whirlwing's Plumage": {
     "itemId": 158215
+  },
+  "Za'qul's Portal Key": {
+    "itemId": 169306
   }
 }

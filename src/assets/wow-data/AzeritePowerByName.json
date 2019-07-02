@@ -6,7 +6,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -93,6 +99,25 @@
       12
     ]
   },
+  "Arcane Heart": {
+    "powerId": 577,
+    "spellId": 303006,
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
   "Arcane Pressure": {
     "powerId": 214,
     "spellId": 274594,
@@ -141,6 +166,7 @@
     "spellId": 280172,
     "tier": 1,
     "classesId": [
+      0,
       1,
       2,
       3,
@@ -235,14 +261,20 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
     ]
   },
   "Baleful Invocation": {
-    "powerId": 429,
+    "powerId": 515,
     "spellId": 287059,
     "tier": 3,
     "classesId": [
@@ -269,7 +301,7 @@
     ]
   },
   "Bastion of Might": {
-    "powerId": 520,
+    "powerId": 237,
     "spellId": 287377,
     "tier": 3,
     "classesId": [
@@ -335,11 +367,18 @@
     "spellId": 267889,
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "Blessed Sanctuary": {
@@ -424,7 +463,7 @@
     ]
   },
   "Bloody Runeblade": {
-    "powerId": 557,
+    "powerId": 243,
     "spellId": 289339,
     "tier": 3,
     "classesId": [
@@ -495,11 +534,18 @@
     "spellId": 267884,
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "Brain Storm": {
@@ -676,6 +722,25 @@
       5
     ]
   },
+  "Clockwork Heart": {
+    "powerId": 569,
+    "spellId": 300170,
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
   "Cold Hearted": {
     "powerId": 549,
     "spellId": 288424,
@@ -735,11 +800,18 @@
     "spellId": 267882,
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "Contemptuous Homily": {
@@ -773,7 +845,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -943,7 +1021,7 @@
     ]
   },
   "Early Harvest": {
-    "powerId": 532,
+    "powerId": 120,
     "spellId": 287251,
     "tier": 3,
     "classesId": [
@@ -1037,7 +1115,7 @@
     ]
   },
   "Empyrean Power": {
-    "powerId": 453,
+    "powerId": 507,
     "spellId": 286390,
     "tier": 3,
     "classesId": [
@@ -1076,11 +1154,18 @@
     "spellId": 267886,
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "Equipoise": {
@@ -1510,9 +1595,9 @@
     ]
   },
   "Helchains": {
-    "powerId": 511,
+    "powerId": 142,
     "spellId": 286832,
-    "tier": 4,
+    "tier": 3,
     "classesId": [
       6
     ]
@@ -1526,7 +1611,7 @@
     ]
   },
   "Hour of Reaping": {
-    "powerId": 558,
+    "powerId": 246,
     "spellId": 288878,
     "tier": 3,
     "classesId": [
@@ -1827,14 +1912,20 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
     ]
   },
   "Light's Decree": {
-    "powerId": 508,
+    "powerId": 396,
     "spellId": 286229,
     "tier": 3,
     "classesId": [
@@ -1882,6 +1973,25 @@
     "tier": 3,
     "classesId": [
       1
+    ]
+  },
+  "Loyal to the End": {
+    "powerId": 576,
+    "spellId": 303007,
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
     ]
   },
   "Lunar Shrapnel": {
@@ -2008,7 +2118,7 @@
     ]
   },
   "Nothing Personal": {
-    "powerId": 249,
+    "powerId": 509,
     "spellId": 286573,
     "tier": 3,
     "classesId": [
@@ -2020,11 +2130,18 @@
     "spellId": 267879,
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "Open Palm Strikes": {
@@ -2118,11 +2235,31 @@
       5
     ]
   },
+  "Person-Computer Interface": {
+    "powerId": 568,
+    "spellId": 300168,
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
   "Personal Absorb-o-Tron": {
     "powerId": 502,
     "spellId": 280181,
     "tier": 1,
     "classesId": [
+      0,
       1,
       2,
       3,
@@ -2285,9 +2422,9 @@
     ]
   },
   "Replicating Shadows": {
-    "powerId": 506,
+    "powerId": 124,
     "spellId": 286121,
-    "tier": 4,
+    "tier": 3,
     "classesId": [
       4
     ]
@@ -2464,11 +2601,18 @@
     "spellId": 267883,
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "Scent of Blood": {
@@ -2626,7 +2770,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -2770,7 +2920,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -2793,7 +2949,7 @@
     ]
   },
   "Striking the Anvil": {
-    "powerId": 550,
+    "powerId": 121,
     "spellId": 288452,
     "tier": 3,
     "classesId": [
@@ -2828,7 +2984,7 @@
     ]
   },
   "Sudden Revelation": {
-    "powerId": 397,
+    "powerId": 535,
     "spellId": 287355,
     "tier": 3,
     "classesId": [
@@ -2961,11 +3117,18 @@
     "spellId": 267892,
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "Tectonic Thunder": {
@@ -3180,6 +3343,25 @@
       1
     ]
   },
+  "Undulating Tides": {
+    "powerId": 575,
+    "spellId": 303008,
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
   "Unerring Vision": {
     "powerId": 212,
     "spellId": 274444,
@@ -3326,7 +3508,7 @@
     ]
   },
   "Wildfire": {
-    "powerId": 556,
+    "powerId": 168,
     "spellId": 288755,
     "tier": 3,
     "classesId": [
@@ -3348,7 +3530,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -3367,11 +3555,18 @@
     "spellId": 267880,
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "Wracking Brilliance": {

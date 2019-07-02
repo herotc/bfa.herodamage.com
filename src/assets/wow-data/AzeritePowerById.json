@@ -80,11 +80,18 @@
     "spellName": "Woundbinder",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "20": {
@@ -94,7 +101,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -189,11 +202,18 @@
     "spellName": "On My Way",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "42": {
@@ -201,11 +221,18 @@
     "spellName": "Savior",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "43": {
@@ -215,7 +242,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -377,7 +410,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -390,7 +429,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -403,7 +448,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -416,7 +467,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -429,7 +486,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -440,11 +503,18 @@
     "spellName": "Synergistic Growth",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "103": {
@@ -452,11 +522,18 @@
     "spellName": "Concentrated Mending",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "104": {
@@ -464,11 +541,18 @@
     "spellName": "Bracing Chill",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "105": {
@@ -476,11 +560,18 @@
     "spellName": "Ephemeral Recovery",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "106": {
@@ -2502,11 +2593,18 @@
     "spellName": "Blessed Portents",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   "465": {
@@ -3055,6 +3153,7 @@
     "spellName": "Personal Absorb-o-Tron",
     "tier": 1,
     "classesId": [
+      0,
       1,
       2,
       3,
@@ -3074,6 +3173,7 @@
     "spellName": "Auto-Self-Cauterizer",
     "tier": 1,
     "classesId": [
+      0,
       1,
       2,
       3,
@@ -3652,6 +3752,101 @@
     "tier": 1,
     "classesId": [
       10
+    ]
+  },
+  "568": {
+    "spellId": 300168,
+    "spellName": "Person-Computer Interface",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "569": {
+    "spellId": 300170,
+    "spellName": "Clockwork Heart",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "575": {
+    "spellId": 303008,
+    "spellName": "Undulating Tides",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "576": {
+    "spellId": 303007,
+    "spellName": "Loyal to the End",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  "577": {
+    "spellId": 303006,
+    "spellName": "Arcane Heart",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
     ]
   }
 }
