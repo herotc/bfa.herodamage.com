@@ -99,10 +99,6 @@ export class ReportTransformer {
           return result
         })
         break
-      case 'races':
-        // TODO: Proper handling of Races labels instead of ignoring variations
-        processedResults = results.filter((result) => typeof result[0] !== 'string' || !result[0].includes('--'))
-        break
       default:
         processedResults = results
         break

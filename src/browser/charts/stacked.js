@@ -1,16 +1,26 @@
 import load from 'little-loader'
 
-import { refreshWowheadLinks, wowAzeriteEssenceLabel, wowAzeriteLabel, wowTrinketLabel } from '../../utils/wow/ui'
+import {
+  refreshWowheadLinks,
+  wowAzeriteEssenceLabel,
+  wowAzeriteLabel,
+  wowRaceLabel,
+  wowTrinketLabel
+} from '../../utils/wow/ui'
 import { excludeEmptyRows, formatNumber, initOverlay, removeLoading } from './common'
 import { getTalentsMappingFromSpellIds } from '../../utils/wow/core'
 
 /**
  *
  * @param data
+ * @param wowClass
+ * @param spec
+ * @param talentsMapping
  * @param templateDPS
+ * @param lang
  * @returns {*}
  */
-function processRacesData (data, templateDPS) {
+function processRacesData (data, wowClass, spec, talentsMapping, templateDPS, lang) {
   // Sort
   let maxDPS = 0
   for (let row = 0; row < data.getNumberOfRows(); row++) {
@@ -29,7 +39,7 @@ function processRacesData (data, templateDPS) {
   // Process data
   for (let row = 0; row < data.getNumberOfRows(); row++) {
     let raceStyle = ''
-    const rowName = data.getValue(row, 0)
+    const rowName = data.getValue(row, 0).split('--')[0]
     if (AllianceRaces.includes(rowName)) {
       raceStyle = 'stroke-width: 3; stroke-color: #1144AA; color: #3366CC'
     } else if (HordeRaces.includes(rowName)) {
@@ -47,6 +57,18 @@ function processRacesData (data, templateDPS) {
     data.setValue(row, 3, raceStyle)
     data.setValue(row, 2, tooltip)
     data.setValue(row, 1, curVal)
+  }
+
+  // Remove labels from data to add interactive ones in HTML
+  const labels = []
+  for (let row = 0; row < data.getNumberOfRows(); row++) {
+    const wowLabel = data.getValue(row, 0)
+    labels.push(wowRaceLabel(wowLabel, wowClass, spec, talentsMapping, lang))
+    data.setValue(row, 0, '')
+  }
+  const interactiveLabels = document.getElementById('google-chart-labels')
+  for (let label of labels) {
+    interactiveLabels.innerHTML += label
   }
 
   return { data, maxDPS }
@@ -169,7 +191,7 @@ export async function stackedChart (pageContext, chartTitle, lang) {
     let rawDataProcessed
     switch (simulationType) {
       case 'races':
-        rawDataProcessed = processRacesData(rawData, templateDPS)
+        rawDataProcessed = processRacesData(rawData, wowClass, spec, talentsMapping, templateDPS, lang)
         break
       case 'azerite-levels':
       case 'azerite-stacks':
