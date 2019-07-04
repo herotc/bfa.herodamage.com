@@ -16,7 +16,7 @@ const Footer = ({ classes, siteMetadata }) => (
   <footer>
     <Paper className={classes.footer} elevation={1}>
       <Typography align={'center'}>
-        Copyright © 2017-2018 Hero Damage |&nbsp;
+        Copyright © 2017-2019 Hero Damage |&nbsp;
         <a href={siteMetadata.github} title="GitHub Repository">GitHub</a>&nbsp;|&nbsp;
         <a href="https://bfa-prepatch.herodamage.com/" title="BfA PrePatch version of Hero Damage">BfA PrePatch
           Version</a>&nbsp;|&nbsp;

@@ -21,7 +21,7 @@ const Metas = ({ i18nPlugin, fightLength, fightLengthVariation, simcBuildTimesta
       <p>
         <Trans><b>Last Update:</b></Trans>&nbsp;{timeAgo(buildDate)}
         <DateFormat value={buildDate}
-          format={{ month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' }}/> (CET)<br/>
+          format={{ month: 'short', day: '2-digit', hour: '2-digit', minute: '2-digit' }}/> (CEST)<br/>
         <Trans><b>WoW-Build:</b></Trans> {wowVersion}.{wowBuild}&nbsp;
         <a href={`https://github.com/simulationcraft/simc/commits/${simcGitRevision}`}
           title="Corresponding SimC commit">#{simcGitRevision}</a><br/>

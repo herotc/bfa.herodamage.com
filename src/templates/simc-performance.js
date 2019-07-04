@@ -175,7 +175,7 @@ export const query = graphql`
         }
       }
     }
-    relatedSimulations: allSitePage(filter: {context: {lang: {eq: $lang}, slug: {regex: "/^\/simc-performance\//i"}, fightStyle: {eq: $fightStyle}, tier: {eq: $tier}}}, sort: {fields: [context___simulationFeaturedOrder], order: ASC}) {
+    relatedSimulations: allSitePage(filter: {context: {lang: {eq: $lang}, slug: {regex: "/^\/simc-performance\//i"}, fightStyle: {eq: $fightStyle}, tier: {eq: $tier}}}, sort: {fields: [context___simulationFeaturedOrder, context___simulationTypeOrder], order: ASC}) {
       edges {
         node {
           path

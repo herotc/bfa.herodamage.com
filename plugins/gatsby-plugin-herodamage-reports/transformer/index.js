@@ -23,16 +23,17 @@ export class ReportTransformer {
     const [simulationName, fightStyle, tier, wowClass, spec, variation] = name.toLowerCase().split('_')
     Object.assign(this.extraFields, { simulationName })
 
-    const { simulationFeaturedOrder, simulationCategory, simulationType, simulationTemplate } = mapping.simulationDetails[simulationName]
+    const { simulationFeaturedOrder, simulationCategory, simulationType, simulationTypeOrder, simulationTemplate } = mapping.simulationDetails[simulationName]
     let slug = `/${wowClass}/${simulationType}/${fightStyle}-${tier}-${spec}`
     if (variation) slug += `-${variation}`
     Object.assign(this.reportFields, {
       slug, // '/death-knight/trinkets/1t-t21-frost-cold-heart-runic-attenuation'
       name, // 'TrinketSimulation_1T_T21_Death-Knight_Frost_Cold-Heart-Runic-Attenuation'
       wowClass, // 'death-knight'
-      simulationFeaturedOrder: simulationFeaturedOrder || null, // 2
+      simulationFeaturedOrder: simulationFeaturedOrder, // 3
       simulationCategory, // 'trinkets'
       simulationType, // 'trinkets'
+      simulationTypeOrder, // null
       simulationTemplate, // 'trinkets'
       tier, // 't21'
       spec, // 'frost'
@@ -271,12 +272,20 @@ export class ReportTransformer {
     for (const simulationName of simulationsName) {
       for (const fightStyle of fightStyles) {
         for (const tier of tiers) {
-          const { simulationFeaturedOrder, simulationCategory, simulationType } = mapping.simulationDetails[simulationName]
+          const { simulationFeaturedOrder, simulationCategory, simulationType, simulationTypeOrder } = mapping.simulationDetails[simulationName]
           const slug = `/simc-performance/${simulationType}/${fightStyle}-${tier}`
           createPage({
             path: slug,
             component: resolve('./src/templates/simc-performance.js'),
-            context: { slug, simulationFeaturedOrder, simulationCategory, simulationType, fightStyle, tier }
+            context: {
+              slug,
+              simulationFeaturedOrder,
+              simulationCategory,
+              simulationType,
+              simulationTypeOrder,
+              fightStyle,
+              tier
+            }
           })
         }
       }
