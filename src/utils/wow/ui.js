@@ -213,13 +213,19 @@ export function wowAzeriteEssenceLabel (rawName, wowClass, spec, templateTalents
   const essence = getAzeriteEssenceInformation(parts[0].replace(' (Major)', '').replace(' (Minor)', ''))
   if (!essence) return (container && `<div class="label-container">${rawName}</div>`) || `${rawName}`
 
+  const isMajor = parts[0].includes('(Major)')
+  const isMinor = parts[0].includes('(Minor)')
+
+  let className = 'azerite-essence-'
+  if (isMajor) className += 'major'
+  if (isMinor) className += 'minor'
+
   const { rank3Id } = essence
-  let label = `<a href="${getWowheadLink(lang)}azerite-essence-power/${rank3Id}">
+  let label = `<a href="${getWowheadLink(lang)}azerite-essence-power/${rank3Id}${isMinor ? '?nomajor="true"' : ''}" class="${className}">
       <span>${rawName}</span>
     </a>`
   if (parts[0].includes('(3 Allies)')) label += `&nbsp;(3 Allies)`
-  if (parts[0].includes('(Major)')) label += `&nbsp;(Major)`
-  if (parts[0].includes('(Minor)')) label += `&nbsp;(Minor)`
+
   // Add back the formatted variations
   if (parts[1]) {
     const variations = parts[1].split(';')
@@ -237,7 +243,7 @@ export function wowAzeriteEssenceLabel (rawName, wowClass, spec, templateTalents
     }
     label += `&nbsp;|&nbsp;${variationStrings.join(' - ')}`
   }
-  return (container && `<div class="label-container">${label}</div>`) || `${label}`
+  return (container && `<div class="label-container ${className}">${label}</div>`) || `${label}`
 }
 
 /**

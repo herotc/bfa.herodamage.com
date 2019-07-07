@@ -2,11 +2,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import { refreshWowheadLinks } from '../../utils/wow/ui'
+import { getSpecWithVariation, refreshWowheadLinks } from '../../utils/wow/ui'
 import { getResultsStates } from './combinations/get-results-states'
 import toUpper from 'lodash/toUpper'
 import startCase from 'lodash/startCase'
-import { getSpecWithVariation } from '../../utils/wow/ui'
 // Components
 import { Trans } from '@lingui/react'
 import CircularProgress from '@material-ui/core/CircularProgress'
@@ -130,8 +129,8 @@ class CombinationsSimulationTemplate extends React.Component {
     return (
       <div>
         <h1>{startCase(simulationType)} {toUpper(fightStyle)} {toUpper(tier)} {getSpecWithVariation(t, spec, variation)} {startCase(t(wowClass))}</h1>
-        <p><Trans><b>Information:</b><br/>These simulations are all based on the default profiles from
-          SimulationCraft.<br/>You can consider everything within the target error DPS range to be mostly equal and
+        <p><Trans><b>Information:</b><br />These simulations are all based on the default profiles from
+          SimulationCraft.<br />You can consider everything within the target error DPS range to be mostly equal and
           requiring a more detailed investigation.</Trans></p>
         <p><Trans>The purpose of these simulations is to get a general idea of how different setups will compare with
           each other and not to promote any definitive best builds. Several variables (like different trinkets, WF/TF
@@ -149,28 +148,35 @@ class CombinationsSimulationTemplate extends React.Component {
         </p>
         <Related data={data} fightStyle={fightStyle} simulationFeaturedOrder={simulationFeaturedOrder}
           simulationCategory={simulationCategory} simulationType={simulationType} spec={spec} t={t} tier={tier}
-          variation={variation}/>
+          variation={variation} />
         <Metas i18nPlugin={i18nPlugin} fightLength={fightLength} fightLengthVariation={fightLengthVariation}
           simcBuildTimestamp={simcBuildTimestamp} simulationCategory={simulationCategory}
           simcGitRevision={simcGitRevision} targetError={targetError} templateGear={templateGear}
-          templateDPS={templateDPS} wowBuild={wowBuild} wowClass={wowClass} wowVersion={wowVersion}/>
+          templateDPS={templateDPS} wowBuild={wowBuild} wowClass={wowClass} wowVersion={wowVersion} />
         {!results &&
-        <CircularProgress id="results-loader" color="secondary"/>}
+        <CircularProgress id="results-loader" color="secondary" />}
         {results &&
         <div>
           <Filters name={name} onAzeritePowerSelect={this.handleAzeritePowerSelect}
             onTalentSelect={this.handleTalentSelect}
-            azeritePowersFilter={azeritePowersFilter} talentsTree={talentsTree} wowheadLink={wowheadLink}/>
+            azeritePowersFilter={azeritePowersFilter} talentsTree={talentsTree} wowheadLink={wowheadLink} />
+          {simulationType.endsWith('a') &&
           <p style={{ textAlign: 'center' }}>
             <span className={'azerite-tier3-specific'}>Outer Ring (Spec Specific)</span>
             &nbsp;|&nbsp;
             <span className={'azerite-tier3-generic'}>Outer Ring (Generic)</span>
             &nbsp;|&nbsp;
             <span className={'azerite-tier2'}>Inner Ring</span>
-          </p>
+          </p>}
+          {simulationType.endsWith('e') &&
+          <p style={{ textAlign: 'center' }}>
+            <span className={'azerite-essence-major'}>Major + Minor</span>
+            &nbsp;|&nbsp;
+            <span className={'azerite-essence-minor'}>Minor</span>
+          </p>}
           <Table>
             <EnhancedTableHead multiTargets={multiTargets} onRequestSort={this.handleRequestSort}
-              order={order} orderBy={orderBy}/>
+              order={order} orderBy={orderBy} />
             <TableBody>
               {results
                 .filter((result) => this.isValidResult(result))
@@ -179,8 +185,8 @@ class CombinationsSimulationTemplate extends React.Component {
                 .map((result) => (
                   <TableRow key={`${name}-${result.rank}`} hover>
                     <TableCell component="th" scope="row" numeric>{result.rank}</TableCell>
-                    <TableCell dangerouslySetInnerHTML={{ __html: result.talentsLabel }}/>
-                    <TableCell dangerouslySetInnerHTML={{ __html: result.label }}/>
+                    <TableCell dangerouslySetInnerHTML={{ __html: result.talentsLabel }} />
+                    <TableCell dangerouslySetInnerHTML={{ __html: result.label }} />
                     <TableCell numeric>{result.dps}</TableCell>
                     {multiTargets && <TableCell numeric>{result.bossDPS}</TableCell>}
                     <TableCell numeric>{result.dpsPercentageDifference}</TableCell>
@@ -193,7 +199,7 @@ class CombinationsSimulationTemplate extends React.Component {
           <TablePagination component="div" count={results.length}
             rowsPerPage={rowsPerPage} page={page} rowsPerPageOptions={[5, 10, 15, 20, 25, 50, 100, 1000]}
             backIconButtonProps={{ 'aria-label': 'Previous Page' }} nextIconButtonProps={{ 'aria-label': 'Next Page' }}
-            onChangePage={this.handleChangePage} onChangeRowsPerPage={this.handleChangeRowsPerPage}/>
+            onChangePage={this.handleChangePage} onChangeRowsPerPage={this.handleChangeRowsPerPage} />
         </div>}
       </div>
     )

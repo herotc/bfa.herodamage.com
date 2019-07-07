@@ -11,7 +11,7 @@ import TableSortLabel from '@material-ui/core/TableSortLabel'
 const columnData = [
   { id: 'rank', label: '#', numeric: true, sortable: false },
   { id: 'talents', label: 'Talents', numeric: false, sortable: false },
-  { id: 'special', label: 'Azerite Powers', numeric: false, sortable: false },
+  { id: 'special', label: 'Azerite', numeric: false, sortable: false },
   { id: 'dps', label: 'DPS', numeric: true, sortable: true },
   { id: 'bossDPS', label: 'Boss DPS', numeric: true, sortable: true },
   { id: 'dpsPercentageDifference', label: '% Diff', numeric: true, sortable: false }

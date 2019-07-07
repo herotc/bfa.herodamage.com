@@ -49,6 +49,12 @@ class StackedChartLayout extends React.Component {
           &nbsp;|&nbsp;
           <span className={'azerite-tier2'}>Inner Ring</span>
         </p>}
+        {simulationType.includes('essences') &&
+        <p style={{ textAlign: 'center' }}>
+          <span className={'azerite-essence-major'}>Major + Minor</span>
+          &nbsp;|&nbsp;
+          <span className={'azerite-essence-minor'}>Minor</span>
+        </p>}
         <CircularProgress id="results-loader" color="secondary"/>
         <div id="chart-overlay"/>
         <div id="google-chart-labels"/>

@@ -31,7 +31,7 @@ export function getResultsStates (props) {
     result.talentsLabel = wowTalentsLabel(rawTalentLabels, wowClass, spec, lang)
 
     const rawLabelsSplitted = rawLabels.split('; ').join(' / ').split(' / ')
-    result.label = rawLabelsSplitted.map((label) => {
+    result.label = rawLabelsSplitted.map((label, index) => {
       if (label === 'None') return label
       switch (simulationType) {
         case 'combinations-default':
@@ -45,7 +45,9 @@ export function getResultsStates (props) {
         case 'combinations-1e':
         case 'combinations-2e':
         case 'combinations-3e': {
-          return wowAzeriteEssenceLabel(label, wowClass, spec, rawTalentLabels, lang, false)
+          // We do not have the Minor / Major information on the combinations, it's always first = major and others = minor
+          const newLabel = `${label}${index === 0 ? ' (Major)' : ' (Minor)'}`
+          return wowAzeriteEssenceLabel(newLabel, wowClass, spec, rawTalentLabels, lang, false)
         }
       }
     }).join(' ')

@@ -78,6 +78,12 @@ const styles = (theme) => ({
         },
         '&.azerite-tier3-specific': {
           color: '#ff7043'
+        },
+        '&.azerite-essence-major': {
+          color: '#70d5ff'
+        },
+        '&.azerite-essence-minor': {
+          color: '#8788ee'
         }
       }
     },
@@ -92,6 +98,12 @@ const styles = (theme) => ({
     },
     '& .azerite-tier3-specific': {
       color: '#ff7043'
+    },
+    '& .azerite-essence-major': {
+      color: '#70d5ff'
+    },
+    '& .azerite-essence-minor': {
+      color: '#8788ee'
     },
     '& #chart-overlay': {
       width: '2px',
