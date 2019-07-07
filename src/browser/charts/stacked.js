@@ -241,7 +241,7 @@ export async function stackedChart (pageContext, chartTitle, lang) {
         top: 50,
         bottom: 100,
         right: 100,
-        left: 410
+        left: 330
       },
       fontName: '"Roboto", "Helvetica", "Arial", sans-serif',
       titleTextStyle: {

@@ -213,8 +213,8 @@ export function wowAzeriteEssenceLabel (rawName, wowClass, spec, templateTalents
   const essence = getAzeriteEssenceInformation(parts[0].replace(' (Major)', '').replace(' (Minor)', ''))
   if (!essence) return (container && `<div class="label-container">${rawName}</div>`) || `${rawName}`
 
-  const { itemId } = essence
-  let label = `<a href="${getWowheadLink(lang)}item=${itemId}">
+  const { rank3Id } = essence
+  let label = `<a href="${getWowheadLink(lang)}azerite-essence-power/${rank3Id}">
       <span>${rawName}</span>
     </a>`
   if (parts[0].includes('(3 Allies)')) label += `&nbsp;(3 Allies)`

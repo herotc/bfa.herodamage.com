@@ -1,50 +1,62 @@
 {
   "Blood of the Enemy": {
     "essenceId": 23,
-    "itemId": 168444
+    "itemId": 168444,
+    "rank3Id": 85
   },
   "Condensed Life-Force": {
     "essenceId": 14,
-    "itemId": 168856
+    "itemId": 168856,
+    "rank3Id": 55
   },
   "Conflict and Strife": {
     "essenceId": 32,
-    "itemId": 169900
+    "itemId": 169900,
+    "rank3Id": 123
   },
   "Essence of the Focusing Iris": {
     "essenceId": 5,
-    "itemId": 168622
+    "itemId": 168622,
+    "rank3Id": 19
   },
   "Memory of Lucid Dreams": {
     "essenceId": 27,
-    "itemId": 168848
+    "itemId": 168848,
+    "rank3Id": 104
   },
   "Purification Protocol": {
     "essenceId": 6,
-    "itemId": 168860
+    "itemId": 168860,
+    "rank3Id": 31
   },
   "Ripple in Space": {
     "essenceId": 15,
-    "itemId": 168852
+    "itemId": 168852,
+    "rank3Id": 59
   },
   "The Crucible of Flame": {
     "essenceId": 12,
-    "itemId": 168613
+    "itemId": 168613,
+    "rank3Id": 47
   },
   "The Unbound Force": {
     "essenceId": 28,
-    "itemId": 168865
+    "itemId": 168865,
+    "rank3Id": 108
   },
   "Vision of Perfection": {
     "essenceId": 22,
-    "itemId": 168844
+    "itemId": 168844,
+    "rank3Id": 81
   },
   "Worldvein Resonance": {
     "essenceId": 4,
-    "itemId": 168617
+    "itemId": 168617,
+    "rank3Id": 15
   },
   "Worldvein Resonance (3 Allies)": {
     "essenceId": 4,
-    "itemId": 168617
+    "itemId": 168617,
+    "rank3Id": 15
   }
 }

@@ -60,7 +60,7 @@ const styles = (theme) => ({
       float: 'left',
       marginTop: 53,
       position: 'relative',
-      width: 400,
+      width: 320,
       zIndex: 1,
       '& .label-container': {
         display: 'block',

@@ -1,74 +1,86 @@
 [
-    {
-        "essenceId": 12,
-        "itemId": 168613,
-        "name": "The Crucible of Flame",
-        "additionalInput": []
-    },
-    {
-        "essenceId": 4,
-        "itemId": 168617,
-        "name": "Worldvein Resonance",
-        "additionalInput": []
-    },
-    {
-        "essenceId": 4,
-        "itemId": 168617,
-        "name": "Worldvein Resonance (3 Allies)",
-        "additionalInput": ["bfa.worldvein_allies=3"]
-    },
-    {
-        "essenceId": 15,
-        "itemId": 168852,
-        "name": "Ripple in Space",
-        "additionalInput": []
-    },
-    {
-        "essenceId": 22,
-        "itemId": 168844,
-        "name": "Vision of Perfection",
-        "additionalInput": []
-    },
-    {
-        "essenceId": 27,
-        "itemId": 168848,
-        "name": "Memory of Lucid Dreams",
-        "additionalInput": []
-    },
-    {
-        "essenceId": 32,
-        "itemId": 169900,
-        "name": "Conflict and Strife",
-        "additionalInput": []
-    },
-    {
-        "essenceId": 5,
-        "itemId": 168622,
-        "name": "Essence of the Focusing Iris",
-        "additionalInput": []
-    },
-    {
-        "essenceId": 14,
-        "itemId": 168856,
-        "name": "Condensed Life-Force",
-        "additionalInput": []
-    },
-    {
-        "essenceId": 23,
-        "itemId": 168444,
-        "name": "Blood of the Enemy",
-        "additionalInput": []
-    },
-    {
-        "essenceId": 6,
-        "itemId": 168860,
-        "name": "Purification Protocol",
-        "additionalInput": []
-    },
-    {
-        "essenceId": 28,
-        "itemId": 168865,
-        "name": "The Unbound Force",
-        "additionalInput": []
-    }
+  {
+    "essenceId": 12,
+    "itemId": 168613,
+    "rank3Id": 47,
+    "name": "The Crucible of Flame",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 4,
+    "itemId": 168617,
+    "rank3Id": 15,
+    "name": "Worldvein Resonance",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 4,
+    "itemId": 168617,
+    "rank3Id": 15,
+    "name": "Worldvein Resonance (3 Allies)",
+    "additionalInput": ["bfa.worldvein_allies=3"]
+  },
+  {
+    "essenceId": 15,
+    "itemId": 168852,
+    "rank3Id": 59,
+    "name": "Ripple in Space",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 22,
+    "itemId": 168844,
+    "rank3Id": 81,
+    "name": "Vision of Perfection",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 27,
+    "itemId": 168848,
+    "rank3Id": 104,
+    "name": "Memory of Lucid Dreams",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 32,
+    "itemId": 169900,
+    "rank3Id": 123,
+    "name": "Conflict and Strife",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 5,
+    "itemId": 168622,
+    "rank3Id": 19,
+    "name": "Essence of the Focusing Iris",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 14,
+    "itemId": 168856,
+    "rank3Id": 55,
+    "name": "Condensed Life-Force",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 23,
+    "itemId": 168444,
+    "rank3Id": 85,
+    "name": "Blood of the Enemy",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 6,
+    "itemId": 168860,
+    "rank3Id": 31,
+    "name": "Purification Protocol",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 28,
+    "itemId": 168865,
+    "rank3Id": 108,
+    "name": "The Unbound Force",
+    "additionalInput": []
+  }
 ]
