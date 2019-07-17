@@ -155,14 +155,17 @@ export function wowAzeriteLabel (rawSpellName, wowClass, spec, templateTalentsMa
   const labels = []
   let tierClassName
   for (const spellName of spellNames) {
-    const azeritePower = getAzeriteInformationByName(spellName)
+    const spellNameParts = spellName.split(' (')
+    const azeritePower = getAzeriteInformationByName(spellNameParts[0])
     if (!azeritePower) continue
 
     const { spellId, tier, classesId } = azeritePower
     if (!tierClassName) tierClassName = getAzeriteClassName(tier, classesId) // Save the tier
-    labels.push(`<a href="${getWowheadLink(lang)}spell=${spellId}" class="${tierClassName}">
+    let label = `<a href="${getWowheadLink(lang)}spell=${spellId}" class="${tierClassName}">
       <span>${rawSpellName}</span>
-    </a>`)
+    </a>`
+    if (spellNameParts[1]) label += `&nbsp;(${spellNameParts[1]}`
+    labels.push(label)
   }
 
   if (labels.length === 0) {
@@ -301,6 +304,8 @@ export function wowTrinketLabel (rawItemName, wowClass, spec, templateTalentsMap
   let label = `<a href="${getWowheadLink(lang)}item=${itemId}">
       <span>${rawItemName}</span>
     </a>`
+  const variant = parts[0].split(' (')[1]
+  if (variant) label += `&nbsp;(${variant}`
   // Add back the formatted variations
   if (parts[1]) {
     const variations = parts[1].split(';')

@@ -139,11 +139,12 @@ export class ReportTransformer {
           const value = results[i]
           const parts = value.shift().split('--') // Split up the variations, those aren't supported by the addons atm
           const spellNames = parts[0].split(' / ') // Some labels are concatened, like the Alliance / Horde one, we always take the first one
-          // Discard RA results
-          if (!parts[1] || !parts[1].includes('ra:')) {
+          if (!parts[1]) {
             // Insert each power (powerId and meanDPS)
             for (const spellName of spellNames) {
-              const { powerId } = getAzeriteInformationByName(spellName)
+              const azeriteInformation = getAzeriteInformationByName(spellName)
+              if (!azeriteInformation) continue
+              const { powerId } = azeriteInformation
 
               // Use actual values for AzeriteForge
               const afWeights = []

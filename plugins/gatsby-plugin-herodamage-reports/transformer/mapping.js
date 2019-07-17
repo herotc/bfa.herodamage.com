@@ -1,12 +1,12 @@
 export const simulationDetails = {
   'azerite-levels': {
-    simulationFeaturedOrder: 1,
     simulationCategory: 'azerite',
     simulationType: 'azerite-levels',
     simulationTypeOrder: 101,
     simulationTemplate: 'azerite-levels'
   },
   'azerite-stacks': {
+    simulationFeaturedOrder: 1,
     simulationCategory: 'azerite',
     simulationType: 'azerite-stacks',
     simulationTypeOrder: 102,
@@ -44,7 +44,6 @@ export const simulationDetails = {
     simulationTemplate: 'combinations'
   },
   'combinator-3a': {
-    simulationFeaturedOrder: 4,
     simulationCategory: 'combinations',
     simulationType: 'combinations-3a',
     simulationTypeOrder: 101,
@@ -69,6 +68,7 @@ export const simulationDetails = {
     simulationTemplate: 'combinations'
   },
   'combinator-3e': {
+    simulationFeaturedOrder: 4,
     simulationCategory: 'combinations',
     simulationType: 'combinations-3e',
     simulationTypeOrder: 105,
