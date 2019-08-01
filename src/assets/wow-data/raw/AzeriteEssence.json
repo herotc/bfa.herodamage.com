@@ -18,7 +18,9 @@
     "itemId": 168617,
     "rank3Id": 15,
     "name": "Worldvein Resonance (3 Allies)",
-    "additionalInput": ["bfa.worldvein_allies=3"]
+    "additionalInput": [
+      "bfa.worldvein_allies=3"
+    ]
   },
   {
     "essenceId": 15,
@@ -53,6 +55,7 @@
     "itemId": 168622,
     "rank3Id": 19,
     "name": "Essence of the Focusing Iris",
+    "roleOnly": "damage",
     "additionalInput": []
   },
   {
@@ -60,6 +63,7 @@
     "itemId": 168856,
     "rank3Id": 55,
     "name": "Condensed Life-Force",
+    "roleOnly": "damage",
     "additionalInput": []
   },
   {
@@ -67,6 +71,7 @@
     "itemId": 168444,
     "rank3Id": 85,
     "name": "Blood of the Enemy",
+    "roleOnly": "damage",
     "additionalInput": []
   },
   {
@@ -74,6 +79,7 @@
     "itemId": 168860,
     "rank3Id": 31,
     "name": "Purification Protocol",
+    "roleOnly": "damage",
     "additionalInput": []
   },
   {
@@ -81,6 +87,23 @@
     "itemId": 168865,
     "rank3Id": 108,
     "name": "The Unbound Force",
+    "roleOnly": "damage",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 7,
+    "itemId": 168559,
+    "rank3Id": 24,
+    "name": "Anima of Life and Death",
+    "roleOnly": "tank",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 25,
+    "itemId": 168839,
+    "rank3Id": 98,
+    "name": "Aegis of the Deep",
+    "roleOnly": "tank",
     "additionalInput": []
   }
 ]
