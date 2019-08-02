@@ -105,5 +105,13 @@
     "name": "Aegis of the Deep",
     "roleOnly": "tank",
     "additionalInput": []
+  },
+  {
+    "essenceId": 13,
+    "itemId": 168568,
+    "rank3Id": 51,
+    "name": "Nullification Dynamo",
+    "roleOnly": "tank",
+    "additionalInput": []
   }
 ]
