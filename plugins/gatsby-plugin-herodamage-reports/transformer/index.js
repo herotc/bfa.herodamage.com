@@ -189,7 +189,7 @@ export class ReportTransformer {
         }
         const apwWeights = apwPowers.map(({ powerId, weight }) => `${powerId}=${weight}`)
         const apwWeightsName = `herodamage.com - ${simulationType === 'azeritelevels' ? 'Levels' : 'Stacks'}_${fightStyle.toUpperCase()}_${tier.toUpperCase()}`
-        const apwWeightsString = `( AzeritePowerWeights:1:"${apwWeightsName}":${classId}:${specId}: ${apwWeights.join(', ')} )`
+        const apwWeightsString = `( AzeritePowerWeights:2:"${apwWeightsName}":${classId}:${specId}: ${apwWeights.join(', ')}: )`
 
         // Save them
         Object.assign(this.reportFields, {
