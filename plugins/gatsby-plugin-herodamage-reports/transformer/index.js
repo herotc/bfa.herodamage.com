@@ -81,7 +81,7 @@ export class ReportTransformer {
               case 'azerite_powers':
                 const powersId = value.split('/')
                 for (const powerId of powersId) {
-                  if (parseInt(powerId) <= 12) continue
+                  if (powerId === '' || parseInt(powerId) <= 12) continue
                   const azeriteInformation = getAzeriteInformationById(powerId)
                   if (!azeriteInformation) {
                     console.log(`Cannot find information about azerite powerId "${powerId}" in "${name}"`)

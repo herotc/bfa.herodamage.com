@@ -563,7 +563,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -575,11 +581,18 @@
     "spellName": "Bracing Chill",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   {
@@ -705,7 +718,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -725,11 +744,18 @@
     ],
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   {
@@ -838,7 +864,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -850,11 +882,18 @@
     "spellName": "Concentrated Mending",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   {
@@ -923,7 +962,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -935,11 +980,18 @@
     "spellName": "Ephemeral Recovery",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   {
@@ -2385,6 +2437,18 @@
     ]
   },
   {
+    "powerId": 515,
+    "spellId": 287059,
+    "spellName": "Baleful Invocation",
+    "specsId": [
+      266
+    ],
+    "tier": 3,
+    "classesId": [
+      9
+    ]
+  },
+  {
     "powerId": 390,
     "spellId": 278577,
     "spellName": "Pressure Point",
@@ -2587,7 +2651,7 @@
     "powerId": 461,
     "spellId": 279926,
     "spellName": "Earthlink",
-    "tier": 2,
+    "tier": 3,
     "classesId": [
       1,
       2,
@@ -2609,11 +2673,18 @@
     "spellName": "On My Way",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   {
@@ -2701,11 +2772,18 @@
     "spellName": "Savior",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   {
@@ -2714,11 +2792,18 @@
     "spellName": "Blessed Portents",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   {
@@ -2961,11 +3046,18 @@
     "spellName": "Woundbinder",
     "tier": 2,
     "classesId": [
+      1,
       2,
+      3,
+      4,
       5,
+      6,
       7,
+      8,
+      9,
       10,
-      11
+      11,
+      12
     ]
   },
   {
@@ -3209,7 +3301,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -3223,7 +3321,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -3327,7 +3431,13 @@
     "classesId": [
       1,
       2,
+      3,
+      4,
+      5,
       6,
+      7,
+      8,
+      9,
       10,
       11,
       12
@@ -4169,6 +4279,7 @@
     "spellName": "Auto-Self-Cauterizer",
     "tier": 1,
     "classesId": [
+      0,
       1,
       2,
       3,
@@ -4189,6 +4300,7 @@
     "spellName": "Personal Absorb-o-Tron",
     "tier": 1,
     "classesId": [
+      0,
       1,
       2,
       3,
@@ -4244,6 +4356,212 @@
     ]
   },
   {
+    "powerId": 511,
+    "spellId": 286832,
+    "spellName": "Helchains",
+    "specsId": [
+      252
+    ],
+    "tier": 4,
+    "classesId": [
+      6
+    ]
+  },
+  {
+    "powerId": 506,
+    "spellId": 286121,
+    "spellName": "Replicating Shadows",
+    "specsId": [
+      261
+    ],
+    "tier": 4,
+    "classesId": [
+      4
+    ]
+  },
+  {
+    "powerId": 557,
+    "spellId": 289339,
+    "spellName": "Bloody Runeblade",
+    "specsId": [
+      250
+    ],
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  {
+    "powerId": 519,
+    "spellId": 287283,
+    "spellName": "Frostwhelp's Indignation",
+    "specsId": [
+      251
+    ],
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  {
+    "powerId": 533,
+    "spellId": 287268,
+    "spellName": "Glimmer of Light",
+    "specsId": [
+      65
+    ],
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  {
+    "powerId": 527,
+    "spellId": 287126,
+    "spellName": "Righteous Conviction",
+    "specsId": [
+      66
+    ],
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  {
+    "powerId": 507,
+    "spellId": 286390,
+    "spellName": "Empyrean Power",
+    "specsId": [
+      70
+    ],
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  {
+    "powerId": 550,
+    "spellId": 288452,
+    "spellName": "Striking the Anvil",
+    "specsId": [
+      71
+    ],
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  {
+    "powerId": 544,
+    "spellId": 288056,
+    "spellName": "Unbridled Ferocity",
+    "specsId": [
+      72
+    ],
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  {
+    "powerId": 520,
+    "spellId": 287377,
+    "spellName": "Bastion of Might",
+    "specsId": [
+      73,
+      71
+    ],
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  {
+    "powerId": 552,
+    "spellId": 288417,
+    "spellName": "Magus of the Dead",
+    "specsId": [
+      252
+    ],
+    "tier": 3,
+    "classesId": [
+      6
+    ]
+  },
+  {
+    "powerId": 508,
+    "spellId": 286229,
+    "spellName": "Light's Decree",
+    "specsId": [
+      70
+    ],
+    "tier": 3,
+    "classesId": [
+      2
+    ]
+  },
+  {
+    "powerId": 545,
+    "spellId": 288080,
+    "spellName": "Cold Steel, Hot Blood",
+    "specsId": [
+      72
+    ],
+    "tier": 3,
+    "classesId": [
+      1
+    ]
+  },
+  {
+    "powerId": 518,
+    "spellId": 287093,
+    "spellName": "Dire Consequences",
+    "specsId": [
+      253,
+      255
+    ],
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  {
+    "powerId": 528,
+    "spellId": 287707,
+    "spellName": "Surging Shots",
+    "specsId": [
+      254
+    ],
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  {
+    "powerId": 551,
+    "spellId": 288570,
+    "spellName": "Primeval Intuition",
+    "specsId": [
+      255
+    ],
+    "tier": 3,
+    "classesId": [
+      3
+    ]
+  },
+  {
+    "powerId": 512,
+    "spellId": 286949,
+    "spellName": "Tectonic Thunder",
+    "specsId": [
+      262
+    ],
+    "tier": 3,
+    "classesId": [
+      7
+    ]
+  },
+  {
     "powerId": 530,
     "spellId": 287768,
     "spellName": "Thunderaan's Fury",
@@ -4253,6 +4571,198 @@
     "tier": 3,
     "classesId": [
       7
+    ]
+  },
+  {
+    "powerId": 555,
+    "spellId": 288754,
+    "spellName": "Chaotic Transformation",
+    "specsId": [
+      577
+    ],
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  {
+    "powerId": 558,
+    "spellId": 288878,
+    "spellName": "Hour of Reaping",
+    "specsId": [
+      581
+    ],
+    "tier": 3,
+    "classesId": [
+      12
+    ]
+  },
+  {
+    "powerId": 529,
+    "spellId": 287773,
+    "spellName": "Arcanic Pulsar",
+    "specsId": [
+      102
+    ],
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  {
+    "powerId": 532,
+    "spellId": 287251,
+    "spellName": "Early Harvest",
+    "specsId": [
+      105
+    ],
+    "tier": 3,
+    "classesId": [
+      11
+    ]
+  },
+  {
+    "powerId": 513,
+    "spellId": 285958,
+    "spellName": "Straight, No Chaser",
+    "specsId": [
+      268
+    ],
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  {
+    "powerId": 536,
+    "spellId": 287829,
+    "spellName": "Secret Infusion",
+    "specsId": [
+      270
+    ],
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  {
+    "powerId": 516,
+    "spellId": 286585,
+    "spellName": "Dance of Chi-Ji",
+    "specsId": [
+      269
+    ],
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  {
+    "powerId": 509,
+    "spellId": 286573,
+    "spellName": "Nothing Personal",
+    "specsId": [
+      259
+    ],
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  {
+    "powerId": 517,
+    "spellId": 287055,
+    "spellName": "Fury of Xuen",
+    "specsId": [
+      269
+    ],
+    "tier": 3,
+    "classesId": [
+      10
+    ]
+  },
+  {
+    "powerId": 524,
+    "spellId": 287649,
+    "spellName": "Echoing Blades",
+    "specsId": [
+      259
+    ],
+    "tier": 3,
+    "classesId": [
+      4
+    ]
+  },
+  {
+    "powerId": 514,
+    "spellId": 286027,
+    "spellName": "Equipoise",
+    "specsId": [
+      62
+    ],
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  {
+    "powerId": 556,
+    "spellId": 288755,
+    "spellName": "Wildfire",
+    "specsId": [
+      63
+    ],
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  {
+    "powerId": 547,
+    "spellId": 288164,
+    "spellName": "Flash Freeze",
+    "specsId": [
+      64
+    ],
+    "tier": 3,
+    "classesId": [
+      8
+    ]
+  },
+  {
+    "powerId": 535,
+    "spellId": 287355,
+    "spellName": "Sudden Revelation",
+    "specsId": [
+      256
+    ],
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  {
+    "powerId": 534,
+    "spellId": 287336,
+    "spellName": "Promise of Deliverance",
+    "specsId": [
+      257
+    ],
+    "tier": 3,
+    "classesId": [
+      5
+    ]
+  },
+  {
+    "powerId": 525,
+    "spellId": 287637,
+    "spellName": "Chaos Shards",
+    "specsId": [
+      267
+    ],
+    "tier": 3,
+    "classesId": [
+      9
     ]
   },
   {
@@ -4416,9 +4926,29 @@
     ]
   },
   {
-    "powerId": 576,
-    "spellId": 303007,
-    "spellName": "Loyal to the End",
+    "powerId": 568,
+    "spellId": 300168,
+    "spellName": "Person-Computer Interface",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "powerId": 569,
+    "spellId": 300170,
+    "spellName": "Clockwork Heart",
     "tier": 3,
     "classesId": [
       1,
@@ -4439,6 +4969,46 @@
     "powerId": 575,
     "spellId": 303008,
     "spellName": "Undulating Tides",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "powerId": 577,
+    "spellId": 303006,
+    "spellName": "Arcane Heart",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
+  },
+  {
+    "powerId": 576,
+    "spellId": 303007,
+    "spellName": "Loyal to the End",
     "tier": 3,
     "classesId": [
       1,

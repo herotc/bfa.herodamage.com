@@ -1,4 +1,14 @@
 {
+  "Aegis of the Deep": {
+    "essenceId": 25,
+    "itemId": 168839,
+    "rank3Id": 98
+  },
+  "Anima of Life and Death": {
+    "essenceId": 7,
+    "itemId": 168559,
+    "rank3Id": 24
+  },
   "Blood of the Enemy": {
     "essenceId": 23,
     "itemId": 168444,
@@ -23,6 +33,11 @@
     "essenceId": 27,
     "itemId": 168848,
     "rank3Id": 104
+  },
+  "Nullification Dynamo": {
+    "essenceId": 13,
+    "itemId": 168568,
+    "rank3Id": 51
   },
   "Purification Protocol": {
     "essenceId": 6,
