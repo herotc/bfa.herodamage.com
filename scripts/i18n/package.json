@@ -21,17 +21,17 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@babel/core": "^7.5.5",
+    "@babel/core": "^7.6.2",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
-    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.6.0",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-env": "^7.6.2",
     "@babel/preset-react": "^7.0.0",
     "@lingui/babel-preset-react": "^2.8.3",
     "@lingui/cli": "^2.8.3",
     "@lingui/macro": "^2.8.3",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-macros": "^2.6.1",
-    "react": "^16.9.0"
+    "react": "^16.10.2"
   }
 }
