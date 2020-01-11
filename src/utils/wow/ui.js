@@ -2,6 +2,7 @@
 import {
   getAzeriteEssenceInformation,
   getAzeriteInformationByName,
+  getCorruptionInformation,
   getTalentsMappingDifference,
   getTalentsTree,
   getTrinketInformation
@@ -247,6 +248,48 @@ export function wowAzeriteEssenceLabel (rawName, wowClass, spec, templateTalents
     label += `&nbsp;|&nbsp;${variationStrings.join(' - ')}`
   }
   return (container && `<div class="label-container ${className}">${label}</div>`) || `${label}`
+}
+
+/**
+ *
+ * @param rawName
+ * @param wowClass
+ * @param spec
+ * @param templateTalentsMapping
+ * @param lang
+ * @param container
+ * @return {boolean|string|string}
+ */
+export function wowCorruptionLabel (rawName, wowClass, spec, templateTalentsMapping, lang = defaultLang, container = true) {
+  // Split up the variations
+  const parts = rawName.split('--')
+  const corruption = getCorruptionInformation(parts[0])
+  if (!corruption) return (container && `<div class="label-container">${rawName}</div>`) || `${rawName}`
+
+  const { spellId } = corruption
+  let label = `<a href="${getWowheadLink(lang)}spell=${spellId}">
+      <span>${rawName}</span>
+    </a>`
+  if (parts[0].includes('(Allies)')) label += `&nbsp;(Allies)`
+
+  // Add back the formatted variations
+  if (parts[1]) {
+    const variations = parts[1].split(';')
+    const variationStrings = []
+    for (const variation of variations) {
+      const parts = variation.split(':')
+      const variationName = parts[0]
+      const variationValue = parts[1]
+      switch (variationName) {
+        case 'talents':
+          const talents = getTalentsMappingDifference(templateTalentsMapping, variationValue)
+          variationStrings.push(`${wowTalentsLabel(talents, wowClass, spec, lang)}`)
+          break
+      }
+    }
+    label += `&nbsp;|&nbsp;${variationStrings.join(' - ')}`
+  }
+  return (container && `<div class="label-container">${label}</div>`) || `${label}`
 }
 
 /**

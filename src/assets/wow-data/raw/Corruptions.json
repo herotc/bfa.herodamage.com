@@ -1,0 +1,375 @@
+[
+    {
+        "name": "Strikethrough",
+        "spellId": 315282,
+        "tiers": [
+            {
+                "bonusId": 6437,
+                "corruption": 10
+            },
+            {
+                "bonusId": 6438,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6439,
+                "corruption": 20
+            }
+        ]
+    },
+    {
+        "name": "Severe",
+        "spellId": 315558,
+        "tiers": [
+            {
+                "bonusId": 6480,
+                "corruption": 10
+            },
+            {
+                "bonusId": 6481,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6482,
+                "corruption": 20
+            }
+        ]
+    },
+    {
+        "name": "Expedient",
+        "spellId": 315546,
+        "tiers": [
+            {
+                "bonusId": 6474,
+                "corruption": 10
+            },
+            {
+                "bonusId": 6475,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6476,
+                "corruption": 20
+            }
+        ]
+    },
+    {
+        "name": "Versatile",
+        "spellId": 315553,
+        "tiers": [
+            {
+                "bonusId": 6477,
+                "corruption": 10
+            },
+            {
+                "bonusId": 6478,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6479,
+                "corruption": 20
+            }
+        ]
+    },
+    {
+        "name": "Masterful",
+        "spellId": 315531,
+        "tiers": [
+            {
+                "bonusId": 6471,
+                "corruption": 10
+            },
+            {
+                "bonusId": 6472,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6473,
+                "corruption": 20
+            }
+        ]
+    },
+    {
+        "name": "Deadly Momentum",
+        "spellId": 318497,
+        "tiers": [
+            {
+                "bonusId": 6556,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6561,
+                "corruption": 20
+            },
+            {
+                "bonusId": 6562,
+                "corruption": 35
+            }
+        ]
+    },
+    {
+        "name": "Racing Pulse",
+        "spellId": 318496,
+        "tiers": [
+            {
+                "bonusId": 6555,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6559,
+                "corruption": 20
+            },
+            {
+                "bonusId": 6560,
+                "corruption": 35
+            }
+        ]
+    },
+    {
+        "name": "Surging Vitality",
+        "spellId": 318499,
+        "tiers": [
+            {
+                "bonusId": 6558,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6565,
+                "corruption": 20
+            },
+            {
+                "bonusId": 6566,
+                "corruption": 35
+            }
+        ],
+        "additionalInput": [
+            "bfa.surging_vitality_damage_taken_period=10"
+        ]
+    },
+    {
+        "name": "Honed Mind",
+        "spellId": 318498,
+        "tiers": [
+            {
+                "bonusId": 6557,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6563,
+                "corruption": 20
+            },
+            {
+                "bonusId": 6564,
+                "corruption": 35
+            }
+        ]
+    },
+    {
+        "name": "Echoing Void",
+        "spellId": 318486,
+        "tiers": [
+            {
+                "bonusId": 6549,
+                "corruption": 25
+            },
+            {
+                "bonusId": 6550,
+                "corruption": 35
+            },
+            {
+                "bonusId": 6551,
+                "corruption": 60
+            }
+        ]
+    },
+    {
+        "name": "Infinite Stars",
+        "spellId": 318488,
+        "tiers": [
+            {
+                "bonusId": 6552,
+                "corruption": 20
+            },
+            {
+                "bonusId": 6553,
+                "corruption": 50
+            },
+            {
+                "bonusId": 6554,
+                "corruption": 75
+            }
+        ]
+    },
+    {
+        "name": "Ineffable Truth",
+        "spellId": 318484,
+        "tiers": [
+            {
+                "bonusId": 6547,
+                "corruption": 12
+            },
+            {
+                "bonusId": 6548,
+                "corruption": 30
+            }
+        ]
+    },
+    {
+        "name": "Twilight Devastation",
+        "spellId": 318478,
+        "tiers": [
+            {
+                "bonusId": 6537,
+                "corruption": 25
+            },
+            {
+                "bonusId": 6538,
+                "corruption": 50
+            },
+            {
+                "bonusId": 6539,
+                "corruption": 75
+            }
+        ]
+    },
+    {
+        "name": "Twisted Appendage",
+        "spellId": 318483,
+        "tiers": [
+            {
+                "bonusId": 6543,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6544,
+                "corruption": 35
+            },
+            {
+                "bonusId": 6545,
+                "corruption": 66
+            }
+        ]
+    },
+    {
+        "name": "Void Ritual",
+        "spellId": 318480,
+        "tiers": [
+            {
+                "bonusId": 6540,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6541,
+                "corruption": 35
+            },
+            {
+                "bonusId": 6542,
+                "corruption": 66
+            }
+        ],
+        "additionalInput": [
+            "bfa.void_ritual_increased_chance_active=0"
+        ]
+    },
+    {
+        "name": "Void Ritual (Allies)",
+        "spellId": 318480,
+        "tiers": [
+            {
+                "bonusId": 6540,
+                "corruption": 15
+            },
+            {
+                "bonusId": 6541,
+                "corruption": 35
+            },
+            {
+                "bonusId": 6542,
+                "corruption": 66
+            }
+        ],
+        "additionalInput": [
+            "bfa.void_ritual_increased_chance_active=1"
+        ]
+    },
+    {
+        "name": "Gushing Wound",
+        "spellId": 318179,
+        "tiers": [
+            {
+                "bonusId": 6573,
+                "corruption": 15
+            }
+        ]
+    },
+    {
+        "name": "Glimpse of Clarity",
+        "spellId": 315573,
+        "tiers": [
+            {
+                "bonusId": 6546,
+                "corruption": 15
+            }
+        ]
+    },
+    {
+        "name": "Obsidian Destruction",
+        "spellId": 317420,
+        "tiers": [
+            {
+                "bonusId": 6572,
+                "corruption": 50
+            }
+        ]
+    },
+    {
+        "name": "Searing Flames",
+        "spellId": 316698,
+        "tiers": [
+            {
+                "bonusId": 6571,
+                "corruption": 30
+            }
+        ]
+    },
+    {
+        "name": "Flash of Insight",
+        "spellId": 316717,
+        "tiers": [
+            {
+                "bonusId": 6570,
+                "corruption": 20
+            }
+        ]
+    },
+    {
+        "name": "Lash of the Void",
+        "spellId": 317290,
+        "tiers": [
+            {
+                "bonusId": 6569,
+                "corruption": 25
+            }
+        ]
+    },
+    {
+        "name": "Whispered Truths",
+        "spellId": 316780,
+        "tiers": [
+            {
+                "bonusId": 6568,
+                "corruption": 25
+            }
+        ]
+    },
+    {
+        "name": "Devour Vitality",
+        "spellId": 316615,
+        "tiers": [
+            {
+                "bonusId": 6567,
+                "corruption": 25
+            }
+        ]
+    }
+]

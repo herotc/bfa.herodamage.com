@@ -4,6 +4,7 @@ import Trinkets from '../../assets/wow-data/Trinket.json'
 import AzeriteEssences from '../../assets/wow-data/AzeriteEssence.json'
 import AzeritePowersById from '../../assets/wow-data/AzeritePowerById.json'
 import AzeritePowersByName from '../../assets/wow-data/AzeritePowerByName.json'
+import Corruptions from '../../assets/wow-data/Corruptions.json'
 
 /**
  * Get the class id from the class string
@@ -111,4 +112,13 @@ export function getAzeriteInformationById (azeritePowerId) {
  */
 export function getAzeriteInformationByName (azeritePowerName) {
   return AzeritePowersByName[azeritePowerName]
+}
+
+/**
+ *
+ * @param corruptionName
+ * @return {*}
+ */
+export function getCorruptionInformation (corruptionName) {
+  return Corruptions[corruptionName]
 }

@@ -4,6 +4,7 @@ import {
   refreshWowheadLinks,
   wowAzeriteEssenceLabel,
   wowAzeriteLabel,
+  wowCorruptionLabel,
   wowRaceLabel,
   wowTrinketLabel
 } from '../../utils/wow/ui'
@@ -114,9 +115,14 @@ function processData (simulationType, data, wowClass, spec, talentsMapping, temp
       const absStepVal = curAbsVal - prevAbsVal
       const curVal = 100 * ((templateDPS + curAbsVal) / templateDPS - 1)
       const stepVal = curVal - prevVal
+      const tierDesc = simulationType === 'azerite-stacks' ? 'Stacks: ' :
+        simulationType === 'essences' ? 'Rank: ' :
+        simulationType === 'corruptions-absolute' ? 'Corruption: ' :
+        simulationType === 'corruptions-relative' ? '' :
+        'Item Level: '
       const tooltip = `
         <div class="chart-tooltip">
-          <b>${data.getValue(row, 0).split('--')[0]}<br/> ${simulationType === 'azerite-stacks' ? 'Stack' : 'Item Level'} ${data.getColumnLabel(col)}</b><br/>
+          <b>${data.getValue(row, 0).split('--')[0]}<br/> ${tierDesc}${data.getColumnLabel(col)}</b><br/>
           <b>Total:</b> ${formatNumber(curVal.toFixed(2))} % (${formatNumber(curAbsVal.toFixed())})<br/>
           <b>Increase:</b> ${formatNumber(stepVal.toFixed(2))}% (${formatNumber(absStepVal.toFixed())} )
         </div>`
@@ -149,6 +155,14 @@ function processData (simulationType, data, wowClass, spec, talentsMapping, temp
       for (let row = 0; row < data.getNumberOfRows(); row++) {
         const wowLabel = data.getValue(row, 0)
         labels.push(wowTrinketLabel(wowLabel, wowClass, spec, talentsMapping, lang))
+        data.setValue(row, 0, '')
+      }
+      break
+    case 'corruptions-absolute':
+    case 'corruptions-relative':
+      for (let row = 0; row < data.getNumberOfRows(); row++) {
+        const wowLabel = data.getValue(row, 0)
+        labels.push(wowCorruptionLabel(wowLabel, wowClass, spec, talentsMapping, lang))
         data.setValue(row, 0, '')
       }
       break
@@ -197,13 +211,16 @@ export async function stackedChart (pageContext, chartTitle, lang) {
       case 'azerite-stacks':
       case 'essences':
       case 'trinkets':
+      case 'corruptions-absolute':
+      case 'corruptions-relative':
         rawDataProcessed = processData(simulationType, rawData, wowClass, spec, talentsMapping, templateDPS, lang)
     }
     refreshWowheadLinks()
     const { data, maxDPS } = rawDataProcessed
 
     // Compute the horizontal axis stacks value
-    const maxPercentageGain = Math.floor(100 * ((templateDPS + maxDPS) / templateDPS - 1))
+    const maxPercentageGainRaw = 100 * ((templateDPS + maxDPS) / templateDPS - 1)
+    const maxPercentageGain = Math.floor(maxPercentageGainRaw)
     const maxPercentageGainHAxis = maxPercentageGain % 2 === 0 ? maxPercentageGain : maxPercentageGain + 1
     const hAxisStacks = []
     switch (simulationType) {
@@ -217,10 +234,18 @@ export async function stackedChart (pageContext, chartTitle, lang) {
       case 'azerite-stacks':
       case 'essences':
       case 'trinkets':
+      case 'corruptions-absolute':
         // A gridline every 2%
         for (let i = 1; i <= maxPercentageGainHAxis / 2; i++) {
           hAxisStacks.push(i * 2)
         }
+        break
+      case 'corruptions-relative':
+        // A gridline every 0.05%
+        for (let i = 0.05; i <= maxPercentageGainRaw; i += 0.05) {
+          hAxisStacks.push(i)
+        }
+        break
     }
 
     // Get content width (to force a min-width on mobile, can't do it in css because of the overflow)
@@ -258,7 +283,7 @@ export async function stackedChart (pageContext, chartTitle, lang) {
         gridlines: {
           count: hAxisStacks.length
         },
-        format: '#.#\'%\'',
+        format: '#.##\'%\'',
         textStyle: {
           fontSize: 14,
           color: textColor

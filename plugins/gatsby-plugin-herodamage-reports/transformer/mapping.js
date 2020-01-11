@@ -87,5 +87,18 @@ export const simulationDetails = {
     simulationType: 'trinkets',
     simulationTypeOrder: 101,
     simulationTemplate: 'trinkets'
+  },
+  'corruptions-absolute': {
+    simulationCategory: 'corruptions',
+    simulationType: 'corruptions-absolute',
+    simulationTypeOrder: 101,
+    simulationTemplate: 'corruptions-absolute'
+  },
+  'corruptions-relative': {
+    simulationFeaturedOrder: 6,
+    simulationCategory: 'corruptions',
+    simulationType: 'corruptions-relative',
+    simulationTypeOrder: 102,
+    simulationTemplate: 'corruptions-relative'
   }
 }
