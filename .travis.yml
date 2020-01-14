@@ -8,7 +8,7 @@ sudo: required
 language: node_js
 
 node_js:
-  - "10"
+  - "10.15.0"
 
 env:
   global:
@@ -25,7 +25,6 @@ cache:
     - "node_modules"
 
 before_install:
-  - npm install npm -g # The npm version bundled with node is rarely the latest stable
   - node --version
   - npm --version
 
