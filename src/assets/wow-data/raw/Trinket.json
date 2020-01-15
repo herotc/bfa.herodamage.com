@@ -3,8 +3,6 @@
     "name": "Frenetic Corpuscle",
     "itemId": 160648,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -18,8 +16,6 @@
     "name": "Construct Overcharger",
     "itemId": 160652,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -33,8 +29,6 @@
     "name": "Vanquished Tendril of G'huun",
     "itemId": 160654,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -48,8 +42,6 @@
     "name": "Invocation of Yu'lon",
     "itemId": 165568,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -63,8 +55,6 @@
     "name": "Variable Intensity Gigavolt Oscillating Reactor",
     "itemId": 165572,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -78,8 +68,6 @@
     "name": "Kimbul's Razor Claw",
     "itemId": 165579,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -93,8 +81,6 @@
     "name": "Lurker's Insidious Gift (Full)",
     "itemId": 167866,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -108,8 +94,6 @@
     "name": "Lurker's Insidious Gift (20s)",
     "itemId": 167866,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -123,8 +107,6 @@
     "name": "Lurker's Insidious Gift (10s)",
     "itemId": 167866,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -138,8 +120,6 @@
     "name": "Idol of Indiscriminate Consumption",
     "itemId": 167868,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -153,10 +133,9 @@
     "name": "Azshara's Font of Power",
     "itemId": 169314,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -169,10 +148,9 @@
     "name": "Dribbling Inkpod",
     "itemId": 169319,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -185,10 +163,9 @@
     "name": "Vision of Demise",
     "itemId": 169307,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -201,10 +178,9 @@
     "name": "Phial of the Arcane Tempest",
     "itemId": 169313,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -217,10 +193,89 @@
     "name": "Ashvane's Razor Coral",
     "itemId": 169311,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Torment in a Jar",
+    "itemId": 173943,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Writhing Segment of Drest'agath",
+    "itemId": 173946,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Vita-Charged Titanshard",
+    "itemId": 174500,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Void-Twisted Titanshard",
+    "itemId": 174528,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Humming Black Dragonscale",
+    "itemId": 174044,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
     ],
     "bonusIds": [
 
@@ -233,8 +288,6 @@
     "name": "Plume of the Seaborne Avian",
     "itemId": 161378,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -248,8 +301,6 @@
     "name": "Permafrost-Encrusted Heart",
     "itemId": 161381,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -263,8 +314,6 @@
     "name": "Spiritbound Voodoo Burl",
     "itemId": 161412,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -278,8 +327,6 @@
     "name": "Doom's Wake",
     "itemId": 161462,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -293,8 +340,6 @@
     "name": "Forest Lord's Razorleaf",
     "itemId": 166794,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -308,7 +353,6 @@
     "name": "Shockbiter's Fang",
     "itemId": 169318,
     "itemLevels": [
-      415,
       425,
       440
     ],
@@ -323,7 +367,6 @@
     "name": "Enthraller's Bindstone",
     "itemId": 169317,
     "itemLevels": [
-      415,
       425,
       440
     ],
@@ -338,9 +381,8 @@
     "name": "Oxidized Refuse Remover",
     "itemId": 170273,
     "itemLevels": [
-      395,
-      410,
-      420
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -404,10 +446,10 @@
     "name": "Harlan's Loaded Dice",
     "itemId": 155881,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -420,10 +462,10 @@
     "name": "My'das Talisman",
     "itemId": 158319,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -436,10 +478,10 @@
     "name": "Tiny Electromental in a Jar",
     "itemId": 158374,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -452,10 +494,10 @@
     "name": "Azerokk's Resonating Heart",
     "itemId": 159612,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -468,10 +510,10 @@
     "name": "Galecaller's Boon",
     "itemId": 159614,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -484,10 +526,10 @@
     "name": "Lustrous Golden Plumage",
     "itemId": 159617,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -500,10 +542,10 @@
     "name": "Dead-Eye Spyglass",
     "itemId": 159623,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -516,10 +558,10 @@
     "name": "Kul Tiran Cannonball Runner",
     "itemId": 159628,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -532,24 +574,10 @@
     "name": "Remote Guidance Device",
     "itemId": 169769,
     "itemLevels": [
-      415,
-      425,
-      440
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Landoi's Scrutiny",
-    "itemId": 163935,
-    "itemLevels": [
-      400,
-      415,
-      425
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -562,10 +590,9 @@
     "name": "Galewind Chimes",
     "itemId": 155568,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -578,10 +605,9 @@
     "name": "Gilded Loa Figurine",
     "itemId": 158153,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -594,10 +620,9 @@
     "name": "Emblem of Zandalar",
     "itemId": 158154,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -610,10 +635,9 @@
     "name": "Dinobone Charm",
     "itemId": 158155,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -626,10 +650,9 @@
     "name": "Pearl Diver's Compass",
     "itemId": 158162,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -642,10 +665,9 @@
     "name": "First Mate's Spyglass",
     "itemId": 158163,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -658,10 +680,9 @@
     "name": "Plunderbeard's Flask",
     "itemId": 158164,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -674,10 +695,9 @@
     "name": "Whirlwing's Plumage",
     "itemId": 158215,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -690,10 +710,9 @@
     "name": "Living Oil Cannister",
     "itemId": 158216,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -706,10 +725,9 @@
     "name": "Vial of Storms",
     "itemId": 158224,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -722,10 +740,9 @@
     "name": "Doom Shroom",
     "itemId": 158555,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -738,10 +755,9 @@
     "name": "Snowpelt Mangler",
     "itemId": 160263,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -754,10 +770,9 @@
     "name": "Incessantly Ticking Clock",
     "itemId": 161113,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -770,10 +785,9 @@
     "name": "Berserker's Juju",
     "itemId": 161117,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -786,10 +800,9 @@
     "name": "Ravasaur Skull Bijou",
     "itemId": 161119,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -802,42 +815,9 @@
     "name": "Kaja-fied Banana",
     "itemId": 161125,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Notorious Gladiator's Medallion",
-    "itemId": 167377,
-    "itemLevels": [
-      400,
-      415,
-      425,
-      440
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Notorious Gladiator's Badge",
-    "itemId": 167380,
-    "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -850,10 +830,9 @@
     "name": "Crawg Gnawed Femur",
     "itemId": 163703,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -863,13 +842,57 @@
     ]
   },
   {
-    "name": "Notorious Gladiator's Maledict",
-    "itemId": 167383,
+    "name": "Corrupted Gladiator's Medallion",
+    "itemId": 172666,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Corrupted Gladiator's Badge",
+    "itemId": 172669,
+    "itemLevels": [
+      415,
+      430,
+      445
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Corrupted Gladiator's Maledict",
+    "itemId": 172672,
+    "itemLevels": [
+      415,
+      430,
+      445
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Corrupted Gladiator's Insignia",
+    "itemId": 172668,
+    "itemLevels": [
+      415,
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -905,13 +928,12 @@
     ]
   },
   {
-    "name": "Crushing Alchemist Stone",
-    "itemId": 168675,
+    "name": "Peerless Alchemist Stone",
+    "itemId": 305992,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      470
     ],
     "bonusIds": [
 
@@ -924,8 +946,6 @@
     "name": "Vigilant's Bloodshaper",
     "itemId": 160651,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -939,8 +959,6 @@
     "name": "Vanquished Tendril of G'huun",
     "itemId": 160654,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -954,8 +972,6 @@
     "name": "Twitching Tentacle of Xalzaix",
     "itemId": 160656,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -969,8 +985,6 @@
     "name": "Crest of Pa'ku",
     "itemId": 165581,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -984,8 +998,6 @@
     "name": "Incandescent Sliver",
     "itemId": 165571,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -999,8 +1011,6 @@
     "name": "Tidestorm Codex",
     "itemId": 165576,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1014,8 +1024,6 @@
     "name": "Harbinger's Inscrutable Will",
     "itemId": 167867,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -1030,8 +1038,6 @@
     "name": "Harbinger's Inscrutable Will (50% Silenced)",
     "itemId": 167867,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -1046,8 +1052,6 @@
     "name": "Harbinger's Inscrutable Will (20% Silenced)",
     "itemId": 167867,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -1062,10 +1066,9 @@
     "name": "Azshara's Font of Power",
     "itemId": 169314,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -1078,10 +1081,9 @@
     "name": "Shiver Venom Relic",
     "itemId": 168905,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -1094,10 +1096,9 @@
     "name": "Leviathan's Lure",
     "itemId": 169304,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -1110,10 +1111,9 @@
     "name": "Za'qul's Portal Key",
     "itemId": 169306,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -1126,10 +1126,121 @@
     "name": "Aquipotent Nautilus",
     "itemId": 169305,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Oozing Coagulum",
+    "itemId": 174180,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Forbidden Obsidian Claw",
+    "itemId": 173944,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Manifesto of Madness",
+    "itemId": 174103,
+    "itemLevels": [
+      440,
+      455,
+      470,
+      485
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Psyche Shredder",
+    "itemId": 174060,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Vita-Charged Titanshard",
+    "itemId": 174500,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Void-Twisted Titanshard",
+    "itemId": 174528,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Humming Black Dragonscale",
+    "itemId": 174044,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
     ],
     "bonusIds": [
 
@@ -1142,8 +1253,6 @@
     "name": "Azuretho's Singed Plumage",
     "itemId": 161377,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1157,8 +1266,6 @@
     "name": "Drust-Runed Icicle",
     "itemId": 161380,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1172,8 +1279,6 @@
     "name": "T'zane's Barkspines",
     "itemId": 161411,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1187,8 +1292,6 @@
     "name": "Doom's Hatred",
     "itemId": 161461,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1202,8 +1305,6 @@
     "name": "Ancient Knot of Wisdom",
     "itemId": 166793,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1217,7 +1318,6 @@
     "name": "Shockbiter's Fang",
     "itemId": 169318,
     "itemLevels": [
-      415,
       425,
       440
     ],
@@ -1232,7 +1332,6 @@
     "name": "Enthraller's Bindstone",
     "itemId": 169317,
     "itemLevels": [
-      415,
       425,
       440
     ],
@@ -1247,9 +1346,8 @@
     "name": "Oxidized Refuse Remover",
     "itemId": 170273,
     "itemLevels": [
-      395,
-      410,
-      420
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1330,10 +1428,10 @@
     "name": "Vessel of Skittering Shadows",
     "itemId": 159610,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -1346,10 +1444,10 @@
     "name": "Ignition Mage's Fuse",
     "itemId": 159615,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -1362,10 +1460,10 @@
     "name": "Conch of Dark Whispers",
     "itemId": 159620,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -1378,10 +1476,10 @@
     "name": "Hadal's Nautilus",
     "itemId": 159622,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -1394,10 +1492,10 @@
     "name": "Rotcrusted Voodoo Doll",
     "itemId": 159624,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -1410,10 +1508,10 @@
     "name": "Balefire Branch",
     "itemId": 159630,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -1426,10 +1524,10 @@
     "name": "Lady Waycrest's Music Box",
     "itemId": 159631,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -1442,22 +1540,10 @@
     "name": "Ingenious Mana Battery",
     "itemId": 169344,
     "itemLevels": [
-      415,
-      425,
-      440
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Leyshock's Grand Compilation",
-    "itemId": 163937,
-    "itemLevels": [
-      400
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -1470,10 +1556,9 @@
     "name": "Galewind Chimes",
     "itemId": 155568,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1486,10 +1571,9 @@
     "name": "Gilded Loa Figurine",
     "itemId": 158153,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1502,10 +1586,9 @@
     "name": "Emblem of Zandalar",
     "itemId": 158154,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1518,10 +1601,9 @@
     "name": "Dinobone Charm",
     "itemId": 158155,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1534,10 +1616,9 @@
     "name": "Pearl Diver's Compass",
     "itemId": 158162,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1550,10 +1631,9 @@
     "name": "First Mate's Spyglass",
     "itemId": 158163,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1566,10 +1646,9 @@
     "name": "Plunderbeard's Flask",
     "itemId": 158164,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1582,10 +1661,9 @@
     "name": "Whirlwing's Plumage",
     "itemId": 158215,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1598,10 +1676,9 @@
     "name": "Living Oil Cannister",
     "itemId": 158216,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1614,10 +1691,9 @@
     "name": "Vial of Storms",
     "itemId": 158224,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1630,10 +1706,9 @@
     "name": "Doom Shroom",
     "itemId": 158555,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1646,10 +1721,9 @@
     "name": "Snowpelt Mangler",
     "itemId": 160263,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1662,10 +1736,9 @@
     "name": "Incessantly Ticking Clock",
     "itemId": 161113,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1678,10 +1751,9 @@
     "name": "Berserker's Juju",
     "itemId": 161117,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1694,10 +1766,9 @@
     "name": "Ravasaur Skull Bijou",
     "itemId": 161119,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1710,42 +1781,9 @@
     "name": "Kaja-fied Banana",
     "itemId": 161125,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Notorious Gladiator's Medallion",
-    "itemId": 167377,
-    "itemLevels": [
-      400,
-      415,
-      425,
-      440
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Notorious Gladiator's Badge",
-    "itemId": 167380,
-    "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1758,10 +1796,9 @@
     "name": "Crawg Gnawed Femur",
     "itemId": 163703,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1774,10 +1811,9 @@
     "name": "Moonstone of Zin-Azshari",
     "itemId": 165666,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1787,13 +1823,57 @@
     ]
   },
   {
-    "name": "Notorious Gladiator's Maledict",
-    "itemId": 167383,
+    "name": "Corrupted Gladiator's Medallion",
+    "itemId": 172666,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Corrupted Gladiator's Badge",
+    "itemId": 172669,
+    "itemLevels": [
+      415,
+      430,
+      445
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Corrupted Gladiator's Maledict",
+    "itemId": 172672,
+    "itemLevels": [
+      415,
+      430,
+      445
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Corrupted Gladiator's Insignia",
+    "itemId": 172668,
+    "itemLevels": [
+      415,
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -1829,13 +1909,12 @@
     ]
   },
   {
-    "name": "Crushing Alchemist Stone",
-    "itemId": 168675,
+    "name": "Peerless Alchemist Stone",
+    "itemId": 305992,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      470
     ],
     "bonusIds": [
 
@@ -1848,8 +1927,6 @@
     "name": "Disc of Systematic Regression",
     "itemId": 160650,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1863,8 +1940,6 @@
     "name": "Vanquished Tendril of G'huun",
     "itemId": 160654,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1878,8 +1953,6 @@
     "name": "Syringe of Bloodborne Infirmity",
     "itemId": 160655,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1893,8 +1966,6 @@
     "name": "Everchill Anchor",
     "itemId": 165570,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1908,8 +1979,6 @@
     "name": "Grong's Primal Rage",
     "itemId": 165574,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1923,8 +1992,6 @@
     "name": "Ramping Amplitude Gigavolt Engine",
     "itemId": 165580,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -1938,8 +2005,6 @@
     "name": "Lurker's Insidious Gift (Full)",
     "itemId": 167866,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -1953,8 +2018,6 @@
     "name": "Lurker's Insidious Gift (20s)",
     "itemId": 167866,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -1968,8 +2031,6 @@
     "name": "Lurker's Insidious Gift (10s)",
     "itemId": 167866,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -1983,8 +2044,6 @@
     "name": "Idol of Indiscriminate Consumption",
     "itemId": 167868,
     "itemLevels": [
-      395,
-      410,
       425
     ],
     "bonusIds": [
@@ -1998,10 +2057,9 @@
     "name": "Azshara's Font of Power",
     "itemId": 169314,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -2014,10 +2072,9 @@
     "name": "Dribbling Inkpod",
     "itemId": 169319,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -2030,10 +2087,9 @@
     "name": "Vision of Demise",
     "itemId": 169307,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -2046,10 +2102,9 @@
     "name": "Phial of the Arcane Tempest",
     "itemId": 169313,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
     ],
     "bonusIds": [
 
@@ -2062,10 +2117,89 @@
     "name": "Ashvane's Razor Coral",
     "itemId": 169311,
     "itemLevels": [
-      400,
-      415,
       430,
-      445
+      445,
+      460
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Torment in a Jar",
+    "itemId": 173943,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Writhing Segment of Drest'agath",
+    "itemId": 173946,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Vita-Charged Titanshard",
+    "itemId": 174500,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Void-Twisted Titanshard",
+    "itemId": 174528,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Humming Black Dragonscale",
+    "itemId": 174044,
+    "itemLevels": [
+      430,
+      445,
+      460,
+      475
     ],
     "bonusIds": [
 
@@ -2078,8 +2212,6 @@
     "name": "Prism of Dark Intensity",
     "itemId": 161376,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -2093,8 +2225,6 @@
     "name": "Galecaller's Beak",
     "itemId": 161379,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -2108,8 +2238,6 @@
     "name": "Kraulok's Claw",
     "itemId": 161419,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -2123,8 +2251,6 @@
     "name": "Doom's Fury",
     "itemId": 161463,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -2138,8 +2264,6 @@
     "name": "Knot of Ancient Fury",
     "itemId": 166795,
     "itemLevels": [
-      400,
-      415,
       425
     ],
     "bonusIds": [
@@ -2153,7 +2277,6 @@
     "name": "Shockbiter's Fang",
     "itemId": 169318,
     "itemLevels": [
-      415,
       425,
       440
     ],
@@ -2168,7 +2291,6 @@
     "name": "Enthraller's Bindstone",
     "itemId": 169317,
     "itemLevels": [
-      415,
       425,
       440
     ],
@@ -2183,9 +2305,8 @@
     "name": "Oxidized Refuse Remover",
     "itemId": 170273,
     "itemLevels": [
-      395,
-      410,
-      420
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2249,10 +2370,10 @@
     "name": "Merektha's Fang",
     "itemId": 158367,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -2265,10 +2386,10 @@
     "name": "Rezan's Gleaming Eye",
     "itemId": 158712,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -2281,10 +2402,10 @@
     "name": "Razdunk's Big Red Button",
     "itemId": 159611,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -2297,10 +2418,10 @@
     "name": "Gore-Crusted Butcher's Block",
     "itemId": 159616,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -2313,10 +2434,10 @@
     "name": "Briny Barnacle",
     "itemId": 159619,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -2329,10 +2450,10 @@
     "name": "Vial of Animated Blood",
     "itemId": 159625,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -2345,10 +2466,10 @@
     "name": "Jes' Howler",
     "itemId": 159627,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -2361,24 +2482,10 @@
     "name": "Remote Guidance Device",
     "itemId": 169769,
     "itemLevels": [
-      415,
-      425,
-      440
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "'Bygone Bee' Almanac",
-    "itemId": 163936,
-    "itemLevels": [
-      400,
-      415,
-      425
+      440,
+      455,
+      465,
+      475
     ],
     "bonusIds": [
 
@@ -2391,10 +2498,9 @@
     "name": "Galewind Chimes",
     "itemId": 155568,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2407,10 +2513,9 @@
     "name": "Gilded Loa Figurine",
     "itemId": 158153,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2423,10 +2528,9 @@
     "name": "Emblem of Zandalar",
     "itemId": 158154,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2439,10 +2543,9 @@
     "name": "Dinobone Charm",
     "itemId": 158155,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2455,10 +2558,9 @@
     "name": "Pearl Diver's Compass",
     "itemId": 158162,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2471,10 +2573,9 @@
     "name": "First Mate's Spyglass",
     "itemId": 158163,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2487,10 +2588,9 @@
     "name": "Plunderbeard's Flask",
     "itemId": 158164,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2503,10 +2603,9 @@
     "name": "Whirlwing's Plumage",
     "itemId": 158215,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2519,10 +2618,9 @@
     "name": "Living Oil Cannister",
     "itemId": 158216,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2535,10 +2633,9 @@
     "name": "Vial of Storms",
     "itemId": 158224,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2551,10 +2648,9 @@
     "name": "Doom Shroom",
     "itemId": 158555,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2567,10 +2663,9 @@
     "name": "Snowpelt Mangler",
     "itemId": 160263,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2583,10 +2678,9 @@
     "name": "Incessantly Ticking Clock",
     "itemId": 161113,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2599,10 +2693,9 @@
     "name": "Berserker's Juju",
     "itemId": 161117,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2615,10 +2708,9 @@
     "name": "Ravasaur Skull Bijou",
     "itemId": 161119,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2631,42 +2723,9 @@
     "name": "Kaja-fied Banana",
     "itemId": 161125,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Notorious Gladiator's Medallion",
-    "itemId": 167377,
-    "itemLevels": [
-      400,
-      415,
-      425,
-      440
-    ],
-    "bonusIds": [
-
-    ],
-    "additionalInput": [
-
-    ]
-  },
-  {
-    "name": "Notorious Gladiator's Badge",
-    "itemId": 167380,
-    "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2679,10 +2738,9 @@
     "name": "Crawg Gnawed Femur",
     "itemId": 163703,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2692,13 +2750,57 @@
     ]
   },
   {
-    "name": "Notorious Gladiator's Maledict",
-    "itemId": 167383,
+    "name": "Corrupted Gladiator's Medallion",
+    "itemId": 172666,
     "itemLevels": [
-      400,
       415,
-      425,
-      440
+      430,
+      445
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Corrupted Gladiator's Badge",
+    "itemId": 172669,
+    "itemLevels": [
+      415,
+      430,
+      445
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Corrupted Gladiator's Maledict",
+    "itemId": 172672,
+    "itemLevels": [
+      415,
+      430,
+      445
+    ],
+    "bonusIds": [
+
+    ],
+    "additionalInput": [
+
+    ]
+  },
+  {
+    "name": "Corrupted Gladiator's Insignia",
+    "itemId": 172668,
+    "itemLevels": [
+      415,
+      430,
+      445
     ],
     "bonusIds": [
 
@@ -2734,13 +2836,12 @@
     ]
   },
   {
-    "name": "Crushing Alchemist Stone",
-    "itemId": 168675,
+    "name": "Peerless Alchemist Stone",
+    "itemId": 305992,
     "itemLevels": [
-      400,
-      415,
-      425,
-      440
+      440,
+      455,
+      470
     ],
     "bonusIds": [
 
