@@ -113,5 +113,21 @@
     "name": "Nullification Dynamo",
     "roleOnly": "tank",
     "additionalInput": []
+  },
+  {
+    "essenceId": 35,
+    "itemId": 173282,
+    "rank3Id": 135,
+    "name": "Breath of the Dying",
+    "roleOnly": "damage",
+    "additionalInput": []
+  },
+  {
+    "essenceId": 36,
+    "itemId": 173290,
+    "rank3Id": 139,
+    "name": "Spark of Inspiration",
+    "roleOnly": "damage",
+    "additionalInput": []
   }
 ]
