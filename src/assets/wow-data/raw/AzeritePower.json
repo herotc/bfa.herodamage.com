@@ -5024,5 +5024,25 @@
       11,
       12
     ]
+  },
+  {
+    "powerId": 582,
+    "spellId": 317137,
+    "spellName": "Heart of Darkness",
+    "tier": 3,
+    "classesId": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ]
   }
 ]
