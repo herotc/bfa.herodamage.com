@@ -263,14 +263,15 @@ export function wowAzeriteEssenceLabel (rawName, wowClass, spec, templateTalents
 export function wowCorruptionLabel (rawName, wowClass, spec, templateTalentsMapping, lang = defaultLang, container = true) {
   // Split up the variations
   const parts = rawName.split('--')
-  const corruption = getCorruptionInformation(parts[0])
+  const labelParts = parts[0].split(" (")
+  const corruption = getCorruptionInformation(labelParts[0])
   if (!corruption) return (container && `<div class="label-container">${rawName}</div>`) || `${rawName}`
 
   const { spellId } = corruption
   let label = `<a href="${getWowheadLink(lang)}spell=${spellId}">
       <span>${rawName}</span>
     </a>`
-  if (parts[0].includes('(Allies)')) label += `&nbsp;(Allies)`
+  if (labelParts.length > 1) label += `&nbsp;(${labelParts[1]}`
 
   // Add back the formatted variations
   if (parts[1]) {
