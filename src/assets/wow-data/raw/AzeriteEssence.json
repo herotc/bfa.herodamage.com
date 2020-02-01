@@ -129,5 +129,12 @@
     "name": "Spark of Inspiration",
     "roleOnly": "damage",
     "additionalInput": []
+  },
+  {
+    "essenceId": 37,
+    "itemId": 173885,
+    "rank3Id": 143,
+    "name": "The Formless Void",
+    "additionalInput": []
   }
 ]
