@@ -74,6 +74,12 @@ export const simulationDetails = {
     simulationTypeOrder: 105,
     simulationTemplate: 'combinations'
   },
+  'combinator-4e': {
+    simulationCategory: 'combinations',
+    simulationType: 'combinations-4e',
+    simulationTypeOrder: 106,
+    simulationTemplate: 'combinations'
+  },
   racesimulation: {
     simulationFeaturedOrder: 5,
     simulationCategory: 'races',

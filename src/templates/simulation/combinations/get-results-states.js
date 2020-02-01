@@ -44,7 +44,8 @@ export function getResultsStates (props) {
         case 'combinations-0e':
         case 'combinations-1e':
         case 'combinations-2e':
-        case 'combinations-3e': {
+        case 'combinations-3e':
+        case 'combinations-4e': {
           // We do not have the Minor / Major information on the combinations, it's always first = major and others = minor
           const newLabel = `${label}${index === 0 ? ' (Major)' : ' (Minor)'}`
           return wowAzeriteEssenceLabel(newLabel, wowClass, spec, rawTalentLabels, lang, false)
