@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles'
 import { Link } from 'gatsby'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+import NewReleasesIcon from '@material-ui/icons/NewReleases'
 
 import { langs } from '../../../plugins/gatsby-plugin-herodamage-i18n'
 
@@ -62,6 +63,12 @@ const Header = ({ classes, i18nPlugin, siteMetadata }) => (
           </span>
         </Link>
       </h2>
+      <div style={{display: 'flex', alignItems: 'center'}}>
+        <NewReleasesIcon style={{margin: 4}}/>
+        <Link to={i18nPlugin.tLink('/game')}>
+          <b>Available Now<br/>Hero Damage: The Game</b>
+        </Link>
+      </div>
       <Typography>
         {langs.map((lang, index) => (
           <LangSelector key={index} classes={classes} i18nPlugin={i18nPlugin} lang={lang}
