@@ -198,16 +198,28 @@
                 "bonusId": 6554,
                 "corruption": 75
             }
+        ],
+        "itemLevels": [
+            430,
+            445,
+            460,
+            475
         ]
     },
     {
-        "name": "Ineffable Truth",
+        "name": "Ineffable Truth (T1)",
         "spellId": 318484,
         "tiers": [
             {
                 "bonusId": 6547,
                 "corruption": 12
-            },
+            }
+        ]
+    },
+    {
+        "name": "Ineffable Truth (T2)",
+        "spellId": 318484,
+        "tiers": [
             {
                 "bonusId": 6548,
                 "corruption": 30
@@ -248,6 +260,12 @@
                 "bonusId": 6545,
                 "corruption": 66
             }
+        ],
+        "itemLevels": [
+            430,
+            445,
+            460,
+            475
         ]
     },
     {
@@ -300,6 +318,12 @@
                 "bonusId": 6573,
                 "corruption": 15
             }
+        ],
+        "itemLevels": [
+            430,
+            445,
+            460,
+            475
         ]
     },
     {
@@ -320,6 +344,13 @@
                 "bonusId": 6572,
                 "corruption": 50
             }
+        ],
+        "specs": [
+            "retribution",
+            "arms",
+            "fury",
+            "blood",
+            "unholy"
         ]
     },
     {
@@ -330,6 +361,10 @@
                 "bonusId": 6571,
                 "corruption": 30
             }
+        ],
+        "specs": [
+            "protection",
+            "frost"
         ]
     },
     {
@@ -340,6 +375,9 @@
                 "bonusId": 6570,
                 "corruption": 20
             }
+        ],
+        "specs": [
+            "elemental"
         ]
     },
     {
@@ -350,6 +388,19 @@
                 "bonusId": 6569,
                 "corruption": 25
             }
+        ],
+        "specs": [
+            "outlaw",
+            "enhancement",
+            "windwalker",
+            "havoc",
+            "vengeance"
+        ],
+        "itemLevels": [
+            430,
+            445,
+            460,
+            475
         ]
     },
     {
@@ -360,6 +411,10 @@
                 "bonusId": 6568,
                 "corruption": 25
             }
+        ],
+        "specs": [
+            "beast_mastery",
+            "marksmanship"
         ]
     },
     {
@@ -370,6 +425,12 @@
                 "bonusId": 6567,
                 "corruption": 25
             }
+        ],
+        "specs": [
+            "feral",
+            "guardian",
+            "survival",
+            "brewmaster"
         ]
     }
 ]
