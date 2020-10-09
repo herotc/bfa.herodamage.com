@@ -18,9 +18,10 @@ const Footer = ({ classes, siteMetadata }) => (
       <Typography align={'center'}>
         Copyright © 2017-2020 Hero Damage |&nbsp;
         <a href={siteMetadata.github} title="GitHub Repository">GitHub</a>&nbsp;|&nbsp;
-        <a href="https://bfa-prepatch.herodamage.com/" title="BfA PrePatch version of Hero Damage">BfA PrePatch
-          Version</a>&nbsp;|&nbsp;
-        <a href="https://legion.herodamage.com/" title="Legion version of Hero Damage">Legion Version</a>
+        <a href="https://shadowlands.herodamage.com/" title="Shadowlands version of Hero Damage">Shadowlands</a>&nbsp;|&nbsp;
+        <a href="https://shadowlands-prepatch.herodamage.com/" title="Shadowlands PrePatch version of Hero Damage">Shadowlands PrePatch</a>&nbsp;|&nbsp;
+        <a href="https://bfa-prepatch.herodamage.com/" title="BfA PrePatch version of Hero Damage">BfA PrePatch</a>&nbsp;|&nbsp;
+        <a href="https://legion.herodamage.com/" title="Legion version of Hero Damage">Legion</a>
       </Typography>
     </Paper>
   </footer>
