@@ -15,12 +15,12 @@ diff.on('line', function (relativeUrl) {
     jsonFiles.push({ files: urls })
     urls = []
   }
-  // Complete filename version, i.e.: https://www.herodamage.com/blog/index.html
+  // Complete filename version, i.e.: https://bfa.herodamage.com/blog/index.html
   urls.push(`${baseUrl}/${relativeUrl}`)
   // Alternative versions
   const patterns = [
-    'index.html', // Indexless version, i.e.: https://www.herodamage.com/blog/
-    '/index.html' // Indexless version without trailing slash, i.e.: https://www.herodamage.com/blog
+    'index.html', // Indexless version, i.e.: https://bfa.herodamage.com/blog/
+    '/index.html' // Indexless version without trailing slash, i.e.: https://bfa.herodamage.com/blog
   ]
   const relativeUrlLength = relativeUrl.length
   for (let pattern of patterns) {
@@ -28,7 +28,7 @@ diff.on('line', function (relativeUrl) {
       urls.push(`${baseUrl}/${relativeUrl.slice(0, relativeUrlLength - pattern.length)}`)
     }
   }
-  // Special case for the homepage, i.e.: https://www.herodamage.com (baseUrl without trailing slash)
+  // Special case for the homepage, i.e.: https://bfa.herodamage.com (baseUrl without trailing slash)
   if (relativeUrl === 'index.html') urls.push(`${baseUrl}`)
 })
 
