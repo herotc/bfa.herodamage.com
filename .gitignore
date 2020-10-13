@@ -20,8 +20,13 @@ yarn-error.log
 # IDE #
 #######
 ## VSCode // TODO
-.vscode
-
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/terminals.json
+*.code-workspace
 ## Intellij
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 # User-specific stuff
