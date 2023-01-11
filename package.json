@@ -68,7 +68,7 @@
     "gatsby-plugin-react-helmet": "^3.1.10",
     "gatsby-plugin-styled-components": "^3.1.8",
     "gatsby-source-filesystem": "^2.1.29",
-    "gatsby-transformer-remark": "^2.6.27",
+    "gatsby-transformer-remark": "^5.25.1",
     "jss": "^9.8.7",
     "little-loader": "^0.2.0",
     "lodash": "^4.17.15",
